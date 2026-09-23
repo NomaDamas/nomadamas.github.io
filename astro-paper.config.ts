@@ -8,7 +8,6 @@ export default defineAstroPaperConfig({
       "서울의 AI 오픈소스 해커하우스. 없어서 만든 것들을 전부 공개합니다.",
     author: "NomaDamas",
     profile: "https://github.com/NomaDamas",
-    ogImage: "default-og.jpg",
     lang: "ko",
     timezone: "Asia/Seoul",
     dir: "ltr",

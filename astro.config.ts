@@ -74,6 +74,18 @@ export default defineConfig({
       styles: ["normal", "italic"],
       formats: ["woff", "ttf"],
     },
+    {
+      // OG 이미지용 한글 폰트. Layout의 <Font>가 참조하지 않으므로 방문자에게 preload되지 않고,
+      // 빌드 때 satori가 experimental_getFontFileURL로만 가져간다.
+      name: "Nanum Gothic Coding",
+      cssVariable: "--font-nanum-gothic-coding",
+      provider: fontProviders.google(),
+      fallbacks: ["monospace"],
+      weights: [400, 700],
+      styles: ["normal"],
+      // satori는 ttf만 읽는다. woff까지 받으면 아무도 안 쓰는 1.6MB가 배포된다.
+      formats: ["ttf"],
+    },
   ],
   env: {
     schema: {

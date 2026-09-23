@@ -35,7 +35,7 @@ export default {
   },
   footer: {
     copyright: "Copyright",
-    allRightsReserved: "",
+    allRightsReserved: "NomaDamas",
   },
   pages: {
     tagTitle: "태그",
