@@ -64,13 +64,20 @@ draft: false      # true면 빌드에서 빠진다
 
 ## 건드리기 전에 알아야 할 설정
 
-`astro.config.mjs`의 세 항목은 빼면 조용히 망가진다.
+`astro.config.ts`의 네 항목은 빼면 조용히 망가진다. 빌드는 그대로 통과한다.
 
 | 항목 | 빼면 |
 |---|---|
 | `site` 절대 URL | 네이버가 sitemap을 수집하지 않는다 |
 | `image.layout: 'constrained'` | srcset이 한 장도 안 생긴다. 원본 해상도 1장만 내려간다 |
 | `image.breakpoints` | 기본 8단계라 이미지 1장이 8개 파일이 된다 |
+| `fonts`의 Nanum Gothic Coding | OG 이미지의 한글이 전부 두부(□)로 나온다 |
+
+OG 이미지는 satori가 빌드 때 그리는데, satori는 넘겨준 폰트에 없는 글리프를 그냥 비운다.
+테마 기본 폰트(Google Sans Code)에는 한글이 없어서 한글 제목이 통째로 사라진다.
+`src/utils/loadOgFonts.ts`가 라틴 + 한글 폰트를 한 배열로 묶어 두 OG 생성기에 넘긴다.
+**OG 이미지를 건드렸으면 `pnpm build` 후 `dist/og.png`와 `dist/posts/<슬러그>/index.png`를 눈으로 연다.**
+글자가 깨져도 빌드는 성공하므로 파일을 직접 보는 것 말고 확인할 방법이 없다.
 
 `public/robots.txt`는 정적 파일로 둔다. 동적 라우트가 5xx를 내면 네이버가 사이트 전체를 수집 금지로 읽는다.
 
