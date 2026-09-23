@@ -73,5 +73,5 @@ Ahrefs가 13만 7천 개 사이트를 조사했을 때 97%가 llms.txt로 들어
 ---
 
 이 블로그는 [Astro](https://astro.build)로 만들어 GitHub Pages에 올립니다.
-저장소는 [NomaDamas/blog](https://github.com/NomaDamas/blog)에 공개돼 있어요.
+저장소는 [NomaDamas/nomadamas.github.io](https://github.com/NomaDamas/nomadamas.github.io)에 공개돼 있어요.
 설정을 그대로 가져다 쓰셔도 됩니다.
