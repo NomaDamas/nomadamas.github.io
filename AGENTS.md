@@ -54,9 +54,10 @@ draft: false      # true면 빌드에서 빠진다
 - **이미지는 `src/assets/images/`에 둔다.** 글에서 `@/` 별칭으로 참조한다:
   `![설명](@/assets/images/foo.png)`. 별칭이라 글이 어느 깊이에 있든 경로가 같다.
 - **원본을 그대로 커밋한다.** 빌드할 때 Astro가 webp로 변환하고 srcset을 만든다.
-  실측으로 2,340KB 스크린샷이 독자에게는 48KB로 간다. 커밋 전에 손으로 줄이지 않는다.
+  실측(2026-09-23)으로 2,000px PNG 2,394KB가 webp 5장(15.6~95.1KB, 합계 274KB)이 된다.
+  독자는 화면에 맞는 1장만 받는다. 커밋 전에 손으로 줄이지 않는다.
 - **`public/`에 이미지를 넣지 않는다.** Astro가 `public/`은 처리하지 않아 원본이 그대로 나간다.
-  용량과 대역폭 견적이 19배 갈리는 유일한 변수다. 예외는 Astro가 다루지 않는 동영상뿐이다.
+  위 실측 기준 발행 용량이 약 9배 갈린다. 예외는 Astro가 다루지 않는 동영상뿐이다.
 - **GIF를 커밋하지 않는다.** 실측 2,976KB GIF가 mp4로 377KB다. 움짤은 mp4로 만들어 `public/videos/`에 둔다.
   개별 파일 100MiB를 넘으면 push 자체가 거부된다.
 - **Git LFS를 쓰지 않는다.** 공식 문서에 `Git LFS cannot be used with GitHub Pages sites`이고,
@@ -70,7 +71,7 @@ draft: false      # true면 빌드에서 빠진다
 |---|---|
 | `site` 절대 URL | 네이버가 sitemap을 수집하지 않는다 |
 | `image.layout: 'constrained'` | srcset이 한 장도 안 생긴다. 원본 해상도 1장만 내려간다 |
-| `image.breakpoints` | 기본 8단계라 이미지 1장이 8개 파일이 된다 |
+| `image.breakpoints` | 기본 목록(로컬 8단계) 중 원본 폭 이하마다 파일이 생긴다. 2,000px 1장이 7개가 된다 |
 | `fonts`의 Nanum Gothic Coding | OG 이미지의 한글이 전부 두부(□)로 나온다 |
 
 OG 이미지는 satori가 빌드 때 그리는데, satori는 넘겨준 폰트에 없는 글리프를 그냥 비운다.
@@ -85,6 +86,11 @@ OG 이미지는 satori가 빌드 때 그리는데, satori는 넘겨준 폰트에
 (2) 특이도를 클래스 하나 이상으로 올려야 한다. `global.css` 맨 아래 `mark` 규칙이 그 예다.
 
 `public/robots.txt`는 정적 파일로 둔다. 동적 라우트가 5xx를 내면 네이버가 사이트 전체를 수집 금지로 읽는다.
+
+`/llms.txt`는 `src/pages/llms.txt.ts`가 글 목록에서 빌드 때 만든다. 손으로 고치지 않는다.
+구글 검색은 이 파일을 쓰지 않는다(Search Central 2026-06-15 개정: 두어도 순위에 득실 없음).
+넣은 이유는 코딩 에이전트가 실제로 읽어 가고(Ahrefs 2026-06 조사에서 GPTBot, Claude Code 순)
+Chrome Lighthouse의 실험 항목이 검사하기 때문이다. 검색 순위 효과를 기대하고 늘리지 않는다.
 
 ## 색과 로고
 
@@ -118,8 +124,6 @@ UI 문자열은 `src/i18n/lang/ko.ts`에 있다. `astro.config.ts`의 `i18n.loca
 
 ## 하지 않는 것
 
-- **`llms.txt`를 만들지 않는다.** 2025-06-17 구글 Mueller가 어떤 AI 시스템도 쓰지 않는다고 했고,
-  13.7만 사이트 조사에서 97%가 트래픽 0이었다. AI 검색 인용은 평범한 색인과 본문 품질에서 온다.
 - **재게시할 때 canonical을 빼지 않는다.** 없으면 도메인 권위가 높은 velog가 대표로 잡혀
   정본을 자체 도메인에 둔 결정이 무의미해진다.
 - **로컬 맥에 자동화를 걸지 않는다.** 발행 자동화는 GitHub Actions나 클라우드 세션의 push로만 한다.
@@ -142,7 +146,7 @@ UI 문자열은 `src/i18n/lang/ko.ts`에 있다. `astro.config.ts`의 `i18n.loca
    그리고 org Settings > Pages > Verified domains에서 발급되는 TXT 레코드.
    TXT가 없으면 사이트를 내린 뒤 다른 사람이 서브도메인을 가져갈 수 있다.
 2. DNS 반영 확인 후 저장소 Settings > Pages > Custom domain 설정, Enforce HTTPS 체크.
-3. `astro.config.mjs`의 `site`와 `public/robots.txt`의 Sitemap 줄을 새 도메인으로 바꾼다.
+3. `astro-paper.config.ts`의 `site.url`, `astro.config.ts`의 `site`와 `public/robots.txt`의 Sitemap 줄을 새 도메인으로 바꾼다.
    안 바꾸면 canonical이 옛 주소를 가리킨다.
 4. `curl -sI https://blog.nomadamas.org`로 `server: GitHub.com` 확인 (프록시 안 탔는지).
 
