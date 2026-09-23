@@ -1,0 +1,15 @@
+# 정적 파일로 둔다. 동적 라우트가 5xx를 내면 네이버가 사이트 전체를 수집 금지로 읽는다.
+User-agent: *
+Allow: /
+
+# 검색용 AI 크롤러. 막으면 AI 검색 인용 대상에서 빠진다.
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Yeti
+Allow: /
+
+Sitemap: https://blog.nomadamas.org/sitemap-index.xml
