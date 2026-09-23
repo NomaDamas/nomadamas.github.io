@@ -6,7 +6,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://blog.nomadamas.org',
+	site: 'https://nomadamas.github.io',
 	trailingSlash: 'always',
 	// GitHub Pages는 경로별 301을 못 만든다. URL 구조는 첫 배포 전에 확정한다.
 	image: {
