@@ -1,0 +1,49 @@
+---
+// 검색엔진 소유확인 메타와 방문 분석 스크립트. 값은 전부 저장소 변수(vars.*)에서 빌드 때 들어온다.
+// 값이 없으면 아무것도 출력하지 않는다. 등록 절차는 scripts/setup-seo-services.sh가 안내한다.
+import {
+  PUBLIC_BING_SITE_VERIFICATION,
+  PUBLIC_CLARITY_PROJECT_ID,
+  PUBLIC_GA_MEASUREMENT_ID,
+  PUBLIC_NAVER_SITE_VERIFICATION,
+} from "astro:env/client";
+import GoogleAnalytics from "./GoogleAnalytics.astro";
+import MicrosoftClarity from "./MicrosoftClarity.astro";
+
+// 형식이 틀린 값은 조용히 무시하지 않고 빌드를 멈춘다. 틀린 태그가 배포되면
+// 소유확인과 수집이 소리 없이 실패하고, 몇 주 뒤에야 빈 리포트로 드러난다.
+const check = (name: string, value: string | undefined, pattern: RegExp) => {
+  if (value && !pattern.test(value)) {
+    throw new Error(
+      `${name} 형식이 맞지 않습니다: "${value}" (기대 형식 ${pattern})`
+    );
+  }
+  return value;
+};
+
+const gaId = check(
+  "PUBLIC_GA_MEASUREMENT_ID",
+  PUBLIC_GA_MEASUREMENT_ID,
+  /^G-[A-Z0-9]+$/
+);
+const clarityId = check(
+  "PUBLIC_CLARITY_PROJECT_ID",
+  PUBLIC_CLARITY_PROJECT_ID,
+  /^[a-z0-9]+$/
+);
+const naver = check(
+  "PUBLIC_NAVER_SITE_VERIFICATION",
+  PUBLIC_NAVER_SITE_VERIFICATION,
+  /^[A-Za-z0-9_-]+$/
+);
+const bing = check(
+  "PUBLIC_BING_SITE_VERIFICATION",
+  PUBLIC_BING_SITE_VERIFICATION,
+  /^[A-Za-z0-9]+$/
+);
+---
+
+{naver && <meta name="naver-site-verification" content={naver} />}
+{bing && <meta name="msvalidate.01" content={bing} />}
+{gaId && <GoogleAnalytics id={gaId} />}
+{clarityId && <MicrosoftClarity id={clarityId} />}

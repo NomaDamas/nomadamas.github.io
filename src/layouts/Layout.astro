@@ -3,6 +3,7 @@ import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 import { resolveDefaultOgImagePath } from "@/utils/resolveDefaultOgImagePath";
 import { getAssetPath } from "@/utils/withBase";
+import SiteAnalytics from "@/components/SiteAnalytics.astro";
 import config from "@/config";
 import "@/styles/global.css";
 
@@ -94,6 +95,7 @@ const rssHref = getAssetPath("rss.xml");
         />
       )
     }
+    <SiteAnalytics />
 
     <!--
       Inline FOUC-prevention script: sets data-theme on <html> before

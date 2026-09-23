@@ -23,6 +23,14 @@ jobs:
       - uses: withastro/action@v6
         with:
           package-manager: pnpm@latest
+        # 소유확인 토큰과 분석 ID. 공개값이라 secrets가 아니라 저장소 변수에 둔다.
+        # 비어 있으면 해당 태그가 빠질 뿐 빌드는 통과한다. 등록은 scripts/setup-seo-services.sh.
+        env:
+          PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.PUBLIC_GOOGLE_SITE_VERIFICATION }}
+          PUBLIC_NAVER_SITE_VERIFICATION: ${{ vars.PUBLIC_NAVER_SITE_VERIFICATION }}
+          PUBLIC_BING_SITE_VERIFICATION: ${{ vars.PUBLIC_BING_SITE_VERIFICATION }}
+          PUBLIC_GA_MEASUREMENT_ID: ${{ vars.PUBLIC_GA_MEASUREMENT_ID }}
+          PUBLIC_CLARITY_PROJECT_ID: ${{ vars.PUBLIC_CLARITY_PROJECT_ID }}
 
   deploy:
     needs: build

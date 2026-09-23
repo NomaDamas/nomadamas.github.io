@@ -96,6 +96,27 @@ export default defineConfig({
         context: "client",
         optional: true,
       }),
+      // 아래 넷은 src/components/SiteAnalytics.astro가 쓴다. CI에서는 저장소 변수(vars.*)로 들어온다.
+      PUBLIC_NAVER_SITE_VERIFICATION: envField.string({
+        access: "public",
+        context: "client",
+        optional: true,
+      }),
+      PUBLIC_BING_SITE_VERIFICATION: envField.string({
+        access: "public",
+        context: "client",
+        optional: true,
+      }),
+      PUBLIC_GA_MEASUREMENT_ID: envField.string({
+        access: "public",
+        context: "client",
+        optional: true,
+      }),
+      PUBLIC_CLARITY_PROJECT_ID: envField.string({
+        access: "public",
+        context: "client",
+        optional: true,
+      }),
     },
   },
   experimental: {
