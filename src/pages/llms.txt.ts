@@ -31,6 +31,7 @@ export const GET: APIRoute = async () => {
     "## Optional",
     "",
     `- [소개](${abs("about/")}): NomaDamas가 어떤 곳인지`,
+    `- [전체 본문](${abs("llms-full.txt")}): 소개와 모든 글 본문을 한 파일로`,
     `- [RSS](${abs("rss.xml")}): 새 글 피드`,
     "",
   ].join("\n");

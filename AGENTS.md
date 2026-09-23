@@ -93,6 +93,24 @@ OG 이미지는 satori가 빌드 때 그리는데, satori는 넘겨준 폰트에
 Chrome Lighthouse의 실험 항목이 검사하며, 생성 비용이 0이기 때문이다. 구글 Mueller도 2026-05에
 "검색용이 아니고 개발자 문서 외에는 별 의미 없다"고 했다. 순위 효과를 기대하고 키우지 않는다.
 
+## 검색 노출 설정
+
+`coreyhaines31/marketingskills`의 `seo-audit`, `ai-seo`, `schema` 스킬 점검표를 기준으로 맞췄다(2026-09-23).
+점검은 `pnpm build` 후 `dist/`의 HTML을 직접 읽어서 한다. JSON-LD는 `curl`이나 웹 요약 도구가 지워 버려서
+"스키마 없음"으로 잘못 나온다.
+
+- **페이지마다 제목과 설명이 달라야 한다.** 새 페이지를 만들면 `<Layout>`에 `title`과 `description`을 넘긴다.
+  빼면 사이트 설명이 그대로 들어가 여러 페이지가 같은 설명을 쓰게 된다. 목록의 2쪽 이후는 제목과 설명에 쪽수가 붙는다.
+- **색인이 필요 없는 페이지는 `noindex`.** 지금은 검색(`/search/`)과 404다. `astro.config.ts`의 sitemap `filter`에서도 뺀다.
+- **구조화 데이터는 `src/utils/structuredData.ts`가 만든다.** 홈은 `Organization`과 `WebSite`, 글은 `BlogPosting`이다.
+  글쓴이 기본값이 조직(NomaDamas)이라 author를 `Person`으로 두면 틀린다. 개인 이름으로 쓴 글만 `Person`이 된다.
+  로고는 `public/apple-touch-icon.png`(180px)를 쓴다. 구글 로고 요건이 112px 이상이라 줄이지 않는다.
+- **sitemap `lastmod`는 날짜를 아는 페이지에만 단다.** `src/utils/postLastmod.ts`가 글 프런트매터의 날짜를 읽는다.
+  빌드 시각을 넣으면 매 배포마다 전부 바뀐 것처럼 보여 구글이 lastmod를 믿지 않게 된다.
+- **`robots.txt`는 크롤러를 이름으로 적는다.** `*`만으로도 전부 허용되지만 AI 크롤러 정책을 추측하게 두지 않으려는 것이다.
+  막을 봇이 생기면 그 이름을 빼서 `Disallow` 그룹을 따로 만든다.
+- `/llms.txt`는 목차, `/llms-full.txt`는 소개와 모든 글 본문을 한 파일로 묶은 것이다. 둘 다 빌드 때 만들어진다.
+
 ## 색과 로고
 
 팔레트는 로고에서 뽑았다. 로고는 #fefefe 종이 위에 #000000 잉크로 그린 낙타와 별이고
