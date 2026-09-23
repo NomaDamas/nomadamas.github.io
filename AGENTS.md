@@ -9,13 +9,30 @@ GitHub Actions가 빌드해 GitHub Pages로 배포한다. 현재 주소는 `http
 velog `@nomadamas`와 dev.to는 재게시 채널이다. 정본이 아니다.
 선정 근거는 우산 저장소의 `09-docs/blog-platform-260922.html`과 `09-docs/blog-images-seo-260922.html`에 있다.
 
+테마는 [AstroPaper](https://github.com/satnaing/astro-paper)다. 검색(pagefind), 태그,
+페이지네이션, 글별 OG 이미지 자동 생성, 라이트/다크가 이미 들어 있다. 업스트림을 고칠 때는
+`astro-paper.config.ts`를 먼저 보고, 컴포넌트를 직접 고치면 나중에 업데이트가 어려워진다.
+
 ## 발행
 
 ```bash
 # 글 하나 추가하고 push하면 끝이다. 별도 업로드 단계가 없다.
-git add src/content/blog/<슬러그>.md src/assets/posts/<슬러그>/
+git add src/content/posts/<슬러그>.md src/assets/images/
 git commit -m "post: <제목>"
 git push
+```
+
+frontmatter는 AstroPaper 스키마를 따른다. `pubDate`가 아니라 `pubDatetime`이다.
+
+```yaml
+---
+title: "제목"
+description: "검색 결과와 공유 카드에 나오는 한두 문장"
+pubDatetime: 2026-09-23T18:00:00+09:00
+tags: ["astro", "seo"]
+featured: false   # 홈 상단에 올릴 때만 true
+draft: false      # true면 빌드에서 빠진다
+---
 ```
 
 ## 웹에서 글쓰기
@@ -34,8 +51,8 @@ git push
 
 ## 이미지
 
-- **이미지는 `src/assets/posts/<슬러그>/`에 둔다.** 글에서 상대경로로 참조한다:
-  `![설명](../../assets/posts/<슬러그>/foo.png)`
+- **이미지는 `src/assets/images/`에 둔다.** 글에서 `@/` 별칭으로 참조한다:
+  `![설명](@/assets/images/foo.png)`. 별칭이라 글이 어느 깊이에 있든 경로가 같다.
 - **원본을 그대로 커밋한다.** 빌드할 때 Astro가 webp로 변환하고 srcset을 만든다.
   실측으로 2,340KB 스크린샷이 독자에게는 48KB로 간다. 커밋 전에 손으로 줄이지 않는다.
 - **`public/`에 이미지를 넣지 않는다.** Astro가 `public/`은 처리하지 않아 원본이 그대로 나간다.
@@ -59,8 +76,17 @@ git push
 
 ## URL 구조
 
-`/posts/<슬러그>/`로 고정한다. GitHub Pages는 경로별 서버사이드 301을 만들 수 없고
-Astro의 redirects는 meta refresh HTML만 뱉는다. 한번 발행한 주소는 되돌리기 어렵다.
+`/posts/<슬러그>/`로 고정한다. 슬러그는 파일명이 그대로 된다. GitHub Pages는 경로별
+서버사이드 301을 만들 수 없고 Astro의 redirects는 meta refresh HTML만 뱉는다.
+한번 발행한 주소는 되돌리기 어려우니 파일명을 나중에 바꾸지 않는다. 영문 슬러그를 권한다.
+
+## 언어
+
+UI 문자열은 `src/i18n/lang/ko.ts`에 있다. `astro.config.ts`의 `i18n.locales`에 `ko`가
+들어 있어야 `astro-paper.config.ts`의 `lang: "ko"`가 동작한다. 둘 중 하나만 바꾸면 빌드가 깨진다.
+
+검색은 pagefind를 쓰는데 한국어 어간 분석을 지원하지 않는다. 정확히 일치하는 단어는 찾지만
+활용형은 못 찾는다. 빌드 로그에 매번 경고가 찍히는데 정상이다.
 
 ## 하지 않는 것
 
