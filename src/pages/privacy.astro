@@ -14,70 +14,44 @@ import config from "@/config";
 const title = "방문 분석 안내";
 const usesGa = Boolean(PUBLIC_GA_MEASUREMENT_ID);
 const usesClarity = Boolean(PUBLIC_CLARITY_PROJECT_ID);
-const issuesUrl = "https://github.com/NomaDamas/nomadamas.github.io/issues";
 ---
 
 <Layout
   title={`${title} | ${config.site.title}`}
-  description="이 블로그가 쓰는 방문 분석 도구와 모으는 정보를 안내합니다."
+  description="이 블로그가 사용하는 방문 분석 도구를 안내합니다."
 >
   <Header />
 
   <Main pageTitle={title} class="app-prose">
-    {!usesGa && !usesClarity && <p>지금은 방문 분석 도구를 쓰지 않아요.</p>}
-
     {
-      (usesGa || usesClarity) && (
-        <p>
-          어떤 글이 읽히는지 보려고 아래 도구를 써요. 이 블로그에 광고는 없어요.
-        </p>
-      )
-    }
-
-    {
-      usesGa && (
+      usesGa || usesClarity ? (
         <>
-          <h2>Google Analytics 4</h2>
-          <p>
-            방문한 페이지, 들어온 경로, 기기 종류, 대략적인 지역을{" "}
-            <code>_ga</code> 쿠키로 모아요. Google이 이 정보를 쓰는 방식은{" "}
-            <a href="https://policies.google.com/technologies/partner-sites?hl=ko">
-              Google 안내 페이지
-            </a>
-            에 있어요. 원하지 않으면{" "}
-            <a href="https://tools.google.com/dlpage/gaoptout">
-              차단 부가 기능
-            </a>
-            을 설치하면 돼요.
-          </p>
+          <p>이 블로그는 쿠키로 방문 정보를 수집하는 아래 도구를 사용합니다.</p>
+          <ul>
+            {usesGa && (
+              <li>
+                Google Analytics 4 (
+                <a href="https://policies.google.com/technologies/partner-sites?hl=ko">
+                  Google 데이터 사용 안내
+                </a>
+                )
+              </li>
+            )}
+            {usesClarity && (
+              <li>
+                Microsoft Clarity (
+                <a href="https://privacy.microsoft.com/privacystatement">
+                  Microsoft 개인정보처리방침
+                </a>
+                )
+              </li>
+            )}
+          </ul>
         </>
+      ) : (
+        <p>현재 사용하는 방문 분석 도구가 없습니다.</p>
       )
     }
-
-    {
-      usesClarity && (
-        <>
-          <h2>Microsoft Clarity</h2>
-          <p>
-            클릭과 스크롤을 기록해 히트맵과 세션 재생으로 봐요. 입력한 글 같은
-            민감한 내용은 가려져요. 기록에는 <code>_clck</code>,{" "}
-            <code>_clsk</code>, <code>MUID</code> 같은 쿠키를 써요. 이 데이터는
-            Microsoft도 받아 자기 서비스와 광고에 쓸 수 있어요. 원하지 않으면
-            추적 차단 확장 프로그램으로 <code>clarity.ms</code>를 막으면 돼요.
-            자세한 내용은{" "}
-            <a href="https://privacy.microsoft.com/privacystatement">
-              Microsoft 개인정보처리방침
-            </a>
-            에 있어요.
-          </p>
-        </>
-      )
-    }
-
-    <h2>문의</h2>
-    <p>
-      <a href={issuesUrl}>저장소 이슈</a>로 남겨 주세요.
-    </p>
   </Main>
 
   <Footer />
