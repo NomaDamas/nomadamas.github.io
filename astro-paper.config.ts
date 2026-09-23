@@ -5,7 +5,7 @@ export default defineAstroPaperConfig({
     url: "https://nomadamas.github.io/",
     title: "NomaDamas",
     description:
-      "서울의 AI 오픈소스 해커하우스. 없어서 만든 것들을 전부 공개합니다.",
+      "서울의 AI 오픈소스 해커하우스. 재밌는 걸 만들어 공개합니다.",
     author: "NomaDamas",
     profile: "https://github.com/NomaDamas",
     lang: "ko",

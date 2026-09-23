@@ -3,7 +3,7 @@
 <https://nomadamas.github.io>
 
 서울의 AI 오픈소스 해커하우스 [NomaDamas](https://github.com/NomaDamas)의 블로그입니다.
-저장소 README에 안 들어가는 이야기를 적습니다. 왜 이렇게 만들었고, 무엇을 재봤고, 어디서 틀렸는지.
+프로젝트를 왜 그렇게 만들었는지, 만들어 보니 뭐가 달랐는지를 적습니다.
 
 ## 글 쓰기
 
