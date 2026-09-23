@@ -10,25 +10,38 @@
   --font-app: var(--font-google-sans-code);
 }
 
-/* Light theme values */
+/*
+  팔레트는 로고에서 뽑았다. 로고는 #fefefe 종이 위에 #000000 잉크로 그린
+  낙타와 별이고, 중간색이 없는 완전 무채색이다. 그래서 두 테마의 배경도
+  그 두 색을 그대로 쓴다 -- 라이트는 종이, 다크는 잉크.
+
+  테마 기본값이던 남색(#212737) + 주황(#ff6b01) 조합은 로고와 무관해서
+  다크모드에서 로고가 배경에 뜬 검은 사각형처럼 보였다.
+
+  강조색은 낙타 위의 별에서 가져온 호박색 하나만 쓴다. 로고 자체에 색이
+  없으므로 강조색을 늘리면 마크와 싸운다. 아래 값은 전부 WCAG AA(4.5:1)를
+  넘는 것을 확인했다.
+*/
+
+/* Light theme values -- 종이 */
 :root,
 [data-theme="light"] {
-  --background: #fdfdfd;
-  --foreground: #282728;
-  --accent: #006cac;
+  --background: #fcfcfc;
+  --foreground: #171717;
+  --accent: #9a6408;
   --accent-foreground: #ffffff;
-  --muted: #e6e6e6;
-  --muted-foreground: #6b7280;
-  --border: #ece9e9;
+  --muted: #ededed;
+  --muted-foreground: #57534e;
+  --border: #d8d5d0;
 }
 
-/* Dark theme values */
+/* Dark theme values -- 잉크 */
 [data-theme="dark"] {
-  --background: #212737;
-  --foreground: #eaedf3;
-  --accent: #ff6b01;
-  --accent-foreground: #ffffff;
-  --muted: #343f60;
-  --muted-foreground: #afb9ca;
-  --border: #ab4b08;
+  --background: #111111;
+  --foreground: #ededed;
+  --accent: #f0b429;
+  --accent-foreground: #171717;
+  --muted: #1f1f1f;
+  --muted-foreground: #a1a1a1;
+  --border: #303030;
 }
