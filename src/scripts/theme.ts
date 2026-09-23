@@ -24,7 +24,11 @@ function reflect(): void {
   const root = document.firstElementChild;
   root?.setAttribute("data-theme", themeValue);
   root?.classList.toggle("dark", themeValue === DARK);
-  document.querySelector("#theme-btn")?.setAttribute("aria-label", themeValue);
+  // 접근명은 동작("밝게 어둡게 바꾸기")으로 고정돼 있다. 현재 상태만 따로 읽어준다.
+  const state = document.querySelector("#theme-state");
+  if (state instanceof HTMLElement) {
+    state.textContent = state.dataset[themeValue] ?? "";
+  }
 
   // Fill <meta name="theme-color"> with the computed background colour so
   // Android's browser chrome matches the page background.

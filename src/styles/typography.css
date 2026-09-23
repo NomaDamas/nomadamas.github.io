@@ -60,6 +60,10 @@
     }
 
     table {
+      /* 열이 3~4개만 돼도 표가 페이지 폭을 밀어 문서 전체에 가로 스크롤이 생긴다.
+         표가 자기 안에서 스크롤을 받게 한다. */
+      @apply block w-fit max-w-full overflow-x-auto;
+
       th,
       td {
         @apply border-border border p-2;

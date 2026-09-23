@@ -50,7 +50,9 @@ export default defineConfig({
       rehypePlugins: [rehypeCallouts],
     }),
     shikiConfig: {
-      themes: { light: "min-light", dark: "night-owl" },
+      // night-owl은 배경이 #011627 남색이라 무채색 팔레트와 안 맞는다.
+      // min-dark 배경 #1f1f1f는 --muted와 같은 값이고 min-light와 같은 계열이다.
+      themes: { light: "min-light", dark: "min-dark" },
       defaultColor: false,
       wrap: false,
       transformers: [

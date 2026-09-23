@@ -14,6 +14,7 @@ import ShareLinks from "./_components/ShareLinks.astro";
 import BackButton from "./_components/BackButton.astro";
 import BackToTopButton from "./_components/BackToTopButton.astro";
 import AdjacentPostNav from "./_components/AdjacentPostNav.astro";
+import { useTranslations } from "@/i18n";
 import config from "@/config";
 
 export async function getStaticPaths() {
@@ -60,6 +61,7 @@ type Props = {
 
 const { post, prevPost, nextPost } = Astro.props;
 const locale = Astro.currentLocale ?? config.site.lang;
+const t = useTranslations(locale);
 
 const {
   title,
@@ -98,6 +100,7 @@ const ogImage = ogImageUrl
 
 <PostLayout
   title={`${title} | ${config.site.title}`}
+  headline={title}
   description={description}
   ogImage={ogImage}
   canonicalURL={canonicalURL}
@@ -164,7 +167,7 @@ const ogImage = ogImageUrl
   <Footer />
 </PostLayout>
 
-<script is:inline data-astro-rerun>
+<script is:inline data-astro-rerun define:vars={{ headingLinkLabel: t.a11y.headingLink, copyLabel: t.post.copyCode, copiedLabel: t.post.copied }}>
   function createProgressBar() {
     const progressContainer = document.createElement("div");
     progressContainer.className =
@@ -207,6 +210,11 @@ const ogImage = ogImageUrl
       link.className =
         "heading-link ms-2 no-underline opacity-75 md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100";
       link.href = "#" + heading.id;
+      // 안의 "#"이 aria-hidden이라 이름을 안 주면 접근명이 빈 문자열이 된다.
+      link.setAttribute(
+        "aria-label",
+        heading.textContent.trim() + " " + headingLinkLabel
+      );
 
       const span = document.createElement("span");
       span.ariaHidden = "true";
@@ -218,7 +226,7 @@ const ogImage = ogImageUrl
   addHeadingLinks();
 
   function attachCopyButtons() {
-    const copyButtonLabel = "Copy";
+    const copyButtonLabel = copyLabel;
     const codeBlocks = Array.from(document.querySelectorAll("pre"));
 
     for (const codeBlock of codeBlocks) {
@@ -253,7 +261,7 @@ const ogImage = ogImageUrl
 
       await navigator.clipboard.writeText(text ?? "");
 
-      button.innerText = "Copied";
+      button.innerText = copiedLabel;
 
       setTimeout(() => {
         button.innerText = copyButtonLabel;
