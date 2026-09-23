@@ -79,6 +79,11 @@ OG 이미지는 satori가 빌드 때 그리는데, satori는 넘겨준 폰트에
 **OG 이미지를 건드렸으면 `pnpm build` 후 `dist/og.png`와 `dist/posts/<슬러그>/index.png`를 눈으로 연다.**
 글자가 깨져도 빌드는 성공하므로 파일을 직접 보는 것 말고 확인할 방법이 없다.
 
+`@layer base` 안의 스타일은 **레이어 없는 외부 CSS에 항상 진다** -- 특이도와 무관하다.
+검색 하이라이트를 팔레트 색으로 맞출 때 이걸로 두 번 헛짚었다. pagefind가 자기 CSS에서
+`.pagefind-ui--reset mark { all: revert }`로 되돌리는데, 이걸 이기려면 (1) 규칙을 레이어 밖에 두고
+(2) 특이도를 클래스 하나 이상으로 올려야 한다. `global.css` 맨 아래 `mark` 규칙이 그 예다.
+
 `public/robots.txt`는 정적 파일로 둔다. 동적 라우트가 5xx를 내면 네이버가 사이트 전체를 수집 금지로 읽는다.
 
 ## 색과 로고

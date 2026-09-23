@@ -82,14 +82,19 @@ export const GET: APIRoute = async context => {
                           {
                             type: "p",
                             props: {
-                              style: { fontSize: 72, fontWeight: "bold" },
+                              style: {
+                                fontSize: 72,
+                                fontWeight: "bold",
+                                wordBreak: "keep-all",
+                              },
                               children: config.site.title,
                             },
                           },
                           {
                             type: "p",
                             props: {
-                              style: { fontSize: 28 },
+                              // 28이면 설명 끝 마침표 하나가 다음 줄로 밀린다.
+                              style: { fontSize: 26, wordBreak: "keep-all" },
                               children: config.site.description,
                             },
                           },

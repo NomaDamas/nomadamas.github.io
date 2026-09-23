@@ -90,6 +90,7 @@ export const GET: APIRoute = async ({ props, url }) => {
                       props: {
                         style: {
                           fontSize: 72,
+                          wordBreak: "keep-all",
                           fontWeight: "bold",
                           maxHeight: "84%",
                           overflow: "hidden",

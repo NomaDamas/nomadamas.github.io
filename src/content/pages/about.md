@@ -22,7 +22,7 @@ description: "서울의 AI 오픈소스 해커하우스. 없어서 만든 것들
 - [CozyClay](https://github.com/NomaDamas/CozyClay) - 오픈소스 프리비주얼라이제이션 도구
 - [KICE_slayer_AI_Korean](https://github.com/NomaDamas/KICE_slayer_AI_Korean) - 수능 국어 1등급에 도전하는 AI
 - [awesome-korean-llm](https://github.com/NomaDamas/awesome-korean-llm) - 한국어 LLM 목록
-- [katok](https://github.com/NomaDamas/katok) - 에이전트로 카카오톡 대화를 검색하는 CLI
+- katok - 에이전트로 카카오톡 대화를 검색하는 CLI (아직 비공개)
 - [god-tibo-imagen](https://github.com/NomaDamas/god-tibo-imagen) - Codex 구독으로 GPT image 2.0을 쓰는 패키지
 - [bananatape](https://github.com/NomaDamas/bananatape) - 개발자를 위한 바이브 디자인 도구
 

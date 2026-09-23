@@ -9,7 +9,8 @@
   * {
     @apply border-border outline-accent/75;
     scrollbar-width: auto;
-    scrollbar-color: var(--color-muted) transparent;
+    /* --muted는 배경과 거의 같아 썸이 안 보인다(라이트 1.13:1). 경계색으로 올린다. */
+    scrollbar-color: var(--color-border) transparent;
   }
   a,
   button,
@@ -36,4 +37,16 @@
 
 :target {
   scroll-margin-block: 1rem;
+}
+
+/* 검색 하이라이트가 브라우저 기본 순노랑으로 뜨는 걸 막는다. 범인은 pagefind-ui.css의
+   `.pagefind-ui--reset mark { all: revert }`다. 두 가지를 넘어야 이긴다 --
+   (1) 레이어 없는 스타일이 @layer base를 항상 이기므로 이 규칙도 레이어 밖에 둔다.
+   (2) 저쪽은 클래스를 낀 (0,1,1)이라 맨 `mark`로는 특이도가 모자라다. */
+:root mark,
+:root .pagefind-ui--reset mark {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+  border-radius: 0.125rem;
+  padding-inline: 0.125rem;
 }

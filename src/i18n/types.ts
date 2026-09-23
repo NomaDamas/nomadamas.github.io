@@ -8,6 +8,8 @@ export interface UIStrings {
     search: string;
   };
   post: {
+    copyCode: string;
+    copied: string;
     publishedAt: string;
     updatedAt: string;
     sharePostIntro: string;
@@ -60,6 +62,21 @@ export interface UIStrings {
     noResults: string;
     goToPreviousPage: string;
     goToNextPage: string;
+    headingLink: string;
+    currentTheme: { light: string; dark: string };
+  };
+  searchUi: {
+    placeholder: string;
+    clear_search: string;
+    load_more: string;
+    search_label: string;
+    filters_label: string;
+    zero_results: string;
+    one_result: string;
+    many_results: string;
+    alt_search: string;
+    search_suggestion: string;
+    searching: string;
   };
   notFound: {
     title: string;
