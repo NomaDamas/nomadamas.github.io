@@ -6,6 +6,12 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @layer base {
+  /* 브라우저 기본 줄바꿈은 한글을 글자 단위로 끊어 "해커하우/스", "공개하/고요"가 된다.
+     keep-all로 어절 단위로 끊고, 긴 URL이나 영문은 break-word로 넘치지 않게 한다. */
+  body {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
   * {
     @apply border-border outline-accent/75;
     scrollbar-width: auto;
