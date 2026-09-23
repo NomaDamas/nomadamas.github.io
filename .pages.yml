@@ -1,0 +1,47 @@
+# Pages CMS 설정. app.pagescms.org에 GitHub으로 로그인하면 이 파일을 읽어
+# 브라우저에서 글을 쓰고 이미지를 드래그해 올릴 수 있다. 저장하면 이 저장소에 바로 커밋된다.
+#
+# 이미지 경로가 핵심이다. output을 상대경로로 둬야 Astro가 빌드할 때 webp로 변환한다.
+# 절대 공개경로(/images 같은 것)로 두면 public/ 취급이 돼 원본이 그대로 나간다.
+
+media:
+  input: src/assets/posts
+  output: ../../assets/posts
+  categories: [image]
+  extensions: [png, jpg, jpeg, webp, svg, gif]
+
+content:
+  - name: posts
+    label: 글
+    type: collection
+    path: src/content/blog
+    format: yaml-frontmatter
+    filename: '{primary}.md'
+    view:
+      primary: title
+      sort: pubDate
+      order: desc
+      fields: [title, pubDate]
+    fields:
+      - name: title
+        label: 제목
+        type: string
+        required: true
+      - name: description
+        label: 요약
+        type: text
+        required: true
+        description: 검색 결과와 SNS 카드에 그대로 나오는 문장이다. 한두 문장으로 쓴다.
+      - name: pubDate
+        label: 발행일
+        type: date
+        required: true
+      - name: updatedDate
+        label: 수정일
+        type: date
+      - name: heroImage
+        label: 대표 이미지
+        type: image
+      - name: body
+        label: 본문
+        type: rich-text
