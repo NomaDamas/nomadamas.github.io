@@ -38,6 +38,7 @@ export default {
   footer: {
     copyright: "Copyright",
     allRightsReserved: "NomaDamas",
+    privacy: "방문 분석 안내",
   },
   pages: {
     tagTitle: "태그",
@@ -76,8 +77,10 @@ export default {
     zero_results: "[SEARCH_TERM] 검색 결과가 없습니다",
     one_result: "[SEARCH_TERM] 검색 결과 1건",
     many_results: "[SEARCH_TERM] 검색 결과 [COUNT]건",
-    alt_search: "[SEARCH_TERM] 결과가 없어 [DIFFERENT_TERM] 결과를 보여드립니다",
-    search_suggestion: "[SEARCH_TERM] 검색 결과가 없습니다. 다른 검색어로 찾아보세요",
+    alt_search:
+      "[SEARCH_TERM] 결과가 없어 [DIFFERENT_TERM] 결과를 보여드립니다",
+    search_suggestion:
+      "[SEARCH_TERM] 검색 결과가 없습니다. 다른 검색어로 찾아보세요",
     searching: "[SEARCH_TERM] 검색 중",
   },
   notFound: {

@@ -16,6 +16,8 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+# scripts/setup-seo-services.sh가 재실행용으로 남기는 입력값
+.seo-services.env
 
 # macOS-specific files
 .DS_Store

@@ -38,6 +38,7 @@ export default {
   footer: {
     copyright: "Copyright",
     allRightsReserved: "All rights reserved.",
+    privacy: "Analytics notice",
   },
   pages: {
     tagTitle: "Tag",
@@ -76,8 +77,10 @@ export default {
     zero_results: "No results for [SEARCH_TERM]",
     one_result: "1 result for [SEARCH_TERM]",
     many_results: "[COUNT] results for [SEARCH_TERM]",
-    alt_search: "No results for [SEARCH_TERM]. Showing results for [DIFFERENT_TERM] instead",
-    search_suggestion: "No results for [SEARCH_TERM]. Try one of the following searches:",
+    alt_search:
+      "No results for [SEARCH_TERM]. Showing results for [DIFFERENT_TERM] instead",
+    search_suggestion:
+      "No results for [SEARCH_TERM]. Try one of the following searches:",
     searching: "Searching for [SEARCH_TERM]",
   },
   notFound: {

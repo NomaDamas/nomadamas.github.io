@@ -19,6 +19,14 @@ pnpm preview  # 빌드 결과 확인
 프론트매터 형식, 이미지 넣는 법, 건드리면 조용히 망가지는 설정, 색과 로고 규칙은
 [`AGENTS.md`](./AGENTS.md)에 있습니다. **글이나 설정을 고치기 전에 그 문서를 먼저 보세요.**
 
+## 검색엔진, 방문 분석 연결
+
+GA4, Microsoft Clarity, Google Search Console, 네이버 서치어드바이저, Bing 연결은 단계별 안내 스크립트로 합니다.
+
+```bash
+scripts/setup-seo-services.sh   # gh 로그인 필요
+```
+
 ## 오타를 발견하셨다면
 
 글 하단의 "이 글 고치기"를 누르면 GitHub 편집 화면으로 바로 갑니다. Pull Request 환영합니다.

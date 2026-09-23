@@ -1,0 +1,33 @@
+---
+// SiteAnalytics.astro가 측정 ID가 있을 때만 렌더링한다.
+//
+// ClientRouter는 pushState 순간에만 제목을 이전 글 것으로 되돌려 둔다
+// (astro/dist/transitions/router.js의 moveToLocation). GA의 브라우저 기록 기반
+// 자동 페이지뷰를 쓰면 새 주소에 이전 제목이 붙을 수 있어서, 그 자동 수집은
+// GA 설정에서 끄고 페이지 전환은 astro:after-swap에서 직접 보낸다.
+// 첫 페이지뷰는 config가 보낸다. 스크립트가 다시 실행돼도 리스너는 하나만 건다.
+type Props = { id: string };
+const { id } = Astro.props;
+---
+
+<script
+  is:inline
+  async
+  src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
+<script is:inline define:vars={{ id }}>
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () {
+    window.dataLayer.push(arguments);
+  };
+  if (!window.__gaBound) {
+    window.__gaBound = true;
+    window.gtag("js", new Date());
+    window.gtag("config", id);
+    document.addEventListener("astro:after-swap", function () {
+      window.gtag("event", "page_view", {
+        page_location: location.href,
+        page_title: document.title,
+      });
+    });
+  }
+</script>

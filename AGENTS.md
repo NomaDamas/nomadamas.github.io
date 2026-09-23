@@ -129,14 +129,26 @@ UI 문자열은 `src/i18n/lang/ko.ts`에 있다. `astro.config.ts`의 `i18n.loca
   정본을 자체 도메인에 둔 결정이 무의미해진다.
 - **로컬 맥에 자동화를 걸지 않는다.** 발행 자동화는 GitHub Actions나 클라우드 세션의 push로만 한다.
 
-## 배포 전 체크리스트
+## 검색엔진과 방문 분석
 
-- [ ] 템플릿 샘플 글 5개 삭제 (`first-post`, `second-post`, `third-post`, `markdown-style-guide`, `using-mdx`)
-- [ ] `src/pages/index.astro`와 `about.astro`의 Astro 템플릿 문구를 노마다마스 소개로 교체
-- [ ] `src/components/Footer.astro`의 소셜 링크를 실제 계정으로 교체
-- [ ] Search Console과 네이버 서치어드바이저 소유확인, sitemap과 RSS 제출
+GA4, Microsoft Clarity, Search Console, 네이버 서치어드바이저, Bing 연결은
+`scripts/setup-seo-services.sh`로 한다. 사람이 할 일(계정에서 만들기, 값 복사, 확인 버튼)을
+단계별로 안내하고, 형식 검사, 저장소 변수 등록, 재배포, 배포된 HTML 확인은 스크립트가 한다.
+값을 바꾸거나 서비스를 추가할 때도 이 스크립트를 다시 돌린다. 입력값은 `.seo-services.env`(gitignore)에 남는다.
 
-### 나중에: 커스텀 도메인 `blog.nomadamas.org`
+- **값은 저장소 변수(`vars.*`)에 둔다.** 전부 페이지 HTML에 그대로 나가는 공개값이라 secrets가 아니다.
+  `deploy.yml`이 빌드 env로 넘기고 `src/components/SiteAnalytics.astro`가 태그를 만든다.
+- **로컬 `.env`에 넣지 않는다.** 넣으면 `pnpm dev` 트래픽이 GA와 Clarity에 섞인다.
+- **형식이 틀린 값은 빌드를 멈춘다.** `SiteAnalytics.astro`의 정규식 검사다. 틀린 태그가 조용히
+  배포되면 소유확인과 수집이 실패한 걸 몇 주 뒤 빈 리포트로 알게 된다.
+- **GA4의 '브라우저 기록 이벤트 기반 페이지 변경'은 꺼 둔다.** ClientRouter가 pushState 순간에만
+  이전 글 제목을 넣어 두기 때문에(`astro/dist/transitions/router.js`의 `moveToLocation`), 페이지 전환
+  페이지뷰는 `GoogleAnalytics.astro`가 `astro:after-swap`에서 새 제목으로 직접 보낸다. 켜 두면 두 번 잡힌다.
+- **`/privacy/`는 켜진 도구만 적는다.** GA4와 Clarity 약관이 사용 사실 고지를 요구한다.
+  분석 도구를 새로 붙이면 `src/pages/privacy.astro`에도 항목을 더한다.
+- Bing은 Search Console에서 가져오기로 연결한다. 토큰 없이 확인되고 사이트맵도 따라온다.
+
+## 나중에: 커스텀 도메인 `blog.nomadamas.org`
 
 지금은 `nomadamas.github.io`로 서비스한다. 자체 도메인으로 옮길 때만 아래를 한다.
 **순서를 지킨다. DNS가 먼저다.** 반대로 하면 안 뜨는 주소로 리다이렉트된다.
