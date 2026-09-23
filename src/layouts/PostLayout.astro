@@ -1,6 +1,7 @@
 ---
 import Layout from "./Layout.astro";
 import config from "@/config";
+import { author as authorNode, organization } from "@/utils/structuredData";
 
 type Props = {
   title?: string;
@@ -11,6 +12,8 @@ type Props = {
   modDatetime?: Date | null;
   /** 사이트명 접미사가 붙기 전의 글 제목. title은 <title>용이라 " | NomaDamas"가 붙어 있다. */
   headline?: string;
+  author?: string;
+  tags?: string[];
 };
 
 const { site } = config;
@@ -23,22 +26,28 @@ const {
   pubDatetime,
   modDatetime,
   headline,
+  author = site.author,
+  tags = [],
 } = Astro.props;
+
+const pageUrl = canonicalURL ?? new URL(Astro.url.pathname, Astro.site).href;
+// 구글은 dateModified를 권장한다. 수정한 적이 없으면 발행일이 곧 마지막 수정일이다.
+const lastModified = modDatetime ?? pubDatetime;
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   headline: headline ?? title ?? site.title,
-  image: ogImage,
+  ...(description && { description }),
+  ...(ogImage && { image: ogImage }),
+  url: pageUrl,
+  mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
+  inLanguage: site.lang,
   ...(pubDatetime && { datePublished: pubDatetime.toISOString() }),
-  ...(modDatetime && { dateModified: modDatetime.toISOString() }),
-  author: [
-    {
-      "@type": "Person",
-      name: site.author,
-      ...(site.profile && { url: site.profile }),
-    },
-  ],
+  ...(lastModified && { dateModified: lastModified.toISOString() }),
+  ...(tags.length > 0 && { keywords: tags }),
+  author: authorNode(author),
+  publisher: organization(),
 };
 ---
 

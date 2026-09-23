@@ -17,7 +17,10 @@ import {
   transformerNotationWordHighlight,
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
+import { postLastmod } from "./src/utils/postLastmod";
 import config from "./astro-paper.config";
+
+const lastmod = postLastmod(config.site.url);
 
 export default defineConfig({
   site: config.site.url,
@@ -30,8 +33,17 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
+      // sitemap에는 색인될 페이지만 넣는다. 검색 페이지는 noindex라 뺀다.
       filter: page =>
-        config.features?.showArchives !== false || !page.endsWith("/archives/"),
+        !page.endsWith("/search/") &&
+        (config.features?.showArchives !== false ||
+          !page.endsWith("/archives/")),
+      // 날짜를 아는 페이지(글, 글 목록)에만 lastmod를 단다. 모르는 곳에 빌드 시각을 넣으면
+      // 매번 전부 바뀐 것처럼 보여 구글이 lastmod를 무시하게 된다.
+      serialize: item => {
+        const date = lastmod.get(item.url);
+        return date ? { ...item, lastmod: date } : item;
+      },
     }),
   ],
   i18n: {

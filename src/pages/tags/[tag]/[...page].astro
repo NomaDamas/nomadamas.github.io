@@ -35,9 +35,13 @@ const { page, tagName } = Astro.props;
 
 const locale = Astro.currentLocale ?? config.site.lang;
 const t = useTranslations(locale);
+const pageSuffix = page.currentPage > 1 ? ` (${page.currentPage}쪽)` : "";
 ---
 
-<Layout title={`${t.pages.tagTitle}: ${tagName} | ${config.site.title}`}>
+<Layout
+  title={`${t.pages.tagTitle}: ${tagName}${pageSuffix} | ${config.site.title}`}
+  description={`${config.site.title} 블로그에서 '${tagName}' 태그가 붙은 글입니다.${pageSuffix}`}
+>
   <Header />
 
   <Breadcrumb />

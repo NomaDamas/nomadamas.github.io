@@ -106,6 +106,8 @@ const ogImage = ogImageUrl
   canonicalURL={canonicalURL}
   pubDatetime={pubDatetime}
   modDatetime={modDatetime}
+  author={post.data.author}
+  tags={tags}
 >
   <Header />
 
@@ -167,7 +169,15 @@ const ogImage = ogImageUrl
   <Footer />
 </PostLayout>
 
-<script is:inline data-astro-rerun define:vars={{ headingLinkLabel: t.a11y.headingLink, copyLabel: t.post.copyCode, copiedLabel: t.post.copied }}>
+<script
+  is:inline
+  data-astro-rerun
+  define:vars={{
+    headingLinkLabel: t.a11y.headingLink,
+    copyLabel: t.post.copyCode,
+    copiedLabel: t.post.copied,
+  }}
+>
   function createProgressBar() {
     const progressContainer = document.createElement("div");
     progressContainer.className =

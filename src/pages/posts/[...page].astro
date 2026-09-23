@@ -21,9 +21,13 @@ const { page } = Astro.props;
 
 const locale = Astro.currentLocale ?? config.site.lang;
 const t = useTranslations(locale);
+const pageSuffix = page.currentPage > 1 ? ` (${page.currentPage}쪽)` : "";
 ---
 
-<Layout title={`${t.pages.postsTitle} | ${config.site.title}`}>
+<Layout
+  title={`${t.pages.postsTitle}${pageSuffix} | ${config.site.title}`}
+  description={`${config.site.title} 블로그의 모든 글을 최신순으로 모았습니다.${pageSuffix}`}
+>
   <Header />
 
   <Breadcrumb />

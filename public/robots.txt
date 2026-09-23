@@ -1,15 +1,31 @@
 # 정적 파일로 둔다. 동적 라우트가 5xx를 내면 네이버가 사이트 전체를 수집 금지로 읽는다.
+#
+# 공개 블로그라 검색엔진, AI 검색, AI 학습용 크롤러를 모두 허용한다. 첫 그룹만으로도 전부
+# 허용되지만, 정책을 추측하게 두지 않으려고 주요 크롤러를 이름으로 적었다.
+# 막을 봇이 생기면 해당 그룹에서 빼서 Disallow 그룹을 따로 만든다.
 User-agent: *
 Allow: /
 
-# 검색용 AI 크롤러. 막으면 AI 검색 인용 대상에서 빠진다.
-User-agent: OAI-SearchBot
-Allow: /
-User-agent: Claude-SearchBot
-Allow: /
-User-agent: PerplexityBot
-Allow: /
+# 검색엔진
+User-agent: Googlebot
+User-agent: Bingbot
 User-agent: Yeti
+Allow: /
+
+# AI 검색과 답변 인용. 막으면 그 서비스의 답변 출처에서 빠진다.
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Allow: /
+
+# AI 학습과 모델 개선
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://nomadamas.github.io/sitemap-index.xml

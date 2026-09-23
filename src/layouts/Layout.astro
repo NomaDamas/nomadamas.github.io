@@ -13,6 +13,8 @@ type Props = {
   ogImage?: string;
   canonicalURL?: string;
   ogType?: "website" | "article";
+  /** 검색 결과에 나올 필요가 없는 페이지(검색, 404). sitemap에서도 뺀다(astro.config.ts). */
+  noindex?: boolean;
 };
 
 const { site } = config;
@@ -23,6 +25,7 @@ const {
   ogImage = resolveDefaultOgImagePath(config),
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
   ogType = "website",
+  noindex = false,
 } = Astro.props;
 
 const socialImageURL = new URL(ogImage, Astro.site ?? Astro.url);
@@ -44,6 +47,7 @@ const rssHref = getAssetPath("rss.xml");
     <link rel="apple-touch-icon" href={getAssetPath("apple-touch-icon.png")} />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
 
     <!-- Font -->
     <Font
