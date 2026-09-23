@@ -1,3 +1,8 @@
 allowBuilds:
   esbuild: true
   sharp: true
+
+# 갓 올라온 패키지를 받지 않는다. 공급망 공격은 보통 배포 직후 몇 시간에 몰린다.
+# CI의 pnpm 기본값과 같은 값을 저장소에 박아, 로컬에서만 통과하고 CI에서 깨지는 상황을 막는다.
+# (이 맥의 전역 설정은 0이라 명시하지 않으면 로컬과 CI가 어긋난다.)
+minimumReleaseAge: 1440
