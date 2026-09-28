@@ -23,6 +23,7 @@ export default {
     editPage: "이 글 고치기",
     previousPost: "이전 글",
     nextPost: "다음 글",
+    toc: "목차",
   },
   pagination: {
     prev: "이전",

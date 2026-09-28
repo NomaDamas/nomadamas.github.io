@@ -1,24 +1,28 @@
 ---
 // 노션처럼 넓은 화면 오른쪽에 떠 있는 목차. 절(h2)과 소절(h3)마다 짧은 막대를 세우고,
 // 지금 읽는 절의 막대를 진하게 한다. 막대에 마우스를 올리거나 키보드로 들어오면 제목 목록이 펼쳐진다.
-// 좁은 화면에서는 숨기고 본문의 목차 상자(remarkTocBox)를 쓴다. 스타일은 global.css의 .floating-toc.
+// 마우스가 있는 넓은 화면에서만 띄우고, 그때는 본문의 목차 상자(remarkTocBox)를 숨긴다.
+// 터치 기기나 좁은 화면에서는 이 목차를 숨기고 본문 목차 상자를 그대로 둔다.
 import type { MarkdownHeading } from "astro";
+import { useTranslations } from "@/i18n";
 
 type Props = { headings: MarkdownHeading[] };
 
 const { headings } = Astro.props;
+
+const t = useTranslations(Astro.currentLocale);
 ---
 
 <nav
   id="floating-toc"
   class="floating-toc"
-  aria-label="목차"
+  aria-label={t.post.toc}
   data-pagefind-ignore="all"
 >
-  <ol class="floating-toc-bars" aria-hidden="true">
+  <ol class="bars" aria-hidden="true">
     {headings.map(h => <li data-depth={h.depth} />)}
   </ol>
-  <div class="floating-toc-panel">
+  <div class="panel">
     <ol>
       {
         headings.map(h => (
@@ -33,12 +37,109 @@ const { headings } = Astro.props;
   </div>
 </nav>
 
+<style>
+  .floating-toc {
+    display: none;
+  }
+
+  /* 1024px는 Tailwind lg와 같은 값이다. 본문 폭(max-w-3xl) 바깥 여백이 막대를 담을 만큼 넓어지는 지점이다.
+     hover가 없는 터치 기기에서는 목록을 펼칠 수 없으므로 띄우지 않는다 */
+  @media (min-width: 1024px) and (hover: hover) {
+    .floating-toc {
+      display: block;
+      position: fixed;
+      right: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 40;
+    }
+
+    /* 이 목차가 실제로 떠 있는 글에서만 본문 목차 상자를 숨긴다 */
+    :global(main:has(.floating-toc) nav.toc) {
+      display: none;
+    }
+  }
+
+  .bars {
+    list-style: none;
+    margin: 0;
+    padding: 0.75rem 0.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.6rem;
+  }
+  .bars li {
+    width: 1rem;
+    height: 2px;
+    border-radius: 1px;
+    background: var(--border);
+    transition: background-color 0.15s;
+  }
+  .bars li[data-depth="3"] {
+    width: 0.6rem;
+  }
+  .bars li.active {
+    background: var(--foreground);
+  }
+
+  .panel {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 17rem;
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
+    padding: 0.6rem 0.4rem;
+    border: 1px solid var(--border);
+    border-radius: 0.6rem;
+    background: var(--background);
+    box-shadow: 0 10px 30px rgb(0 0 0 / 0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s;
+  }
+  .floating-toc:hover .panel,
+  .floating-toc:focus-within .panel {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .panel ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .panel a {
+    display: block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.35rem;
+    font-size: 0.85rem;
+    line-height: 1.35;
+    color: var(--muted-foreground);
+    text-decoration: none;
+  }
+  .panel li[data-depth="3"] a {
+    padding-left: 1.4rem;
+    font-size: 0.8rem;
+  }
+  .panel a:hover,
+  .panel a:focus-visible {
+    background: var(--muted);
+    color: var(--foreground);
+  }
+  .panel a.active {
+    color: var(--accent);
+    font-weight: 600;
+  }
+</style>
+
 <script is:inline data-astro-rerun>
   (() => {
     const toc = document.getElementById("floating-toc");
     if (!toc) return;
     const links = [...toc.querySelectorAll("a[data-slug]")];
-    const bars = [...toc.querySelectorAll(".floating-toc-bars li")];
+    const bars = [...toc.querySelectorAll(".bars li")];
     const targets = links.map(a => document.getElementById(a.dataset.slug));
 
     // 페이지를 옮길 때마다 이 스크립트가 다시 돌므로 이전 페이지의 스크롤 리스너를 떼어 낸다
@@ -61,6 +162,11 @@ const { headings } = Astro.props;
     }
     document.addEventListener("scroll", update, {
       passive: true,
+      signal: controller.signal,
+    });
+    // 떠 있는 목차가 없는 글로 옮겨 가도 리스너가 남지 않게 페이지를 바꾸기 전에 떼어 낸다
+    document.addEventListener("astro:before-swap", () => controller.abort(), {
+      once: true,
       signal: controller.signal,
     });
     update();

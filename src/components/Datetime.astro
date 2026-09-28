@@ -29,12 +29,20 @@ const t = useTranslations(Astro.currentLocale);
 
 const isModified = modDatetime && modDatetime > pubDatetime;
 
-// 발행일은 늘 보이고, 수정일은 발행 뒤에 고쳤을 때만 옆에 붙인다
+// 발행일은 늘 보이고, 수정일은 발행 뒤 다른 날에 고쳤을 때만 옆에 붙인다.
+// 같은 날 고친 글에 같은 날짜가 두 번 찍히지 않도록 화면에 보이는 날짜로 비교한다
 const tz = postTimezone ?? config.site.timezone;
-const published = dayjs(pubDatetime).tz(tz);
-const updated = isModified ? dayjs(modDatetime).tz(tz) : null;
 const format = (d: dayjs.Dayjs) => d.format("D MMM, YYYY");
-const textClass = ["text-sm", { "sm:text-base": size === "lg" }];
+const published = dayjs(pubDatetime).tz(tz);
+const modified = isModified ? dayjs(modDatetime).tz(tz) : null;
+const updated =
+  modified && format(modified) !== format(published) ? modified : null;
+// 좁은 화면에서는 "발행: 날짜"와 "/ 수정: 날짜" 사이에서만 줄을 바꾸고,
+// 바뀐 줄도 달력 아이콘 오른쪽에서 시작하게 한다
+const textClass = [
+  "text-sm whitespace-nowrap",
+  { "sm:text-base": size === "lg" },
+];
 ---
 
 <div
@@ -46,21 +54,18 @@ const textClass = ["text-sm", { "sm:text-base": size === "lg" }];
       { "scale-90": size === "sm" },
     ]}
   />
-  <span class:list={textClass}>{t.post.publishedAt}:</span>
-  <time class:list={textClass} datetime={published.toISOString()}>
-    {format(published)}
-  </time>
-  {
-    updated && (
-      <>
-        <span class:list={textClass} aria-hidden="true">
-          /
+  <div class="flex flex-wrap gap-x-2">
+    <span class:list={textClass}>
+      {t.post.publishedAt}:{" "}
+      <time datetime={published.toISOString()}>{format(published)}</time>
+    </span>
+    {
+      updated && (
+        <span class:list={textClass}>
+          <span aria-hidden="true">/</span> {t.post.updatedAt}:{" "}
+          <time datetime={updated.toISOString()}>{format(updated)}</time>
         </span>
-        <span class:list={textClass}>{t.post.updatedAt}:</span>
-        <time class:list={textClass} datetime={updated.toISOString()}>
-          {format(updated)}
-        </time>
-      </>
-    )
-  }
+      )
+    }
+  </div>
 </div>

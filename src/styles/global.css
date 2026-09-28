@@ -57,38 +57,19 @@
   padding-inline: 0.125rem;
 }
 
-/* 독자가 복사해 쓰는 한국어 부탁 문장(text 블록)은 줄을 바꿔 한눈에 보이게 한다.
-   bash, json 같은 코드는 줄바꿈이 뜻을 바꿀 수 있어 가로 스크롤로 둔다.
+/* 코드 블록 메타에 wrap을 적은 블록(```text wrap)은 줄을 바꿔 한눈에 보이게 한다.
+   독자가 복사해 쓰는 긴 문장용이다. 나머지 코드는 줄바꿈이 뜻을 바꿀 수 있어 가로 스크롤로 둔다.
+   클래스는 src/utils/transformers/wrap.js가 붙인다.
    테마 스타일이 @layer 안에 있으므로 이 규칙은 레이어 밖에 둔다(위 mark 규칙과 같은 이유). */
-pre.astro-code[data-language="text"],
-pre.astro-code[data-language="text"] code {
+pre.astro-code.wrap,
+pre.astro-code.wrap code {
   white-space: pre-wrap;
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
 
-/* 본문 토글(<details class="toggle">): 자주 묻는 질문, 개발자용 예시처럼 접어 두는 내용.
-   typography.css의 details 규칙은 목차용이라 안의 문단을 숨기고 글자 선택을 막는다.
-   toggle 클래스에서만 되살린다. 레이어 밖에 두어야 이긴다. */
-details.toggle {
-  display: block;
-  cursor: auto;
-  user-select: text;
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  padding: 0.6rem 1rem;
-  margin-block: 0.75rem;
-}
-details.toggle > summary {
-  cursor: pointer;
-  font-weight: 600;
-}
-details.toggle p {
-  display: block;
-  margin-block: 0.75rem 0.25rem;
-}
-
-/* 글 목차(src/utils/remarkTocBox.ts가 만든 <nav class="toc">). 늘 펼친 상자에 절은 그대로, 소절은 들여 쓴다 */
+/* 글 목차(src/utils/remarkTocBox.ts가 만든 <nav class="toc">). 늘 펼친 상자에 절은 그대로, 소절은 들여 쓴다.
+   마우스가 있는 넓은 화면에서는 떠 있는 목차(FloatingToc.astro)가 이 상자를 숨긴다 */
 nav.toc {
   border: 1px solid var(--border);
   border-radius: 0.5rem;
@@ -108,95 +89,4 @@ nav.toc ul ul {
   margin-top: 0.2rem;
   padding-left: 1.1rem;
   font-size: 0.95em;
-}
-
-/* 떠 있는 목차(posts/[...slug]/_components/FloatingToc.astro). 노션처럼 오른쪽 가장자리에 막대만 두고
-   올리면 제목 목록을 펼친다. 본문 폭(max-w-3xl) 바깥 여백이 막대를 담을 만큼 넓은 화면에서만 띄우고,
-   그때는 본문의 목차 상자(nav.toc)를 숨긴다 */
-.floating-toc {
-  display: none;
-}
-@media (min-width: 1024px) {
-  .floating-toc {
-    display: block;
-    position: fixed;
-    right: 1.25rem;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 40;
-  }
-  nav.toc {
-    display: none;
-  }
-}
-.floating-toc-bars {
-  list-style: none;
-  margin: 0;
-  padding: 0.75rem 0.25rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.6rem;
-}
-.floating-toc-bars li {
-  width: 1rem;
-  height: 2px;
-  border-radius: 1px;
-  background: var(--border);
-  transition: background-color 0.15s;
-}
-.floating-toc-bars li[data-depth="3"] {
-  width: 0.6rem;
-}
-.floating-toc-bars li.active {
-  background: var(--foreground);
-}
-.floating-toc-panel {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 17rem;
-  max-height: calc(100vh - 6rem);
-  overflow-y: auto;
-  padding: 0.6rem 0.4rem;
-  border: 1px solid var(--border);
-  border-radius: 0.6rem;
-  background: var(--background);
-  box-shadow: 0 10px 30px rgb(0 0 0 / 0.25);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.15s;
-}
-.floating-toc:hover .floating-toc-panel,
-.floating-toc:focus-within .floating-toc-panel {
-  opacity: 1;
-  pointer-events: auto;
-}
-.floating-toc-panel ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.floating-toc-panel a {
-  display: block;
-  padding: 0.3rem 0.6rem;
-  border-radius: 0.35rem;
-  font-size: 0.85rem;
-  line-height: 1.35;
-  color: var(--muted-foreground);
-  text-decoration: none;
-}
-.floating-toc-panel li[data-depth="3"] a {
-  padding-left: 1.4rem;
-  font-size: 0.8rem;
-}
-.floating-toc-panel a:hover,
-.floating-toc-panel a:focus-visible {
-  background: var(--muted);
-  color: var(--foreground);
-}
-.floating-toc-panel a.active {
-  color: var(--accent);
-  font-weight: 600;
 }
