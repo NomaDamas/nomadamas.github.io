@@ -7,25 +7,14 @@ tags: ["autorag agent", "오토래그", "rag", "카카오톡 검색", "로컬 �
 ogImage: ../../assets/images/autorag-agent-intro/00-cover.png
 featured: true
 ---
-> **기준**
->
-> - 발행일: 2026-09-28. 시연과 캡처: 2026-09-23~27. 버전: AutoRAG Agent 2.5.3(2026-09-23 배포)
-> - 시연 환경: Apple Silicon 맥. 답을 정리하는 모델은 OpenAI `gpt-6-luna`(2026-09-22 공개). 따라 하기는 Claude Code 2.1.281(Sonnet 5), Codex CLI 0.156.1
-> - 시연 데이터: 가상 회사 '한빛랩스'의 문서 29개, 메일 35통, 카카오톡 메시지 86개
-
-> [!NOTE]
-> **이해관계 고지.** AutoRAG는 (주)Markr의 GitHub 조직(Marker-Inc-Korea)이 공개한 오픈소스입니다. 저는 Markr 소속 DevRel로, Markr가 운영하는 AI 해커하우스 NomaDamas에서 일합니다. AutoRAG를 알리는 일도 제 업무에 들어갑니다.
->
-> **시연 데이터.** 화면에 나오는 회사, 사람, 메일 주소, 대화는 모두 지어낸 것입니다. 먼저 제 실제 메일과 카카오톡으로 돌려 보고, 결과가 나오는 모양(출처 표기, 잡음이 섞이는 방식)을 본떠 합성 데이터를 만들었습니다.
-
-최초 발행 2026-09-28.
-
 > **요약**
 >
 > 1. AutoRAG Agent는 문서 폴더, 메일, 카카오톡, 슬랙에 흩어진 자료를 한곳에 옮기지 않아도 연결해서 쓸 수 있는 오픈소스 CLI(명령줄 도구)입니다. 질문하면 찾아서 출처가 달린 답으로 돌려줍니다.
 > 2. AI 모델 없이 찾기만 하는 Lite 모드는 무료로 쓸 수 있습니다. 모델을 붙이면 원문을 다시 읽고 엇갈리는 값을 대조해 답을 정리해 줍니다.
 > 3. 카카오톡 대화와 한글(HWP) 파일까지 검색할 수 있습니다. 비교한 Gemini Notebook과 ChatGPT의 공식 문서에서는 확인되지 않은 기능입니다.
 > 4. 명령어를 몰라도 됩니다. Claude Code나 Codex에게 한국어로 부탁하면 설치 안내를 읽고 설정부터 검색까지 대신해 줍니다.
+
+## 목차
 
 ## 이런 적 있으신가요
 
@@ -214,7 +203,7 @@ Claude Code는 AutoRAG로 "부산 해커톤 일시", "장소", "주차"를 차�
 > [!NOTE]
 > **Codex에게 맡겨도 됩니다.** 같은 두 부탁을 Codex에도 그대로 넣었더니 설정부터 답까지 끝냈습니다. 다만 Codex는 작업 폴더 밖을 막는 샌드박스 안에서 명령을 실행하는데, 그 안에서는 맥의 GPU를 쓰지 못해 설정에 22분쯤 걸렸습니다. Codex도 초안에 홀을 빌린 시간을 행사 시간처럼 적었고, Claude Code와 달리 이 점을 따로 짚지 않았습니다. 어느 에이전트를 쓰든 초안은 근거 파일과 맞춰 보고 보내세요.
 
-<details>
+<details class="toggle">
 <summary>에이전트가 받는 검색 결과(개발자용)</summary>
 
 에이전트는 `autorag lite retrieve "질문" --json`을 실행해 아래와 같은 결과를 받습니다. 점수와 메타데이터 같은 필드는 빼고 본문은 줄였습니다. 이 가운데 무엇을 쓸지는 에이전트가 이미 쓰는 모델이 판단하기 때문에, AutoRAG 쪽에는 모델도 API 키도 필요 없습니다.
@@ -303,25 +292,40 @@ AutoRAG Agent는 "그 얘기 어디서 했더라"를 찾는 데 드는 시간을
 
 ## 자주 묻는 질문
 
-### 명령어를 몰라도 쓸 수 있나요?
+<details class="toggle">
+<summary>명령어를 몰라도 쓸 수 있나요?</summary>
 
 네. Claude Code나 Codex 같은 AI 코딩 에이전트에게 한국어로 부탁하면, 에이전트가 AutoRAG 저장소의 설치 안내(스킬)를 읽고 설정과 검색을 대신해 줍니다. 에이전트가 명령을 실행해도 되는지 물으면 읽어 보고 허락하면 됩니다. 컴퓨터에 Node.js 24 이상은 미리 설치해 두어야 합니다.
 
-### AutoRAG Agent를 쓰려면 API 키가 꼭 필요한가요?
+</details>
+
+<details class="toggle">
+<summary>AutoRAG Agent를 쓰려면 API 키가 꼭 필요한가요?</summary>
 
 아닙니다. 색인과 `autorag lite retrieve` 검색은 모델 없이 쓸 수 있고, 임베딩도 내 컴퓨터에서 계산합니다. 원문을 다시 읽고 답을 정리해 주는 `autorag search`에만 모델이 필요합니다. 이 글의 시연에서는 OpenAI `gpt-6-luna`로 질문 하나에 0.003~0.014달러가 들었습니다.
 
-### 내 자료가 외부 서버로 올라가나요?
+</details>
+
+<details class="toggle">
+<summary>내 자료가 외부 서버로 올라가나요?</summary>
 
 원본은 클라우드나 외부 서버로 올라가지 않습니다. 문서의 색인과 변환 사본은 내 컴퓨터의 `.autorag/` 폴더에, 메신저 기록은 각 연결 도구가 내 컴퓨터에 둔 보관소에 있습니다. 다만 `autorag search`에 클라우드 모델을 쓰면 검색으로 찾은 발췌가 그 모델 제공자에게 전달됩니다. 밖으로 보내면 안 되는 자료라면 모델 없는 Lite 모드나 로컬 모델을 쓰면 됩니다.
 
-### 윈도우나 리눅스에서도 쓸 수 있나요?
+</details>
+
+<details class="toggle">
+<summary>윈도우나 리눅스에서도 쓸 수 있나요?</summary>
 
 네. 본체는 맥, 윈도우, 리눅스에서 모두 자동 테스트를 거칩니다. 다만 연결하는 소스 중에는 운영체제를 가리는 것이 있습니다. 카카오톡은 Apple Silicon 맥에서 카카오톡 앱이 켜져 있어야 하고 Spotlight는 맥 전용입니다.
 
-### 예전 AutoRAG(파이썬)와 같은 제품인가요?
+</details>
+
+<details class="toggle">
+<summary>예전 AutoRAG(파이썬)와 같은 제품인가요?</summary>
 
 다른 제품입니다. 파이썬 AutoRAG는 RAG 파이프라인을 자동으로 최적화하는 도구이고 `pip install AutoRAG`로 설치합니다. AutoRAG Agent는 같은 저장소에서 2.0으로 새로 만든 검색 에이전트이고 npm 패키지 `@autorag/librarian`으로 설치합니다. 파이썬판은 `legacy/` 폴더에서 계속 유지보수됩니다.
+
+</details>
 
 ## 참고 자료
 
