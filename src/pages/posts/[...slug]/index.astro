@@ -14,6 +14,12 @@ import ShareLinks from "./_components/ShareLinks.astro";
 import BackButton from "./_components/BackButton.astro";
 import BackToTopButton from "./_components/BackToTopButton.astro";
 import AdjacentPostNav from "./_components/AdjacentPostNav.astro";
+import FloatingToc from "./_components/FloatingToc.astro";
+import {
+  FLOATING_TOC_MIN_HEADINGS,
+  TOC_MAX_DEPTH,
+  TOC_MIN_DEPTH,
+} from "@/utils/toc";
 import { useTranslations } from "@/i18n";
 import config from "@/config";
 
@@ -75,7 +81,13 @@ const {
   hideEditPost,
 } = post.data;
 
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+
+// 떠 있는 목차에는 본문 목차와 같은 깊이의 제목을 글 전체에서 넣는다.
+// 목차 상자로 바뀐 "## 목차" 제목은 remarkTocBox가 제목에서 빼므로 여기 들어오지 않는다
+const tocHeadings = headings.filter(
+  h => h.depth >= TOC_MIN_DEPTH && h.depth <= TOC_MAX_DEPTH
+);
 
 let ogImageUrl: string | undefined;
 
@@ -149,6 +161,12 @@ const ogImage = ogImageUrl
     >
       <Content />
     </article>
+
+    {
+      tocHeadings.length >= FLOATING_TOC_MIN_HEADINGS && (
+        <FloatingToc headings={tocHeadings} />
+      )
+    }
 
     <hr class="my-8 border-dashed" />
 

@@ -56,3 +56,37 @@
   border-radius: 0.125rem;
   padding-inline: 0.125rem;
 }
+
+/* 코드 블록 메타에 wrap을 적은 블록(```text wrap)은 줄을 바꿔 한눈에 보이게 한다.
+   독자가 복사해 쓰는 긴 문장용이다. 나머지 코드는 줄바꿈이 뜻을 바꿀 수 있어 가로 스크롤로 둔다.
+   클래스는 src/utils/transformers/wrap.js가 붙인다.
+   테마 스타일이 @layer 안에 있으므로 이 규칙은 레이어 밖에 둔다(위 mark 규칙과 같은 이유). */
+pre.astro-code.wrap,
+pre.astro-code.wrap code {
+  white-space: pre-wrap;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+/* 글 목차(src/utils/remarkTocBox.ts가 만든 <nav class="toc">). 늘 펼친 상자에 절은 그대로, 소절은 들여 쓴다.
+   마우스가 있는 넓은 화면에서는 떠 있는 목차(FloatingToc.astro)가 이 상자를 숨긴다 */
+nav.toc {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.9rem 1.1rem;
+  margin-block: 1.75rem;
+  font-size: 0.95em;
+}
+nav.toc ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.4rem 0 0;
+}
+nav.toc li {
+  margin-block: 0.2rem;
+}
+nav.toc ul ul {
+  margin-top: 0.2rem;
+  padding-left: 1.1rem;
+  font-size: 0.95em;
+}

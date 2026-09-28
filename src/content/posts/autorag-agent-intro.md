@@ -1,0 +1,326 @@
+---
+title: "자료를 옮기지 않고 찾아 주는 오픈소스 AI 사서, AutoRAG Agent"
+description: "문서 폴더, 메일, 카카오톡에 흩어진 자료를 한곳에 모으지 않아도 찾아서, 출처가 달린 답으로 돌려주는 오픈소스 AutoRAG Agent를 소개합니다. 실제 화면, 비슷한 서비스와의 차이, 명령어 없이 Claude Code에게 맡겨 시작하는 방법을 담았습니다."
+pubDatetime: 2026-09-28T14:19:00+09:00
+author: "안승원 (Aiden)"
+tags: ["autorag agent", "오토래그", "rag", "카카오톡 검색", "로컬 검색", "claude code", "오픈소스"]
+ogImage: ../../assets/images/autorag-agent-intro/00-cover.png
+featured: true
+---
+> **요약**
+>
+> 1. AutoRAG Agent는 문서 폴더, 메일, 카카오톡, 슬랙에 흩어진 자료를 한곳에 옮기지 않아도 연결해서 쓸 수 있는 오픈소스 CLI(명령줄 도구)입니다. 질문하면 찾아서 출처가 달린 답으로 돌려줍니다.
+> 2. AI 모델 없이 찾기만 하는 Lite 모드는 무료로 쓸 수 있습니다. 모델을 붙이면 원문을 다시 읽고 엇갈리는 값을 대조해 답을 정리해 줍니다.
+> 3. 카카오톡 대화와 한글(HWP) 파일까지 검색할 수 있습니다. 비교한 Gemini Notebook과 ChatGPT의 공식 문서에서는 확인되지 않은 기능입니다.
+> 4. 명령어를 몰라도 됩니다. Claude Code나 Codex에게 한국어로 부탁하면 설치 안내를 읽고 설정부터 검색까지 대신해 줍니다.
+
+## 목차
+
+## 이런 적 있으신가요
+
+10월에 부산에서 해커톤을 연다고 해 보겠습니다. 대표님이 묻습니다. "대관료 얼마로 정해졌어요? 계약금은 냈고요? 정원은 몇 명이죠?"
+
+답은 다 어딘가에 있습니다. 대관료는 처음 받은 견적 메일과 할인 뒤 다시 받은 견적 메일에 나옵니다. 계약금은 재무 담당자가 카카오톡으로 이체했다고 알려 왔고, 입금 확인은 행사장 매니저의 카카오톡과 메일로 왔습니다. 정원은 8월 계획서에 80명으로 적혀 있는데, 9월에 팀 단톡방에서 100명으로 늘렸습니다.
+
+파일 검색은 파일 이름을, 메일 검색은 메일 안을, 카카오톡 검색은 대화방 하나를 찾아 줍니다. 세 곳을 따로 뒤져야 하고, 찾은 숫자 중 어느 것이 최신인지도 결국 사람이 맞춰 봐야 합니다.
+
+AI 서비스에 물어보려면 내 컴퓨터의 파일은 올려야 하고, 카카오톡 대화는 방마다 내보내서 올려야 합니다. 내일 새 메시지가 오면 또 올려야 합니다.
+
+## AutoRAG Agent란?
+
+AutoRAG Agent는 내 컴퓨터에서 돌아가는 오픈소스 검색 에이전트입니다. 문서 폴더와 메일, 메신저를 원래 자리에 그대로 두고 연결만 하면, 질문 하나로 여러 곳을 함께 찾아 출처가 달린 답을 돌려줍니다.
+
+이름에 들어간 RAG(검색 증강 생성)는 AI가 답하기 전에 내 자료에서 관련 내용을 먼저 찾아 읽게 하는 방식입니다. AI가 기억에 기대지 않고 찾은 자료를 바탕으로 답하기 때문에, 틀린 답을 지어낼 여지가 줄고 근거도 확인할 수 있습니다.
+
+AutoRAG는 원래 RAG 파이프라인을 자동으로 최적화하는 파이썬 도구였습니다. 같은 저장소(star 5,112, 2026-09-28 조회)에서 2026년 7월에 2.0으로 새로 만든 것이 AutoRAG Agent입니다.
+
+![AutoRAG Agent의 작동 방식을 세 칸으로 나눈 그림. 왼쪽은 문서, 메일, 메신저, 노트와 드라이브가 원래 자리에 있다는 것, 가운데는 찾는다, 원문을 다시 읽는다, 정리한다 세 단계와 Lite 모드, 에이전트 검색 두 방식, 오른쪽은 대관료 297만원, 계약금 입금 완료, 확정 정원 100명이라는 답과 메일 두 통, 카카오톡 대화 구간 하나로 된 출처](@/assets/images/autorag-agent-intro/01-diagram.png)
+*자료를 한곳으로 옮기지 않아도, AutoRAG Agent가 연결된 곳에서 찾아 원문을 확인하고 출처와 함께 답해 줍니다.*
+
+쓰는 방법은 두 가지입니다.
+
+- **Lite 모드(`autorag lite retrieve`)**: 모델 없이 찾기만 합니다. 무료로 쓸 수 있고, 찾은 내용이 AI 모델 제공자에게 넘어가지 않습니다.
+- **에이전트 검색(`autorag search`)**: 찾은 결과의 원문을 AI 모델이 다시 열어 대조하고 번호 달린 답으로 정리해 줍니다. 모델은 클라우드 모델과 로컬 모델 중에서 고를 수 있습니다.
+
+## 이렇게 답합니다
+
+앞에서 든 해커톤 준비 상황을 시연용 자료로 그대로 만들었습니다. 가상 회사 '한빛랩스'의 DevRel 담당 한지우가 10월 17일 부산 해커톤을 준비하고 있고, 대표가 대관료와 계약금, 정원을 묻는 상황입니다.
+
+답이 되는 메시지는 문서 폴더, 행사장 매니저와 주고받은 메일, 팀 단톡방, 1:1 대화방 두 개(재무 담당자, 행사장 매니저)에 흩어져 있습니다. 대관료와 정원은 중간에 값이 바뀌었습니다. 이 자료를 모두 AutoRAG Agent에 연결했습니다.
+
+![시연 상황을 정리한 그림. 위에는 가상 회사 한빛랩스의 DevRel 담당 한지우가 10월 17일 부산 해커톤을 준비하고 있고, 대표 박준영이 대관료, 계약금, 정원을 묻는 말풍선이 있다. 그 아래에 연결한 자료 다섯 곳(문서 폴더 29개, 메일 35통, 팀 단톡방, 1:1 재무 담당자, 1:1 행사장 매니저)이 있다. 표는 항목마다 메시지를 날짜순으로 놓았다. 대관료는 8/21 메일의 견적 3,300,000원(할인 전 값)이 8/29 메일에서 할인 뒤 2,970,000원이 되었고 9/18 메일에서 변동 없음을 확인했다. 계약금은 9/11 재무 담당자 카카오톡의 이체, 9/12 행사장 매니저 카카오톡의 입금 확인, 9/12 대관 확정 메일로 이어진다. 정원은 8/14 하반기 계획 문서의 80명(9월에 바뀜)이 9/16 팀 단톡방에서 대표가 100명으로 정했고 9/18 메일에서 100명 배치 가능을 확인했다. 맞는 답은 297만원, 입금 완료, 100명이다. 맨 아래에는 뉴스레터, 영수증, 오픈채팅방 잡담 같은 관계없는 자료도 섞었다는 설명이 있다](@/assets/images/autorag-agent-intro/02-scenario.png)
+*시연에 쓴 가상 상황입니다. 주황은 나중에 바뀐 값, 초록은 최종 값입니다. 회사와 사람, 메일과 대화는 모두 지어냈고, 날짜와 금액은 시연 자료에 적힌 그대로입니다.*
+
+실제 메일함과 카카오톡처럼 관계없는 자료도 섞어 두었습니다. 뉴스레터, 결제 영수증, 세미나 초대 메일, 오픈채팅방 잡담, 회사 규정과 회의록 같은 것들입니다.
+
+### Lite 모드로 모델 없이 찾기
+
+먼저 모델 없이 "해커톤 대관료"를 찾았습니다.
+
+![터미널 캡처. autorag lite retrieve '해커톤 대관료' 결과 네 건. 1위 expense-policy.md가 주황 상자로 표시되어 대관료와 관계없는 경비 규정이라는 라벨이 붙어 있고, 2위 메일, 3위 카카오톡 1:1 대화, 4위 devrel-h2-plan.pptx가 초록 상자로 표시되어 있다. pptx 본문의 참가 정원 80명에는 8월 계획 기준 정원이라는 주황 라벨이 붙어 있다](@/assets/images/autorag-agent-intro/03-lite.png)
+*검색 한 번에 문서, 메일, 카카오톡 결과가 함께 나옵니다. 초록은 찾던 자료, 주황은 주의할 결과입니다. 2026-09-23 캡처, AutoRAG Agent 2.5.3.*
+
+검색 한 번으로 세 곳을 함께 찾았습니다. 메일은 할인 뒤 받은 견적 메일, 카카오톡은 재무 담당자와 나눈 대화, 문서는 하반기 계획 발표 자료(pptx)입니다.
+
+결과마다 원래 자리가 함께 나옵니다. 문서는 파일 경로, 메일은 `/mail-export/...`, 카카오톡은 `/kakao/...`로 시작하는 대화 구간 주소입니다.
+
+한계도 그대로 보입니다. 1위는 대관료와 관계없는 경비 규정인데, 같은 비용 이야기라 가까운 내용으로 잡혔습니다. 또 계획서의 "참가 정원 80명"은 9월에 바뀌기 전 값입니다. Lite는 후보를 모아 줄 뿐, 어느 값이 최신인지는 판단하지 않습니다.
+
+### 에이전트 검색으로 원문까지 대조하기
+
+이번에는 같은 자료에 모델을 붙여 물어봤습니다.
+
+```bash
+autorag search '부산 해커톤 대관 조건 최신 기준으로 정리해 줘. 대관료, 계약금 입금 여부, 확정된 정원까지'
+```
+
+![터미널 캡처. autorag search 출력이 세 구간으로 나뉘어 있다. 위 주황 구간은 빠른 답으로 문서 두 개만 보고 정원 80명, 대관료는 모른다고 답한 부분, 가운데 주황 구간은 330만원 견적 메일을 찾은 뒤 계약금과 정원을 대화에서 확인하겠다는 진행 메시지, 아래 초록 구간은 대관료 297만원, 계약금 891,000원 입금, 확정 정원 100명이라는 최종 답과 메일 네 통, 카카오톡 대화 구간 하나로 된 출처 다섯 개. 최종 답 마지막 줄의 09:00~21:00에는 홀을 빌린 시간이 행사 시간처럼 들어감이라는 주황 라벨이, 맨 아래 real 0m29.977s에는 30초 라벨이 붙어 있다](@/assets/images/autorag-agent-intro/04-agent-search.png)
+*빠른 답(위)을 먼저 보여 주고, 다시 찾아 확인한 뒤(가운데) 최종 답(아래)을 냅니다. 2026-09-27 캡처, AutoRAG Agent 2.5.3, gpt-6-luna.*
+
+답은 두 번 나옵니다. 먼저 나오는 "빠른 답"은 계획서와 예산표 두 문서만 보고, 정원은 80명이고 대관료는 모른다고 답합니다.
+
+그다음 에이전트가 스스로 다시 찾습니다. 진행 메시지를 보면 330만원 견적 메일을 새 단서로 찾은 뒤, 그 견적의 계약금을 냈는지와 최신 정원을 대화에서 확인하겠다고 알립니다.
+
+최종 답은 이렇습니다.
+
+1. 대관료는 할인 뒤 297만원(VAT 별도)이고, 정원을 100명으로 늘린 뒤에도 그대로입니다.
+2. 계약금 891,000원은 9월 12일 행사장이 입금을 확인하고 대관 확정을 알려 왔으므로 입금 완료입니다.
+3. 정원은 계획서의 80명이 아니라 9월에 확정한 100명입니다.
+
+항목마다 근거 번호가 붙고, 아래 출처 목록에 메일 한 통이나 카카오톡 대화 구간의 주소와 요약이 나옵니다. 카카오톡 구간은 모델 없는 검색으로 찾아 JSON(에이전트가 읽는 결과 형식)으로 받으면 대화방 이름과 시각이 함께 나옵니다.
+
+틀린 곳도 하나 있습니다. 마지막 줄에 행사 일정이라고 적은 09:00~21:00은 8월 대관 문의 메일에 적어 보낸 시간입니다. 참가자가 몇 시에 모이는지는 자료에 없습니다.
+
+> [!WARNING]
+> **매번 같은 답이 나오지는 않습니다.** 같은 자료로 세 번 물었습니다. "최신 기준", "확정된"이라는 말 없이 물은 두 번 중 한 번은 메일과 카카오톡을 다시 찾지 않고 12초 만에 끝났습니다. 그 답은 계획서만 보고 정원을 80명이라고 했고, 대관료와 계약금은 확인할 수 없다고 했습니다. 나머지 한 번과, 그 말을 넣어 물은 세 번째(위 캡처)는 세 항목을 모두 맞혔습니다. 한 번씩 돌려 본 결과라 문구의 효과를 단정할 수는 없습니다. 답에 "확인할 수 없다"는 항목이 남아 있으면 질문을 바꿔 한 번 더 물어보고, 값이 여러 번 바뀐 자료라면 답에 붙은 출처를 확인해 보세요.
+
+시간과 비용도 적어 둡니다. 에이전트 검색은 질문 하나에 12초에서 41초가 걸렸고 비용은 `gpt-6-luna` 기준 0.003~0.014달러였습니다. Lite 모드는 같은 자료에서 1.4초 안팎(처음 한 번은 3초)에 끝나고 비용이 들지 않습니다.
+
+## 자주 쓰는 AI 서비스와 무엇이 다른가
+
+내 자료를 올려 AI에게 묻는 서비스 가운데 많이 쓰는 두 가지, Gemini Notebook(구 NotebookLM)과 ChatGPT를 나란히 놓고 비교했습니다. 모든 칸은 2026-09-23에 두 서비스의 공식 문서에서 확인했습니다.
+
+| 항목 | Gemini Notebook(구 NotebookLM) | ChatGPT(파일, 프로젝트, 앱) | AutoRAG Agent |
+|---|---|---|---|
+| 자료를 두는 곳 | 노트북으로 가져옴 | 올린 파일은 ChatGPT 보관함에 저장, 연결한 앱은 그때그때 조회 | 원본은 제자리, 색인과 변환 사본은 내 컴퓨터(`.autorag/`)에 |
+| 시작하려면 | 구글 계정, 소스 추가 | 파일 올리기 또는 앱 로그인 | Node.js 24 이상, PDF용 Java 11 이상, 소스별 연결 도구 설치 |
+| 카카오톡, 한글(HWP) | 공식 문서에서 확인되지 않음 | 카톡 대화를 검색 소스로 쓰는 기능은 공식 문서에서 확인되지 않음 | 둘 다 지원(카톡은 Apple Silicon 맥) |
+| 출처 표시 | 답 안에 인용 | 인용과 발췌(회사 지식 모드) | 번호별로 원래 자리(파일 경로와 쪽수, 카톡 대화 구간, 메일) |
+| AI 코딩 에이전트에서 | 개인용 공식 경로 확인되지 않음 | 프로젝트 파일을 외부 에이전트가 부르는 공식 경로 확인되지 않음 | 명령줄(`--json`)과 에이전트 스킬 5종 |
+| 모델 없이 검색만 | 확인되지 않음 | 확인되지 않음 | `autorag lite` |
+| 비용 | 무료 등급(노트북당 소스 50개) + 유료 플랜 | 무료 + 유료 플랜 | 오픈소스(MIT), 모델 사용료는 고른 제공자 몫 |
+
+*"확인되지 않음"은 기능이 없다는 뜻이 아니라, 2026-09-23 기준 공식 문서에서 찾지 못했다는 뜻입니다.*
+
+정리하면 이렇게 다릅니다.
+
+1. **자료를 한곳으로 옮기지 않아도 됩니다.** 원본을 클라우드나 서버에 올릴 필요 없이, 카카오톡이나 슬랙처럼 도구마다 내 컴퓨터에 따로 둔 보관소를 그대로 연결하면 됩니다. 문서의 색인과 변환 사본도 내 컴퓨터의 `.autorag/` 폴더에 만들어집니다. 구글 드라이브 같은 클라우드 드라이브는 바뀐 파일만 내 컴퓨터로 내려받아 읽습니다.
+2. **한국 업무 환경의 자료까지 검색할 수 있습니다.** 카카오톡 대화와 한글(HWP, HWPX) 파일 검색은 비교한 두 서비스의 공식 문서에서 확인되지 않은 기능입니다.
+3. **두 웹 서비스와 달리 AI 코딩 에이전트가 바로 쓸 수 있습니다.** 명령 결과를 JSON으로 내주고, Claude Code나 Codex가 읽는 스킬 파일도 저장소에 함께 들어 있습니다. 모델 없이 찾기만 하는 Lite 모드가 있어서 판단은 에이전트가 이미 쓰는 모델에 맡길 수 있습니다. 두 서비스의 공식 문서에서는 2026-09-23 기준 이런 경로와 모델 없는 검색을 찾지 못했습니다.
+
+아쉬운 점도 있습니다. 웹 서비스보다 Node.js, PDF용 Java, 소스별 연결 도구처럼 준비할 것이 많습니다.
+
+## 어디까지 연결되나
+
+`autorag ui` 명령을 실행하면 내 컴퓨터에서만 열리는 관리 화면이 뜹니다. 여기서 검색할 폴더를 적고, 메일이나 카카오톡 같은 소스를 추가한 뒤 연결이 되는지 시험해 볼 수 있습니다.
+
+![AutoRAG 관리 화면의 Data sources 페이지. Local folders에 /Users/Shared/hanbit-labs/docs가 적혀 있고, Connections에 mail-export와 kakao 두 연결이 ready 상태로 초록 상자 안에 표시되어 있다](@/assets/images/autorag-agent-intro/05-ui-connections.png)
+*검색할 폴더와 연결한 소스가 한 화면에 보입니다. 시연에서는 메일 보관 폴더와 카카오톡을 연결했습니다.*
+
+![AutoRAG 관리 화면의 Add a source 목록. KakaoTalk, WhatsApp, Telegram, Slack, Lark/Feishu, Discord, Notion, GitHub issues, GitHub gists, ClawGallery, Cloud drive(rclone), Mail export, Mailcrawl, Obsidian vault, RSS/Atom feeds, Spotlight 16개 카드](@/assets/images/autorag-agent-intro/06-ui-sources.png)
+*추가할 수 있는 소스는 16종입니다. 2026-09-23 캡처, AutoRAG Agent 2.5.3.*
+
+검색 폴더 말고 연결할 수 있는 소스는 이렇습니다.
+
+- **메신저**: 카카오톡, 슬랙, 디스코드, 텔레그램, 왓츠앱, Lark
+- **메일**: Gmail, IMAP 메일함, 내보낸 `.eml`, `.mbox` 파일
+- **노트와 문서**: 노션, 옵시디언, 구글 드라이브와 원드라이브 같은 클라우드 드라이브
+- **그 밖에**: GitHub 이슈와 PR, GitHub gist, 스크린샷과 사진, RSS, 맥 Spotlight
+
+검색 폴더 안의 PDF, 워드, 엑셀, 파워포인트, 한글(HWP, HWPX) 파일은 따로 설정하지 않아도 알아서 읽습니다.
+
+연결했다고 바로 검색되지는 않습니다. 설정 파일에서 허용한 소스와 범위만 검색합니다. 메신저는 기본으로 모든 대화방을 검색하지만, 특정 방만 보이게 제한할 수도 있습니다.
+
+토큰이나 비밀번호는 AutoRAG 설정 파일에 적을 필요 없이 환경 변수와 각 연결 도구에 두면 됩니다. 관리 화면 맨 위에도 이 원칙이 적혀 있습니다.
+
+## Claude Code에게 맡겨 보기
+
+AutoRAG는 명령줄 도구지만 명령어를 외울 필요는 없습니다. Claude Code나 Codex 같은 AI 코딩 에이전트에게 한국어로 부탁하면, 에이전트가 저장소의 설치 안내(스킬)를 읽고 설치부터 검색까지 대신해 줍니다. 스킬은 에이전트에게 "이럴 때 이 명령을 이렇게 써라"를 알려 주는 설명서입니다.
+
+아래는 가상 회사 폴더(문서 29개, 메일 35통)를 두고 Claude Code에게 실제로 부탁해 본 과정입니다.
+
+**준비물**
+
+- [Claude Code](https://code.claude.com/docs/ko/quickstart) 또는 [Codex](https://developers.openai.com/codex/cli)
+- [Node.js](https://nodejs.org/ko/download) 24 이상. PDF까지 읽으려면 Java 11 이상
+
+### 1. 검색할 폴더에서 Claude Code를 열고 부탁합니다
+
+터미널에서 자료가 있는 폴더로 들어가 `claude`를 입력해 Claude Code를 연 뒤, 아래 문장을 붙여 넣고 Enter를 누릅니다.
+
+```text wrap
+AutoRAG Agent를 설치해서 이 폴더의 documents를 검색할 수 있게 설정해 줘. AI 모델 없이 쓰는 Lite 모드로 하고, 방법은 github.com/Marker-Inc-Korea/AutoRAG 저장소의 skills/autorag-lite-setup/SKILL.md를 읽고 따라 줘. 우선은 이 폴더의 문서만 연결해 줘.
+```
+
+![Claude Code 화면. 위에는 Claude Code v2.1.281, Sonnet 5, 폴더 경로 /Users/Shared/hanbit-hands-on이 보이고, 아래 입력창에 AutoRAG Agent 설치와 Lite 모드 설정을 부탁하는 문장이 들어 있다. 입력창에 부탁을 붙여 넣고 Enter라는 초록 라벨이 붙어 있다](@/assets/images/autorag-agent-intro/07-hands-on-ask.png)
+*자료가 있는 폴더에서 Claude Code를 열고 부탁 문장을 붙여 넣은 모습입니다. 가운데 빈 화면은 잘라 냈습니다. 2026-09-26 캡처, Claude Code 2.1.281(Sonnet 5).*
+
+마지막 문장은 메일이나 카카오톡은 빼고 문서부터 연결해 달라는 부탁입니다. 설치 안내에는 컴퓨터에 있는 연결 도구를 찾아 알아서 연결하는 단계가 있어서, 처음에는 범위를 좁혀 두는 편이 결과를 확인하기 쉽습니다.
+
+처음 여는 폴더라면 Claude Code가 이 폴더를 믿어도 되는지 먼저 묻습니다. 내 자료가 있는 폴더이니 믿는다고 고르면 됩니다.
+
+### 2. 명령을 실행해도 되는지 물으면 읽고 허락합니다
+
+Claude Code는 명령을 실행하기 전에 무엇을 하려는지 보여 주고 허락을 구합니다. 처음에는 저장소에서 설치 안내 파일(SKILL.md)을 내려받는 명령을 실행해도 되는지 물었습니다.
+
+![Claude Code의 권한 확인 창. Bash command 아래에 curl로 raw.githubusercontent.com의 AutoRAG skills/autorag-lite-setup/SKILL.md를 받는 명령과 Fetch the AutoRAG Lite setup skill이라는 설명이 초록 상자로 표시되어 있고, Do you want to proceed? 아래 1. Yes에 읽어 보고 1번(Yes)이라는 라벨이 붙어 있다. 2번은 curl 명령을 다시 묻지 않기, 3번은 auto mode 전환, 4번은 No다](@/assets/images/autorag-agent-intro/08-hands-on-permission.png)
+*명령과 그 아래 한 줄 설명을 읽고 1번(Yes)을 고르면 됩니다.*
+
+설정을 마칠 때까지 폴더의 파일 목록 보기, 설정 파일 만들기, 색인 만들기, 시험 검색 같은 명령을 허락할지 몇 번 더 묻습니다. 2번을 고르면 같은 종류의 명령은 다음부터 묻지 않습니다. 파일을 지우거나 이 폴더 밖을 바꾸는 명령이 보이면 허락하기 전에 한 번 더 읽어 보세요.
+
+설정을 마치기까지 10분쯤 걸렸고, 그중 7분 30초는 처음 한 번 필요한 도구를 내려받고 문서를 읽어 색인을 만드는 시간이었습니다. 모두 끝나면 Claude Code가 무엇을 했는지 요약해 줍니다.
+
+![Claude Code의 설정 요약. 설치 줄에는 autorag 2.5.3과 dupey가 이미 있어 새로 설치하지 않았다는 내용과 시연 컴퓨터에는 이미 설치돼 있었음이라는 주황 라벨, 연결한 문서 줄에는 documents 폴더 하나만 연결했고 64개 파일을 훑어 63개를 색인했다는 내용과 초록 라벨, 모델 줄에는 설정한 AI 모델이 없고 임베딩은 내장 Qwen3를 로컬에서 돌려 문서 내용이 밖으로 나가지 않는다는 내용과 초록 라벨이 붙어 있다](@/assets/images/autorag-agent-intro/09-hands-on-setup.png)
+*설정 요약의 앞부분입니다. 64개 중 한 개는 다른 파일과 내용이 같아 빠졌습니다.*
+
+시연 컴퓨터에는 AutoRAG가 이미 설치돼 있어서 설치 단계를 건너뛰었습니다. AutoRAG가 없는 컴퓨터라면 설치 명령(`bun install -g @autorag/librarian`, Bun이 없으면 `npm install -g @autorag/librarian`)을 실행해도 되는지부터 묻습니다. 요약 뒤쪽에는 이번에 연결하지 않은 메일, 메신저 연결 도구와 그 이유도 적혀 있습니다.
+
+### 3. 이제 평소 말로 물어봅니다
+
+설정이 끝나면 같은 입력창에 아래처럼 부탁해 보세요.
+
+```text wrap
+부산 해커톤(10/17) 참가자에게 보낼 안내 문자 초안 써 줘. 일시, 장소, 주차는 AutoRAG로 documents에서 찾아 확인하고, 근거 파일도 같이 알려 줘.
+```
+
+![Claude Code의 답. 위 초록 구간은 참가자에게 보낼 안내 문자 초안으로 일시 2026년 10월 17일(토) 09:00~21:00, 장소 센텀 스테이지홀 그랜드홀(부산 센텀시티), 주차 20대까지 무료가 적혀 있고, 일시 줄에는 홀을 빌린 시간이 행사 시간처럼 들어감이라는 주황 라벨이 붙어 있다. 가운데 초록 구간은 일시, 장소, 인원, 주차마다 근거 메일과 파일 이름을 적은 표, 아래 주황 구간은 발송 전 확인할 점의 첫 항목으로 09:00~21:00은 홀을 빌린 시간이고 접수와 개회 시각은 자료에 없다는 내용이다](@/assets/images/autorag-agent-intro/10-hands-on-answer.png)
+*안내 문자 초안, 항목별 근거 파일, 보내기 전에 확인할 점이 함께 나옵니다. 2026-09-26 캡처.*
+
+Claude Code는 AutoRAG로 "부산 해커톤 일시", "장소", "주차"를 차례로 찾았습니다. 처음 결과에 대관 문의 메일만 나오자 확정 회신과 주차 안내를 다시 찾았습니다. 확정 뒤에 바뀐 내용이 없는지 9월 메일도 날짜순으로 열어 봤습니다. 부탁부터 답까지 1분 40초쯤 걸렸습니다.
+
+초안의 일시에 적힌 09:00~21:00은 행사 시간이 아니라 홀을 빌린 시간입니다. Claude Code도 답 끝의 "발송 전 확인할 점"에서 이 점을 짚었고, 상세 주소가 자료에 없다는 것도 알려 줬습니다. 부탁할 때 근거 파일도 같이 달라고 한 것은 이 때문입니다. 보내기 전에 근거와 한 번 맞춰 보면 이런 차이를 바로잡을 수 있습니다.
+
+> [!NOTE]
+> **Codex에게 맡겨도 됩니다.** 같은 두 부탁을 Codex에도 그대로 넣었더니 설정부터 답까지 끝냈습니다. 다만 Codex는 작업 폴더 밖을 막는 샌드박스 안에서 명령을 실행하는데, 그 안에서는 맥의 GPU를 쓰지 못해 설정에 22분쯤 걸렸습니다. Codex도 초안에 홀을 빌린 시간을 행사 시간처럼 적었고, Claude Code와 달리 이 점을 따로 짚지 않았습니다. 어느 에이전트를 쓰든 초안은 근거 파일과 맞춰 보고 보내세요.
+
+> [!example]- 에이전트가 받는 검색 결과(개발자용)
+> 에이전트는 `autorag lite retrieve "질문" --json`을 실행해 아래와 같은 결과를 받습니다. 점수와 메타데이터 같은 필드는 빼고 본문은 줄였습니다. 이 가운데 무엇을 쓸지는 에이전트가 이미 쓰는 모델이 판단하기 때문에, AutoRAG 쪽에는 모델도 API 키도 필요 없습니다.
+>
+> ```json
+> {
+>   "ok": true,
+>   "query": "해커톤 주차",
+>   "results": [
+>     { "number": 1, "method": "minsync",
+>       "source": "/Users/Shared/hanbit-labs/docs/office/devrel-h2-plan.pptx",
+>       "content": "... 부산 해커톤: 2026-10-17 (토), 참가 정원 80명, 장소 부산 센텀시티 ..." },
+>     { "number": 2, "method": "mail-export-lexical",
+>       "source": "/mail-export/hanbit/chunks/20260912-1502-a6",
+>       "content": "Subject: [센텀 스테이지홀] 대관 확정 안내 (10/17 그랜드홀) ... 주차는 20대까지 무료입니다. ..." },
+>     { "number": 3, "method": "kakao-semantic",
+>       "source": "/kakao/hanbit/chunks/window_cb0678ba670b50da",
+>       "content": "[해운대코더] 한빛랩스 해커톤 벌써 대기 걸렸다던데요 ㅠ" }
+>   ]
+> }
+> ```
+
+## 명령으로 직접 쓰기
+
+터미널이 익숙하다면 명령 네 줄로 시작할 수 있습니다. 모델 없이 쓰는 Lite 모드입니다.
+
+```bash
+npm install -g @autorag/librarian
+autorag lite init --search-paths ~/Documents/work
+autorag lite refresh
+autorag lite retrieve "찾고 싶은 내용"
+```
+
+처음 한 번은 준비에 몇 분이 걸립니다. 파일 한 개짜리 새 폴더에서 첫 `refresh`가 약 3분(175초) 걸렸고, 그다음 `refresh`부터는 바뀐 파일만 다시 읽습니다.
+
+문서를 쪼개는 방법, 임베딩 모델, 벡터 DB를 직접 고르거나 설정할 필요가 없습니다. 임베딩도 API 키 없이 내 컴퓨터에서 계산합니다.
+
+답을 정리하는 에이전트 검색까지 쓰려면 모델을 하나 정하면 됩니다. OpenAI, Anthropic, Google 같은 제공자의 API 키나 구독, OpenAI 호환 주소를 쓸 수 있습니다.
+
+```bash
+autorag init --search-paths ~/Documents/work --model-provider openai --model-id gpt-5.6-luna
+autorag refresh
+autorag search "질문"
+autorag ui   # 메일, 카카오톡 같은 소스 연결
+```
+
+위 명령의 `gpt-5.6-luna`처럼 AutoRAG Agent 2.5.3의 기본 모델 목록에 있는 모델은 `--model-id`만으로 쓸 수 있습니다.
+
+이 글의 시연처럼 `gpt-6-luna`를 쓰려면 한 단계가 더 필요합니다. 2.5.3의 목록에는 아직 `gpt-6-luna`가 없어서, `--model-id gpt-6-luna`만 주면 `autorag search`가 이런 오류를 내고 멈춥니다(2026-09-27 확인).
+
+```text wrap
+Unknown configured model: openai/gpt-6-luna. Add baseUrl (and optional api/apiKeyEnv) for OpenAI-compatible endpoints, or use a pi-ai catalog model id.
+```
+
+그럴 때는 `~/.autorag/config.json`의 `model` 항목에 주소를 직접 적으면 됩니다. 이 설정으로 `autorag health`가 정상 응답하는 것까지 확인했습니다.
+
+```json
+"model": {
+  "provider": "openai",
+  "id": "gpt-6-luna",
+  "api": "openai-responses",
+  "baseUrl": "https://api.openai.com/v1",
+  "apiKeyEnv": "OPENAI_API_KEY",
+  "reasoning": true,
+  "contextWindow": 272000,
+  "maxTokens": 128000
+}
+```
+
+> [!TIP]
+> 클라우드 모델로 에이전트 검색을 하면 찾은 발췌가 그 모델 제공자에게 전달됩니다. 밖으로 보내면 안 되는 자료는 Lite 모드나 로컬 모델로 검색하면 됩니다.
+
+## 마치며
+
+AutoRAG Agent는 "그 얘기 어디서 했더라"를 찾는 데 드는 시간을 줄여 주는 도구입니다. 자료를 한곳으로 옮기지 않아도 원래 자리에서 찾아 근거와 함께 돌려주고, 사람도 AI 에이전트도 같은 방식으로 쓸 수 있습니다.
+
+- **저장소**: [github.com/Marker-Inc-Korea/AutoRAG](https://github.com/Marker-Inc-Korea/AutoRAG). 도움이 됐다면 star를 눌러 주세요
+- **버그와 제안**: [이슈](https://github.com/Marker-Inc-Korea/AutoRAG/issues)에 남겨 주세요. 새 소스 연결을 제안하는 이슈 양식도 따로 있습니다
+- **처음 기여**: [`good first issue`와 `AutoRAG-2.0` 라벨이 붙은 이슈](https://github.com/Marker-Inc-Korea/AutoRAG/issues?q=is%3Aopen+label%3A%22good+first+issue%22+label%3AAutoRAG-2.0)부터 보시면 됩니다. 절차는 [CONTRIBUTING.md](https://github.com/Marker-Inc-Korea/AutoRAG/blob/main/CONTRIBUTING.md)에 있습니다
+- **질문과 소식**: 저장소 [Discussions](https://github.com/Marker-Inc-Korea/AutoRAG/discussions)에서 질문하고 릴리스 소식도 볼 수 있습니다
+
+![GitHub의 Marker-Inc-Korea/AutoRAG 저장소 첫 화면. About 문구와 Releases의 AutoRAG v2.5.3 Latest가 초록 상자로 표시되어 있다](@/assets/images/autorag-agent-intro/11-github.png)
+*AutoRAG 저장소. 2026-09-23 캡처, 2.5.3이 최신 버전입니다(2026-09-28 재확인).*
+
+## 자주 묻는 질문
+
+> [!faq]- 명령어를 몰라도 쓸 수 있나요?
+> 네. Claude Code나 Codex 같은 AI 코딩 에이전트에게 한국어로 부탁하면, 에이전트가 AutoRAG 저장소의 설치 안내(스킬)를 읽고 설정과 검색을 대신해 줍니다. 에이전트가 명령을 실행해도 되는지 물으면 읽어 보고 허락하면 됩니다. 컴퓨터에 Node.js 24 이상은 미리 설치해 두어야 합니다.
+
+> [!faq]- AutoRAG Agent를 쓰려면 API 키가 꼭 필요한가요?
+> 아닙니다. 색인과 `autorag lite retrieve` 검색은 모델 없이 쓸 수 있고, 임베딩도 내 컴퓨터에서 계산합니다. 원문을 다시 읽고 답을 정리해 주는 `autorag search`에만 모델이 필요합니다. 이 글의 시연에서는 OpenAI `gpt-6-luna`로 질문 하나에 0.003~0.014달러가 들었습니다.
+
+> [!faq]- 내 자료가 외부 서버로 올라가나요?
+> 원본은 클라우드나 외부 서버로 올라가지 않습니다. 문서의 색인과 변환 사본은 내 컴퓨터의 `.autorag/` 폴더에, 메신저 기록은 각 연결 도구가 내 컴퓨터에 둔 보관소에 있습니다. 다만 `autorag search`에 클라우드 모델을 쓰면 검색으로 찾은 발췌가 그 모델 제공자에게 전달됩니다. 밖으로 보내면 안 되는 자료라면 모델 없는 Lite 모드나 로컬 모델을 쓰면 됩니다.
+
+> [!faq]- 윈도우나 리눅스에서도 쓸 수 있나요?
+> 네. 본체는 맥, 윈도우, 리눅스에서 모두 자동 테스트를 거칩니다. 다만 연결하는 소스 중에는 운영체제를 가리는 것이 있습니다. 카카오톡은 Apple Silicon 맥에서 카카오톡 앱이 켜져 있어야 하고 Spotlight는 맥 전용입니다.
+
+> [!faq]- 예전 AutoRAG(파이썬)와 같은 제품인가요?
+> 다른 제품입니다. 파이썬 AutoRAG는 RAG 파이프라인을 자동으로 최적화하는 도구이고 `pip install AutoRAG`로 설치합니다. AutoRAG Agent는 같은 저장소에서 2.0으로 새로 만든 검색 에이전트이고 npm 패키지 `@autorag/librarian`으로 설치합니다. 파이썬판은 `legacy/` 폴더에서 계속 유지보수됩니다.
+
+## 참고 자료
+
+**AutoRAG**
+
+- [AutoRAG GitHub 저장소](https://github.com/Marker-Inc-Korea/AutoRAG) - 소스, README, 이슈
+- [@autorag/librarian npm 패키지](https://www.npmjs.com/package/@autorag/librarian) - 버전과 배포 이력
+- [연결 가능한 소스 설정 문서](https://github.com/Marker-Inc-Korea/AutoRAG/blob/main/docs/datasource-skills.md) - 소스별 설정과 허용 범위
+- [에이전트 스킬 폴더](https://github.com/Marker-Inc-Korea/AutoRAG/tree/main/skills) - Claude Code, Codex용 스킬 5종
+
+**비교한 도구의 공식 문서**
+
+- [Gemini Notebook(구 NotebookLM) 개명 안내](https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/), [플랜별 한도](https://support.google.com/notebooklm/answer/16206866?hl=en)
+- [ChatGPT 파일 보관함](https://help.openai.com/en/articles/20001052-file-storage-and-library-in-chatgpt/), [ChatGPT 프로젝트](https://help.openai.com/en/articles/10169521-projects-in-chatgpt), [ChatGPT for Kakao](https://help.openai.com/en/articles/12677933-chatgpt-for-kakao-overview-and-kakao-tools)
+
+**갱신 이력**
+
+- 2026-09-28 최초 발행
+
+---
+
+이 글은 AI의 도움을 받아 작성했습니다. 화면과 수치는 직접 실행한 결과에서 옮겼고, 구조 그림은 그 결과를 바탕으로 그렸습니다.

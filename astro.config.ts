@@ -9,14 +9,16 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { unified } from "@astrojs/markdown-remark";
 import remarkToc from "remark-toc";
-import remarkCollapse from "remark-collapse";
 import rehypeCallouts from "rehype-callouts";
+import remarkTocBox from "./src/utils/remarkTocBox";
+import { TOC_HEADING, TOC_MAX_DEPTH, TOC_MIN_DEPTH } from "./src/utils/toc";
 import {
   transformerNotationDiff,
   transformerNotationHighlight,
   transformerNotationWordHighlight,
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
+import { transformerWrap } from "./src/utils/transformers/wrap";
 import { postLastmod } from "./src/utils/postLastmod";
 import config from "./astro-paper.config";
 
@@ -56,8 +58,17 @@ export default defineConfig({
   markdown: {
     processor: unified({
       remarkPlugins: [
-        remarkToc,
-        [remarkCollapse, { test: "Table of contents" }],
+        // "## 목차"(또는 Table of contents 등) 제목 자리에 절과 소절 목차를 만들고,
+        // remarkTocBox가 늘 펼친 상자로 감싼다. 테마 기본의 접는 목차(remark-collapse)는 쓰지 않는다
+        [
+          remarkToc,
+          {
+            heading: TOC_HEADING,
+            minDepth: TOC_MIN_DEPTH,
+            maxDepth: TOC_MAX_DEPTH,
+          },
+        ],
+        remarkTocBox,
       ],
       rehypePlugins: [rehypeCallouts],
     }),
@@ -72,6 +83,7 @@ export default defineConfig({
         transformerNotationHighlight(),
         transformerNotationWordHighlight(),
         transformerNotationDiff({ matchAlgorithm: "v3" }),
+        transformerWrap(),
       ],
     },
   },
