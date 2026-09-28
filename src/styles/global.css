@@ -66,3 +66,46 @@ pre.astro-code[data-language="text"] code {
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
+
+/* 본문 토글(<details class="toggle">): 자주 묻는 질문, 개발자용 예시처럼 접어 두는 내용.
+   typography.css의 details 규칙은 목차용이라 안의 문단을 숨기고 글자 선택을 막는다.
+   toggle 클래스에서만 되살린다. 레이어 밖에 두어야 이긴다. */
+details.toggle {
+  display: block;
+  cursor: auto;
+  user-select: text;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.6rem 1rem;
+  margin-block: 0.75rem;
+}
+details.toggle > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+details.toggle p {
+  display: block;
+  margin-block: 0.75rem 0.25rem;
+}
+
+/* 글 목차(src/utils/remarkTocBox.ts가 만든 <nav class="toc">). 늘 펼친 상자에 절은 그대로, 소절은 들여 쓴다 */
+nav.toc {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.9rem 1.1rem;
+  margin-block: 1.75rem;
+  font-size: 0.95em;
+}
+nav.toc ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.4rem 0 0;
+}
+nav.toc li {
+  margin-block: 0.2rem;
+}
+nav.toc ul ul {
+  margin-top: 0.2rem;
+  padding-left: 1.1rem;
+  font-size: 0.95em;
+}

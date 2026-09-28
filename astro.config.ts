@@ -11,6 +11,7 @@ import { unified } from "@astrojs/markdown-remark";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import rehypeCallouts from "rehype-callouts";
+import remarkTocBox from "./src/utils/remarkTocBox";
 import {
   transformerNotationDiff,
   transformerNotationHighlight,
@@ -56,7 +57,10 @@ export default defineConfig({
   markdown: {
     processor: unified({
       remarkPlugins: [
-        remarkToc,
+        // 한국어 글은 "## 목차" 제목 자리에 목차를 만든다(절과 소절까지). remarkTocBox가 상자로 감싼다.
+        // 테마 기본값(Table of contents, 접기)도 그대로 받는다
+        [remarkToc, { heading: "목차|table[ -]of[ -]contents?", maxDepth: 3 }],
+        remarkTocBox,
         [remarkCollapse, { test: "Table of contents" }],
       ],
       rehypePlugins: [rehypeCallouts],

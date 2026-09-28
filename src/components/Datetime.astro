@@ -29,11 +29,12 @@ const t = useTranslations(Astro.currentLocale);
 
 const isModified = modDatetime && modDatetime > pubDatetime;
 
-const datetime = dayjs(isModified ? modDatetime : pubDatetime).tz(
-  postTimezone ?? config.site.timezone
-);
-
-const date = datetime.format("D MMM, YYYY");
+// 발행일은 늘 보이고, 수정일은 발행 뒤에 고쳤을 때만 옆에 붙인다
+const tz = postTimezone ?? config.site.timezone;
+const published = dayjs(pubDatetime).tz(tz);
+const updated = isModified ? dayjs(modDatetime).tz(tz) : null;
+const format = (d: dayjs.Dayjs) => d.format("D MMM, YYYY");
+const textClass = ["text-sm", { "sm:text-base": size === "lg" }];
 ---
 
 <div
@@ -45,17 +46,21 @@ const date = datetime.format("D MMM, YYYY");
       { "scale-90": size === "sm" },
     ]}
   />
+  <span class:list={textClass}>{t.post.publishedAt}:</span>
+  <time class:list={textClass} datetime={published.toISOString()}>
+    {format(published)}
+  </time>
   {
-    isModified && (
-      <span class:list={["text-sm", { "sm:text-base": size === "lg" }]}>
-        {t.post.updatedAt}:
-      </span>
+    updated && (
+      <>
+        <span class:list={textClass} aria-hidden="true">
+          /
+        </span>
+        <span class:list={textClass}>{t.post.updatedAt}:</span>
+        <time class:list={textClass} datetime={updated.toISOString()}>
+          {format(updated)}
+        </time>
+      </>
     )
   }
-  <time
-    class:list={["text-sm", { "sm:text-base": size === "lg" }]}
-    datetime={datetime.toISOString()}
-  >
-    {date}
-  </time>
 </div>
