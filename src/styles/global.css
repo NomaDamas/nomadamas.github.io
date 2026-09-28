@@ -56,3 +56,13 @@
   border-radius: 0.125rem;
   padding-inline: 0.125rem;
 }
+
+/* 독자가 복사해 쓰는 한국어 부탁 문장(text 블록)은 줄을 바꿔 한눈에 보이게 한다.
+   bash, json 같은 코드는 줄바꿈이 뜻을 바꿀 수 있어 가로 스크롤로 둔다.
+   테마 스타일이 @layer 안에 있으므로 이 규칙은 레이어 밖에 둔다(위 mark 규칙과 같은 이유). */
+pre.astro-code[data-language="text"],
+pre.astro-code[data-language="text"] code {
+  white-space: pre-wrap;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
