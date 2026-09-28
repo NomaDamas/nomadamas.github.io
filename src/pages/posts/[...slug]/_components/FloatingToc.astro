@@ -1,0 +1,68 @@
+---
+// 노션처럼 넓은 화면 오른쪽에 떠 있는 목차. 절(h2)과 소절(h3)마다 짧은 막대를 세우고,
+// 지금 읽는 절의 막대를 진하게 한다. 막대에 마우스를 올리거나 키보드로 들어오면 제목 목록이 펼쳐진다.
+// 좁은 화면에서는 숨기고 본문의 목차 상자(remarkTocBox)를 쓴다. 스타일은 global.css의 .floating-toc.
+import type { MarkdownHeading } from "astro";
+
+type Props = { headings: MarkdownHeading[] };
+
+const { headings } = Astro.props;
+---
+
+<nav
+  id="floating-toc"
+  class="floating-toc"
+  aria-label="목차"
+  data-pagefind-ignore="all"
+>
+  <ol class="floating-toc-bars" aria-hidden="true">
+    {headings.map(h => <li data-depth={h.depth} />)}
+  </ol>
+  <div class="floating-toc-panel">
+    <ol>
+      {
+        headings.map(h => (
+          <li data-depth={h.depth}>
+            <a href={`#${h.slug}`} data-slug={h.slug}>
+              {h.text}
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</nav>
+
+<script is:inline data-astro-rerun>
+  (() => {
+    const toc = document.getElementById("floating-toc");
+    if (!toc) return;
+    const links = [...toc.querySelectorAll("a[data-slug]")];
+    const bars = [...toc.querySelectorAll(".floating-toc-bars li")];
+    const targets = links.map(a => document.getElementById(a.dataset.slug));
+
+    // 페이지를 옮길 때마다 이 스크립트가 다시 돌므로 이전 페이지의 스크롤 리스너를 떼어 낸다
+    window.__floatingTocAbort?.abort();
+    const controller = new AbortController();
+    window.__floatingTocAbort = controller;
+
+    let current = -2;
+    function update() {
+      // 화면 위쪽 1/4 선을 지난 마지막 제목을 지금 읽는 절로 본다
+      const line = window.innerHeight / 4;
+      let idx = -1;
+      targets.forEach((el, i) => {
+        if (el && el.getBoundingClientRect().top <= line) idx = i;
+      });
+      if (idx === current) return;
+      current = idx;
+      links.forEach((a, i) => a.classList.toggle("active", i === idx));
+      bars.forEach((b, i) => b.classList.toggle("active", i === idx));
+    }
+    document.addEventListener("scroll", update, {
+      passive: true,
+      signal: controller.signal,
+    });
+    update();
+  })();
+</script>
