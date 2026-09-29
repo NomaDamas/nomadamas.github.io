@@ -4,6 +4,7 @@ import satori from "satori";
 import sharp from "sharp";
 import { loadOgFonts } from "@/utils/loadOgFonts";
 import { getPostSlug } from "@/utils/getPostPaths";
+import { byline, getPostAuthors } from "@/utils/postAuthors";
 import config from "@/config";
 
 export async function getStaticPaths() {
@@ -27,6 +28,9 @@ export const GET: APIRoute = async ({ props, url }) => {
   }
 
   const fonts = await loadOgFonts(url);
+  // 글 제목 아래 보이는 작성자와 같은 사람. GitHub 기록을 못 받으면 프런트매터 author
+  const writer =
+    byline(await getPostAuthors(props.filePath))?.name ?? props.data.author;
 
   const svg = await satori(
     {
@@ -128,7 +132,7 @@ export const GET: APIRoute = async ({ props, url }) => {
                                       overflow: "hidden",
                                       fontWeight: "bold",
                                     },
-                                    children: props.data.author,
+                                    children: writer,
                                   },
                                 },
                               ],

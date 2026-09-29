@@ -1,7 +1,12 @@
 ---
 import Layout from "./Layout.astro";
 import config from "@/config";
-import { author as authorNode, organization } from "@/utils/structuredData";
+import {
+  author as authorNode,
+  organization,
+  person,
+} from "@/utils/structuredData";
+import type { PostAuthor } from "@/utils/postAuthors";
 
 type Props = {
   title?: string;
@@ -12,7 +17,10 @@ type Props = {
   modDatetime?: Date | null;
   /** 사이트명 접미사가 붙기 전의 글 제목. title은 <title>용이라 " | NomaDamas"가 붙어 있다. */
   headline?: string;
+  /** 프런트매터 author. byline이 없을 때만 쓴다. */
   author?: string;
+  /** 제목 아래 보이는 작성자(GitHub 계정). 메타 태그와 구조화 데이터의 글쓴이가 된다. */
+  byline?: PostAuthor | null;
   tags?: string[];
 };
 
@@ -27,6 +35,7 @@ const {
   modDatetime,
   headline,
   author = site.author,
+  byline,
   tags = [],
 } = Astro.props;
 
@@ -46,12 +55,19 @@ const structuredData = {
   ...(pubDatetime && { datePublished: pubDatetime.toISOString() }),
   ...(lastModified && { dateModified: lastModified.toISOString() }),
   ...(tags.length > 0 && { keywords: tags }),
-  author: authorNode(author),
+  author: byline ? person(byline.name, byline.url) : authorNode(author),
   publisher: organization(),
 };
 ---
 
-<Layout {title} {description} {ogImage} {canonicalURL} ogType="article">
+<Layout
+  {title}
+  {description}
+  {ogImage}
+  {canonicalURL}
+  ogType="article"
+  author={byline?.name ?? author}
+>
   <Fragment slot="head">
     {
       pubDatetime && (

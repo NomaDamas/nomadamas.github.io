@@ -1,21 +1,19 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import IconUser from "@/assets/icons/IconUser.svg";
 import { useTranslations } from "@/i18n";
-import { getPostAuthors } from "@/utils/postAuthors";
+import type { PostAuthors } from "@/utils/postAuthors";
 
 type Props = {
-  post: CollectionEntry<"posts">;
+  /** 글 파일을 처음 추가한 GitHub 계정과 마지막으로 커밋한 계정. 규칙은 src/utils/postAuthors.ts */
+  authors: PostAuthors | null;
   class?: string;
 };
 
-const { post, class: className = "" } = Astro.props;
+const { authors, class: className = "" } = Astro.props;
 
 const t = useTranslations(Astro.currentLocale);
 
-// 글 파일을 처음 커밋한 GitHub 계정과 마지막으로 커밋한 계정. 고친 적이 없으면 작성자만 나온다.
-// 화면 표시용이다. 구조화 데이터의 author는 프런트매터 author(기본값 조직)를 그대로 쓴다
-const authors = await getPostAuthors(post.filePath);
+// 고친 적이 없으면 작성자만 나온다
 const rows = authors
   ? [
       { label: t.post.writtenBy, author: authors.createdBy },
