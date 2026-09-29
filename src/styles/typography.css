@@ -66,11 +66,18 @@
 
       th,
       td {
-        @apply border-border border p-2;
+        @apply border-border border px-3 py-2 sm:px-4 sm:py-2.5;
       }
 
+      /* 머리글은 배경색과 굵기로 본문 행과 구분한다.
+         여러 줄로 접힌 머리글끼리 높이가 달라도 가운데에 모이게 한다 */
       th {
-        @apply py-1.5;
+        @apply bg-muted align-middle font-bold;
+      }
+
+      /* 칸마다 줄 수가 달라도 첫 줄이 같은 높이에서 시작하게 한다 */
+      td {
+        @apply align-top;
       }
 
       th[align="center"],
