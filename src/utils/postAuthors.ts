@@ -90,7 +90,8 @@ async function history(repo: string, path: string) {
 }
 
 // GitHub API의 경로 필터는 파일 이름 변경을 따라가지 않는다. 가장 오래된 커밋이 이름을 바꾼 커밋이면
-// 이전 이름의 기록으로 넘어가서, 이름을 바꾼 사람이 작성자로 잡히지 않게 한다
+// 이전 이름의 기록으로 넘어가서, 이름을 바꾼 사람이 작성자로 잡히지 않게 한다.
+// git이 이름 변경으로 알아본 경우만 따라간다. 같은 커밋에서 내용까지 크게 고치면 새 파일로 잡힌다
 async function addedIn(
   repo: string,
   path: string,
