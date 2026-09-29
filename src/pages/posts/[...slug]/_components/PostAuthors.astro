@@ -1,0 +1,60 @@
+---
+import type { CollectionEntry } from "astro:content";
+import IconUser from "@/assets/icons/IconUser.svg";
+import { useTranslations } from "@/i18n";
+import { getPostAuthors } from "@/utils/postAuthors";
+
+type Props = {
+  post: CollectionEntry<"posts">;
+  class?: string;
+};
+
+const { post, class: className = "" } = Astro.props;
+
+const t = useTranslations(Astro.currentLocale);
+
+// 글 파일을 처음 커밋한 GitHub 계정과 마지막으로 커밋한 계정. 고친 적이 없으면 작성자만 나온다.
+// 화면 표시용이다. 구조화 데이터의 author는 프런트매터 author(기본값 조직)를 그대로 쓴다
+const authors = await getPostAuthors(post.filePath);
+const rows = authors
+  ? [
+      { label: t.post.writtenBy, author: authors.createdBy },
+      ...(authors.lastEditedBy
+        ? [{ label: t.post.lastEditedBy, author: authors.lastEditedBy }]
+        : []),
+    ]
+  : [];
+---
+
+{
+  rows.length > 0 && (
+    <div
+      class:list={[
+        "text-muted-foreground flex items-center gap-x-2",
+        className,
+      ]}
+    >
+      <IconUser class="inline-block size-6 min-w-5.5" />
+      {/* Datetime.astro와 같은 크기. 좁은 화면에서는 "/ 최근 수정" 앞에서만 줄을 바꾼다 */}
+      <div class="flex flex-wrap gap-x-2">
+        {rows.map(({ label, author }, index) => (
+          <span class="text-sm whitespace-nowrap sm:text-base">
+            {index > 0 && <span aria-hidden="true">/</span>} {label}:{" "}
+            {author.url ? (
+              <a
+                href={author.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-accent underline decoration-dashed underline-offset-4"
+              >
+                {author.name}
+              </a>
+            ) : (
+              author.name
+            )}
+          </span>
+        ))}
+      </div>
+    </div>
+  )
+}

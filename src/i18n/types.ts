@@ -12,6 +12,8 @@ export interface UIStrings {
     copied: string;
     publishedAt: string;
     updatedAt: string;
+    writtenBy: string;
+    lastEditedBy: string;
     sharePostIntro: string;
     sharePostOn: string;
     sharePostViaEmail: string;

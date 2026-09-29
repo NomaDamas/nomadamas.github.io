@@ -14,6 +14,8 @@ export default {
     copied: "복사됨",
     publishedAt: "발행",
     updatedAt: "수정",
+    writtenBy: "작성",
+    lastEditedBy: "최근 수정",
     sharePostIntro: "이 글 공유하기",
     sharePostOn: "{{platform}}에 공유하기",
     sharePostViaEmail: "메일로 공유하기",

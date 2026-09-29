@@ -5,10 +5,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# 잡마다 필요한 권한만 준다. 여기는 잡에 권한을 적지 않았을 때의 기본값이다.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 # 배포는 한 번에 하나만. 진행 중인 배포를 취소하지 않는다.
 concurrency:
@@ -18,6 +17,11 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # 빌드 도구에 토큰을 넘기므로 읽기 권한만 준다. Pages에 쓰는 권한은 deploy 잡에만 둔다.
+    permissions:
+      contents: read
+      # 글의 작성자를 찾을 때 커밋이 들어온 PR을 읽는다(src/utils/postAuthors.ts)
+      pull-requests: read
     steps:
       - uses: actions/checkout@v7
       - uses: withastro/action@v6
@@ -31,10 +35,16 @@ jobs:
           PUBLIC_BING_SITE_VERIFICATION: ${{ vars.PUBLIC_BING_SITE_VERIFICATION }}
           PUBLIC_GA_MEASUREMENT_ID: ${{ vars.PUBLIC_GA_MEASUREMENT_ID }}
           PUBLIC_CLARITY_PROJECT_ID: ${{ vars.PUBLIC_CLARITY_PROJECT_ID }}
+          # 글의 작성자와 최근 수정자를 GitHub API에서 가져온다. 토큰이 없으면 시간당 60회로 막힌다.
+          GITHUB_TOKEN: ${{ github.token }}
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

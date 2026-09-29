@@ -14,6 +14,8 @@ export default {
     copied: "Copied",
     publishedAt: "Published at",
     updatedAt: "Updated",
+    writtenBy: "Written by",
+    lastEditedBy: "Last edited by",
     sharePostIntro: "Share this post:",
     sharePostOn: "Share this post on {{platform}}",
     sharePostViaEmail: "Share this post via email",
