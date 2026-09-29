@@ -7,6 +7,9 @@ tags: ["k-skill", "에이전트 스킬", "agent skills", "claude code", "공공�
 ogImage: ../../assets/images/k-skill-intro/00-cover.png
 featured: true
 ---
+![케이-스킬이라는 제목과 "한국인의, 한국인에 의한, 한국인을 위한 스킬 모음집"이라는 부제 뒤로 한국 스포츠 선수, 가수, 만화 캐릭터 사진을 모아 붙인 k-skill 대표 이미지](@/assets/images/k-skill-intro/00-k-skill-thumbnail.png)
+*[k-skill 저장소](https://github.com/NomaDamas/k-skill) README 맨 위에 있는 대표 이미지입니다.*
+
 > **요약**
 >
 > 1. k-skill은 한국에서만 필요한 조회와 작업을 AI 코딩 에이전트가 할 수 있게 해 주는 오픈소스 스킬 모음입니다. 21개 분야에 스킬 127개가 있고, Claude Code, Codex 같은 에이전트에서 쓸 수 있습니다.
