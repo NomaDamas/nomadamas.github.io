@@ -2,7 +2,7 @@
 title: "자료를 옮기지 않고 찾아 주는 오픈소스 AI 사서, AutoRAG Agent"
 description: "문서 폴더, 메일, 카카오톡에 흩어진 자료를 한곳에 모으지 않아도 찾아서, 출처가 달린 답으로 돌려주는 오픈소스 AutoRAG Agent를 소개합니다. 실제 화면, 비슷한 서비스와의 차이, 명령어 없이 Claude Code에게 맡겨 시작하는 방법을 담았습니다."
 pubDatetime: 2026-09-28T14:19:00+09:00
-modDatetime: 2026-09-28T21:28:00+09:00
+modDatetime: 2026-09-29T20:15:00+09:00
 author: "안승원 (Aiden)"
 tags: ["autorag agent", "오토래그", "rag", "카카오톡 검색", "로컬 검색", "claude code", "오픈소스"]
 ogImage: ../../assets/images/autorag-agent-intro/00-cover.png
@@ -105,7 +105,7 @@ autorag search '부산 해커톤 대관 조건 최신 기준으로 정리해 줘
 | 항목 | Gemini Notebook(구 NotebookLM) | ChatGPT(파일, 프로젝트, 앱) | AutoRAG Agent |
 |---|---|---|---|
 | 자료를 두는 곳 | 노트북으로 가져옴 | 올린 파일은 ChatGPT 보관함에 저장, 연결한 앱은 그때그때 조회 | 원본은 제자리, 색인과 변환 사본은 내 컴퓨터(`.autorag/`)에 |
-| 시작하려면 | 구글 계정, 소스 추가 | 파일 올리기 또는 앱 로그인 | Node.js 24 이상, PDF용 Java 11 이상, 소스별 연결 도구 설치 |
+| 시작하려면 | 구글 계정, 소스 추가 | 파일 올리기 또는 앱 로그인 | Node.js 24 이상, 소스별 연결 도구 설치 |
 | 카카오톡, 한글(HWP) | 공식 문서에서 확인되지 않음 | 카톡 대화를 검색 소스로 쓰는 기능은 공식 문서에서 확인되지 않음 | 둘 다 지원(카톡은 Apple Silicon 맥) |
 | 출처 표시 | 답 안에 인용 | 인용과 발췌(회사 지식 모드) | 번호별로 원래 자리(파일 경로와 쪽수, 카톡 대화 구간, 메일) |
 | AI 코딩 에이전트에서 | 개인용 공식 경로 확인되지 않음 | 프로젝트 파일을 외부 에이전트가 부르는 공식 경로 확인되지 않음 | 명령줄(`--json`)과 에이전트 스킬 5종 |
@@ -120,11 +120,11 @@ autorag search '부산 해커톤 대관 조건 최신 기준으로 정리해 줘
 2. **한국 업무 환경의 자료까지 검색할 수 있습니다.** 카카오톡 대화와 한글(HWP, HWPX) 파일 검색은 비교한 두 서비스의 공식 문서에서 확인되지 않은 기능입니다.
 3. **두 웹 서비스와 달리 AI 코딩 에이전트가 바로 쓸 수 있습니다.** 명령 결과를 JSON으로 내주고, Claude Code나 Codex가 읽는 스킬 파일도 저장소에 함께 들어 있습니다. 모델 없이 찾기만 하는 Lite 모드가 있어서 판단은 Claude Code나 Codex가 이미 쓰는 모델에 맡길 수 있습니다. 두 서비스의 공식 문서에서는 2026-09-23 기준 이런 경로와 모델 없는 검색을 찾지 못했습니다.
 
-아쉬운 점도 있습니다. 웹 서비스보다 Node.js, PDF용 Java, 소스별 연결 도구처럼 준비할 것이 많습니다.
+아쉬운 점도 있습니다. 웹 서비스와 달리 Node.js를 설치해야 하고, 메일과 메신저는 소스별 연결 도구도 준비해야 합니다.
 
 ## 어디까지 연결되나
 
-연결할 소스를 직접 하나하나 고르지 않아도 됩니다. Claude Code나 Codex에게 AutoRAG 설정을 부탁하면, 저장소의 설치 안내(스킬)에 적힌 순서대로 진행합니다. 스킬은 에이전트에게 "이럴 때 이 명령을 이렇게 써라"를 알려 주는 설명서입니다.
+연결할 소스를 직접 하나하나 고르지 않아도 됩니다. Claude Code나 Codex에게 AutoRAG 설정을 부탁하면, 저장소의 설치 안내(스킬)에 적힌 순서대로 진행합니다. 스킬은 Claude Code 같은 AI 에이전트에게 "이럴 때 이 명령을 이렇게 써라"를 알려 주는 설명서입니다.
 
 1. 이 컴퓨터에 메일, 메신저 연결 도구가 깔려 있는지, 그 도구가 받아 둔 기록이 있는지 먼저 살핍니다. 연결 도구는 슬랙이나 카카오톡 같은 서비스의 기록을 내 컴퓨터로 받아 두는 별도 명령줄 프로그램입니다(예: 슬랙은 `slacrawl`, 카카오톡은 `lazykatok`).
 2. 준비된 소스는 묻지 않고 연결합니다. 예를 들어 슬랙과 디스코드 연결 도구가 깔려 있고 받아 둔 기록도 있으면 둘 다 알아서 설정합니다.
@@ -163,7 +163,7 @@ AutoRAG는 명령줄 도구지만 명령어를 외울 필요는 없습니다. Cl
 **준비물**
 
 - [Claude Code](https://code.claude.com/docs/ko/quickstart) 또는 [Codex](https://developers.openai.com/codex/cli)
-- [Node.js](https://nodejs.org/ko/download) 24 이상. PDF까지 읽으려면 Java 11 이상
+- [Node.js](https://nodejs.org/ko/download) 24 이상
 
 ### 1. 검색할 폴더에서 Claude Code를 열고 부탁합니다
 
@@ -246,7 +246,7 @@ autorag lite refresh
 autorag lite retrieve "찾고 싶은 내용"
 ```
 
-처음 한 번은 준비에 몇 분이 걸립니다. 파일 한 개짜리 새 폴더에서 첫 `refresh`가 약 3분(175초) 걸렸고, 그다음 `refresh`부터는 바뀐 파일만 다시 읽습니다.
+처음 한 번은 준비에 몇 분이 걸립니다. 2.5.3에서 파일 한 개짜리 새 폴더로 재 보니 첫 `refresh`가 약 3분(175초) 걸렸고, 그다음 `refresh`부터는 바뀐 파일만 다시 읽습니다.
 
 문서를 쪼개는 방법, 임베딩 모델, 벡터 DB를 직접 고르거나 설정할 필요가 없습니다. 임베딩도 API 키 없이 내 컴퓨터에서 계산합니다.
 
@@ -260,9 +260,9 @@ autorag search "질문"
 
 메일, 메신저 같은 소스는 설정 파일에 직접 적거나 Claude Code, Codex에게 연결을 맡기면 됩니다. 소스별 설정은 [연결 가능한 소스 설정 문서](https://github.com/Marker-Inc-Korea/AutoRAG/blob/main/docs/datasource-skills.md)에 있습니다.
 
-위 명령의 `gpt-5.6-luna`처럼 AutoRAG Agent 2.5.3의 기본 모델 목록에 있는 모델은 `--model-id`만으로 쓸 수 있습니다.
+위 명령의 `gpt-5.6-luna`처럼 AutoRAG Agent의 기본 모델 목록에 있는 모델은 `--model-id`만으로 쓸 수 있습니다.
 
-이 글의 시연처럼 `gpt-6-luna`를 쓰려면 한 단계가 더 필요합니다. 2.5.3의 목록에는 아직 `gpt-6-luna`가 없어서, `--model-id gpt-6-luna`만 주면 `autorag search`가 이런 오류를 내고 멈춥니다(2026-09-27 확인).
+이 글의 시연처럼 `gpt-6-luna`를 쓰려면 한 단계가 더 필요합니다. 기본 모델 목록에 아직 `gpt-6-luna`가 없어서, `--model-id gpt-6-luna`만 주면 `autorag search`가 이런 오류를 내고 멈춥니다(2.5.3, 2026-09-27 확인). 2026-09-29에 나온 2.6.0의 목록에도 아직 없습니다.
 
 ```text wrap
 Unknown configured model: openai/gpt-6-luna. Add baseUrl (and optional api/apiKeyEnv) for OpenAI-compatible endpoints, or use a pi-ai catalog model id.
@@ -296,7 +296,7 @@ AutoRAG Agent는 "그 얘기 어디서 했더라"를 찾는 데 드는 시간을
 - **질문과 소식**: 저장소 [Discussions](https://github.com/Marker-Inc-Korea/AutoRAG/discussions)에서 질문하고 릴리스 소식도 볼 수 있습니다
 
 ![GitHub의 Marker-Inc-Korea/AutoRAG 저장소 첫 화면. About 문구와 Releases의 AutoRAG v2.5.3 Latest가 초록 상자로 표시되어 있다](@/assets/images/autorag-agent-intro/11-github.png)
-*AutoRAG 저장소. 2026-09-23 캡처, 2.5.3이 최신 버전입니다(2026-09-28 재확인).*
+*AutoRAG 저장소. 2026-09-23 캡처 당시 최신은 2.5.3이었고, 2026-09-29에 2.6.0이 나왔습니다. 이 글의 화면과 수치는 2.5.3에서 확인했습니다.*
 
 ## 자주 묻는 질문
 
@@ -332,7 +332,7 @@ AutoRAG Agent는 "그 얘기 어디서 했더라"를 찾는 데 드는 시간을
 **갱신 이력**
 
 - 2026-09-28 최초 발행
-- 2026-09-28 비용과 연결 설명 보강. Claude Code, Codex에게 Lite 모드로 맡기면 AutoRAG 쪽 비용이 없다는 점, 이때 찾은 내용이 그 모델을 제공하는 회사에 전달된다는 점, Claude Code, Codex가 연결 도구를 찾아 연결하는 과정 추가. 관리 화면(`autorag ui`) 설명 삭제
+- 2026-09-29 비용과 연결 설명 보강. Claude Code, Codex에게 Lite 모드로 맡기면 AutoRAG 쪽 비용이 없다는 점, 이때 찾은 내용이 그 모델을 제공하는 회사에 전달된다는 점, Claude Code, Codex가 연결 도구를 찾아 연결하는 과정 추가. 관리 화면(`autorag ui`) 설명 삭제. 2.6.0 출시에 맞춰 PDF용 Java 요구 사항 삭제
 
 ---
 
