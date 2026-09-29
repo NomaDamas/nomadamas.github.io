@@ -10,6 +10,7 @@ import { getSortedPosts } from "@/utils/getSortedPosts";
 import { slugifyStr } from "@/utils/slugify";
 import { toTransitionName } from "@/utils/toTransitionName";
 import EditPost from "./_components/EditPost.astro";
+import PostAuthors from "./_components/PostAuthors.astro";
 import ShareLinks from "./_components/ShareLinks.astro";
 import BackButton from "./_components/BackButton.astro";
 import BackToTopButton from "./_components/BackToTopButton.astro";
@@ -21,6 +22,7 @@ import {
   TOC_MIN_DEPTH,
 } from "@/utils/toc";
 import { useTranslations } from "@/i18n";
+import { byline, getPostAuthors } from "@/utils/postAuthors";
 import config from "@/config";
 
 export async function getStaticPaths() {
@@ -83,6 +85,9 @@ const {
 
 const { Content, headings } = await render(post);
 
+// 제목 아래 "작성"과 "최근 수정", 그리고 메타 태그와 구조화 데이터의 글쓴이. 규칙은 src/utils/postAuthors.ts
+const authors = await getPostAuthors(post.filePath);
+
 // 떠 있는 목차에는 본문 목차와 같은 깊이의 제목을 글 전체에서 넣는다.
 // 목차 상자로 바뀐 "## 목차" 제목은 remarkTocBox가 제목에서 빼므로 여기 들어오지 않는다
 const tocHeadings = headings.filter(
@@ -119,6 +124,7 @@ const ogImage = ogImageUrl
   pubDatetime={pubDatetime}
   modDatetime={modDatetime}
   author={post.data.author}
+  byline={byline(authors)}
   tags={tags}
 >
   <Header />
@@ -150,6 +156,7 @@ const ogImage = ogImageUrl
       </span>
       <EditPost {hideEditPost} {post} class="max-sm:hidden" />
     </div>
+    <PostAuthors {authors} />
 
     <article
       id="article"

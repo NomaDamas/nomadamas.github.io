@@ -5,6 +5,12 @@
 # public/ 아래를 가리키면 최적화 없이 원본이 그대로 나간다.
 # AstroPaper는 마크다운에서 @/ 별칭을 쓴다(src/content/pages/about.md 참고).
 
+# 로그인한 사람 명의로 커밋한다. 글 제목 아래 작성자와 최근 수정자가 이 커밋에서 나온다.
+# 기본값(app)이면 Pages CMS 봇 명의로 커밋되어 웹에서 쓴 글의 작성자가 봇으로 나온다.
+settings:
+  commit:
+    identity: user
+
 media:
   input: src/assets/images
   output: '@/assets/images'
