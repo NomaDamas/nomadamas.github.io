@@ -2,7 +2,7 @@
 title: "자료를 옮기지 않고 찾아 주는 오픈소스 AI 사서, AutoRAG Agent"
 description: "문서 폴더, 메일, 카카오톡에 흩어진 자료를 한곳에 모으지 않아도 찾아서, 출처가 달린 답으로 돌려주는 오픈소스 AutoRAG Agent를 소개합니다. 실제 화면, 비슷한 서비스와의 차이, 명령어 없이 Claude Code에게 맡겨 시작하는 방법을 담았습니다."
 pubDatetime: 2026-09-28T14:19:00+09:00
-modDatetime: 2026-09-29T20:15:00+09:00
+modDatetime: 2026-09-30T16:10:00+09:00
 author: "안승원 (Aiden)"
 tags: ["autorag agent", "오토래그", "rag", "카카오톡 검색", "로컬 검색", "claude code", "오픈소스"]
 ogImage: ../../assets/images/autorag-agent-intro/00-cover.png
@@ -332,7 +332,7 @@ AutoRAG Agent는 "그 얘기 어디서 했더라"를 찾는 데 드는 시간을
 **갱신 이력**
 
 - 2026-09-28 최초 발행
-- 2026-09-29 비용과 연결 설명 보강. Claude Code, Codex에게 Lite 모드로 맡기면 AutoRAG 쪽 비용이 없다는 점, 이때 찾은 내용이 그 모델을 제공하는 회사에 전달된다는 점, Claude Code, Codex가 연결 도구를 찾아 연결하는 과정 추가. 관리 화면(`autorag ui`) 설명 삭제. 2.6.0 출시에 맞춰 PDF용 Java 요구 사항 삭제
+- 2026-09-30 비용과 연결 설명 보강. Claude Code, Codex에게 Lite 모드로 맡기면 AutoRAG 쪽 비용이 없다는 점, 이때 찾은 내용이 그 모델을 제공하는 회사에 전달된다는 점, Claude Code, Codex가 연결 도구를 찾아 연결하는 과정 추가. 관리 화면(`autorag ui`) 설명 삭제. 2.6.0 출시에 맞춰 PDF용 Java 요구 사항 삭제
 
 ---
 
