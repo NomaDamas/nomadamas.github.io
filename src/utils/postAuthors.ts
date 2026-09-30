@@ -54,26 +54,71 @@ function repository(): string | null {
   }
 }
 
+// 배포 빌드(CI)에서 일시 오류가 나면 이 간격으로 두 번까지 다시 요청한다.
+// 로컬 빌드는 실패해도 줄만 빠지므로 기다리지 않는다(getPostAuthors 참고)
+const RETRY_DELAYS = [2_000, 5_000];
+// 요청 한도에 걸려 GitHub이 retry-after로 기다리라고 할 때, 이보다 길면 기다리지 않고 멈춘다
+const MAX_RETRY_AFTER = 60_000;
+
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+// 다시 요청할 만한 응답이면 기다릴 시간(ms), 아니면 null
+function retryDelay(res: Response, backoff: number): number | null {
+  // GitHub 쪽 일시 오류
+  if (res.status >= 500) return backoff;
+  // 짧은 요청 한도(secondary rate limit)는 403이나 429에 retry-after(초)를 붙여 보낸다.
+  // 시간당 한도를 다 쓴 403에는 retry-after가 없어서 다시 요청해도 소용없다
+  if (res.status === 403 || res.status === 429) {
+    const seconds = Number(res.headers.get("retry-after"));
+    if (seconds > 0 && seconds * 1000 <= MAX_RETRY_AFTER) return seconds * 1000;
+  }
+  return null;
+}
+
 async function get<T>(url: string): Promise<{ data: T; last?: string }> {
   const token = process.env.GITHUB_TOKEN;
-  const res = await fetch(url, {
-    headers: {
-      Accept: "application/vnd.github+json",
-      "X-GitHub-Api-Version": "2022-11-28",
-      "User-Agent": "astro-post-authors",
-      ...(token && { Authorization: `Bearer ${token}` }),
-    },
-    signal: AbortSignal.timeout(10_000),
-  });
-  if (!res.ok) {
+  const delays = process.env.CI ? RETRY_DELAYS : [];
+
+  for (let attempt = 0; ; attempt++) {
+    // 남은 재시도가 없으면 undefined
+    const backoff: number | undefined = delays[attempt];
+    let res: Response;
+    try {
+      res = await fetch(url, {
+        headers: {
+          Accept: "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28",
+          "User-Agent": "astro-post-authors",
+          ...(token && { Authorization: `Bearer ${token}` }),
+        },
+        signal: AbortSignal.timeout(10_000),
+      });
+    } catch (error) {
+      // 연결 실패나 10초 시간 초과
+      if (backoff === undefined) throw error;
+      await sleep(backoff);
+      continue;
+    }
+
+    if (res.ok) {
+      const last = res.headers
+        .get("link")
+        ?.match(/<([^>]+)>;\s*rel="last"/)?.[1];
+      return { data: (await res.json()) as T, last };
+    }
+
+    const wait = backoff === undefined ? null : retryDelay(res, backoff);
+    if (wait !== null) {
+      await res.body?.cancel();
+      await sleep(wait);
+      continue;
+    }
     const limited = res.status === 403 || res.status === 429;
     throw new Error(
       `GitHub API 요청이 실패했습니다 (${res.status}): ${url}` +
         (limited ? ". 토큰 없이 요청하면 시간당 60회로 제한됩니다" : "")
     );
   }
-  const last = res.headers.get("link")?.match(/<([^>]+)>;\s*rel="last"/)?.[1];
-  return { data: (await res.json()) as T, last };
 }
 
 // 경로 하나의 커밋 기록에서 가장 최근 커밋과 가장 오래된 커밋. 최신 커밋이 먼저 오고,
@@ -164,8 +209,8 @@ async function load(filePath: string): Promise<PostAuthors | null> {
 const cache = new Map<string, Promise<PostAuthors | null>>();
 
 /**
- * 배포 빌드(CI)에서는 GitHub 요청이 실패하면 빌드를 멈춘다. 줄을 조용히 빼고 배포하면
- * 모든 글에서 작성자가 사라진 걸 한참 뒤에 알게 된다. 로컬에서는 토큰 없이 돌려
+ * 배포 빌드(CI)에서는 GitHub 요청이 실패하면 빌드를 멈춘다. 일시 오류는 두 번까지 다시 요청한 뒤다.
+ * 줄을 조용히 빼고 배포하면 모든 글에서 작성자가 사라진 걸 한참 뒤에 알게 된다. 로컬에서는 토큰 없이 돌려
  * 요청 한도에 걸리기 쉬우므로 줄만 빼고 넘어간다.
  */
 export function getPostAuthors(

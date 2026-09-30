@@ -1,0 +1,34 @@
+name: Check
+
+# PR마다 배포와 같은 빌드를 돌려 합치기 전에 오류를 잡는다. 배포는 하지 않는다.
+# 빌드에는 타입 검사(astro check), 글 검사(src/utils/checkPosts.ts),
+# 작성자 조회(src/utils/postAuthors.ts)가 들어 있다.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+# 같은 PR에 새로 push하면 앞선 검사는 취소한다.
+concurrency:
+  group: check-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      # 글의 작성자를 찾을 때 커밋이 들어온 PR을 읽는다(src/utils/postAuthors.ts)
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v7
+      # deploy.yml과 같은 액션으로 빌드해서 여기서 통과하면 배포 빌드도 통과하게 한다.
+      # 이 액션은 결과물을 Pages용 아티팩트로 올리기까지 하지만, 배포 잡이 없어 쓰이지 않는다.
+      - uses: withastro/action@v6
+        with:
+          package-manager: pnpm@latest
+        # 소유확인 토큰과 분석 ID(vars.*)는 넘기지 않는다. 비어 있으면 태그만 빠지고 빌드는 같다.
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
