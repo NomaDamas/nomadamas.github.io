@@ -24,7 +24,7 @@ TODO(사진): 머리 사진 1장. NomaDamas 하우스, 에이든 촬영. alt와 
 
 셰어하우스처럼 같이 살거나 코워킹 스페이스처럼 같이 일한다는 점은 비슷합니다. 다른 점은 모인 사람이 모두 무언가를 만들려는 사람이라는 것입니다.
 
-이름 때문에 보안이나 해킹을 떠올리기 쉽지만 관계가 없습니다. 여기서 해커는 떠오른 아이디어를 곧바로 만들어 보는 사람을 가리킵니다. 중소벤처기업부 산하 창업진흥원도 [창업용어사전](https://blog.naver.com/startupkised/224353315457)에서 해커하우스의 해커가 불법적인 해킹을 뜻하는 말이 아니라고 설명합니다.
+이름 때문에 보안이나 해킹을 떠올리기 쉽지만 그런 뜻이 아닙니다. 여기서 해커는 떠오른 아이디어를 곧바로 만들어 보는 사람을 가리킵니다. 중소벤처기업부 산하 창업진흥원도 [창업용어사전](https://blog.naver.com/startupkised/224353315457)에서 해커하우스의 해커가 불법적인 해킹을 뜻하는 말이 아니라고 설명합니다.
 
 ### 어디서 시작됐나
 
@@ -130,18 +130,18 @@ TODO(호스트 동의 후 게재): 아래 문단은 방문한 하우스 호스�
 
 ### 공공 창업 공간
 
-창업진흥원은 [해커하우스를 다룬 인사이트 글](https://blog.naver.com/startupkised/224352151606)에서 도전숙, G밸리 창업큐브, 한국장학재단 창업기숙사를 해커하우스와 비슷한 "직주연계형 창업지원 모델"로 소개합니다. 직주연계는 사는 곳과 일하는 곳을 붙여 둔다는 뜻입니다. 표의 네 곳은 모두 공고를 내고 서류 심사로 뽑으며, 공고에 입주자 비용이 나옵니다.
+창업진흥원은 [해커하우스를 다룬 인사이트 글](https://blog.naver.com/startupkised/224352151606)에서 도전숙, G밸리 창업큐브, 한국장학재단 창업기숙사를 해커하우스와 비슷한 "직주연계형 창업지원 모델"로 소개합니다. 직주연계는 사는 곳과 일하는 곳을 붙여 둔다는 뜻입니다. 표의 네 곳은 모두 공고를 내고 심사를 거쳐 뽑으며, 공고에 입주자 비용이 나옵니다.
 
 | 곳 | 운영 | 무엇을 주나 | 입주자 비용 | 기간 |
 |---|---|---|---|---|
-| [서울 AI 허브](https://english.seoul.go.kr/seoul-policy-archive/seoul-ai-hub/) | 서울시 | 서초구 양재 일대의 사무 공간과 지원 프로그램. 주거는 없습니다 | 제곱미터당 6,020원(부가세 별도, 2026년 2차 공고) | 1년, 1년씩 연장해 최대 4년 |
+| [서울 AI 허브](https://english.seoul.go.kr/seoul-policy-archive/seoul-ai-hub/) | 서울시 | 서초구 양재 일대의 사무 공간과 지원 프로그램. 공고에 주거 제공 내용은 없습니다 | 제곱미터당 6,020원(부가세 별도, 2026년 2차 공고. 월 단위인지는 공고문에 없음) | 1년, 1년씩 연장해 최대 4년 |
 | [G밸리 창업큐브](https://news.seoul.go.kr/economy/archives/571725) | 서울시 | 금천구 가산동의 주거 겸용 사무실 57실 | 월 51,500원(소형), 133,390원(대형), 전기와 수도는 실비 | 2년, 최대 4년 |
-| [도전숙](https://housing.seoul.go.kr/site/main/content/sh01_050500) | 성북구, SH공사 | 성북구 정릉동의 1인 창업자용 공공임대 원룸 | 보증금과 월세(동과 소득에 따라 다름) | 2년, 최대 6년 |
+| [도전숙](https://housing.seoul.go.kr/site/main/content/sh01_050500) | 성북구, SH공사 | 1인 창업자용 공공임대 원룸 | 보증금과 월세(소득에 따라 다름. 소득 50% 기준 평균 월 15만 원, 보증금 1,243만 원) | 2년, 최대 6년 |
 | [한국장학재단 창업기숙사](https://www.kosaf.go.kr/ko/igrtdmtr.do?pg=PTHBJCIN_02M) | 한국장학재단 | 창업에 관심 있거나 이미 창업한 대학생, 대학원생의 기숙사와 창업 공간. 전국 5곳, 195명 이내 | 무상 | 공고에서 확인 |
 
 ### 코리빙 커뮤니티
 
-서울 역삼동의 [논스(nonce)](https://nonce.community/immersionhouse)는 여러 건물에 나눠 사는 코리빙 커뮤니티입니다. 코리빙은 여러 사람이 한집에 살며 공용 공간을 나눠 쓰는 주거를 말합니다. 2023년 1월에는 16명을 뽑아 3개월 동안 함께 살며 만드는 빌더 프로그램 '이머젼 하우스'를 열었고, 당시 안내한 월세는 약 80만 원이었습니다. 2기 모집 공지는 찾지 못했습니다. 논스는 2019년 [직접 쓴 글](https://brunch.co.kr/@nonce/42)에서 스스로를 "해커 하우스도 아니다. 그냥 논스다"라고 소개했습니다.
+서울 역삼동의 [논스(nonce)](https://nonce.community/immersionhouse)는 여러 건물에 나눠 사는 코리빙 커뮤니티입니다. 코리빙은 여러 사람이 한집에 살며 공용 공간을 나눠 쓰는 주거를 말합니다. 2023년 1월에 시작하는 3개월 빌더 프로그램 '이머젼 하우스'로 16명을 모집했고, 당시 안내한 월세는 약 80만 원이었습니다. 2기 모집 공지는 찾지 못했습니다. 논스는 2019년 [직접 쓴 글](https://brunch.co.kr/@nonce/42)에서 예전 논스를 "거의 한국형 해커 하우스"라고 하면서도, 지금의 논스는 "해커 하우스도 아니다. 그냥 논스다"라고 소개했습니다.
 
 ### 투자형 프로그램
 
@@ -149,21 +149,19 @@ TODO(호스트 동의 후 게재): 아래 문단은 방문한 하우스 호스�
 
 | 곳 | 운영 | 조건 |
 |---|---|---|
-| [Hashed Vibe Labs](https://medium.com/hashed-kr/hashed-vibe-labs%EB%A5%BC-%EC%8B%9C%EC%9E%91%ED%95%A9%EB%8B%88%EB%8B%A4-285e52fa2735) | 해시드 | 공개 지원으로 3~5팀을 뽑아 1억 원 투자(지분 5%, 나중에 지분으로 바뀌는 SAFE 계약). 서울 에디션은 2026년 3월 시작 |
+| [Hashed Vibe Labs](https://medium.com/hashed-kr/hashed-vibe-labs%EB%A5%BC-%EC%8B%9C%EC%9E%91%ED%95%A9%EB%8B%88%EB%8B%A4-285e52fa2735) | 해시드 | 공개 지원으로 3~5팀을 뽑아 1억 원을 투자합니다. 나중에 지분 5%로 바뀌는 SAFE 계약입니다. 서울 에디션은 2026년 3월 시작 |
 | [Antler Korea](https://www.antler.co/location/korea) | Antler | 연중 지원, 여러 단계 인터뷰. 팀당 최대 26만 달러 투자 안내 |
-| [Draper Startup House Korea](https://www.draperstartuphouse.co.kr/) | Draper Startup House Korea | 강남구 가로수길의 공유 사무실, 컨설팅과 투자 연계 |
 
 ### 행사형 해커하우스
 
-이름에 해커하우스를 붙인 행사는 한국에서도 열렸습니다. 찾은 14건 가운데 가장 이른 것은 2022년 8월이고, 모두 끝났으며, 대부분 블록체인 재단이나 커뮤니티가 연 행사입니다. 표에는 그중 5건을 담았습니다.
+해커하우스라는 이름을 쓰거나 비슷한 방식으로 연 행사는 한국에서도 열렸습니다. 찾은 14건 가운데 가장 이른 것은 2022년 8월이고, 모두 끝났으며, 대부분 블록체인 재단이나 커뮤니티가 연 행사입니다. 표에는 이름에 해커하우스가 들어간 4건을 담았습니다.
 
 | 행사 | 언제, 어디서 | 얼마나 |
 |---|---|---|
 | [Solana x Wormhole Seoul Hacker House](https://luma.com/seoul-hacker-house) | 2022년 8월, 성동구 성수동 | 5일, 무료 |
-| [ICP Hacker House Korea](https://luma.com/icpkoreahackerhouse) | 2024년 3월, 강남구 | 2일, 무료 |
-| [Startup Village Seoul](https://sv.superteamkr.com/) (Superteam Korea) | 2025년 9월, 용산구 이태원 | 7일 |
-| [맨틀 AI 서울 해커하우스](https://www.khgames.co.kr/news/articleView.html?idxno=304883) | 2026년 5월 30일, 성동구 성수동 | 1일(경향게임스 보도 기준) |
-| [Blockthon 2026 Hacker House](https://luma.com/q6bg341u) (연세대 블록블록) | 2026년 9월 11일, 연세대 | 3시간 워크숍 |
+| [ICP Hacker House Korea](https://luma.com/icpkoreahackerhouse) | 2024년 3월 26~27일, 서울 강남 | 2일 |
+| [맨틀 AI 서울 해커하우스](https://www.khgames.co.kr/news/articleView.html?idxno=304501) | 2026년 5월 30일, 성동구 성수동 | 1일(경향게임스 보도 기준) |
+| [Blockthon 2026 Hacker House](https://luma.com/q6bg341u) (연세대 블록블록) | 2026년 9월 11일, 연세대 | 3시간 세션 |
 
 ## 왜 지금 주목받나
 
@@ -172,12 +170,12 @@ TODO(호스트 동의 후 게재): 아래 문단은 방문한 하우스 호스�
 - **2022년 8월**: 서울 성수동에서 블록체인 프로젝트 솔라나의 서울 해커하우스가 5일간 열렸습니다. 한국에서도 이 이름은 2026년에 처음 나온 말이 아닙니다
 - **2023년 1월**: 미국 SF Standard가 샌프란시스코의 해커하우스 유행을 다뤘습니다
 - **2026년 5월 29일**: 카카오벤처스가 AI 빌더를 위한 공간을 준비한다고 블로그에 알렸습니다. 이 공간이 템프서울입니다
-- **2026년 6월 30일**: 미국 The Atlantic이 기자가 샌프란시스코 해커하우스에서 한 주를 지낸 체험기를 실었습니다
+- **2026년 6월**: 미국 The Atlantic이 샌프란시스코 해커하우스를 취재한 기사를 실었습니다
 - **2026년 7월 5일**: 미국 월스트리트저널이 명문대 학생들이 방학에 샌프란시스코의 해커하우스와 인큐베이터(창업 초기 회사를 키우는 기관)로 모여드는 흐름을 보도했습니다. 국내에서는 AI타임스가 다음 날 전했습니다
 - **2026년 7월 20~21일**: 창업진흥원이 해커하우스를 다룬 인사이트 글과 창업용어사전 글을 이틀 연속 올렸습니다
 - **2026년 8월 19일**: 카카오벤처스가 템프서울을 9월에 연다고 발표했습니다
 - **2026년 9월 18일**: 카카오벤처스가 템프서울의 공식 개관을 발표했습니다. 개관 행사에는 1기 멤버를 포함해 약 40명이 참석했습니다
-- **2026년 9월 21일**: 미국 뉴욕타임스가 샌프란시스코 일대에서 AI 업계 사람들이 모여 사는 집들의 파티와 안전 문제를 조사해 보도했습니다
+- **2026년 9월**: 미국 뉴욕타임스가 샌프란시스코 일대에서 AI 업계 사람들이 모여 사는 집들의 파티와 안전 문제를 조사해 보도했습니다
 
 ## 들어가기 전에 확인할 것
 
@@ -229,9 +227,9 @@ TODO(호스트 동의 후 게재): 아래 문단은 방문한 하우스 호스�
 
 **기원과 해외 흐름**
 
-- [The Register, The Rainbow Mansion](https://www.theregister.com/Print/2010/07/23/the_rainbow_mansion/) - 2010-07-23, 2006년 레인보우 맨션의 시작
+- [The Register, The Rainbow Mansion](https://www.theregister.com/2010/07/23/the_rainbow_mansion/) - 2010-07-23, 2006년 레인보우 맨션의 시작
 - [SF Standard, What is Cerebral Valley?](https://sfstandard.com/2023/01/13/what-is-cerebral-valley-san-franciscos-nerdiest-new-neighborhood/) - 2023-01-13
-- [The Atlantic, 샌프란시스코 해커하우스 체험기](https://www.theatlantic.com/technology/2026/06/hacker-houses-ai-boom-san-francisco/687737/) - 2026-06-30, 유료
+- [The Atlantic, 샌프란시스코 해커하우스 기사](https://www.theatlantic.com/technology/2026/06/hacker-houses-ai-boom-san-francisco/687737/) - 2026-06, 유료
 - [AI타임스, 미국 명문대생의 해커하우스 이동 보도](https://www.aitimes.com/news/articleView.html?idxno=212451) - 2026-07-06, 월스트리트저널 보도 인용
 - [뉴욕타임스 조사 보도 재게재(Press Democrat)](https://www.pressdemocrat.com/2026/09/21/the-ai-party-house-where-networking-has-a-dark-side/) - 2026-09-21
 
