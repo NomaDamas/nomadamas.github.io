@@ -20,6 +20,7 @@ import {
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import { transformerWrap } from "./src/utils/transformers/wrap";
 import { postLastmod } from "./src/utils/postLastmod";
+import checkPosts from "./src/utils/checkPosts";
 import config from "./astro-paper.config";
 
 const lastmod = postLastmod(config.site.url);
@@ -46,6 +47,12 @@ export default defineConfig({
         const date = lastmod.get(item.url);
         return date ? { ...item, lastmod: date } : item;
       },
+    }),
+    // 빌드는 통과하는데 발행된 글이 조용히 깨지는 경우(목차에 지워지는 문장, 미래 발행 시각 등)를
+    // 빌드 시작 전에 잡아 멈춘다. 규칙은 src/utils/checkPosts.ts
+    checkPosts({
+      // src/config.ts와 같은 기본값
+      scheduledPostMargin: config.posts?.scheduledPostMargin ?? 15 * 60 * 1000,
     }),
   ],
   i18n: {
