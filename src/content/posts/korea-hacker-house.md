@@ -7,7 +7,8 @@ tags: ["해커하우스", "hacker house", "템프서울", "코리빙", "창업 �
 featured: false
 draft: false
 ---
-TODO(사진): 머리 사진 1장. NomaDamas 하우스, 에이든 촬영. alt와 캡션
+![NomaDamas 작업 공간. 몰딩 천장이 있는 방의 벽을 따라 책상이 놓여 있고, 멤버 네 명이 각자 모니터를 여러 대 켜 두고 코드 편집기와 터미널 화면을 보며 작업하고 있다. 방 가운데에는 흰 원형 테이블이 있다](@/assets/images/korea-hacker-house/00-nomadamas-workspace.jpg)
+*NomaDamas 작업 공간입니다. 멤버마다 작업 자리와 모니터를 씁니다.*
 
 > **요약**
 >
