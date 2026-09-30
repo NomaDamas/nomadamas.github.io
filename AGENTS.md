@@ -259,6 +259,27 @@ GA4, Microsoft Clarity, Search Console, 네이버 서치어드바이저, Bing �
   분석 도구를 새로 붙이면 `src/pages/privacy.astro`에도 항목을 더한다.
 - Bing은 Search Console에서 가져오기로 연결한다. 토큰 없이 확인되고 사이트맵도 따라온다.
 
+### 방문 데이터 조회
+
+`scripts/analytics-report.sh`로 GA4와 Clarity 데이터를 유입 경로(UTM)별로 본다. 읽기만 한다.
+
+```bash
+scripts/analytics-report.sh ga 7              # GA4 최근 7일
+scripts/analytics-report.sh ga 7 <캠페인>     # utm_campaign 하나만
+scripts/analytics-report.sh clarity 1         # Clarity 최근 1일
+```
+
+- **GA4는 키 파일 없이 서비스 계정을 가장해 읽는다.** GCP 프로젝트 `nomadamas-analytics`의 서비스 계정
+  `ga-reader`가 GA4 속성(`555475692`)에 뷰어로 들어가 있다. 이 서비스 계정의 토큰을 받을 권한
+  (`roles/iam.serviceAccountTokenCreator`)은 조직 공용 Google 계정에만 있다. 스크립트는 `gcloud auth list`에서
+  이 권한이 있는 계정을 찾아 쓰고, 없으면 그 계정으로 `gcloud auth login`부터 한다.
+- **Clarity는 `CLARITY_API_TOKEN`으로 읽는다.** 환경변수가 없으면 `agents-env` 전역 스토어에서 꺼낸다.
+  토큰은 Clarity 프로젝트 설정의 Data Export에서 발급한다.
+- **Clarity는 하루 10회, 최근 1~3일만 조회된다.** 7일 이상의 추이는 GA4로 본다.
+  Clarity의 `sessions`는 봇을 뺀 수이고, `bot_sessions`만 있는 경로는 사람 방문이 아니다.
+- **GA4 표준 보고서는 반영이 늦다.** 방문 뒤 하루에서 이틀까지 걸려, 공유 직후 몇 시간은 Clarity에만 잡힐 수 있다.
+- **권한을 끊을 때**는 GA4 관리의 속성 액세스 관리에서 서비스 계정을 빼고, Clarity 설정에서 토큰을 지운다.
+
 ## 나중에: 커스텀 도메인 `blog.nomadamas.org`
 
 지금은 `nomadamas.github.io`로 서비스한다. 자체 도메인으로 옮길 때만 아래를 한다.
