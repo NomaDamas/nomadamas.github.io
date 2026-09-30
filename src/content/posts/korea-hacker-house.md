@@ -74,8 +74,8 @@ ogImage: ../../assets/images/korea-hacker-house/00-cover.png
 
 ### 템프서울 (/tmp Seoul)
 
-![템프서울 공식 페이지 첫 화면. 검은 바탕에 /tmp Seoul 제목과 Born Temporary, Built to Last 문구, 순간의 상상을 현실로 만드는 빌더들의 공간이라는 설명이 있다. 01 build what matters, 02 from builder to founder, 03 1+1=11 세 항목 아래에 Seoul, Summer 2026, 3 months와 apply now 버튼, organized by Kakao Ventures가 있다](@/assets/images/korea-hacker-house/03-tmpseoul.png)
-*[템프서울 공식 페이지](https://tmpseoul.com/) 첫 화면입니다. 서울, 2026년 여름, 3개월이라는 안내와 지원 버튼(apply now)이 있습니다. 2026-10-01 캡처.*
+![템프서울 개관 행사. 앞쪽 화면에 /tmp Seoul 개관 환영사라는 글자가 떠 있고, 오른쪽에 선 카카오벤처스 김기준 대표가 이야기하고 있다. 참석자들은 뒷모습으로 앉아 있고 벽 쪽에 높은 의자와 소파가 있다](@/assets/images/korea-hacker-house/03-tmpseoul-opening.png)
+*템프서울 개관 행사에서 카카오벤처스 김기준 대표가 환영사를 하는 모습입니다. 사진: [카카오벤처스 공식 개관 발표](https://www.kakao.vc/en/posts/kakaobenceoseu-cangeobja-molib-gongdongce-tempeuseoul-gongsig-gaegwan-geulrobeol-bildeo-keomyunitiwa-yeongyeol-doul-geos).*
 
 [템프서울](https://tmpseoul.com/)은 스타트업 투자사 카카오벤처스가 서울에 연 몰입형 해커하우스입니다. 혼자 창업한 사람을 대상으로 하고 카카오벤처스는 [개관 예고](https://www.kakao.vc/en/posts/kakaobenceoseu-cangeobja-molib-gongdongce-gonggan-tempeuseoul-tmp-seoul-9weol-gaegwan)에서 "숙박을 전제로 한 합숙형 공간이 아닌" 곳이라고 밝혔습니다. 한 번 입주하면 3개월 정도 쓸 수 있습니다.
 
@@ -83,8 +83,8 @@ ogImage: ../../assets/images/korea-hacker-house/00-cover.png
 
 ### VYV House
 
-![VYV House 공식 대표 이미지. 검은 바탕에 HACKER HOUSE / BUILDER RESIDENCY 라벨과 a house for builders with taste라는 큰 제목, vyv.house 주소, 서울의 창업자, 연구자, 디자이너, 인터넷 네이티브 빌더를 위한 해커하우스라는 영어 설명, Seoul, Open to collabs, ship 태그가 있다](@/assets/images/korea-hacker-house/04-vyv-house.jpg)
-*[VYV House 사이트](https://vyv.house/)가 공유용으로 내건 대표 이미지입니다. 서울의 창업자, 연구자, 디자이너, 인터넷 네이티브 빌더를 위한 해커하우스라고 소개합니다.*
+![VYV House의 거실. 여덟 명이 긴 나무 식탁에 둘러앉아 노트북으로 일하고 있고, 뒤쪽 창문 아래 부엌 싱크대 앞에 한 사람이 서 있다](@/assets/images/korea-hacker-house/04-vyv-house.jpg)
+*VYV House에서 사람들이 긴 식탁에 모여 노트북으로 일하는 모습입니다. 사진: [VYV House 사이트 앨범](https://vyv.house/album).*
 
 [VYV House](https://vyv.house/)는 사이트에 투자사 해시드가 지원한다고 적힌 서울의 거주형 하우스입니다. 스스로를 빌더(직접 만드는 사람) 레지던시라고 소개하고 "집과 식탁을 나눈다(Share a home and a table)"고 적습니다. 정확한 위치는 따로 알려 주며 9월 30일 기준 사이트에 입주자 7명의 프로필이 있습니다.
 
@@ -98,6 +98,9 @@ ogImage: ../../assets/images/korea-hacker-house/00-cover.png
 [Team Attention](https://www.team-attention.com/ko)이 운영하고 네이버의 스타트업 투자 조직 D2SF가 지원하는 레지던시입니다. 강남역의 작업 공간을 주며 2026년 첫 시즌(S1)에 3명이 수료했고 두 번째 시즌(S2)에 3명이 참여하고 있습니다. 사이트에 'Apply to UNSUPERVISED' 지원 버튼이 있지만 이 레지던시 전용인지는 적혀 있지 않고 숙박과 기간, 조건 안내도 없습니다. 하단에 운영진 이메일이 있습니다.
 
 ### EO 해커하우스
+
+![샌프란시스코 EO 해커하우스 내부. 왼쪽에 대리석 아일랜드 식탁과 부엌이, 오른쪽에 모니터를 여러 대 놓은 긴 검은 책상이 있고 네 사람이 그 앞에 앉아 일하고 있다. 안쪽에는 거실 소파와 화이트보드가 보인다](@/assets/images/korea-hacker-house/06-eo-house.png)
+*샌프란시스코 EO 해커하우스에 입주한 직원들이 모여 일하는 모습입니다. 사진: [더밀크 손재권](https://www.themiilk.com/articles/a536933fe).*
 
 EO Studio가 미국 샌프란시스코에서 운영하는 거주형 하우스입니다. 김태용 대표는 [링크드인 글](https://www.linkedin.com/posts/tykim90_big-newseo-house-is-moving-were-relocating-activity-7326005961666506753-L-rP)에서 이곳을 회사 숙소이자 창업자를 위한 해커하우스라고 소개합니다. 팔로알토에서 운영하다 2025년 샌프란시스코로 옮겼습니다.
 
