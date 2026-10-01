@@ -1,6 +1,6 @@
 ---
 title: "한국 해커하우스 총정리 (2026년 10월 기준)"
-description: "해커하우스는 창업자와 개발자가 일정 기간 한 공간에 모여 각자의 제품을 만드는 커뮤니티 공간입니다. 해커하우스가 무엇인지, 한국에는 어떤 곳이 있고 서로 어떻게 다른지, 비슷하지만 다른 공공 창업 공간과 들어가기 전에 확인할 점을 정리했습니다."
+description: "해커하우스는 창업자와 개발자가 일정 기간 한 공간에 모여 각자의 제품을 만드는 커뮤니티 공간입니다. 해커하우스가 무엇인지, 한국에는 어떤 곳이 있고 서로 어떻게 다른지, 들어가기 전에 확인할 점을 정리했습니다."
 pubDatetime: 2026-09-30T21:30:00+09:00
 author: "안승원 (Aiden)"
 tags: ["해커하우스", "hacker house", "템프서울", "코리빙", "창업 커뮤니티", "NomaDamas"]
@@ -38,7 +38,7 @@ ogImage: ../../assets/images/korea-hacker-house/00-cover.png
 
 해커하우스는 아직 정해진 뜻이 없어 곳마다 다르게 설명합니다. 한국어판과 영어판 위키백과에도 문서가 없습니다(2026년 9월 30일 확인). 이 글은 편의상 네 유형으로 나눠 봅니다.
 
-![해커하우스 네 가지 유형 그림. 거주형은 한집에 살면서 각자 제품을 만들고 멘토링, 초기 투자, 데모데이까지 붙이는 곳도 있으며 기간은 8주에서 6개월이고 정하지 않은 곳도 있다. 예는 VYV House(서울)와 EO 해커하우스(샌프란시스코)다. 몰입형은 잠은 각자 집에서 자고 정해진 기간 한 공간에 나와 일하며 기간은 3개월 안팎, 예는 템프서울(서울)이다. 두 유형에는 비교표에 넣음 표시가 있다. 행사형은 개발자들이 한곳에 모여 만들고 배우는 오프라인 행사로 몇 시간에서 일주일, 예는 솔라나의 서울 해커하우스(2022)이고 끝난 행사라 따로 모음 표시가 있다. 학생형은 대학생 창업자들이 방학 동안 한집에 살며 예는 예일대 학생들의 예일 해커하우스(샌프란시스코)이고 비교표에 넣지 않음 표시가 있다](@/assets/images/korea-hacker-house/01-types.png)
+![해커하우스 네 가지 유형 그림. 거주형은 한집에 살면서 각자 제품을 만들고 멘토링, 초기 투자, 데모데이까지 붙이는 곳도 있으며 기간은 8주에서 6개월이고 정하지 않은 곳도 있다. 예는 VYV House(서울)와 EO 해커하우스(샌프란시스코)다. 몰입형은 잠은 각자 집에서 자고 정해진 기간 한 공간에 나와 일하며 기간은 3개월 안팎, 예는 템프서울(서울)이다. 두 유형에는 비교표에 넣음 표시가 있다. 행사형은 개발자들이 한곳에 모여 만들고 배우는 오프라인 행사로 몇 시간에서 일주일, 예는 솔라나의 서울 해커하우스(2022)이고 끝난 행사라 비교표에서 뺌 표시가 있다. 학생형은 대학생 창업자들이 방학 동안 한집에 살며 예는 예일대 학생들의 예일 해커하우스(샌프란시스코)이고 비교표에 넣지 않음 표시가 있다](@/assets/images/korea-hacker-house/01-types.png)
 *네 유형을 지내는 방식과 기간으로 나눴습니다. 자세한 내용은 아래 표에 있습니다.*
 
 | 유형 | 어떻게 지내나 | 기간 | 예 |
@@ -48,13 +48,13 @@ ogImage: ../../assets/images/korea-hacker-house/00-cover.png
 | 행사형 | 개발자들이 한곳에 모여 만들고 배우는 오프라인 행사입니다 | 몇 시간에서 일주일 | 블록체인 프로젝트 솔라나의 [서울 해커하우스](https://luma.com/seoul-hacker-house)(2022) |
 | 학생형 | 대학생 창업자들이 방학 동안 한집에 삽니다 | 방학 | 미국 예일대 학생들의 [예일 해커하우스](https://www.aitimes.com/news/articleView.html?idxno=212451)(샌프란시스코) |
 
-비교표에는 지금 운영 중인 거주형과 몰입형을 넣었습니다. 행사형은 찾은 행사가 모두 끝나서 [비슷하지만 다른 곳](#비슷하지만-다른-곳)에 따로 모았습니다.
+비교표에는 지금 운영 중인 거주형과 몰입형을 넣었습니다. 행사형은 찾은 행사가 모두 끝나서 비교표에서 뺐습니다.
 
 ## 한국 해커하우스 비교표
 
 2026년 9월 30일에 각 곳의 공식 페이지와 운영 주체의 발표로 확인했고 NomaDamas는 운영진이 확인한 값으로 채웠습니다. 레지던시(일정 기간 머물며 작업하는 프로그램), 커뮤니티 허브처럼 부르는 이름은 달라도 제품을 만드는 사람들이 일정 기간 한 공간에 모이는 곳이면 넣었고 한국 창업자를 위한 해외 하우스 두 곳도 넣었습니다. 이름을 누르면 출처로 갑니다.
 
-![한국 해커하우스 여섯 곳을 카드 여섯 장으로 비교한 그림. 템프서울(/tmp Seoul)은 숙박 없음, 카카오벤처스, 서울(주소 비공개), 3개월, 추천과 공개 모집, 1기 6명(보도 기준). VYV House는 숙박 있음, 투자사 해시드 지원(사이트 표기), 서울(주소는 따로 안내), 기간 안내 없음, 이메일 문의, 입주자 7명(사이트 소개). Team Attention Hacker in Residence는 숙박 안내 없음, Team Attention과 네이버 D2SF 지원, 서울 강남역, 시즌제(2026년 두 번째 시즌 진행 중), 사이트 지원 버튼이나 이메일, 시즌마다 3명 소개. NomaDamas는 숙박 선택(살거나 드나듦), AI 회사 Markr, 서울, 기간 정하지 않음, 상시 문의 후 면담, 10명 안팎. EO 해커하우스는 숙박 있음, EO Studio, 미국 샌프란시스코, 기간 안내 없음, 추천과 첫 한 달 검증(보도 기준), 규모 안내 없음. 마루SF는 숙박 있음(단기), 아산나눔재단, 미국 산마테오, 4~7주와 1년 최대 16주(2025년 시범 기준), 파트너 기관 추천과 내부 심사(시범 기준), 최대 30명 수용(보도 기준)](@/assets/images/korea-hacker-house/02-compare.png)
+![한국 해커하우스 여섯 곳을 카드 여섯 장으로 비교한 그림. 템프서울(/tmp Seoul)은 숙박 없음, 카카오벤처스, 서울(주소 비공개), 3개월, 추천과 공개 모집, 1기 6명(보도 기준). VYV House는 숙박 있음, 투자사 해시드 지원(사이트 표기), 서울(주소는 따로 안내), 기간 안내 없음, 이메일 문의, 입주자 7명(사이트 소개). Team Attention Hacker in Residence는 숙박 안내 없음, Team Attention과 네이버 D2SF 지원, 서울 강남역, 시즌제(2026년 두 번째 시즌 진행 중), 사이트 지원 버튼이나 이메일, 시즌마다 3명 소개. NomaDamas는 숙박 선택(살거나 드나듦), AI 회사 Markr, 서울, 기간 정하지 않음, 공개 모집 없음, 10명 안팎. EO 해커하우스는 숙박 있음, EO Studio, 미국 샌프란시스코, 기간 안내 없음, 추천과 첫 한 달 검증(보도 기준), 규모 안내 없음. 마루SF는 숙박 있음(단기), 아산나눔재단, 미국 산마테오, 4~7주와 1년 최대 16주(2025년 시범 기준), 파트너 기관 추천과 내부 심사(시범 기준), 최대 30명 수용(보도 기준)](@/assets/images/korea-hacker-house/02-compare.png)
 *여섯 곳의 숙박 여부, 위치, 기간, 들어가는 방법, 규모를 카드 한 장씩으로 모았습니다. 같은 내용을 아래 표에 글자로 적었습니다.*
 
 | 이름 | 운영 | 숙박 | 위치 | 기간 | 들어가는 방법 | 규모 |
@@ -62,7 +62,7 @@ ogImage: ../../assets/images/korea-hacker-house/00-cover.png
 | [템프서울(/tmp Seoul)](https://tmpseoul.com/) | 카카오벤처스 | 없음 | 서울(주소 비공개) | 3개월 | 추천과 공개 모집 | 1기 6명(보도 기준) |
 | [VYV House](https://vyv.house/) | 투자사 해시드 지원(사이트 표기) | 있음 | 서울(주소는 따로 안내) | 안내 없음 | 이메일 문의 | 입주자 7명(사이트 소개) |
 | [Team Attention Hacker in Residence](https://www.team-attention.com/ko) | Team Attention, 네이버 D2SF 지원 | 안내 없음 | 서울 강남역 | 시즌제(2026년 두 번째 시즌 진행 중) | 사이트 지원 버튼이나 이메일 | 시즌마다 3명 소개 |
-| [NomaDamas](https://nomadamas.github.io/about/) | AI 회사 Markr | 선택(살거나 드나듦) | 서울 | 정하지 않음 | 상시 문의 후 면담 | 10명 안팎 |
+| [NomaDamas](https://nomadamas.github.io/about/) | AI 회사 Markr | 선택(살거나 드나듦) | 서울 | 정하지 않음 | 공개 모집 없음 | 10명 안팎 |
 | [EO 해커하우스](https://www.linkedin.com/posts/tykim90_big-newseo-house-is-moving-were-relocating-activity-7326005961666506753-L-rP) | EO Studio | 있음 | 미국 샌프란시스코 | 안내 없음 | 추천, 첫 한 달 검증(보도 기준) | 안내 없음 |
 | [마루SF](https://asan-nanum.org/press/2025-anf-maru-sf-opening/) | 아산나눔재단 | 있음(단기) | 미국 산마테오 | 4~7주, 1년 최대 16주(2025년 시범 기준) | 파트너 기관 추천과 내부 심사(시범 기준) | 최대 30명 수용(보도 기준) |
 
@@ -83,8 +83,8 @@ ogImage: ../../assets/images/korea-hacker-house/00-cover.png
 
 ### VYV House
 
-![VYV House의 거실. 여덟 명이 긴 나무 식탁에 둘러앉아 노트북으로 일하고 있고, 뒤쪽 창문 아래 부엌 싱크대 앞에 한 사람이 서 있다](@/assets/images/korea-hacker-house/04-vyv-house.jpg)
-*VYV House에서 사람들이 긴 식탁에 모여 노트북으로 일하는 모습입니다. 사진: [VYV House 사이트 앨범](https://vyv.house/album).*
+![VYV House의 작업방. 나무 바닥의 넓은 방에 큰 창문이 나 있고, 창가와 벽을 따라 책상 세 개와 모니터, 사무용 의자가 놓여 있다](@/assets/images/korea-hacker-house/04-vyv-house.jpg)
+*VYV House의 작업방입니다. 사진: [VYV House 사이트 앨범](https://vyv.house/album).*
 
 [VYV House](https://vyv.house/)는 사이트에 투자사 해시드가 지원한다고 적힌 서울의 거주형 하우스입니다. 스스로를 빌더(직접 만드는 사람) 레지던시라고 소개하고 "집과 식탁을 나눈다(Share a home and a table)"고 적습니다. 정확한 위치는 따로 알려 주며 9월 30일 기준 사이트에 입주자 7명의 프로필이 있습니다.
 
@@ -92,15 +92,12 @@ ogImage: ../../assets/images/korea-hacker-house/00-cover.png
 
 ### Team Attention Hacker in Residence
 
-![Team Attention 사이트의 레지던시 소개 부분. 01 RESIDENCY 라벨 옆에 HACKER IN RESIDENCE라는 큰 제목과 Supported by NAVER D2SF. 강남역, 최고의 공간과 접근성이라는 설명이 있다](@/assets/images/korea-hacker-house/05-team-attention.png)
-*[Team Attention 사이트](https://www.team-attention.com/ko)의 Hacker in Residence 소개입니다. 네이버 D2SF가 지원하고 강남역에 공간이 있다고 적혀 있습니다. 2026-10-01 캡처.*
-
 [Team Attention](https://www.team-attention.com/ko)이 운영하고 네이버의 스타트업 투자 조직 D2SF가 지원하는 레지던시입니다. 강남역의 작업 공간을 주며 2026년 첫 시즌(S1)에 3명이 수료했고 두 번째 시즌(S2)에 3명이 참여하고 있습니다. 사이트에 'Apply to UNSUPERVISED' 지원 버튼이 있지만 이 레지던시 전용인지는 적혀 있지 않고 숙박과 기간, 조건 안내도 없습니다. 하단에 운영진 이메일이 있습니다.
 
 ### EO 해커하우스
 
-![샌프란시스코 EO 해커하우스 내부. 왼쪽에 대리석 아일랜드 식탁과 부엌이, 오른쪽에 모니터를 여러 대 놓은 긴 검은 책상이 있고 네 사람이 그 앞에 앉아 일하고 있다. 안쪽에는 거실 소파와 화이트보드가 보인다](@/assets/images/korea-hacker-house/06-eo-house.png)
-*샌프란시스코 EO 해커하우스에 입주한 직원들이 모여 일하는 모습입니다. 사진: [더밀크 손재권](https://www.themiilk.com/articles/a536933fe).*
+![샌프란시스코 EO 해커하우스의 작업 공간. 노란 기둥이 늘어선 넓은 방에 흰 책상과 모니터가 줄지어 있고 여러 사람이 각자 자리에서 일하고 있다. 오른쪽 벽 쪽에는 자전거가 세워져 있다](@/assets/images/korea-hacker-house/06-eo-house.jpg)
+*샌프란시스코 EO 해커하우스의 작업 공간입니다. 사진: [더밀크 손재권](https://www.themiilk.com/articles/a536933fe).*
 
 EO Studio가 미국 샌프란시스코에서 운영하는 거주형 하우스입니다. 김태용 대표는 [링크드인 글](https://www.linkedin.com/posts/tykim90_big-newseo-house-is-moving-were-relocating-activity-7326005961666506753-L-rP)에서 이곳을 회사 숙소이자 창업자를 위한 해커하우스라고 소개합니다. 팔로알토에서 운영하다 2025년 샌프란시스코로 옮겼습니다.
 
@@ -108,25 +105,64 @@ EO Studio가 미국 샌프란시스코에서 운영하는 거주형 하우스입
 
 ### 마루SF
 
-![마루SF 개관식 행사장. 연한 노란색 단층 건물 앞마당에 흰 접이의자에 앉은 참석자들이 있고, 오른쪽 연단에서 한 사람이 축사를 하고 있다. 옆 화면에 MARU SF Opening Ceremony와 Congratulatory Remarks가 떠 있다](@/assets/images/korea-hacker-house/07-maru-sf.jpg)
-*2025년 11월 마루SF 개관식입니다. 사진: [아산나눔재단 보도자료](https://asan-nanum.org/press/2025-anf-maru-sf-opening/).*
+![마루SF 실내. 흰 벽의 방에 긴 나무 테이블과 의자가 놓여 있고 벽에 화면과 액자가 걸려 있다. 개관식 하우스 투어에 온 참석자들이 벽에 걸린 아산 정주영 현대 창업주의 어록을 바라보고 있다](@/assets/images/korea-hacker-house/07-maru-sf.jpg)
+*2025년 11월 마루SF 개관식에서 진행한 하우스 투어입니다. 사진: [아산나눔재단 보도자료](https://asan-nanum.org/press/2025-anf-maru-sf-opening/).*
 
 [마루SF](https://asan-nanum.org/press/2025-anf-maru-sf-opening/)는 아산나눔재단이 미국 캘리포니아주 산마테오에 연 단기 체류형 커뮤니티 허브입니다. 2025년 11월 12일 공식 개관했고 한국 스타트업이 4주에서 7주까지, 1년에 최대 16주 머물 수 있습니다([2025년 시범 운영](https://asan-nanum.org/press/maru-sf-soft-opening/) 기준). 재단의 파트너 기관 추천과 내부 심사로 들어가며 시범 운영 약 6개월 동안 53개 팀이 멤버십을 받았습니다.
 
 ### NomaDamas
 
-![왼쪽은 NomaDamas 멤버 두 명이 등받이가 높은 의자에 앉아 한 책상에서 작업하는 뒷모습이다. 위 모니터에는 터미널이, 아래 모니터에는 브라우저에 띄운 게임 화면이 있다. 오른쪽은 변기톤(BYEONGI-THON) 해커톤 포스터로 HACKATHON NO.01, 2026.05.14 THU부터 05.19 TUE까지라는 날짜, 큰 제목 변기톤, AI 서비스 로고가 그려진 동전 세 개가 변기로 떨어지는 그림, '토큰을 변기에 넣고 내려.'라는 문구, 화장실 관련 product를 빌드해서 데모한다는 규칙, HOST 칸의 NOMADAMAS와 markr, SPONSOR 칸의 SISYPHUS LABS가 있다](@/assets/images/korea-hacker-house/08-nomadamas-desk-poster.jpg)
-*왼쪽은 NomaDamas 멤버들이 작업하는 모습, 오른쪽은 NomaDamas와 Markr가 2026년 5월에 연 해커톤 '변기톤' 포스터입니다. 변기톤은 화장실과 관련된 제품을 만들어 시연하는 것이 규칙이었습니다. 출처: [Yeachan Heo의 링크드인 글](https://kr.linkedin.com/posts/yeachan-heo-225b02219_%ED%95%9C%EA%B5%AD-%EC%B5%9C%EA%B3%A0%EC%9D%98-%ED%95%B4%EC%BB%A4%ED%95%98%EC%9A%B0%EC%8A%A4-%EB%85%B8%EB%A7%88%EB%8B%A4%EB%A7%88%EC%8A%A4-%EB%8B%A8%EC%B2%B4%EC%83%9D%ED%99%9C%EC%9D%84-%EC%A1%B0%EA%B8%88%EB%A7%8C-%EB%8D%94-%EC%A2%8B%EC%95%84%ED%96%88%EB%8B%A4%EB%A9%B4-%EC%A7%91%EC%97%90-activity-7465683925131038720-ZpBI).*
+저희 [NomaDamas](https://nomadamas.github.io/about/)는 AI 회사 [Markr AI](https://markr.ai)가 운영하는 서울의 AI 오픈소스 해커하우스입니다. 하우스에 사는 멤버와 드나드는 멤버가 섞여 있고 입주 기간을 정하지 않습니다. 이 글을 쓴 곳이라 [NomaDamas 소개](#nomadamas-소개)에 따로 자세히 적었습니다.
 
-저희 [NomaDamas](https://nomadamas.github.io/about/)는 AI 회사 Markr가 운영하는 서울의 AI 오픈소스 해커하우스입니다. 10명 안팎의 멤버가 AI 오픈소스를 만들어 [GitHub](https://github.com/NomaDamas)(코드를 공개하는 사이트)에 올립니다. 그중 [k-skill](/posts/k-skill-intro/)은 지하철 도착 정보나 부동산 실거래가처럼 한국에서만 필요한 조회를 AI 에이전트가 할 수 있게 해 주는 스킬 모음입니다. 개발자들이 관심 표시로 누르는 star를 7,726개 받았습니다(2026년 9월 30일 조회).
+## NomaDamas 소개
 
-저희 운영 방식은 이렇습니다.
+[NomaDamas GitHub](https://github.com/NomaDamas)(코드를 공개하는 사이트)의 조직 소개에는 "AI Open Source Hacker House backed by Markr AI"라고 적혀 있습니다. Markr AI가 뒷받침하는 AI 오픈소스 해커하우스라는 뜻입니다. 10명 안팎의 멤버가 각자 만들고 싶은 것을 만들고 만든 것은 [GitHub](https://github.com/NomaDamas)에 공개합니다.
 
-- **들어오는 방법**: 모집 기간을 두지 않고 문의를 받아 면담한 뒤 합류합니다.
+### Markr AI가 운영합니다
+
+[Markr AI](https://markr.ai)는 자신을 "다음 세대 산업을 위한 AI를 연구하고 사업화하는(We research and commercialise AI for the next generation of industries)" 회사라고 소개합니다. [NomaDamas](https://nomadamas.github.io/about/)의 공간과 활동은 Markr AI가 운영합니다. Markr AI의 GitHub 조직 [Marker-Inc-Korea](https://github.com/Marker-Inc-Korea)에는 오픈소스 [AutoRAG](https://github.com/Marker-Inc-Korea/AutoRAG)가 있습니다. 컴퓨터 안의 문서를 AI 에이전트가 찾아 쓰게 해 주는 도구이고 star를 5,110개 받았습니다(2026년 10월 1일 조회). 자세한 내용은 [AutoRAG 소개 글](/posts/autorag-agent-intro/)에 있습니다.
+
+### 이렇게 지냅니다
+
+2026년 8월에 멤버들에게 밖에서 [NomaDamas](https://nomadamas.github.io/about/)를 어떻게 설명하는지 물었습니다. 답에는 이런 말이 나왔습니다.
+
+- "개발 좋아하는 사람들끼리 하는 하숙집": 잠도 자고 일도 할 수 있는 해커하우스라는 뜻입니다. 해커하우스라는 말을 처음 듣는 사람에게 이렇게 설명한다고 합니다.
+- "샌프란시스코에 차고(garage)가 있듯이": 실리콘밸리 창업자들이 차고에서 제품을 만들던 것처럼 함께 지내며 만든 것과 배운 것을 나눈다는 뜻입니다.
+- "너드들끼리 모여서 재미난 것을 만드는 공간": 무엇을 만들어야 한다는 범위를 정해 두지 않습니다.
+
+공간은 화려하게 꾸미기보다 집처럼 지내는 쪽을 택했습니다. 놀러 온 사람들은 가정적이고 포근하다고 말하고 멤버들은 작은 규모로 가깝게 지내는 것을 중요하게 여깁니다.
+
 - **사는 방식**: 하우스에 사는 멤버와 드나드는 멤버가 섞여 있고 출퇴근 시간은 정해져 있지 않습니다.
 - **기간**: 입주 기간을 정하지 않습니다.
 - **지원**: 작업 자리와 모니터를 줍니다.
 - **정기 모임**: 매주 화요일 저녁 멤버들이 모여 한 주 동안 만든 것을 공유합니다.
+
+### 일단 만들어 봅니다
+
+멤버들이 꼽은 NomaDamas다운 순간은 대부분 실행에 관한 것이었습니다. 밤에 떠오른 아이디어로 그 자리에서 프로젝트를 시작하고 다음 날 저장소를 공개합니다. 자주 하는 말은 "일단 해 보자(just do it)"이고 멤버들이 적은 핵심 가치는 만들고(Build), 내놓고(Ship), 함께 성장한다(Grow)입니다. 혼자 시작한 프로젝트에 두 사람 이상이 붙어 결과가 커질 때를 가장 NomaDamas다운 순간으로 꼽은 멤버도 있었습니다.
+
+### 만든 오픈소스
+
+[NomaDamas GitHub](https://github.com/NomaDamas)는 2023년 7월에 만들었고 2026년 10월 1일 기준 공개 저장소 87개, star 합계 12,056개입니다. star는 개발자들이 관심 표시로 누르는 버튼입니다. star가 많은 순서로 여섯 개를 골랐습니다.
+
+| 저장소 | 무엇을 하나 | star |
+|---|---|---|
+| [k-skill](https://github.com/NomaDamas/k-skill) | 지하철 도착 정보나 부동산 실거래가처럼 한국에서만 필요한 조회를 AI 에이전트가 할 수 있게 해 주는 스킬 모음입니다. [소개 글](/posts/k-skill-intro/) | 7,734 |
+| [slides-grab](https://github.com/NomaDamas/slides-grab) | Claude Code나 Codex로 발표 자료를 만들 때 쓰는 편집기와 검사 도구입니다 | 1,212 |
+| [CozyClay](https://github.com/NomaDamas/CozyClay) | 브라우저에서 장면과 카메라 움직임을 짜 두고 AI 영상 모델로 넘기는 사전 시각화 도구입니다 | 745 |
+| [KICE_slayer_AI_Korean](https://github.com/NomaDamas/KICE_slayer_AI_Korean) | 수능 국어 1등급에 도전하는 AI입니다 | 530 |
+| [awesome-korean-llm](https://github.com/NomaDamas/awesome-korean-llm) | 한국어 대형 언어 모델을 모은 목록입니다 | 482 |
+| [bananatape](https://github.com/NomaDamas/bananatape) | Codex 구독으로 이미지를 만들고 고치는 디자인 도구입니다 | 188 |
+
+### 해커톤도 엽니다
+
+![왼쪽은 NomaDamas 멤버 두 명이 등받이가 높은 의자에 앉아 한 책상에서 작업하는 뒷모습이다. 위 모니터에는 터미널이, 아래 모니터에는 브라우저에 띄운 게임 화면이 있다. 오른쪽은 변기톤(BYEONGI-THON) 해커톤 포스터로 HACKATHON NO.01, 2026.05.14 THU부터 05.19 TUE까지라는 날짜, 큰 제목 변기톤, AI 서비스 로고가 그려진 동전 세 개가 변기로 떨어지는 그림, '토큰을 변기에 넣고 내려.'라는 문구, 화장실 관련 product를 빌드해서 데모한다는 규칙, HOST 칸의 NOMADAMAS와 markr, SPONSOR 칸의 SISYPHUS LABS가 있다](@/assets/images/korea-hacker-house/08-nomadamas-desk-poster.jpg)
+*왼쪽은 NomaDamas 멤버들이 작업하는 모습, 오른쪽은 NomaDamas와 Markr가 연 해커톤 '변기톤' 포스터입니다. 출처: [Yeachan Heo의 링크드인 글](https://kr.linkedin.com/posts/yeachan-heo-225b02219_%ED%95%9C%EA%B5%AD-%EC%B5%9C%EA%B3%A0%EC%9D%98-%ED%95%B4%EC%BB%A4%ED%95%98%EC%9A%B0%EC%8A%A4-%EB%85%B8%EB%A7%88%EB%8B%A4%EB%A7%88%EC%8A%A4-%EB%8B%A8%EC%B2%B4%EC%83%9D%ED%99%9C%EC%9D%84-%EC%A1%B0%EA%B8%88%EB%A7%8C-%EB%8D%94-%EC%A2%8B%EC%95%84%ED%96%88%EB%8B%A4%EB%A9%B4-%EC%A7%91%EC%97%90-activity-7465683925131038720-ZpBI).*
+
+[NomaDamas](https://nomadamas.github.io/about/)는 규칙 하나로 성격이 정해지는 해커톤을 열거나 함께 운영합니다.
+
+- **변기톤**(2026년 5월 14~19일): NomaDamas와 Markr가 주최하고 Sisyphus Labs가 후원했습니다. "토큰을 변기에 넣고 내려."라는 문구를 걸고 화장실과 관련된 제품을 만들어 시연하는 것이 규칙이었습니다.
+- **[랄프톤 서울 2회차](https://luma.com/v68q8un9)**(2026년 3월 29일): Team Attention이 주최하고 OpenAI가 후원한 해커톤입니다. AI 에이전트가 코딩하는 동안 노트북을 만지고 싶으면 가재 옷을 입어야 한다는 규칙이 있습니다. NomaDamas 멤버들이 호스트로 참여했습니다.
 
 ## 들어가려면
 
@@ -139,47 +175,6 @@ EO Studio가 미국 샌프란시스코에서 운영하는 거주형 하우스입
 | [Team Attention](https://www.team-attention.com/ko) | 사이트 지원 버튼이나 이메일 | [사이트](https://www.team-attention.com/ko) |
 | [EO 해커하우스](https://www.linkedin.com/posts/tykim90_big-newseo-house-is-moving-were-relocating-activity-7326005961666506753-L-rP) | 추천(보도 기준) | [더밀크 인터뷰](https://www.themiilk.com/articles/a536933fe) |
 | [마루SF](https://asan-nanum.org/press/2025-anf-maru-sf-opening/) | 파트너 기관 추천과 내부 심사. 아산나눔재단 '마루'의 2026년 하반기 배치팀은 마루SF 지원 자격도 받습니다 | [아산나눔재단 안내](https://asan-nanum.org/press/2026-anf-maru-open-h2/) |
-
-모집 기간과 비용이 정해진 공개 모집을 찾는다면 [공공 창업 공간](#공공-창업-공간) 공고를 볼 수 있습니다.
-
-## 비슷하지만 다른 곳
-
-해커하우스라는 이름을 쓰지 않지만 창업자에게 살 곳이나 일할 곳을 주는 곳이 있습니다. 이름에 해커하우스가 붙었지만 이미 끝나 참여할 수 없는 행사도 있습니다.
-
-### 공공 창업 공간
-
-창업진흥원은 [해커하우스를 다룬 인사이트 글](https://blog.naver.com/startupkised/224352151606)에서 도전숙, G밸리 창업큐브, 한국장학재단 창업기숙사를 해커하우스와 비슷한 "직주연계형 창업지원 모델"로 소개합니다. 직주연계는 사는 곳과 일하는 곳을 붙여 둔다는 뜻입니다. 표의 네 곳은 모두 공고를 내고 심사를 거쳐 뽑으며 공고에 입주자 비용이 나옵니다.
-
-| 곳 | 운영 | 무엇을 주나 | 입주자 비용 | 기간 |
-|---|---|---|---|---|
-| [서울 AI 허브](https://english.seoul.go.kr/seoul-policy-archive/seoul-ai-hub/) | 서울시 | 서초구 양재 일대의 사무 공간과 지원 프로그램. 공고에 주거 제공 내용은 없습니다 | 제곱미터당 6,020원(부가세 별도, 2026년 2차 공고. 월 단위인지는 공고문에 없음) | 1년, 1년씩 연장해 최대 4년 |
-| [G밸리 창업큐브](https://news.seoul.go.kr/economy/archives/571725) | 서울시 | 금천구 가산동의 주거 겸용 사무실 57실 | 월 51,500원(소형), 133,390원(대형), 전기와 수도는 실비 | 2년, 최대 4년 |
-| [도전숙](https://housing.seoul.go.kr/site/main/content/sh01_050500) | 성북구, SH공사 | 1인 창업자용 공공임대 원룸 | 보증금과 월세(소득에 따라 다름. 소득 50% 기준 평균 월 15만 원, 보증금 1,243만 원) | 2년, 최대 6년 |
-| [한국장학재단 창업기숙사](https://www.kosaf.go.kr/ko/igrtdmtr.do?pg=PTHBJCIN_02M) | 한국장학재단 | 창업에 관심 있거나 이미 창업한 대학생, 대학원생의 기숙사와 창업 공간. 전국 5곳, 195명 이내 | 무상 | 공고에서 확인 |
-
-### 코리빙 커뮤니티
-
-서울 역삼동의 [논스(nonce)](https://nonce.community/immersionhouse)는 여러 건물에 나눠 사는 코리빙 커뮤니티입니다. 코리빙은 여러 사람이 한집에 살며 공용 공간을 나눠 쓰는 주거를 말합니다. 2023년 1월에 시작하는 3개월 빌더 프로그램 '이머젼 하우스'로 16명을 모집했고 당시 안내한 월세는 약 80만 원이었습니다. 2기 모집 공지는 찾지 못했습니다. 논스는 2019년 [직접 쓴 글](https://brunch.co.kr/@nonce/42)에서 예전 논스를 "거의 한국형 해커 하우스"라고 하면서도, 지금의 논스는 "해커 하우스도 아니다. 그냥 논스다"라고 소개했습니다.
-
-### 투자형 프로그램
-
-액셀러레이터는 초기 창업팀을 뽑아 투자하고 일정 기간 키우는 회사입니다. 일할 공간을 주기도 하지만 투자를 받는 대신 회사 지분 일부를 넘겨야 합니다. 해외에는 투자까지 하는 거주형 해커하우스도 있어 경계가 겹치므로, 이 글은 지분을 넘기는지를 기준으로 투자형을 따로 나눴습니다.
-
-| 곳 | 운영 | 조건 |
-|---|---|---|
-| [Hashed Vibe Labs](https://medium.com/hashed-kr/hashed-vibe-labs%EB%A5%BC-%EC%8B%9C%EC%9E%91%ED%95%A9%EB%8B%88%EB%8B%A4-285e52fa2735) | 해시드 | 공개 지원으로 3~5팀을 뽑아 1억 원을 투자합니다. 나중에 지분 5%로 바뀌는 SAFE 계약입니다. 서울 에디션은 2026년 3월 시작 |
-| [Antler Korea](https://www.antler.co/location/korea) | Antler | 연중 지원, 여러 단계 인터뷰. 팀당 최대 26만 달러 투자 안내 |
-
-### 행사형 해커하우스
-
-해커하우스라는 이름을 쓰거나 비슷한 방식으로 연 행사는 한국에서도 열렸습니다. 찾은 14건 가운데 가장 이른 것은 2022년 8월입니다. 모두 끝났고 대부분 블록체인 재단이나 커뮤니티가 연 행사입니다. 표에는 이름에 해커하우스가 들어간 4건을 담았습니다.
-
-| 행사 | 언제, 어디서 | 얼마나 |
-|---|---|---|
-| [Solana x Wormhole Seoul Hacker House](https://luma.com/seoul-hacker-house) | 2022년 8월, 성동구 성수동 | 5일, 무료 |
-| [ICP Hacker House Korea](https://luma.com/icpkoreahackerhouse) | 2024년 3월 26~27일, 서울 강남 | 2일 |
-| [맨틀 AI 서울 해커하우스](https://www.khgames.co.kr/news/articleView.html?idxno=304501) | 2026년 5월 30일, 성동구 성수동 | 1일(경향게임스 보도 기준) |
-| [Blockthon 2026 Hacker House](https://luma.com/q6bg341u) (연세대 블록블록) | 2026년 9월 11일, 연세대 | 3시간 세션 |
 
 ## 왜 지금 주목받나
 
@@ -204,7 +199,7 @@ EO Studio가 미국 샌프란시스코에서 운영하는 거주형 하우스입
 
 1. **잠도 거기서 자나요?** 거주형인지 몰입형인지부터 확인하면 됩니다. [템프서울](https://tmpseoul.com/)처럼 숙박하지 않는 곳도 해커하우스로 불립니다.
 2. **입주자가 내는 돈이 있나요?** 이 글에서 비교한 여섯 곳 모두 입주자 비용을 공식 페이지에 적지 않았습니다. 무엇이 포함되는지(방, 식사, 장비)도 물어볼 수 있습니다.
-3. **지분이나 투자 조건이 붙나요?** 투자형 프로그램은 투자를 받는 대신 지분을 넘깁니다. 공간만 주는 곳인지 투자가 따라오는 곳인지 구분하면 됩니다.
+3. **지분이나 투자 조건이 붙나요?** 투자까지 하는 프로그램은 투자를 받는 대신 회사 지분 일부를 넘깁니다. 공간만 주는 곳인지 투자가 따라오는 곳인지 구분하면 됩니다.
 4. **얼마나 머물 수 있나요?** 기간이 끝나면 나가야 하는지, 연장할 수 있는지 확인하면 됩니다.
 5. **생활 규칙과 문제가 생겼을 때 연락할 곳이 있나요?** 미국에서는 AI 업계 사람들이 모여 사는 집에서 대규모 파티 민원과 안전 문제가 이어졌다는 보도가 있었습니다([뉴욕타임스](https://www.pressdemocrat.com/2026/09/21/the-ai-party-house-where-networking-has-a-dark-side/), 2026년 9월). 여러 사람이 사는 곳이라면 생활 규칙과 신고 창구를 확인해 두면 좋습니다.
 
@@ -217,7 +212,7 @@ EO Studio가 미국 샌프란시스코에서 운영하는 거주형 하우스입
 > 2026년 9월 30일 기준 서울에서 운영 중인 곳으로 카카오벤처스의 [템프서울](https://tmpseoul.com/), 해시드가 지원하는 [VYV House](https://vyv.house/), Team Attention의 [Hacker in Residence](https://www.team-attention.com/ko), 그리고 이 글을 쓴 저희 [NomaDamas](https://nomadamas.github.io/about/)를 찾았습니다. 한국 창업자를 위한 해외 하우스로는 샌프란시스코의 [EO 해커하우스](https://www.linkedin.com/posts/tykim90_big-newseo-house-is-moving-were-relocating-activity-7326005961666506753-L-rP)와 아산나눔재단의 [마루SF](https://asan-nanum.org/press/2025-anf-maru-sf-opening/)가 있습니다.
 
 > [!faq]- 해커하우스에 들어가려면 어떻게 하나요? 비용은 얼마인가요?
-> 비교한 곳들은 대부분 추천을 받거나 먼저 연락해 이야기를 나눈 뒤 들어갑니다. [템프서울](https://tmpseoul.com/)은 공식 페이지에 지원 버튼이 있고 [VYV House](https://vyv.house/)는 이메일로 문의를 받습니다. 입주자 비용은 비교한 여섯 곳 모두 공식 페이지에 적지 않았습니다. 비용과 기간이 공개된 곳을 찾는다면 서울시 [G밸리 창업큐브](https://news.seoul.go.kr/economy/archives/571725)(월 51,500원부터)나 [한국장학재단 창업기숙사](https://www.kosaf.go.kr/ko/igrtdmtr.do?pg=PTHBJCIN_02M)(대학생과 대학원생, 무상) 같은 공공 창업 공간을 볼 수 있습니다.
+> 비교한 곳들은 대부분 추천을 받거나 먼저 연락해 이야기를 나눈 뒤 들어갑니다. [템프서울](https://tmpseoul.com/)은 공식 페이지에 지원 버튼이 있고 [VYV House](https://vyv.house/)는 이메일로 문의를 받습니다. 입주자 비용은 비교한 여섯 곳 모두 공식 페이지에 적지 않았으니 문의할 때 함께 물어볼 수 있습니다.
 
 > [!faq]- 템프서울은 숙박을 하나요? 누가 들어갈 수 있나요?
 > 숙박하지 않습니다. 카카오벤처스는 [템프서울](https://tmpseoul.com/)이 숙박을 전제로 한 합숙형 공간이 아니라고 밝혔고 한 번 입주하면 3개월 정도 쓰는 코워킹 스페이스라고 설명합니다. 대상은 혼자 창업한 사람이고 1기는 링크드인 모집 공고와 커피챗 면접으로 뽑았습니다([중앙일보 보도](https://www.joongang.co.kr/article/25461596)).
@@ -236,7 +231,6 @@ EO Studio가 미국 샌프란시스코에서 운영하는 거주형 하우스입
 - [EO Studio 김태용 대표의 EO 하우스 이전 안내](https://www.linkedin.com/posts/tykim90_big-newseo-house-is-moving-were-relocating-activity-7326005961666506753-L-rP) - 링크드인
 - [더밀크, EO 해커하우스 인터뷰](https://www.themiilk.com/articles/a536933fe)
 - [아산나눔재단, 마루SF 개관](https://asan-nanum.org/press/2025-anf-maru-sf-opening/) - 2025-11-12, [시범 운영 안내](https://asan-nanum.org/press/maru-sf-soft-opening/) - 2025-05-09, [매일경제 영문판, 마루SF 수용 인원](https://www.mk.co.kr/en/business/11370168) - 2025-07-17
-- [논스 이머젼 하우스](https://nonce.community/immersionhouse), [논스가 직접 쓴 소개 글](https://brunch.co.kr/@nonce/42) - 2019-12-17
 - [NomaDamas GitHub](https://github.com/NomaDamas), [NomaDamas 소개](https://nomadamas.github.io/about/)
 
 **정의와 유형**
