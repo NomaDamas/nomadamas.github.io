@@ -1,9 +1,9 @@
 ---
-title: "한국 해커하우스 총정리 (2026년 10월 기준)"
-description: "해커하우스는 창업자와 개발자가 일정 기간 한 공간에 모여 각자의 제품을 만드는 커뮤니티 공간입니다. 해커하우스가 무엇인지, 한국에는 어떤 곳이 있고 서로 어떻게 다른지, 들어가기 전에 확인할 점을 정리했습니다."
+title: "한국 해커하우스 총정리: 창업자와 개발자가 모이는 곳 (2026년 10월 기준)"
+description: "해커하우스(hacker house)는 창업자와 개발자가 한 공간에 모여 제품과 오픈소스를 만드는 커뮤니티 공간입니다. 템프서울, VYV House, NomaDamas 등 한국 해커하우스(Korea hacker house) 여섯 곳의 숙박, 기간, 들어가는 방법을 비교했습니다."
 pubDatetime: 2026-09-30T21:30:00+09:00
 author: "안승원 (Aiden)"
-tags: ["해커하우스", "hacker house", "템프서울", "코리빙", "창업 커뮤니티", "NomaDamas"]
+tags: ["해커하우스", "hacker house", "korea hacker house", "창업", "스타트업", "오픈소스", "템프서울", "NomaDamas"]
 featured: false
 draft: false
 ogImage: ../../assets/images/korea-hacker-house/00-cover.png
@@ -13,13 +13,13 @@ ogImage: ../../assets/images/korea-hacker-house/00-cover.png
 
 미드 [실리콘밸리](https://www.hbo.com/silicon-valley)를 보셨나요? 주인공 리처드는 실리콘밸리의 한 집에 얹혀살며 압축 기술 스타트업 파이드 파이퍼를 차립니다. 집주인 얼리치는 자기 집을 스타트업 인큐베이터로 꾸며 놓고, 개발자들을 재워 주는 대신 그들이 차린 회사의 지분 10%를 가져갑니다. 같은 집에서 먹고 자며 밤낮없이 코드를 짜는 그 집이 해커하우스입니다.
 
-드라마에만 있는 집은 아닙니다. 서울에도 해커하우스가 있고 올해 들어 새로 문을 연 곳도 생겼습니다.
+드라마에만 있는 집은 아닙니다. 서울에도 창업자와 개발자가 모여 제품과 오픈소스를 만드는 해커하우스가 있고 올해 들어 새로 문을 연 곳도 생겼습니다.
 
 > **요약**
 >
 > 1. 해커하우스(hacker house)는 창업자와 개발자가 일정 기간 한 공간에 모여 각자의 제품을 만드는 커뮤니티 공간입니다. 한집에 살며 숙식을 함께하는 거주형이 원형이고 한국에서는 잠은 각자 집에서 자고 정해진 기간 한 공간에 모여 일하는 몰입형도 같은 이름으로 불립니다.
 > 2. 여기서 해커는 남의 시스템에 침입하는 사람이 아니라 떠오른 아이디어를 곧바로 만들어 보는 사람을 뜻합니다.
-> 3. 2026년 9월 30일 기준 서울에서 운영 중인 해커하우스로 카카오벤처스의 [템프서울(/tmp Seoul)](https://tmpseoul.com/), [VYV House](https://vyv.house/), Team Attention의 [Hacker in Residence](https://www.team-attention.com/ko), [NomaDamas](https://nomadamas.github.io/about/) 네 곳을 찾았습니다. 숙박 여부, 기간, 들어가는 방법이 곳마다 다르고 입주자 비용을 공식 페이지에 적은 곳은 없었습니다.
+> 3. 2026년 9월 30일 기준 서울에서 운영 중인 한국 해커하우스(Korea hacker house)로 카카오벤처스의 [템프서울(/tmp Seoul)](https://tmpseoul.com/), [VYV House](https://vyv.house/), Team Attention의 [Hacker in Residence](https://www.team-attention.com/ko), AI 오픈소스 해커하우스 [NomaDamas](https://nomadamas.github.io/about/) 네 곳을 찾았습니다. 숙박 여부, 기간, 들어가는 방법이 곳마다 다르고 입주자 비용을 공식 페이지에 적은 곳은 없었습니다.
 
 ## 목차
 
@@ -125,7 +125,7 @@ EO Studio가 미국 샌프란시스코에서 운영하는 거주형 하우스입
 
 멋을 낸 사무실과는 거리가 멉니다. 밤늦게 게임을 하다가도 이야기가 AI로 번지고, 거기서 나온 아이디어로 그 자리에서 저장소를 만들어 다음 날 공개합니다. 실리콘밸리 창업자들이 차고에서 회사를 시작했듯이 저희도 일단 만들어 내놓고 반응을 보며 키웁니다. 혼자 시작한 프로젝트에 한두 명이 붙어 판이 커지는 일도 생깁니다. 매주 화요일 저녁에는 다 같이 모여 한 주 동안 만든 것을 보여 줍니다.
 
-### 만든 것은 전부 공개합니다
+### 만든 오픈소스는 전부 공개합니다
 
 그렇게 만든 것은 [NomaDamas GitHub](https://github.com/NomaDamas)(코드를 공개하는 사이트)에 올립니다. 2023년 7월부터 공개 저장소 87개를 올렸고 개발자들이 관심 표시로 누르는 star를 모두 12,056개 받았습니다(2026년 10월 1일 기준). 가장 많이 받은 여섯 개는 이렇습니다.
 
@@ -149,7 +149,7 @@ EO Studio가 미국 샌프란시스코에서 운영하는 거주형 하우스입
 
 3월에는 Team Attention이 주최한 [랄프톤 서울 2회차](https://luma.com/v68q8un9)에 NomaDamas 멤버들이 호스트로 참여했습니다. AI 에이전트가 코딩하는 동안 노트북을 만지고 싶으면 가재 옷을 입어야 한다는 규칙이 있는 해커톤입니다.
 
-## 들어가려면
+## 창업자가 해커하우스에 들어가려면
 
 비교표의 곳들은 대부분 추천을 받거나 먼저 연락해 이야기를 나눈 뒤 들어갑니다. 모집 기간을 정해 공고하는 곳은 드뭅니다.
 
@@ -161,7 +161,7 @@ EO Studio가 미국 샌프란시스코에서 운영하는 거주형 하우스입
 | [EO 해커하우스](https://www.linkedin.com/posts/tykim90_big-newseo-house-is-moving-were-relocating-activity-7326005961666506753-L-rP) | 추천(보도 기준) | [더밀크 인터뷰](https://www.themiilk.com/articles/a536933fe) |
 | [마루SF](https://asan-nanum.org/press/2025-anf-maru-sf-opening/) | 파트너 기관 추천과 내부 심사. 아산나눔재단 '마루'의 2026년 하반기 배치팀은 마루SF 지원 자격도 받습니다 | [아산나눔재단 안내](https://asan-nanum.org/press/2026-anf-maru-open-h2/) |
 
-## 왜 지금 주목받나
+## 해커하우스는 왜 지금 주목받나
 
 창업진흥원은 [창업용어사전](https://blog.naver.com/startupkised/224353315457)에서 해커하우스가 AI 창업이 늘면서 다시 주목받고 있다고 설명합니다. 해커하우스가 몇 곳이나 있는지, 입주자가 몇 명인지 집계한 통계는 찾지 못해서 날짜가 분명한 일을 순서대로 모았습니다.
 
@@ -204,6 +204,9 @@ EO Studio가 미국 샌프란시스코에서 운영하는 거주형 하우스입
 
 > [!faq]- 해커하우스는 안전한가요?
 > 한국 해커하우스에서 안전 문제가 보도된 사례는 아직 없습니다. 2026년 9월 [뉴욕타임스가 보도한](https://www.pressdemocrat.com/2026/09/21/the-ai-party-house-where-networking-has-a-dark-side/) 파티 민원과 안전 문제는 미국 샌프란시스코 일대의 사례입니다. 지원하기 전에 [들어가기 전에 확인할 것](#들어가기-전에-확인할-것)의 다섯 가지를 물어볼 수 있습니다.
+
+> [!faq]- Are there hacker houses in Korea?
+> Yes. As of September 30, 2026, there are four hacker houses in Seoul: [/tmp Seoul](https://tmpseoul.com/) by Kakao Ventures (a coworking-style house with no overnight stay), [VYV House](https://vyv.house/) (a residential builder house supported by Hashed), Team Attention's [Hacker in Residence](https://www.team-attention.com/ko) near Gangnam Station, and [NomaDamas](https://nomadamas.github.io/about/), an AI open source hacker house run by Markr AI. For Korean founders abroad, there are the [EO hacker house](https://www.linkedin.com/posts/tykim90_big-newseo-house-is-moving-were-relocating-activity-7326005961666506753-L-rP) in San Francisco and [MARU SF](https://asan-nanum.org/press/2025-anf-maru-sf-opening/) in San Mateo.
 
 ## 참고 자료
 
