@@ -190,7 +190,7 @@ finish() {
 # 값은 전부 공개값(페이지 HTML에 그대로 나감)이라 secrets가 아니라 저장소 변수에 둔다.
 # 실행: scripts/setup-seo-services.sh   (저장소 어디서든, gh 로그인 필요)
 
-SITE_URL="https://nomadamas.github.io/"
+SITE_URL="https://blog.nomadamas.org/"
 cd "$(git rev-parse --show-toplevel)"
 # 다시 실행할 때 기본값으로 쓰려고 입력값을 남겨 두는 파일. Astro가 읽지 않는 이름이라
 # 로컬 개발 서버에 분석 태그가 붙지 않는다. .gitignore에 들어 있다.
@@ -281,7 +281,7 @@ open_url "https://search.google.com/search-console/welcome"
 step "오른쪽 'URL 접두어(URL prefix)' 칸에 ${SITE_URL} 을 넣고 계속을 누릅니다."
 step "다른 확인 방법 중 'HTML 태그'를 펼치고 메타 태그를 복사합니다."
 warn "확인(Verify) 버튼은 아직 누르지 마세요. 배포가 끝난 뒤 8단계에서 누릅니다. 창은 열어 두세요."
-note "github.io 주소라 '도메인' 속성은 쓸 수 없습니다. 막히면: https://support.google.com/webmasters/answer/9008080"
+note "여기서는 'URL 접두어' 속성만 다룹니다. '도메인' 속성은 nomadamas.org의 DNS TXT로 따로 확인합니다. 막히면: https://support.google.com/webmasters/answer/9008080"
 ask_valid PUBLIC_GOOGLE_SITE_VERIFICATION "메타 태그 또는 content 값을 붙여 넣으세요:" '^[A-Za-z0-9_-]+$'
 
 # ── 5 ────────────────────────────────────────────────────────────────────

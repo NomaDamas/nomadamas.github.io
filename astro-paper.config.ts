@@ -2,7 +2,7 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://nomadamas.github.io/",
+    url: "https://blog.nomadamas.org/",
     title: "NomaDamas",
     description:
       "서울의 AI 오픈소스 해커하우스. 재밌는 걸 만들어 공개합니다.",

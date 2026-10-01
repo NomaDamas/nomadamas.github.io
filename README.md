@@ -1,6 +1,6 @@
 # NomaDamas 블로그
 
-<https://nomadamas.github.io>
+<https://blog.nomadamas.org>
 
 서울의 AI 오픈소스 해커하우스 [NomaDamas](https://github.com/NomaDamas)의 블로그입니다.
 프로젝트를 왜 그렇게 만들었는지, 만들어 보니 뭐가 달랐는지를 적습니다.
