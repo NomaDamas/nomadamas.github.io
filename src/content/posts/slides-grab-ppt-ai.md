@@ -1,7 +1,7 @@
 ---
 title: "PPT 만들어주는 AI, Claude Code로 쓰는 무료 오픈소스 slides-grab: 고칠 곳만 드래그해 수정"
 description: "slides-grab은 Claude Code와 Codex로 PPT를 만들고, 드래그한 곳만 AI가 고치게 하는 무료 오픈소스입니다. 주간 보고 PPT 자동화를 직접 해 보고 Gamma, Genspark와 비교했습니다."
-pubDatetime: 2026-10-01T17:10:00+09:00
+pubDatetime: 2026-10-01T18:21:00+09:00
 author: "안승원 (Aiden)"
 tags: ["slides-grab", "PPT AI", "AI PPT", "PPT 자동화", "claude code", "codex", "오픈소스"]
 ogImage: ../../assets/images/slides-grab-ppt-ai/00-cover.png
