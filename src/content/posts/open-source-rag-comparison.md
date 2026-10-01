@@ -1,7 +1,7 @@
 ---
 title: "오픈소스 RAG 비교: AnythingLLM, Open WebUI, Dify, AutoRAG Agent에 한글 파일과 카톡을 넣어 봤습니다"
 description: "AnythingLLM, Open WebUI, Dify, AutoRAG Agent에 같은 한글(HWP) 파일, 카카오톡 대화, 메일을 넣고 같은 질문을 3번씩 물었습니다. 한글 파일을 읽은 것은 AutoRAG Agent뿐이었고, 바뀐 최신 값은 AnythingLLM이 더 안정적으로 찾았습니다."
-pubDatetime: 2026-10-01T21:40:00+09:00
+pubDatetime: 2026-10-01T22:12:00+09:00
 author: "안승원 (Aiden)"
 tags: ["rag", "오픈소스 rag", "anythingllm", "open webui", "dify", "autorag agent", "한글 파일", "카카오톡 검색"]
 ogImage: ../../assets/images/open-source-rag-comparison/00-cover.png
@@ -39,9 +39,9 @@ featured: true
 
 | 도구 | GitHub star (2026-10-01) | 이번에 쓴 버전 |
 |---|---|---|
-| [Dify](https://github.com/langgenius/dify) | 157,653 | 1.17.1 |
-| [Open WebUI](https://github.com/open-webui/open-webui) | 153,705 | 0.11.4 |
-| [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) | 66,645 | 1.16.2 |
+| [Dify](https://github.com/langgenius/dify) | 157,655 | 1.17.1 |
+| [Open WebUI](https://github.com/open-webui/open-webui) | 153,708 | 0.11.4 |
+| [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) | 66,646 | 1.16.2 |
 | [AutoRAG Agent](https://github.com/Marker-Inc-Korea/AutoRAG) (AutoRAG 저장소) | 5,110 | 2.6.1 + 수정 2건(아래 주의 상자) |
 
 ## 이렇게 비교했습니다
