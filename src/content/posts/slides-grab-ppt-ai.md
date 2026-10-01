@@ -25,7 +25,7 @@ featured: true
 
 매주 올리는 보고 PPT는 형식이 거의 같습니다. 엑셀에서 숫자를 옮기고, 차트를 다시 그리고, 제목을 다듬는 일이 매번 되풀이됩니다. 그러다 보면 한 번쯤 이런 생각이 듭니다. "발표자료를 AI로 만들 수는 없을까?"
 
-검색하면 [Gamma](https://gamma.app)와 [Genspark](https://www.genspark.ai)가 먼저 나옵니다. 둘 다 써 봤습니다. 이 글의 시연과 같은 자료(CSV 표와 메모)를 붙여 넣고 주간 업무 보고 PPT 6장을 부탁하자, 둘 다 차트가 든 6장을 만들었습니다.
+"PPT 만들어주는 AI"나 "PPT AI"를 검색하면 [Gamma](https://gamma.app)(감마)와 [Genspark](https://www.genspark.ai)(젠스파크)가 먼저 나옵니다. 둘 다 써 봤습니다. 이 글의 시연과 같은 자료(CSV 표와 메모)를 붙여 넣고 주간 업무 보고 PPT 6장을 부탁하자, 둘 다 차트가 든 6장을 만들었습니다.
 
 ![Gamma가 만든 주간 업무 보고 PPT. 왼쪽 채팅 패널에 붙여 넣은 CSV와 메모, 6장 구성 계획이 있고, 오른쪽에 9월 5주차 고객지원 주간 업무 보고 표지 슬라이드가 사무실 사진 위에 떠 있다](@/assets/images/slides-grab-ppt-ai/12-gamma-deck.png)
 *2026-10-01, Gamma 무료 플랜으로 만든 결과입니다. Genspark 결과는 "Gamma, Genspark와 무엇이 다른가" 절에 있습니다.*
@@ -36,7 +36,7 @@ featured: true
 - **크레딧**: Gamma는 가입할 때 받은 400크레딧을 다 쓰면 다시 채워지지 않습니다. 매주 쓰면 금방 바닥납니다.
 - **자료 옮기기**: 웹 서비스라 자료를 매번 붙여 넣거나 올려야 합니다.
 
-Claude Code나 Codex를 이미 쓰고 있다면 다른 길이 있습니다. 에이전트가 내 폴더의 자료를 읽고 PPT를 파일로 만들고, 고칠 곳을 드래그하면 그 부분만 고치게 하는 것입니다. 그 일을 해 주는 무료 MIT 오픈소스가 slides-grab입니다.
+Claude Code(클로드 코드)나 Codex(코덱스)를 이미 쓰고 있다면 AI PPT를 만드는 다른 길이 있습니다. 에이전트가 내 폴더의 자료를 읽고 PPT를 파일로 만들고, 고칠 곳을 드래그하면 그 부분만 고치게 하는 것입니다. 그 일을 해 주는 무료 MIT 오픈소스가 slides-grab입니다. 매주 같은 형식으로 만드는 보고 PPT 자동화에 맞춰 직접 써 봤습니다.
 
 ## slides-grab이란?
 
@@ -58,7 +58,7 @@ NomaDamas 리더 김동규([@vkehfdl1](https://github.com/vkehfdl1))가 만들�
 | 지원 에이전트 | Claude Code, Codex |
 | 라이선스 | MIT |
 
-## Claude Code로 PPT 만들기
+## Claude Code로 AI PPT 만들기
 
 직접 해 봤습니다. 시연은 가상 회사의 주간 업무 보고로 했습니다. 어떤 자료를 줬는지 먼저 보면 결과를 원자료와 맞춰 볼 수 있습니다.
 
