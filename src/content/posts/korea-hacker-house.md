@@ -8,19 +8,19 @@ featured: false
 draft: false
 ogImage: ../../assets/images/korea-hacker-house/00-cover.png
 ---
-![미국 HBO 드라마 실리콘밸리의 대표 이미지. 흰 배경에 빨간 글씨로 SILICON VALLEY라는 제목이 있고, 그 아래 검은 옷을 입은 주연 배우 다섯 명이 나란히 서서 한 손으로 턱을 괴고 있다](@/assets/images/korea-hacker-house/00-silicon-valley-hbo.jpg)
-*미국 HBO 드라마 '실리콘밸리'(2014~2019). 사진: [HBO](https://www.hbo.com/silicon-valley).*
+![드라마 실리콘밸리의 한 장면. 나무 벽과 책장이 있는 집 거실에 긴 나무 책상을 놓고 모니터와 노트북을 여러 대 켜 두었다. 한 사람은 노트북으로 작업하고, 한 사람은 모니터 앞에서 턱을 괴고 있고, 주인공 리처드는 책상 옆에 서서 전화를 받고 있다. 뒤쪽 벽에는 해적 깃발과 꼬마전구가 걸려 있다](@/assets/images/korea-hacker-house/00-silicon-valley-hbo.jpg)
+*미국 HBO 드라마 '실리콘밸리'(2014~2019)에서 주인공들이 얼리치의 집 거실을 작업실 삼아 일하는 장면입니다. 사진: [HBO](https://www.hbo.com/silicon-valley).*
 
 미드 [실리콘밸리](https://www.hbo.com/silicon-valley)를 보셨나요? 주인공 리처드는 실리콘밸리의 한 집에 얹혀살며 압축 기술 스타트업 파이드 파이퍼를 차립니다. 집주인 얼리치는 자기 집을 스타트업 인큐베이터로 꾸며 놓고, 개발자들을 재워 주는 대신 그들이 차린 회사의 지분 10%를 가져갑니다. 같은 집에서 먹고 자며 밤낮없이 코드를 짜는 그 집이 해커하우스입니다.
 
-드라마에만 있는 집은 아닙니다. 서울에도 해커하우스가 있고 올해 들어 새로 문을 연 곳도 생겼습니다. 이 글은 그중 한 곳인 [NomaDamas](https://nomadamas.github.io/about/)에서 일하는 안승원이 한국의 해커하우스를 찾아 정리한 글입니다.
+드라마에만 있는 집은 아닙니다. 서울에도 해커하우스가 있고 올해 들어 새로 문을 연 곳도 생겼습니다.
 
 > **요약**
 >
 > 1. 해커하우스(hacker house)는 창업자와 개발자가 일정 기간 한 공간에 모여 각자의 제품을 만드는 커뮤니티 공간입니다. 한집에 살며 숙식을 함께하는 거주형이 원형이고 한국에서는 잠은 각자 집에서 자고 정해진 기간 한 공간에 모여 일하는 몰입형도 같은 이름으로 불립니다.
 > 2. 여기서 해커는 남의 시스템에 침입하는 사람이 아니라 떠오른 아이디어를 곧바로 만들어 보는 사람을 뜻합니다.
 > 3. 2026년 9월 30일 기준 서울에서 운영 중인 해커하우스로 카카오벤처스의 [템프서울(/tmp Seoul)](https://tmpseoul.com/), [VYV House](https://vyv.house/), Team Attention의 [Hacker in Residence](https://www.team-attention.com/ko), [NomaDamas](https://nomadamas.github.io/about/) 네 곳을 찾았습니다. 숙박 여부, 기간, 들어가는 방법이 곳마다 다르고 입주자 비용을 공식 페이지에 적은 곳은 없었습니다.
-> 4. 이 글은 NomaDamas에서 DevRel(개발자 커뮤니티 담당)을 맡은 안승원이 썼습니다. 저희도 비교표에 들어 있어서 다른 곳은 공식 페이지와 발표로 확인한 값을, NomaDamas는 운영진이 확인한 값을 같은 칸에 채웠습니다.
+> 4. 저희 NomaDamas도 비교표에 들어 있습니다. 다른 곳은 공식 페이지와 발표로 확인한 값을, NomaDamas는 운영진이 확인한 값을 같은 칸에 채웠습니다.
 
 ## 목차
 
@@ -116,7 +116,7 @@ EO Studio가 미국 샌프란시스코에서 운영하는 거주형 하우스입
 
 ### NomaDamas
 
-저희 [NomaDamas](https://nomadamas.github.io/about/)는 AI 회사 [Markr AI](https://markr.ai)가 운영하는 서울의 AI 오픈소스 해커하우스입니다. 하우스에 사는 멤버와 드나드는 멤버가 섞여 있고 입주 기간을 정하지 않습니다. 이 글을 쓴 곳이라 [아래](#저희-nomadamas를-소개합니다)에 따로 소개합니다.
+저희 [NomaDamas](https://nomadamas.github.io/about/)는 AI 회사 [Markr AI](https://markr.ai)가 운영하는 서울의 AI 오픈소스 해커하우스입니다. 하우스에 사는 멤버와 드나드는 멤버가 섞여 있고 입주 기간을 정하지 않습니다. 자세한 이야기는 [아래](#저희-nomadamas를-소개합니다)에 따로 적었습니다.
 
 ## 저희 NomaDamas를 소개합니다
 
@@ -196,7 +196,7 @@ EO Studio가 미국 샌프란시스코에서 운영하는 거주형 하우스입
 > 셰어하우스는 여러 사람이 집을 나눠 쓰는 주거이고 코워킹 스페이스는 여러 팀이 나눠 쓰는 사무 공간입니다. 해커하우스는 제품을 만든다는 공통 목적으로 모입니다. 거주형은 셰어하우스처럼 같이 살고 몰입형은 코워킹 스페이스처럼 같이 일합니다. [템프서울](https://tmpseoul.com/)처럼 매주 만든 것을 보여 주는 자리(Ship Night)를 여는 곳도 있습니다.
 
 > [!faq]- 한국에는 어떤 해커하우스가 있나요?
-> 2026년 9월 30일 기준 서울에서 운영 중인 곳으로 카카오벤처스의 [템프서울](https://tmpseoul.com/), 해시드가 지원하는 [VYV House](https://vyv.house/), Team Attention의 [Hacker in Residence](https://www.team-attention.com/ko), 그리고 이 글을 쓴 저희 [NomaDamas](https://nomadamas.github.io/about/)를 찾았습니다. 한국 창업자를 위한 해외 하우스로는 샌프란시스코의 [EO 해커하우스](https://www.linkedin.com/posts/tykim90_big-newseo-house-is-moving-were-relocating-activity-7326005961666506753-L-rP)와 아산나눔재단의 [마루SF](https://asan-nanum.org/press/2025-anf-maru-sf-opening/)가 있습니다.
+> 2026년 9월 30일 기준 서울에서 운영 중인 곳으로 카카오벤처스의 [템프서울](https://tmpseoul.com/), 해시드가 지원하는 [VYV House](https://vyv.house/), Team Attention의 [Hacker in Residence](https://www.team-attention.com/ko), 그리고 저희 [NomaDamas](https://nomadamas.github.io/about/)를 찾았습니다. 한국 창업자를 위한 해외 하우스로는 샌프란시스코의 [EO 해커하우스](https://www.linkedin.com/posts/tykim90_big-newseo-house-is-moving-were-relocating-activity-7326005961666506753-L-rP)와 아산나눔재단의 [마루SF](https://asan-nanum.org/press/2025-anf-maru-sf-opening/)가 있습니다.
 
 > [!faq]- 해커하우스에 들어가려면 어떻게 하나요? 비용은 얼마인가요?
 > 비교한 곳들은 대부분 추천을 받거나 먼저 연락해 이야기를 나눈 뒤 들어갑니다. [템프서울](https://tmpseoul.com/)은 공식 페이지에 지원 버튼이 있고 [VYV House](https://vyv.house/)는 이메일로 문의를 받습니다. 입주자 비용은 비교한 여섯 곳 모두 공식 페이지에 적지 않았으니 문의할 때 함께 물어볼 수 있습니다.
