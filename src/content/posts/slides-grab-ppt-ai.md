@@ -1,6 +1,6 @@
 ---
 title: "PPT 만들어주는 AI, Claude Code로 쓰는 무료 오픈소스 slides-grab: 고칠 곳만 드래그해 수정"
-description: "slides-grab은 Claude Code와 Codex로 PPT를 만들고, 드래그한 곳만 AI가 고치게 하는 무료 오픈소스입니다. 주간 보고 PPT 자동화를 직접 해 보고 Gamma, Genspark와 비교했습니다."
+description: "slides-grab은 Claude Code와 Codex로 PPT를 내 컴퓨터의 파일로 만들고, 드래그한 곳만 AI가 고치게 하는 무료 오픈소스입니다. 고친 곳이 정말 그 부분뿐인지 파일로 확인할 수 있습니다. 주간 보고 PPT 자동화를 직접 해 보고 Gamma, Genspark와 비교했습니다."
 pubDatetime: 2026-10-01T18:21:00+09:00
 author: "안승원 (Aiden)"
 tags: ["slides-grab", "PPT AI", "AI PPT", "PPT 자동화", "claude code", "codex", "오픈소스"]
@@ -13,11 +13,11 @@ featured: true
 
 > **요약**
 >
-> 1. [slides-grab](https://github.com/NomaDamas/slides-grab)은 Claude Code나 Codex 같은 AI 코딩 에이전트가 PPT를 만들게 해 주는 MIT 오픈소스입니다. 슬라이드는 내 컴퓨터에 웹페이지 형식(HTML) 파일로 생기고, 브라우저 편집기에서 고칠 곳을 드래그하면 그 영역만 AI가 고칩니다. 도구는 무료이고, AI 사용량은 쓰는 Claude Code나 Codex 요금제에서 나갑니다.
+> 1. [slides-grab](https://github.com/NomaDamas/slides-grab)은 Claude Code나 Codex 같은 AI 코딩 에이전트가 PPT를 만들게 해 주는 무료 MIT 오픈소스입니다. 슬라이드가 내 컴퓨터에 웹페이지 형식(HTML) 파일로 생겨서, 브라우저 편집기에서 드래그해 고친 뒤 정말 그 부분만 바뀌었는지 파일로 확인할 수 있습니다. AI 사용량은 쓰는 Claude Code나 Codex 요금제에서 나갑니다.
 > 2. CSV 파일 하나와 메모 하나를 주고 "주간 업무 보고 PPT를 만들어 줘"라고 부탁했더니, 구성안과 스타일을 먼저 묻고 차트가 든 6장짜리 PPT를 만들었습니다. 수치는 모두 원자료와 맞았습니다.
-> 3. 과장된 제목 한 줄을 드래그해 고쳐 달라고 하자 57초 뒤 6장 전체에서 그 한 줄만 바뀌었습니다.
+> 3. 과장된 제목 한 줄을 드래그해 고쳐 달라고 하자 57초 뒤에 수정이 끝났고, 파일을 비교해 보니 6장 전체에서 바뀐 곳은 그 한 줄뿐이었습니다.
 > 4. PDF와 PPTX로 내보낼 수 있지만 PPTX는 README에 실험 기능으로 적혀 있습니다. 기본 PPTX는 슬라이드마다 이미지 한 장이라 PowerPoint에서 글자를 고칠 수 없습니다. 보고용 최종 파일은 PDF가 안전합니다.
-> 5. [Gamma](https://gamma.app), [Genspark](https://www.genspark.ai)와의 비교표는 "Gamma, Genspark와 무엇이 다른가" 절에 있습니다.
+> 5. 고칠 곳을 골라 AI에게 맡기는 기능은 [Gamma](https://gamma.app), [Genspark](https://www.genspark.ai)에도 있습니다. slides-grab이 다른 점은 결과가 내 컴퓨터의 파일이라는 것입니다. 비교표는 "Gamma, Genspark와 무엇이 다른가" 절에 있습니다.
 
 ## 목차
 
@@ -33,10 +33,10 @@ featured: true
 초안은 금방 나옵니다. 막히는 건 그다음입니다.
 
 - **파일로 받기**: Genspark 무료 플랜은 PDF, PPTX 내보내기가 안 되고, Gamma 무료 플랜은 받은 파일에 "Made by Gamma" 배지가 붙습니다.
-- **크레딧**: Gamma는 가입할 때 받은 400크레딧을 다 쓰면 다시 채워지지 않습니다. 매주 쓰면 금방 바닥납니다.
+- **크레딧**: Gamma는 가입할 때 받은 400크레딧을 다 쓰면 다시 채워지지 않습니다. 새로 가입한 계정으로 6장을 만들고 제목을 한 번 고치고 나니 331크레딧이 남았습니다.
 - **자료 옮기기**: 웹 서비스라 자료를 매번 붙여 넣거나 올려야 합니다.
 
-Claude Code(클로드 코드)나 Codex(코덱스)를 이미 쓰고 있다면 AI PPT를 만드는 다른 길이 있습니다. 에이전트가 내 폴더의 자료를 읽고 PPT를 파일로 만들고, 고칠 곳을 드래그하면 그 부분만 고치게 하는 것입니다. 그 일을 해 주는 무료 MIT 오픈소스가 slides-grab입니다. 매주 같은 형식으로 만드는 보고 PPT 자동화에 맞춰 직접 써 봤습니다.
+Claude Code(클로드 코드)나 Codex(코덱스)를 이미 쓰고 있다면 AI PPT를 만드는 다른 길이 있습니다. 막힌 세 곳에 차례로 답하면 이렇습니다. 결과는 처음부터 내 컴퓨터의 파일로 생기고, 사용량은 이미 쓰는 Claude Code나 Codex 요금제에서 나가고, 자료는 내 폴더에서 바로 읽습니다. 그 일을 해 주는 무료 MIT 오픈소스가 slides-grab입니다. 슬라이드가 파일이라, 드래그해 고친 뒤 AI가 정말 그 부분만 바꿨는지도 직접 확인할 수 있습니다. 매주 같은 형식의 보고 PPT를 만드는 분이라면 아래 시연의 부탁 문장을 본떠 해 볼 수 있습니다.
 
 ## slides-grab이란?
 
@@ -192,6 +192,7 @@ PPT 만들어주는 AI 서비스 [Gamma](https://gamma.app), [Genspark](https://
 | AI 비용 | 쓰는 에이전트(Claude Code, Codex)의 요금제 사용량 | 크레딧 | 크레딧 |
 | PDF, PPTX 받기 | 됨. PPTX는 실험 기능이고 기본은 슬라이드마다 이미지 한 장 | 됨. "Made by Gamma" 배지가 붙음 | 안 됨(유료 플랜 전용) |
 | 부분 수정 | 편집기에서 영역을 드래그하고 요청 | AI 편집 모드에서 요소를 클릭하고 요청 | Select 모드(요소 클릭), Draw 모드(표시를 그려 모아 보내기) |
+| 자료 넣기 | 내 폴더의 파일을 에이전트가 읽음 | 붙여 넣거나 파일로 올림 | 붙여 넣거나 파일로 올림 |
 | 결과물 | 내 컴퓨터의 HTML 파일 | Gamma 웹 서비스 안의 문서 | Genspark 웹 서비스 안의 문서 |
 
 Genspark는 구성안을 세우고 6장을 쓴 뒤, 레이아웃을 스스로 검사해 어긋난 장을 다시 고쳤습니다.
@@ -212,11 +213,7 @@ Gamma의 AI 편집 모드에서도 slides-grab 편집기처럼 고칠 곳을 직
 ![Genspark AI Slides 편집기 화면. 왼쪽에 슬라이드 썸네일 목록, 가운데 위에 Select, Draw, Edit, Verify content, Fix Layout, Polish Content 도구 막대가 있고, The new editor is here라는 안내 상자 아래로 Introducing AI Workspace 6.0 슬라이드가 떠 있다](@/assets/images/slides-grab-ppt-ai/11-genspark-editor.png)
 *Genspark AI Slides 편집기. 위쪽 도구 막대의 Select, Draw로 고칠 곳을 고를 수 있습니다. 출처: [Genspark 도움말](https://www.genspark.ai/helpcenter/ai-slides)*
 
-고칠 곳을 가리켜 부분 수정하는 기능은 세 도구에 모두 있습니다. 차이는 세 가지입니다.
-
-- 슬라이드가 파일로 남습니다. `slide-01.html` 같은 파일이라 고친 곳을 줄 단위로 비교하고, 예전 버전으로 되돌릴 수 있습니다.
-- 이미 쓰는 에이전트가 만들고 고칩니다. 새 서비스에 가입하거나 크레딧을 따로 사지 않아도 됩니다. 대신 Claude Code나 Codex 요금제의 사용량을 씁니다.
-- 자료를 폴더째 줄 수 있습니다. 이번처럼 CSV와 메모를 폴더에 두고 "이걸로 만들어 줘"라고 하면 에이전트가 읽고 계산합니다.
+고칠 곳을 가리켜 부분 수정하는 기능은 세 도구에 모두 있습니다. slides-grab이 다른 점은 결과가 내 컴퓨터의 파일이라는 것입니다. `slide-01.html` 같은 파일이라 AI가 고친 곳이 정말 그 부분뿐인지 줄 단위로 비교해 확인하고, 마음에 들지 않으면 예전 버전으로 되돌릴 수 있습니다. 이 글의 시연에서도 6장 전체에서 바뀐 곳이 `slide-03.html`의 제목 한 줄뿐인 것을 파일 비교로 확인했습니다. 비용이 나가는 곳과 자료를 넣는 방식의 차이는 위 비교표에 있습니다.
 
 반대로 Gamma, Genspark는 설치 없이 웹에서 시작할 수 있고, Gamma는 무료 플랜에서도 PPTX를 받을 수 있습니다. 명령어 설치가 부담스럽다면 이쪽이 더 쉽습니다.
 
@@ -277,7 +274,7 @@ README는 `convert`(PPTX)와 `figma` 내보내기를 "experimental / unstable"�
 > 설치에 명령어가 필요하지만, 설치 안내 한 줄을 Claude Code나 Codex에 붙여 넣으면 에이전트가 대신 설치합니다. 그다음부터는 평소 말로 부탁하고 브라우저 편집기에서 드래그해 고치면 됩니다.
 
 > [!faq]- Gamma, Genspark보다 나은가요?
-> 쓰는 상황에 따라 다릅니다. Claude Code나 Codex를 이미 쓰고 있고 결과물을 파일로 관리하고 싶다면 slides-grab이 맞습니다. 설치 없이 웹에서 시작하고 싶다면 [Gamma](https://gamma.app)나 [Genspark](https://www.genspark.ai)가 쉽습니다. 무료 플랜의 차이는 본문 비교표에 있습니다.
+> Claude Code나 Codex를 이미 쓰고 있고, AI가 고친 결과를 파일로 확인하며 관리하고 싶다면 slides-grab이 맞습니다. 설치 없이 웹에서 시작하고 싶다면 [Gamma](https://gamma.app)나 [Genspark](https://www.genspark.ai)가 쉽습니다. 무료 플랜의 차이는 본문 비교표에 있습니다.
 
 ## 참고 자료
 
