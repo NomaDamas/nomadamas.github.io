@@ -8,8 +8,12 @@ featured: false
 draft: false
 ogImage: ../../assets/images/korea-hacker-house/00-cover.png
 ---
-![NomaDamas 작업 공간. 몰딩 천장이 있는 방의 벽을 따라 책상이 놓여 있고, 멤버 네 명이 각자 모니터를 여러 대 켜 두고 코드 편집기와 터미널 화면을 보며 작업하고 있다. 방 가운데에는 흰 원형 테이블이 있다](@/assets/images/korea-hacker-house/00-nomadamas-workspace.jpg)
-*NomaDamas 작업 공간입니다. 멤버마다 작업 자리와 모니터를 씁니다.*
+![미국 HBO 드라마 실리콘밸리의 대표 이미지. 흰 배경에 빨간 글씨로 SILICON VALLEY라는 제목이 있고, 그 아래 검은 옷을 입은 주연 배우 다섯 명이 나란히 서서 한 손으로 턱을 괴고 있다](@/assets/images/korea-hacker-house/00-silicon-valley-hbo.jpg)
+*미국 HBO 드라마 '실리콘밸리'(2014~2019). 사진: [HBO](https://www.hbo.com/silicon-valley).*
+
+미드 [실리콘밸리](https://www.hbo.com/silicon-valley)를 보셨나요? 주인공 리처드는 실리콘밸리의 한 집에 얹혀살며 압축 기술 스타트업 파이드 파이퍼를 차립니다. 집주인 얼리치는 자기 집을 스타트업 인큐베이터로 꾸며 놓고, 개발자들을 재워 주는 대신 그들이 차린 회사의 지분 10%를 가져갑니다. 같은 집에서 먹고 자며 밤낮없이 코드를 짜는 그 집이 해커하우스입니다.
+
+드라마에만 있는 집은 아닙니다. 서울에도 해커하우스가 있고 올해 들어 새로 문을 연 곳도 생겼습니다. 이 글은 그중 한 곳인 [NomaDamas](https://nomadamas.github.io/about/)에서 일하는 안승원이 한국의 해커하우스를 찾아 정리한 글입니다.
 
 > **요약**
 >
@@ -50,9 +54,9 @@ ogImage: ../../assets/images/korea-hacker-house/00-cover.png
 
 비교표에는 지금 운영 중인 거주형과 몰입형을 넣었습니다. 행사형은 찾은 행사가 모두 끝나서 비교표에서 뺐습니다.
 
-## 한국 해커하우스 비교표
+## 한국에도 해커하우스가 있을까?
 
-2026년 9월 30일에 각 곳의 공식 페이지와 운영 주체의 발표로 확인했고 NomaDamas는 운영진이 확인한 값으로 채웠습니다. 레지던시(일정 기간 머물며 작업하는 프로그램), 커뮤니티 허브처럼 부르는 이름은 달라도 제품을 만드는 사람들이 일정 기간 한 공간에 모이는 곳이면 넣었고 한국 창업자를 위한 해외 하우스 두 곳도 넣었습니다. 이름을 누르면 출처로 갑니다.
+있습니다. 2026년 9월 30일 기준 서울에서 네 곳, 한국 창업자가 머무는 해외 하우스 두 곳을 찾았습니다. 레지던시(일정 기간 머물며 작업하는 프로그램)나 커뮤니티 허브처럼 부르는 이름은 제각각이지만 만드는 사람들이 한 공간에 모인다는 점은 같습니다. 같이 사는 곳도 있고 낮에만 모이는 곳도 있어서 표 하나로 나란히 놓아 봤습니다. 이름을 누르면 출처로 갑니다.
 
 ![한국 해커하우스 여섯 곳을 카드 여섯 장으로 비교한 그림. 템프서울(/tmp Seoul)은 숙박 없음, 카카오벤처스, 서울(주소 비공개), 3개월, 추천과 공개 모집, 1기 6명(보도 기준). VYV House는 숙박 있음, 투자사 해시드 지원(사이트 표기), 서울(주소는 따로 안내), 기간 안내 없음, 이메일 문의, 입주자 7명(사이트 소개). Team Attention Hacker in Residence는 숙박 안내 없음, Team Attention과 네이버 D2SF 지원, 서울 강남역, 시즌제(2026년 두 번째 시즌 진행 중), 사이트 지원 버튼이나 이메일, 시즌마다 3명 소개. NomaDamas는 숙박 선택(살거나 드나듦), AI 회사 Markr, 서울, 기간 정하지 않음, 공개 모집 없음, 10명 안팎. EO 해커하우스는 숙박 있음, EO Studio, 미국 샌프란시스코, 기간 안내 없음, 추천과 첫 한 달 검증(보도 기준), 규모 안내 없음. 마루SF는 숙박 있음(단기), 아산나눔재단, 미국 산마테오, 4~7주와 1년 최대 16주(2025년 시범 기준), 파트너 기관 추천과 내부 심사(시범 기준), 최대 30명 수용(보도 기준)](@/assets/images/korea-hacker-house/02-compare.png)
 *여섯 곳의 숙박 여부, 위치, 기간, 들어가는 방법, 규모를 카드 한 장씩으로 모았습니다. 같은 내용을 아래 표에 글자로 적었습니다.*
@@ -112,38 +116,20 @@ EO Studio가 미국 샌프란시스코에서 운영하는 거주형 하우스입
 
 ### NomaDamas
 
-저희 [NomaDamas](https://nomadamas.github.io/about/)는 AI 회사 [Markr AI](https://markr.ai)가 운영하는 서울의 AI 오픈소스 해커하우스입니다. 하우스에 사는 멤버와 드나드는 멤버가 섞여 있고 입주 기간을 정하지 않습니다. 이 글을 쓴 곳이라 [NomaDamas 소개](#nomadamas-소개)에 따로 자세히 적었습니다.
+저희 [NomaDamas](https://nomadamas.github.io/about/)는 AI 회사 [Markr AI](https://markr.ai)가 운영하는 서울의 AI 오픈소스 해커하우스입니다. 하우스에 사는 멤버와 드나드는 멤버가 섞여 있고 입주 기간을 정하지 않습니다. 이 글을 쓴 곳이라 [아래](#저희-nomadamas를-소개합니다)에 따로 소개합니다.
 
-## NomaDamas 소개
+## 저희 NomaDamas를 소개합니다
 
-[NomaDamas GitHub](https://github.com/NomaDamas)(코드를 공개하는 사이트)의 조직 소개에는 "AI Open Source Hacker House backed by Markr AI"라고 적혀 있습니다. Markr AI가 뒷받침하는 AI 오픈소스 해커하우스라는 뜻입니다. 10명 안팎의 멤버가 각자 만들고 싶은 것을 만들고 만든 것은 [GitHub](https://github.com/NomaDamas)에 공개합니다.
+![NomaDamas 작업 공간. 몰딩 천장이 있는 방의 벽을 따라 책상이 놓여 있고, 멤버 네 명이 각자 모니터를 여러 대 켜 두고 코드 편집기와 터미널 화면을 보며 작업하고 있다. 방 가운데에는 흰 원형 테이블이 있다](@/assets/images/korea-hacker-house/00-nomadamas-workspace.jpg)
+*NomaDamas 작업 공간입니다. 멤버마다 작업 자리와 모니터를 씁니다.*
 
-### Markr AI가 운영합니다
+드라마 속 그 집이 서울에 있다면 아마 이런 모습일 겁니다. [NomaDamas](https://nomadamas.github.io/about/)는 AI 회사 [Markr AI](https://markr.ai)가 운영하는 AI 오픈소스 해커하우스입니다. 해커하우스라는 말이 낯선 분께는 "개발 좋아하는 사람들의 하숙집"이라고 하면 금방 알아들으십니다. 여기서 먹고 자며 만드는 멤버도 있고 출근하듯 드나드는 멤버도 있습니다.
 
-[Markr AI](https://markr.ai)는 자신을 "다음 세대 산업을 위한 AI를 연구하고 사업화하는(We research and commercialise AI for the next generation of industries)" 회사라고 소개합니다. [NomaDamas](https://nomadamas.github.io/about/)의 공간과 활동은 Markr AI가 운영합니다. Markr AI의 GitHub 조직 [Marker-Inc-Korea](https://github.com/Marker-Inc-Korea)에는 오픈소스 [AutoRAG](https://github.com/Marker-Inc-Korea/AutoRAG)가 있습니다. 컴퓨터 안의 문서를 AI 에이전트가 찾아 쓰게 해 주는 도구이고 star를 5,110개 받았습니다(2026년 10월 1일 조회). 자세한 내용은 [AutoRAG 소개 글](/posts/autorag-agent-intro/)에 있습니다.
+멋을 낸 사무실과는 거리가 멉니다. 밤늦게 게임을 하다가도 이야기가 AI로 번지고, 거기서 나온 아이디어로 그 자리에서 저장소를 만들어 다음 날 공개합니다. 실리콘밸리 창업자들이 차고에서 회사를 시작했듯이 저희도 일단 만들어 내놓고 반응을 보며 키웁니다. 혼자 시작한 프로젝트에 한두 명이 붙어 판이 커지는 일도 생깁니다. 매주 화요일 저녁에는 다 같이 모여 한 주 동안 만든 것을 보여 줍니다.
 
-### 이렇게 지냅니다
+### 만든 것은 전부 공개합니다
 
-2026년 8월에 멤버들에게 밖에서 [NomaDamas](https://nomadamas.github.io/about/)를 어떻게 설명하는지 물었습니다. 답에는 이런 말이 나왔습니다.
-
-- "개발 좋아하는 사람들끼리 하는 하숙집": 잠도 자고 일도 할 수 있는 해커하우스라는 뜻입니다. 해커하우스라는 말을 처음 듣는 사람에게 이렇게 설명한다고 합니다.
-- "샌프란시스코에 차고(garage)가 있듯이": 실리콘밸리 창업자들이 차고에서 제품을 만들던 것처럼 함께 지내며 만든 것과 배운 것을 나눈다는 뜻입니다.
-- "너드들끼리 모여서 재미난 것을 만드는 공간": 무엇을 만들어야 한다는 범위를 정해 두지 않습니다.
-
-공간은 화려하게 꾸미기보다 집처럼 지내는 쪽을 택했습니다. 놀러 온 사람들은 가정적이고 포근하다고 말하고 멤버들은 작은 규모로 가깝게 지내는 것을 중요하게 여깁니다.
-
-- **사는 방식**: 하우스에 사는 멤버와 드나드는 멤버가 섞여 있고 출퇴근 시간은 정해져 있지 않습니다.
-- **기간**: 입주 기간을 정하지 않습니다.
-- **지원**: 작업 자리와 모니터를 줍니다.
-- **정기 모임**: 매주 화요일 저녁 멤버들이 모여 한 주 동안 만든 것을 공유합니다.
-
-### 일단 만들어 봅니다
-
-멤버들이 꼽은 NomaDamas다운 순간은 대부분 실행에 관한 것이었습니다. 밤에 떠오른 아이디어로 그 자리에서 프로젝트를 시작하고 다음 날 저장소를 공개합니다. 자주 하는 말은 "일단 해 보자(just do it)"이고 멤버들이 적은 핵심 가치는 만들고(Build), 내놓고(Ship), 함께 성장한다(Grow)입니다. 혼자 시작한 프로젝트에 두 사람 이상이 붙어 결과가 커질 때를 가장 NomaDamas다운 순간으로 꼽은 멤버도 있었습니다.
-
-### 만든 오픈소스
-
-[NomaDamas GitHub](https://github.com/NomaDamas)는 2023년 7월에 만들었고 2026년 10월 1일 기준 공개 저장소 87개, star 합계 12,056개입니다. star는 개발자들이 관심 표시로 누르는 버튼입니다. star가 많은 순서로 여섯 개를 골랐습니다.
+그렇게 만든 것은 [NomaDamas GitHub](https://github.com/NomaDamas)(코드를 공개하는 사이트)에 올립니다. 2023년 7월부터 공개 저장소 87개를 올렸고 개발자들이 관심 표시로 누르는 star를 모두 12,056개 받았습니다(2026년 10월 1일 기준). 가장 많이 받은 여섯 개는 이렇습니다.
 
 | 저장소 | 무엇을 하나 | star |
 |---|---|---|
@@ -154,15 +140,16 @@ EO Studio가 미국 샌프란시스코에서 운영하는 거주형 하우스입
 | [awesome-korean-llm](https://github.com/NomaDamas/awesome-korean-llm) | 한국어 대형 언어 모델을 모은 목록입니다 | 482 |
 | [bananatape](https://github.com/NomaDamas/bananatape) | Codex 구독으로 이미지를 만들고 고치는 디자인 도구입니다 | 188 |
 
-### 해커톤도 엽니다
+운영사 [Markr AI](https://markr.ai)도 오픈소스를 공개합니다. 컴퓨터 안의 문서를 AI 에이전트가 찾아 쓰게 해 주는 [AutoRAG](https://github.com/Marker-Inc-Korea/AutoRAG)는 star를 5,110개 받았습니다. 자세한 내용은 [AutoRAG 소개 글](/posts/autorag-agent-intro/)에 있습니다.
+
+### 놀 때도 만듭니다
 
 ![왼쪽은 NomaDamas 멤버 두 명이 등받이가 높은 의자에 앉아 한 책상에서 작업하는 뒷모습이다. 위 모니터에는 터미널이, 아래 모니터에는 브라우저에 띄운 게임 화면이 있다. 오른쪽은 변기톤(BYEONGI-THON) 해커톤 포스터로 HACKATHON NO.01, 2026.05.14 THU부터 05.19 TUE까지라는 날짜, 큰 제목 변기톤, AI 서비스 로고가 그려진 동전 세 개가 변기로 떨어지는 그림, '토큰을 변기에 넣고 내려.'라는 문구, 화장실 관련 product를 빌드해서 데모한다는 규칙, HOST 칸의 NOMADAMAS와 markr, SPONSOR 칸의 SISYPHUS LABS가 있다](@/assets/images/korea-hacker-house/08-nomadamas-desk-poster.jpg)
 *왼쪽은 NomaDamas 멤버들이 작업하는 모습, 오른쪽은 NomaDamas와 Markr가 연 해커톤 '변기톤' 포스터입니다. 출처: [Yeachan Heo의 링크드인 글](https://kr.linkedin.com/posts/yeachan-heo-225b02219_%ED%95%9C%EA%B5%AD-%EC%B5%9C%EA%B3%A0%EC%9D%98-%ED%95%B4%EC%BB%A4%ED%95%98%EC%9A%B0%EC%8A%A4-%EB%85%B8%EB%A7%88%EB%8B%A4%EB%A7%88%EC%8A%A4-%EB%8B%A8%EC%B2%B4%EC%83%9D%ED%99%9C%EC%9D%84-%EC%A1%B0%EA%B8%88%EB%A7%8C-%EB%8D%94-%EC%A2%8B%EC%95%84%ED%96%88%EB%8B%A4%EB%A9%B4-%EC%A7%91%EC%97%90-activity-7465683925131038720-ZpBI).*
 
-[NomaDamas](https://nomadamas.github.io/about/)는 규칙 하나로 성격이 정해지는 해커톤을 열거나 함께 운영합니다.
+올해 5월에는 Markr와 함께 해커톤 변기톤을 열었습니다. 주제는 화장실입니다. "토큰을 변기에 넣고 내려."라는 문구를 걸고 엿새 동안 화장실과 관련된 제품을 만들어 시연했습니다.
 
-- **변기톤**(2026년 5월 14~19일): NomaDamas와 Markr가 주최하고 Sisyphus Labs가 후원했습니다. "토큰을 변기에 넣고 내려."라는 문구를 걸고 화장실과 관련된 제품을 만들어 시연하는 것이 규칙이었습니다.
-- **[랄프톤 서울 2회차](https://luma.com/v68q8un9)**(2026년 3월 29일): Team Attention이 주최하고 OpenAI가 후원한 해커톤입니다. AI 에이전트가 코딩하는 동안 노트북을 만지고 싶으면 가재 옷을 입어야 한다는 규칙이 있습니다. NomaDamas 멤버들이 호스트로 참여했습니다.
+3월에는 Team Attention이 주최한 [랄프톤 서울 2회차](https://luma.com/v68q8un9)에 NomaDamas 멤버들이 호스트로 참여했습니다. AI 에이전트가 코딩하는 동안 노트북을 만지고 싶으면 가재 옷을 입어야 한다는 규칙이 있는 해커톤입니다.
 
 ## 들어가려면
 
