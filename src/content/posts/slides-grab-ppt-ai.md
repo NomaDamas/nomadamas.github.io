@@ -7,8 +7,9 @@ tags: ["slides-grab", "PPT AI", "AI PPT", "PPT 자동화", "claude code", "codex
 ogImage: ../../assets/images/slides-grab-ppt-ai/00-cover.png
 featured: true
 ---
-![slides-grab 편집기 화면. 왼쪽에 slides-grab 제목 슬라이드가 떠 있고 부제 Easy way to edit slides가 선택되어 있으며, 오른쪽 패널에서 선택한 글자의 내용, 색, 크기, 굵기, 정렬을 고칠 수 있다](@/assets/images/slides-grab-ppt-ai/00-slides-grab-demo.png)
-*[slides-grab 저장소](https://github.com/NomaDamas/slides-grab) README의 데모 영상 한 장면입니다.*
+<video src="/videos/slides-grab-ppt-ai/slides-grab-demo.mp4" poster="/videos/slides-grab-ppt-ai/slides-grab-demo.jpg" controls muted playsinline preload="metadata" width="100%" aria-label="slides-grab 편집기 데모 영상. 슬라이드의 로고 부분을 드래그해 빨간 박스로 감싸고 오른쪽 입력창에 수정 요청을 적어 AI가 그 부분만 고치는 과정"></video>
+
+*[slides-grab 저장소](https://github.com/NomaDamas/slides-grab) README의 데모 영상입니다(29초, 소리 없음). 슬라이드에서 고칠 곳을 드래그하고 요청을 적으면 AI가 그 부분만 고칩니다.*
 
 > **요약**
 >
@@ -20,13 +21,22 @@ featured: true
 
 ## 목차
 
-## AI로 만든 PPT, 고칠 때 막히는 곳
+## 발표자료를 AI로 만들 수는 없을까?
 
-AI에게 PPT를 만들어 달라고 하면 초안은 금방 나옵니다. 막히는 건 그다음입니다. 3장 제목 한 줄만 바꾸고 싶은데 다시 만들면 멀쩡하던 다른 장까지 바뀌고, 말로 "세 번째 장 위쪽 제목"이라고 설명하면 엉뚱한 곳을 고치기도 합니다.
+매주 올리는 보고 PPT는 형식이 거의 같습니다. 엑셀에서 숫자를 옮기고, 차트를 다시 그리고, 제목을 다듬는 일이 매번 되풀이됩니다. 그러다 보면 한 번쯤 이런 생각이 듭니다. "발표자료를 AI로 만들 수는 없을까?"
 
-그래서 PPT 만들어주는 AI 서비스들은 고칠 곳을 가리키는 기능을 넣고 있습니다. [Gamma](https://gamma.app)는 Gamma 5(공개 베타)에서 요소를 클릭해 AI로 고치는 편집 모드를 내놨고, [Genspark](https://www.genspark.ai)는 슬라이드에 표시를 그려 수정 요청을 모아 보내는 Draw 모드가 있습니다.
+검색하면 [Gamma](https://gamma.app)와 [Genspark](https://www.genspark.ai)가 먼저 나옵니다. 둘 다 써 봤습니다. 이 글의 시연과 같은 자료(CSV 표와 메모)를 붙여 넣고 주간 업무 보고 PPT 6장을 부탁하자, 둘 다 차트가 든 6장을 만들었습니다.
 
-slides-grab은 Claude Code나 Codex로 PPT를 만들고, 드래그한 영역만 고치게 해 주는 무료 MIT 오픈소스입니다. 결과물은 웹 서비스 안이 아니라 내 컴퓨터의 파일로 남습니다.
+![Gamma가 만든 주간 업무 보고 PPT. 왼쪽 채팅 패널에 붙여 넣은 CSV와 메모, 6장 구성 계획이 있고, 오른쪽에 9월 5주차 고객지원 주간 업무 보고 표지 슬라이드가 사무실 사진 위에 떠 있다](@/assets/images/slides-grab-ppt-ai/12-gamma-deck.png)
+*2026-10-01, Gamma 무료 플랜으로 만든 결과입니다. Genspark 결과는 "Gamma, Genspark와 무엇이 다른가" 절에 있습니다.*
+
+초안은 금방 나옵니다. 막히는 건 그다음입니다.
+
+- **파일로 받기**: Genspark 무료 플랜은 PDF, PPTX 내보내기가 안 되고, Gamma 무료 플랜은 받은 파일에 "Made by Gamma" 배지가 붙습니다.
+- **크레딧**: Gamma는 가입할 때 받은 400크레딧을 다 쓰면 다시 채워지지 않습니다. 매주 쓰면 금방 바닥납니다.
+- **자료 옮기기**: 웹 서비스라 자료를 매번 붙여 넣거나 올려야 합니다.
+
+Claude Code나 Codex를 이미 쓰고 있다면 다른 길이 있습니다. 에이전트가 내 폴더의 자료를 읽고 PPT를 파일로 만들고, 고칠 곳을 드래그하면 그 부분만 고치게 하는 것입니다. 그 일을 해 주는 무료 MIT 오픈소스가 slides-grab입니다.
 
 ## slides-grab이란?
 
@@ -118,7 +128,13 @@ Claude Code는 slides-grab 스킬을 불러와 자료를 읽은 뒤, 만들기 �
 npx slides-grab edit --slides-dir decks/weekly-support-w5
 ```
 
-브라우저에 편집기가 뜨면 3장으로 가서 제목 두 줄을 드래그로 감싸고, 오른쪽 입력창에 고칠 내용을 적습니다. 고칠 때 쓸 AI 모델도 여기서 고를 수 있습니다.
+브라우저에 편집기가 뜨면 3장으로 가서 제목 두 줄을 드래그로 감싸고, 오른쪽 입력창에 고칠 내용을 적습니다. 고칠 때 쓸 AI 모델도 여기서 고를 수 있습니다. 전체 과정은 이렇습니다.
+
+<video src="/videos/slides-grab-ppt-ai/edit-drag.mp4" poster="/videos/slides-grab-ppt-ai/edit-drag.jpg" controls muted playsinline preload="metadata" width="100%" aria-label="slides-grab 편집기 녹화. 3장으로 넘어가 제목 두 줄을 드래그해 빨간 박스로 감싸고, 수정 요청을 입력하고 claude-opus-4-8 모델을 골라 실행하면, AI가 제목만 고친 뒤 초록 박스와 Check 버튼이 나타난다"></video>
+
+*2026-10-01 녹화, slides-grab 1.5.2 편집기(24초, 소리 없음). AI가 고치는 동안의 93초는 20배 빠르게 돌렸습니다. 아래 캡처와는 따로 한 번 더 실행한 녹화라 걸린 시간과 바뀐 문구가 조금 다릅니다.*
+
+캡처로 한 단계씩 보면 이렇습니다.
 
 ![slides-grab 편집기. 3/6장 차트 슬라이드의 제목 두 줄이 빨간 박스 1번으로 감싸져 있고, 오른쪽 Prompt 칸에 5주차 문의 471건은 1~2주차보다 아직 많아서 두 지표 모두 회복은 과장이야, 3주차 정점 대비 개선됐다는 사실만 말하도록 제목을 고쳐 줘라는 요청이, Model 칸에 claude-opus-4-8이 선택되어 있다. 아래 Run HTML Edit 버튼이 있다](@/assets/images/slides-grab-ppt-ai/06-editor-bbox.png)
 *2026-10-01 캡처, slides-grab 1.5.2 편집기. 빨간 박스가 고칠 영역이고, 박스를 여러 개 그려 한 번에 보낼 수도 있습니다.*
@@ -168,15 +184,30 @@ slides-grab은 마지막 검토 뒤에 슬라이드가 바뀌면 PDF, PPTX 내�
 
 ## Gamma, Genspark와 무엇이 다른가
 
-PPT 만들어주는 AI 서비스 [Gamma](https://gamma.app), [Genspark](https://www.genspark.ai)의 무료 플랜과 비교했습니다. 두 서비스의 값은 공식 도움말에서 확인했습니다.
+PPT 만들어주는 AI 서비스 [Gamma](https://gamma.app), [Genspark](https://www.genspark.ai)의 무료 플랜에 slides-grab 시연과 같은 자료를 주고 직접 써 봤습니다. 요금과 내보내기 조건은 공식 도움말에서 확인했습니다.
 
 | 항목 | slides-grab | [Gamma](https://gamma.app) 무료 플랜 | [Genspark](https://www.genspark.ai) 무료 플랜 |
 |---|---|---|---|
 | 도구 비용 | 없음(MIT 오픈소스) | 가입할 때 400크레딧, 다시 채워지지 않음 | 하루 100크레딧(평생 무료 한도 안에서) |
 | AI 비용 | 쓰는 에이전트(Claude Code, Codex)의 요금제 사용량 | 크레딧 | 크레딧 |
 | PDF, PPTX 받기 | 됨. PPTX는 실험 기능이고 기본은 슬라이드마다 이미지 한 장 | 됨. "Made by Gamma" 배지가 붙음 | 안 됨(유료 플랜 전용) |
-| 부분 수정 | 편집기에서 영역을 드래그하고 요청 | AI 편집 모드(Gamma 5 공개 베타)에서 요소를 클릭하고 요청 | Select 모드(요소 클릭), Draw 모드(표시를 그려 모아 보내기) |
+| 부분 수정 | 편집기에서 영역을 드래그하고 요청 | AI 편집 모드에서 요소를 클릭하고 요청 | Select 모드(요소 클릭), Draw 모드(표시를 그려 모아 보내기) |
 | 결과물 | 내 컴퓨터의 HTML 파일 | Gamma 웹 서비스 안의 문서 | Genspark 웹 서비스 안의 문서 |
+
+Genspark는 구성안을 세우고 6장을 쓴 뒤, 레이아웃을 스스로 검사해 어긋난 장을 다시 고쳤습니다.
+
+![Genspark AI 슬라이드 화면. 왼쪽에 작업 기록(6장 모두 작성했습니다, 슬라이드 레이아웃 확인, 4장에서 정리할 게 보여 자기 교정하겠다는 문장)이 있고, 가운데에 6장 썸네일, 오른쪽에 5주 동안 2,366건이 들어왔고 평균 42분 안에 답했다는 요약 슬라이드가 크게 떠 있다. 위쪽에 발표, 내보내기 버튼이 있다](@/assets/images/slides-grab-ppt-ai/15-genspark-deck.png)
+*2026-10-01, Genspark 무료 플랜. 2,366건은 5주 접수 합계, 42분은 5주 첫 응답 평균(41.8분)으로 원자료와 맞습니다.*
+
+Gamma의 AI 편집 모드에서도 slides-grab 편집기처럼 고칠 곳을 직접 고를 수 있습니다. 3장 제목을 클릭하자 그 요소에 대한 입력창이 열렸습니다.
+
+![Gamma AI 편집 모드. 3장 제목 3주차 문의 급증은 결제 오류 공지 지연이 원인이 파란 테두리로 선택되어 있고, 바로 아래 입력창에 5주차에 회복됐다는 결론까지 보이도록 제목을 한 줄로 고쳐 줘라는 요청이 적혀 있다. 위에 편집할 카드 또는 요소 선택 안내가 떠 있다](@/assets/images/slides-grab-ppt-ai/13-gamma-select-edit.png)
+*2026-10-01, Gamma 무료 플랜. 왼쪽 아래 채팅창에도 선택한 항목이 표시됩니다.*
+
+50초 안에 제목 한 줄만 바뀌었고, 채팅 패널에 원본과 수정본 미리보기가 나란히 붙었습니다.
+
+![Gamma 수정 결과. 3장 제목이 3주차 문의 급증, 결제 오류 공지 지연 후 5주차에 회복으로 바뀌었고 차트와 오른쪽 설명은 그대로다. 왼쪽 채팅 패널에 3번 슬라이드 제목을 바꿨다는 답과 원본, 수정됨 썸네일, 전후 비교하기 버튼이 있다](@/assets/images/slides-grab-ppt-ai/14-gamma-edited.png)
+*2026-10-01, Gamma 무료 플랜.*
 
 ![Genspark AI Slides 편집기 화면. 왼쪽에 슬라이드 썸네일 목록, 가운데 위에 Select, Draw, Edit, Verify content, Fix Layout, Polish Content 도구 막대가 있고, The new editor is here라는 안내 상자 아래로 Introducing AI Workspace 6.0 슬라이드가 떠 있다](@/assets/images/slides-grab-ppt-ai/11-genspark-editor.png)
 *Genspark AI Slides 편집기. 위쪽 도구 막대의 Select, Draw로 고칠 곳을 고를 수 있습니다. 출처: [Genspark 도움말](https://www.genspark.ai/helpcenter/ai-slides)*
