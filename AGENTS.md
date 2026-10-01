@@ -294,13 +294,15 @@ scripts/analytics-report.sh clarity 1         # Clarity 최근 1일
 2. `dig +short blog.nomadamas.org CNAME`이 `nomadamas.github.io.`인지 본다.
 3. 저장소 Settings > Pages > Custom domain에 `blog.nomadamas.org`를 넣고 Enforce HTTPS를 켠다.
    Actions로 배포하므로 `CNAME` 파일은 만들지 않고, 만들어도 무시된다. 인증서 발급은 최대 한 시간 걸린다.
-   상태는 `gh api repos/NomaDamas/nomadamas.github.io/pages --jq .https_certificate`로 본다.
+   상태는 `gh api repos/NomaDamas/nomadamas.github.io/pages --jq .https_certificate`로 본다(`approved`가 되면 붙은 것이다).
+   **커스텀 도메인을 새로 넣으면 Enforce HTTPS가 꺼진 상태로 돌아간다.** 인증서가 `approved`가 된 뒤에 다시 켠다.
 4. 도메인을 쓰는 곳을 바꾼다. `astro-paper.config.ts`의 `site.url` 하나가 canonical, sitemap,
    OG 이미지, RSS, `/llms.txt`의 기준이 된다(`astro.config.ts`는 이 값을 그대로 쓴다).
    `public/robots.txt`의 Sitemap 줄과 `scripts/setup-seo-services.sh`의 `SITE_URL`도 같이 바꾼다.
    안 바꾸면 canonical이 옛 주소를 가리킨다.
-5. `curl -sI https://blog.nomadamas.org`에 `server: GitHub.com`이 오는지(프록시 안 탔는지),
-   `curl -sI https://nomadamas.github.io/`가 `location: https://blog.nomadamas.org/`인지 본다.
+5. `curl -sI https://blog.nomadamas.org`에 `server: GitHub.com`이 오는지(프록시 안 탔는지)와
+   `curl -sIL https://nomadamas.github.io/`가 최종 200인지 본다. 루트는 인증서가 붙기 전에 만들어진
+   리다이렉트라 `http://blog.nomadamas.org/`를 한 번 거쳐 올라간다(깊은 경로는 곧바로 https).
 6. Search Console과 네이버 서치어드바이저에 새 주소를 추가하고 사이트맵을 다시 제출한다.
    옛 주소 속성은 리다이렉트가 잡히는지 보려고 남겨 둔다. 글 주소(`/posts/...`)는 그대로라
    페이지 색인은 넘어오지만, 옮긴 직후 며칠은 새 주소 노출이 줄어든다.
