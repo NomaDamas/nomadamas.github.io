@@ -1,10 +1,12 @@
 # NomaDamas 블로그
 
 NomaDamas 조직 블로그의 정본이다. 글과 이미지가 전부 이 저장소에 있고, `main`에 push하면
-GitHub Actions가 빌드해 GitHub Pages로 배포한다. 현재 주소는 `https://nomadamas.github.io`.
+GitHub Actions가 빌드해 GitHub Pages로 배포한다. 주소는 `https://blog.nomadamas.org`이고
+기본 주소 `nomadamas.github.io`는 그쪽으로 넘어간다.
 
-저장소 이름이 곧 주소다. `<org>.github.io`는 org 루트 사이트라 경로 접두사가 붙지 않는다.
-이름을 바꾸면 주소가 바뀌고 색인이 초기화되므로 바꾸지 않는다.
+저장소 이름은 `nomadamas.github.io`로 둔다. `<org>.github.io`는 org 루트 사이트라 경로 접두사가
+붙지 않는다. 이름을 바꾸면 기본 주소가 바뀌고 색인이 초기화되므로 바꾸지 않는다. 주소를 바꾸는
+일은 저장소 이름이 아니라 커스텀 도메인 설정으로 한다("커스텀 도메인" 절).
 
 velog `@nomadamas`와 dev.to는 재게시 채널이다. 정본이 아니다.
 선정 근거는 우산 저장소의 `09-docs/blog-platform-260922.html`과 `09-docs/blog-images-seo-260922.html`에 있다.
@@ -280,20 +282,38 @@ scripts/analytics-report.sh clarity 1         # Clarity 최근 1일
 - **GA4 표준 보고서는 반영이 늦다.** 방문 뒤 하루에서 이틀까지 걸려, 공유 직후 몇 시간은 Clarity에만 잡힐 수 있다.
 - **권한을 끊을 때**는 GA4 관리의 속성 액세스 관리에서 서비스 계정을 빼고, Clarity 설정에서 토큰을 지운다.
 
-## 나중에: 커스텀 도메인 `blog.nomadamas.org`
+## 커스텀 도메인 `blog.nomadamas.org`
 
-지금은 `nomadamas.github.io`로 서비스한다. 자체 도메인으로 옮길 때만 아래를 한다.
-**순서를 지킨다. DNS가 먼저다.** 반대로 하면 안 뜨는 주소로 리다이렉트된다.
+2026-10-01에 `nomadamas.github.io`에서 옮겼다. 주소를 바꿀 때는 아래 순서를 지킨다.
+**DNS가 먼저다.** 반대로 하면 안 뜨는 주소로 넘어간다. GitHub Pages는 org 사이트에 커스텀
+도메인이 걸리면 `<org>.github.io` 요청을 그쪽으로 보낸다.
 
-1. 상사에게 Cloudflare DNS 두 건을 한 번에 요청한다.
-   `blog` CNAME -> `nomadamas.github.io`, **반드시 회색 구름(DNS only)**.
-   프록시를 켜면 인증서 발급이 실패하고, GitHub Pages의 크롤러 개방 상태도 덮인다.
-   그리고 org Settings > Pages > Verified domains에서 발급되는 TXT 레코드.
-   TXT가 없으면 사이트를 내린 뒤 다른 사람이 서브도메인을 가져갈 수 있다.
-2. DNS 반영 확인 후 저장소 Settings > Pages > Custom domain 설정, Enforce HTTPS 체크.
-3. `astro-paper.config.ts`의 `site.url`, `astro.config.ts`의 `site`와 `public/robots.txt`의 Sitemap 줄을 새 도메인으로 바꾼다.
+1. Cloudflare(`nomadamas.org` zone)에 `blog` CNAME -> `nomadamas.github.io`를 만든다.
+   **반드시 회색 구름(DNS only).** 프록시(주황 구름)를 켜면 GitHub Pages가 Let's Encrypt
+   인증서를 못 받고, 크롤러 개방 상태도 덮인다. k-skill이 쓰는 `k-skill.nomadamas.org`와 같은 zone이다.
+2. `dig +short blog.nomadamas.org CNAME`이 `nomadamas.github.io.`인지 본다.
+3. 저장소 Settings > Pages > Custom domain에 `blog.nomadamas.org`를 넣고 Enforce HTTPS를 켠다.
+   Actions로 배포하므로 `CNAME` 파일은 만들지 않고, 만들어도 무시된다. 인증서 발급은 최대 한 시간 걸린다.
+   상태는 `gh api repos/NomaDamas/nomadamas.github.io/pages --jq .https_certificate`로 본다.
+4. 도메인을 쓰는 곳을 바꾼다. `astro-paper.config.ts`의 `site.url` 하나가 canonical, sitemap,
+   OG 이미지, RSS, `/llms.txt`의 기준이 된다(`astro.config.ts`는 이 값을 그대로 쓴다).
+   `public/robots.txt`의 Sitemap 줄과 `scripts/setup-seo-services.sh`의 `SITE_URL`도 같이 바꾼다.
    안 바꾸면 canonical이 옛 주소를 가리킨다.
-4. `curl -sI https://blog.nomadamas.org`로 `server: GitHub.com` 확인 (프록시 안 탔는지).
+5. `curl -sI https://blog.nomadamas.org`에 `server: GitHub.com`이 오는지(프록시 안 탔는지),
+   `curl -sI https://nomadamas.github.io/`가 `location: https://blog.nomadamas.org/`인지 본다.
+6. Search Console과 네이버 서치어드바이저에 새 주소를 추가하고 사이트맵을 다시 제출한다.
+   옛 주소 속성은 리다이렉트가 잡히는지 보려고 남겨 둔다. 글 주소(`/posts/...`)는 그대로라
+   페이지 색인은 넘어오지만, 옮긴 직후 며칠은 새 주소 노출이 줄어든다.
+7. org Settings > Pages > Verified domains에서 `nomadamas.org`를 확인한다. TXT 레코드 하나를
+   Cloudflare에 넣는 일이다. 확인하지 않으면 다른 사람이 `blog.nomadamas.org`를 자기 Pages
+   도메인으로 등록해 우리 서브도메인에 자기 사이트를 띄울 수 있다.
+
+글 본문에 남은 `https://nomadamas.github.io/...` 링크는 그대로 둔다. 옛 주소가 새 주소로 넘어가므로
+깨지지 않고, 여러 글을 한꺼번에 고치면 그 글들의 "최근 수정"이 전부 바뀐다.
+
+조직 사이트에 커스텀 도메인을 걸면 같은 계정의 프로젝트 사이트도 그 도메인 아래로 온다
+(`nomadamas.github.io/slides-grab/` -> `blog.nomadamas.org/slides-grab/`). slides-grab 저장소의
+`site`가 아직 옛 주소면 그 저장소가 만드는 canonical과 절대주소 링크도 새 주소로 바꾼다.
 
 ---
 

@@ -28,4 +28,4 @@ User-agent: Google-Extended
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://nomadamas.github.io/sitemap-index.xml
+Sitemap: https://blog.nomadamas.org/sitemap-index.xml
