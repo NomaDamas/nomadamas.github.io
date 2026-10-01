@@ -48,8 +48,6 @@ NomaDamas 리더 김동규([@vkehfdl1](https://github.com/vkehfdl1))가 만들�
 | 지원 에이전트 | Claude Code, Codex |
 | 라이선스 | MIT |
 
-*2026-10-01 GitHub API와 npm으로 조회했습니다.*
-
 ## Claude Code로 PPT 만들기
 
 직접 해 봤습니다. 시연은 가상 회사의 주간 업무 보고로 했습니다. 어떤 자료를 줬는지 먼저 보면 결과를 원자료와 맞춰 볼 수 있습니다.
@@ -104,10 +102,11 @@ Claude Code는 slides-grab 스킬을 불러와 자료를 읽은 뒤, 만들기 �
 
 2차 검토는 둘 다 통과했습니다. 고치지 않은 작은 지적 4건은 `design-debt.md` 파일에 남겼습니다. 완성된 PPT는 이렇습니다.
 
-![완성된 6장. 1장 검은 표지에 한빛랩스 고객지원팀 주간 업무 보고 9월 5주차, 2장 FAQ 자동 답변 도입 후 첫 응답 29분 만족도 4.4점으로 5주 중 가장 좋았습니다라는 제목 아래 471건, 98.9%, 29분, 4.4점 KPI 네 칸, 3장 막대와 선이 겹친 5주 추이 차트와 만족도 표, 4장 원인과 조치 두 칸 비교, 5장 환불 문의 평균 처리 1.8일, 6장 다음 주 계획 두 항목(실행, 결정 요청)](@/assets/images/slides-grab-ppt-ai/05-deck-6.png)
-*2026-10-01 `slides-grab png`로 렌더링, slides-grab 1.5.2. 3장 제목은 다음 절에서 고친 뒤의 모습입니다.*
+<object data="/files/slides-grab-ppt-ai/weekly-support-w5.pdf#navpanes=0&view=FitH" type="application/pdf" width="100%" height="480" aria-label="slides-grab으로 만든 주간 업무 보고 PDF 6쪽">
+  <p><a href="/files/slides-grab-ppt-ai/weekly-support-w5.pdf">주간 업무 보고 PDF 열기(6쪽)</a></p>
+</object>
 
-표지를 뺀 다섯 장 아래에 출처(`weekly-support.csv`, `9월 5주차 팀 메모`)가 붙었습니다. 3장 차트는 문의 건수(막대)와 첫 응답 시간(선)을 한 그래프에 겹쳐 그렸습니다.
+*slides-grab으로 만든 PDF입니다. 스크롤해서 6쪽을 모두 볼 수 있고, 화면에 보이지 않으면 [PDF 파일](/files/slides-grab-ppt-ai/weekly-support-w5.pdf)을 열면 됩니다. 3장 제목은 다음 절에서 고친 뒤의 모습입니다.*
 
 ### 3. 고칠 곳만 드래그해서 수정하기
 
@@ -179,13 +178,8 @@ PPT 만들어주는 AI 서비스 [Gamma](https://gamma.app), [Genspark](https://
 | 부분 수정 | 편집기에서 영역을 드래그하고 요청 | AI 편집 모드(Gamma 5 공개 베타)에서 요소를 클릭하고 요청 | Select 모드(요소 클릭), Draw 모드(표시를 그려 모아 보내기) |
 | 결과물 | 내 컴퓨터의 HTML 파일 | Gamma 웹 서비스 안의 문서 | Genspark 웹 서비스 안의 문서 |
 
-*Gamma, Genspark는 2026-10-01 공식 도움말 기준입니다. 출처는 글 끝 참고 자료에 있습니다.*
-
 ![Genspark AI Slides 편집기 화면. 왼쪽에 슬라이드 썸네일 목록, 가운데 위에 Select, Draw, Edit, Verify content, Fix Layout, Polish Content 도구 막대가 있고, The new editor is here라는 안내 상자 아래로 Introducing AI Workspace 6.0 슬라이드가 떠 있다](@/assets/images/slides-grab-ppt-ai/11-genspark-editor.png)
-*[Genspark AI Slides 도움말](https://www.genspark.ai/helpcenter/ai-slides)의 편집기 이미지입니다. 위쪽 도구 막대의 Select, Draw가 부분 수정 기능입니다.*
-
-![별이 뜬 파란 그라데이션 하늘 위에 흰 글씨로 GAMMA라고 적힌 Gamma 대표 이미지](@/assets/images/slides-grab-ppt-ai/12-gamma.png)
-*[Gamma 도움말](https://help.gamma.app/en/articles/8033284-can-i-edit-my-content-using-ai)에 실린 Gamma 대표 이미지입니다. AI 편집 모드의 화면 캡처는 도움말에 없습니다.*
+*Genspark AI Slides 편집기. 위쪽 도구 막대의 Select, Draw로 고칠 곳을 고를 수 있습니다. 출처: [Genspark 도움말](https://www.genspark.ai/helpcenter/ai-slides)*
 
 고칠 곳을 가리켜 부분 수정하는 기능은 세 도구에 모두 있습니다. 차이는 세 가지입니다.
 
@@ -262,7 +256,7 @@ README는 `convert`(PPTX)와 `figma` 내보내기를 "experimental / unstable"�
 - [쇼케이스 갤러리](https://nomadamas.github.io/slides-grab/) - slides-grab으로 만든 발표 자료
 - [ppt_team_agent](https://github.com/uxjoseph/ppt_team_agent) - slides-grab의 바탕이 된 저장소
 
-**비교에 쓴 공식 도움말 (2026-10-01 조회)**
+**비교에 쓴 공식 도움말**
 
 - [Gamma, How do credits work in Gamma?](https://help.gamma.app/en/articles/7834324-how-do-credits-work-in-gamma) - 무료 400크레딧, 다시 채워지지 않음
 - [Gamma, What's the easiest way to export my gamma?](https://help.gamma.app/en/articles/8022861-what-s-the-easiest-way-to-export-my-gamma) - PDF, PPTX 내보내기와 "Made by Gamma" 배지
@@ -276,4 +270,4 @@ README는 `convert`(PPTX)와 `figma` 내보내기를 "experimental / unstable"�
 
 ---
 
-이 글은 AI의 도움을 받아 작성했습니다. 화면은 직접 실행한 Claude Code 세션과 slides-grab 편집기를 캡처했고, 시연 데이터는 가상 회사 자료로 만들었습니다. 저장소 수치는 2026-10-01에 GitHub API와 npm으로 조회했습니다.
+이 글은 AI의 도움을 받아 작성했습니다. 화면은 직접 실행한 Claude Code 세션과 slides-grab 편집기를 캡처했고, 시연 데이터는 가상 회사 자료로 만들었습니다.
