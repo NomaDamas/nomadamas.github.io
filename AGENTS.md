@@ -307,8 +307,10 @@ scripts/analytics-report.sh clarity 1         # Clarity 최근 1일
    옛 주소 속성은 리다이렉트가 잡히는지 보려고 남겨 둔다. 글 주소(`/posts/...`)는 그대로라
    페이지 색인은 넘어오지만, 옮긴 직후 며칠은 새 주소 노출이 줄어든다.
 7. org Settings > Pages > Verified domains에서 `nomadamas.org`를 확인한다. TXT 레코드 하나를
-   Cloudflare에 넣는 일이다. 확인하지 않으면 다른 사람이 `blog.nomadamas.org`를 자기 Pages
-   도메인으로 등록해 우리 서브도메인에 자기 사이트를 띄울 수 있다.
+   Cloudflare에 넣는 일이다(`_github-pages-challenge-nomadamas.nomadamas.org`). 확인하지 않으면
+   다른 사람이 `blog.nomadamas.org`를 자기 Pages 도메인으로 등록해 우리 서브도메인에 자기 사이트를
+   띄울 수 있다. **TXT 레코드는 지우지 않는다.** 지우면 확인이 풀리고, "모르는 TXT"를 정리하다가
+   이 레코드를 지우는 일이 없도록 남겨 둔 이유를 여기 적어 둔다.
 
 글 본문에 남은 `https://nomadamas.github.io/...` 링크는 그대로 둔다. 옛 주소가 새 주소로 넘어가므로
 깨지지 않고, 여러 글을 한꺼번에 고치면 그 글들의 "최근 수정"이 전부 바뀐다.
