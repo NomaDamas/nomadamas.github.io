@@ -60,8 +60,9 @@ TypeSafe AI 창업자 Diogo Almeida는 OpenAI에서 언어 모델이 지시를 �
 
 2주 뒤에는 큰 회사들이 비슷한 기능을 내놓았습니다. OpenAI는 9월 29일 [DevDay](https://openai.com/index/devday-2026-recap/)에서 GPT-6 Luna 기반의 Decisions API를 제한 미리보기로 발표했습니다. Databricks는 9월 30일 [ai_decide()](https://www.databricks.com/blog/introducing-aidecide-make-fast-decisions-your-governed-data) 베타를 내면서 TypeSafe API와 호환된다고 밝혔습니다. Cloudflare는 10월 1일 Jev API와 호환되는 오픈소스 모델 [Clef](https://blog.cloudflare.com/clef-decision-models/)를 공개했습니다.
 
-![TypeSafe AI 홈페이지의 비교 화면. 분홍 배경에 터미널 창 두 개가 나란히 있다. 왼쪽 TypeSafe AI 창은 같은 명령으로 질문 15개에 대한 답을 JSON으로 모두 받아 COST $0.000081, Completed in 0.114s를 표시했고 오른쪽 LLM 창은 답을 아직 받는 중이다. 아래에는 TypeSafe AI는 비용 0.000081달러에 0.114초, LLM은 비용 0.013880달러에 8.566초가 걸렸다고 적혀 있다](@/assets/images/jev-ai/03-typesafe-race.png)
-*TypeSafe AI 홈페이지의 비교 화면입니다. 같은 질문을 TypeSafe API와 LLM에 보낸 결과로, 회사가 만든 시연입니다. 2026-10-06 캡처.*
+<video src="/videos/jev-ai/typesafe-race.mp4" poster="/videos/jev-ai/typesafe-race.jpg" autoplay loop muted playsinline controls width="100%" aria-label="TypeSafe AI가 발표 글에 실은 비교 영상. 위에 Same 27 questions. Same order.라는 제목이 있고 터미널 창 두 개가 나란히 있다. 두 창에서 명령을 동시에 실행하자 왼쪽 TypeSafe 창은 0.114초 만에 질문 27개의 답을 확률이 담긴 JSON으로 모두 받아 cost $0.000081을 표시한다. 그때 오른쪽 LLM 창(gpt-5.6-terra)은 Waiting for first token...이라며 첫 토큰을 기다리고 있다. LLM 창은 그 뒤 답을 한 줄씩 받아 8.566초에 끝나고 cost $0.013880을 표시한다. 마지막에는 제목 아래에 TYPESAFE 74.9x FASTER, 171.0x CHEAPER가 뜬다"></video>
+
+*TypeSafe가 [발표 글](https://typesafe.ai/blog/introducing-system-one-models-and-jev)에 실은 비교 영상입니다(15초 반복, 소리 없음). 같은 질문 27개를 TypeSafe API와 GPT-5.6 Terra에 동시에 보낸 회사의 시연입니다. 영상 끝의 74.9배와 171.0배는 이 시연 한 번의 값입니다.*
 
 TypeSafe 홈페이지는 Jev가 193.6배 빠르고 444.6배 싸다고 내세웁니다. 회사가 만든 업무 네 가지 평가에서 나온 값입니다. 회사도 블로그에서 실제로 얻을 이득으로는 높은 쪽일 것이라고 적었습니다.
 
@@ -123,6 +124,10 @@ Jev가 놓친 사기 메일 5통은 모두 정상 메일처럼 꾸민 메일이�
 사기 메일을 이렇게 놓친다면 메일함을 통째로 맡기기는 어렵습니다. 그래도 Jev가 답에 붙이는 확신도를 보면 어디까지 맡길지 고를 수 있었습니다.
 
 ### 확신도로 사람에게 넘길 메일을 고를 수 있습니다
+
+<video src="/videos/jev-ai/typesafe-confidence.mp4" poster="/videos/jev-ai/typesafe-confidence.jpg" autoplay loop muted playsinline controls width="480" height="576" style="margin-inline:auto" aria-label="TypeSafe AI 홈페이지의 확신도 설명 애니메이션. 분홍 점무늬 배경 위 TYPESAFE AI MODEL 창에 Confidence levels and thresholds ...라는 글과 격자가 있다. 격자의 칸이 흰색, 회색, 검은색처럼 농도가 다른 색으로 하나씩 차오르고 왼쪽 위의 통과 수가 03 / 40 PASS에서 12 / 40 PASS까지 올라간다. 격자 아래에는 NO에서 50/50을 거쳐 YES로 이어지는 흑백 막대가 있다. 잠시 뒤 칸이 비워지고 처음부터 다시 시작한다"></video>
+
+*TypeSafe 홈페이지에 걸린 확신도와 기준선 설명 애니메이션입니다(8초 반복, 소리 없음). 격자의 칸이 '아니요'(흰색)부터 '예'(검은색)까지 농도가 다른 색으로 차고 왼쪽 위 숫자가 기준을 통과(PASS)한 칸 수를 셉니다.*
 
 Jev는 종류처럼 보기를 고르는 답에 [확신도](https://docs.typesafe.ai/confidence)를 붙여 줍니다. 확신도가 기준보다 낮은 메일만 사람에게 넘기면 결과가 이렇게 달라집니다(1회차 실측, 메일 종류 질문).
 
