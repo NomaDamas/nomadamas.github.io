@@ -1,7 +1,7 @@
 ---
 title: "AI 페스타 2026 현장: 경진대회 특별관에서 만난 CozyClay(코지클레이)"
 description: "AI 페스타 2026(AI FESTA 26)의 전국민 AI 경진대회 특별관에서 NomaDamas 오픈소스 CozyClay(코지클레이) 부스를 볼 수 있습니다. 3D로 짠 장면을 AI 영상 모델에 넘기는 도구입니다. 10월 6일부터 8일까지 서울 코엑스 C홀에서 열리는 행사의 일정과 입장료, 특별관 위치도 정리했습니다."
-pubDatetime: 2026-10-07T16:45:00+09:00
+pubDatetime: 2026-10-07T21:45:00+09:00
 author: "안승원 (Aiden)"
 tags: ["AI 페스타 2026", "AI FESTA 26", "인공지능 페스타", "전국민 AI 경진대회", "AI ROOKIE", "CozyClay", "코지클레이", "NomaDamas"]
 featured: false
@@ -113,7 +113,7 @@ CozyClay는 무료로 쓸 수 있는 오픈소스입니다. 빗나간 영상에 
 
 밤늦게 이어진 이야기에서 아이디어가 나오면 그 자리에서 저장소를 만들고 다음 날 공개합니다. 실리콘밸리 창업자들이 차고에서 시작했듯이 일단 만들어 내놓고 반응을 보며 키웁니다.
 
-공개 저장소 90개가 받은 star는 모두 12,142개입니다(2026년 10월 7일 기준). CozyClay는 그중 세 번째로 star를 많이 받았습니다. 첫째는 [k-skill](https://github.com/NomaDamas/k-skill)(7,804개)로, 지하철 도착 정보나 부동산 실거래가처럼 한국에서만 필요한 조회를 AI 에이전트가 할 수 있게 해 줍니다. 둘째는 AI로 발표 자료를 만들 때 쓰는 [slides-grab](https://github.com/NomaDamas/slides-grab)(1,212개)입니다.
+공개 저장소 90개가 받은 star는 모두 12,148개입니다(2026년 10월 7일 기준). CozyClay는 그중 세 번째로 star를 많이 받았습니다. 첫째는 [k-skill](https://github.com/NomaDamas/k-skill)(7,810개)로, 지하철 도착 정보나 부동산 실거래가처럼 한국에서만 필요한 조회를 AI 에이전트가 할 수 있게 해 줍니다. 둘째는 AI로 발표 자료를 만들 때 쓰는 [slides-grab](https://github.com/NomaDamas/slides-grab)(1,212개)입니다.
 
 올해 5월에는 Markr AI와 화장실을 주제로 한 해커톤 '변기톤'을 열었습니다. 하우스 이야기는 [한국 해커하우스 글](/posts/korea-hacker-house/#저희-nomadamas를-소개합니다)에서 더 읽을 수 있습니다.
 
