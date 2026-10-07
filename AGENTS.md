@@ -44,6 +44,8 @@ draft: false      # true면 빌드에서 빠진다
 ```
 
 `modDatetime`을 발행 뒤 다른 날짜로 적으면 날짜 옆에 수정일이 함께 나온다. 같은 날 고친 것은 표시하지 않는다.
+홈, 글 목록, 태그 목록, RSS는 `modDatetime`이 있으면 그 값으로 정렬해 그 글을 맨 위로 올리고(`src/utils/getSortedPosts.ts`),
+sitemap의 `lastmod`도 이 값을 쓴다.
 
 `pubDatetime`은 발행하는 시각을 시간대(`+09:00`)까지 적고, 합치기 직전에 합치는 시각으로 고친다.
 
