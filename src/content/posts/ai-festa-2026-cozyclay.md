@@ -42,6 +42,9 @@ AI 페스타 2026이 열리는 코엑스 C홀에 들어서면 큰 회사들의 �
 
 전시장은 피지컬 AI와 로봇, AI 반도체, AI 인프라, 국방 AI, 보안과 양자처럼 주제별 특별관으로 나뉩니다. 메인 무대 옆은 독자 AI 파운데이션 모델 특별관으로, LG AI연구원과 SK텔레콤, 업스테이지처럼 AI 모델을 직접 만드는 회사가 모였습니다. 메인 무대 앞에는 전국민 AI 경진대회 특별관이 있습니다.
 
+![AI 페스타 2026 전시 배치도. 위쪽 가운데에 검은 메인무대가 있다. 그 바로 아래 회색 CH-01 구역에 빨간 테두리와 'CozyClay 부스' 표시를 했다. 오른쪽 옆에는 CH-02가 있다. 입구는 오른쪽 아래, 출구는 왼쪽 아래에 있다](@/assets/images/ai-festa-2026-cozyclay/08-booth-map.png)
+*AI 페스타 2026 전시 배치도입니다. 빨간 테두리를 친 CH-01이 경진대회 특별관에서 CozyClay 부스가 있는 구역입니다. 이미지: [AI페스타조직위원회](https://www.aifesta.kr/exhibition/booth-map), 빨간 표시는 NomaDamas가 더했습니다.*
+
 ## 전국민 AI 경진대회와 AI ROOKIE란?
 
 ![전국민 AI 경진대회 배너. 남색 바탕에 '모두의 AI를 위한 전국민 AI 경진대회 AI Challenge for All' 제목과 'AI ROOKIE', 'AI CHAMPION' 두 대회 이름이 있다. 아래에는 머리에 안테나를 단 흰 호랑이 캐릭터가 있다. 왼쪽 벽에는 '함께하는 기업/기관' 아래 Liner, 미리캔버스, ABLEARN 로고와 재정경제부, 교육부, 국방부, 문화체육관광부, 법제처, 행정안전부, 해양수산부, 성평등가족부 로고가 붙어 있다. 오른쪽 파란 벽에는 CHAMPION의 앞 글자 CHAMPI가 세로로 크게 보인다](@/assets/images/ai-festa-2026-cozyclay/02-challenge-banner.jpg)
@@ -135,7 +138,7 @@ AI 페스타 2026에서 큰 회사들의 부스를 지나 메인 무대 앞으�
 > 2026년 10월 6일(화)부터 8일(목)까지 서울 코엑스 3층 C홀에서 열립니다. 관람 시간은 6일과 7일이 오전 10시부터 오후 5시까지, 마지막 날인 8일은 오후 4시까지입니다. [공식 사이트](https://www.aifesta.kr/)의 사전 등록은 10월 2일 오후 6시에 마감됐습니다. 사전 등록을 마쳤다면 무료로 들어갈 수 있습니다. 마치지 못했다면 현장에서 등록하고 입장료 1만 원을 냅니다. AI 서밋과 퓨처 테크 컨퍼런스는 따로 유료 등록해야 합니다.
 
 > [!faq]- AI 페스타 2026에서 CozyClay(코지클레이) 부스와 전국민 AI 경진대회 특별관은 어디에 있나요?
-> 전국민 AI 경진대회 특별관은 코엑스 C홀 메인 무대 앞에 있습니다. [전국민 AI 경진대회](https://aichallenge4all.or.kr/) 우수작을 모은 특별관으로 AI ROOKIE와 AI CHAMPION 간판이 걸려 있고 [CozyClay](https://github.com/NomaDamas/CozyClay) 부스는 AI ROOKIE 간판 아래에 있습니다. 하얀 기둥에 "애니메이션 좋아하세요?"라고 크게 적힌 곳입니다.
+> 전국민 AI 경진대회 특별관은 코엑스 C홀 메인 무대 앞에 있습니다. [전국민 AI 경진대회](https://aichallenge4all.or.kr/) 우수작을 모은 특별관으로 AI ROOKIE와 AI CHAMPION 간판이 걸려 있고 [CozyClay](https://github.com/NomaDamas/CozyClay) 부스는 AI ROOKIE 간판 아래에 있습니다. [공식 전시 배치도](https://www.aifesta.kr/exhibition/booth-map)에서는 메인 무대 바로 앞 CH-01 구역입니다.
 
 > [!faq]- AI ROOKIE(인공지능 루키 대회)는 누가 참가하나요?
 > 만 34세 이하이면서 학사 학위가 없는 대학생이 전공과 상관없이 참가할 수 있습니다. 팀장은 대한민국 국적이어야 합니다. 스스로 정한 문제를 푸는 AI 서비스를 만들어 예선, 본선, 결선 심사를 거치고 총상금은 3억 5천만 원입니다. 공지와 일정은 [AI ROOKIE 사이트](https://ai-rookie.or.kr/)에 있습니다.
@@ -144,13 +147,14 @@ AI 페스타 2026에서 큰 회사들의 부스를 지나 메인 무대 앞으�
 > [CozyClay](https://github.com/NomaDamas/CozyClay)는 AGPL-3.0 라이선스로 공개된 무료 오픈소스입니다. 설치 없이 보려면 [cozyclay.org](https://cozyclay.org/#try)의 체험판을 컴퓨터 브라우저에서 열면 됩니다. Node.js 22.19 이상이 있는 컴퓨터에서는 터미널에 `npx cozyclay`를 입력해 실행할 수 있습니다. 짠 장면으로 AI 영상을 만드는 비용은 Seedance 같은 영상 모델 서비스에서 따로 듭니다.
 
 > [!faq]- What is AI FESTA 26, and where can I see CozyClay there?
-> AI FESTA 26 (AI Festa 2026) is the flagship event of Korea's national AI Week, designated by the Ministry of Science and ICT. It runs October 6 to 8, 2026, in Hall C on the 3rd floor of COEX, Seoul. Visiting hours are 10:00 to 17:00 on October 6 and 7, and 10:00 to 16:00 on October 8. Visitors who pre-registered (registration closed on October 2) enter free, and on-site registration costs 10,000 won. [CozyClay](https://github.com/NomaDamas/CozyClay), an open source previs tool from NomaDamas that runs in the browser, has a booth in the AI ROOKIE area of the AI Challenge for All special pavilion in front of the main stage. Look for the white pillar asking "애니메이션 좋아하세요?" ("Do you like animation?").
+> AI FESTA 26 (AI Festa 2026) is the flagship event of Korea's national AI Week, designated by the Ministry of Science and ICT. It runs October 6 to 8, 2026, in Hall C on the 3rd floor of COEX, Seoul. Visiting hours are 10:00 to 17:00 on October 6 and 7, and 10:00 to 16:00 on October 8. Visitors who pre-registered (registration closed on October 2) enter free, and on-site registration costs 10,000 won. [CozyClay](https://github.com/NomaDamas/CozyClay), an open source previs tool from NomaDamas that runs in the browser, has a booth in the AI ROOKIE area of the AI Challenge for All special pavilion in front of the main stage. On the [official floor plan](https://www.aifesta.kr/exhibition/booth-map), it is block CH-01, right in front of the main stage.
 
 ## 참고 자료
 
 **행사**
 
 - [AI FESTA 26 공식 사이트](https://www.aifesta.kr/) - 일정, 장소, 사전 등록 마감
+- [AI FESTA 26 전시 배치도](https://www.aifesta.kr/exhibition/booth-map) - 특별관 구역과 참가팀 목록
 - [코엑스, 인공지능 페스타 2026 행사 안내](https://www.coex.co.kr/exhibitions/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5-%ED%8E%98%EC%8A%A4%ED%83%80-2026/) - 날짜별 관람 시간
 - [ZDNet Korea, 모두의 AI, 현실이 되다...'AI페스타' 1년만에 확 달라진다](https://zdnet.co.kr/view/?no=20260921174212) - 2026-09-22, 공식 배너
 - [ZDNet Korea, AI 현재와 미래는...'AI 페스타'서 직접 보고 체험한다](https://zdnet.co.kr/view/?no=20260930230542) - 2026-10-04, 주최와 주관, 주요 전시
@@ -175,7 +179,7 @@ AI 페스타 2026에서 큰 회사들의 부스를 지나 메인 무대 앞으�
 **갱신 이력**
 
 - 2026-10-07 최초 발행
-- 2026-10-07 마지막 날(8일) 관람 시간을 오후 4시까지로 바로잡음. 행사와 CozyClay 공식 배너, NomaDamas 작업 공간 사진을 넣음
+- 2026-10-07 마지막 날(8일) 관람 시간을 오후 4시까지로 바로잡음. 행사와 CozyClay 공식 배너, NomaDamas 작업 공간 사진, 부스 위치를 표시한 전시 배치도를 넣음
 
 ---
 
