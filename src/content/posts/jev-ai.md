@@ -25,8 +25,9 @@ Jev(제브)는 미국 스타트업 [TypeSafe AI](https://typesafe.ai/)가 2026�
 
 ChatGPT 같은 LLM(대형 언어 모델)은 질문을 받으면 답을 토큰(글자 조각) 단위로 하나씩 이어 씁니다. Jev는 글을 쓰지 않습니다. 메일 같은 자료와 질문을 받으면 미리 정해 둔 보기마다 확률을 매겨 돌려줍니다. 홈페이지가 내건 문구도 "Decisions, not strings"(문장 말고 판단)입니다.
 
-![같은 메일 한 통에 LLM과 Jev가 답한 모습을 나란히 놓은 그림. 위에는 고객 신지호가 10월 6일 오전 7시 18분에 보낸 메일 '결제 실패 문자 받았는데 확인해주세요'가 있다. 왼쪽 LLM(GPT-6 Luna) 칸은 3.9초가 걸렸고 Jev와 같은 보기 정의를 지시문으로 받아 category: billing, needs_reply: true, urgency: 2라고 답했다. 85토큰을 하나씩 이어 썼고 그중 65토큰은 답하기 전에 생각하는 데 썼으며 답에 얼마나 확신하는지는 없다는 설명이 붙어 있다. 오른쪽 Jev(jev-1.13) 칸은 0.22초가 걸렸고 종류는 결제 73%, 사기 16%, 고객 지원 11%, 답장이 필요할 확률 95%, 급한 정도는 지금 바로 100%로 막대그래프가 그려져 있다. 맨 아래에는 같은 정의를 받아도 GPT-6 Luna는 답 하나를, Jev는 보기마다 확률을 돌려줬다고 적혀 있다](@/assets/images/jev-ai/01-llm-vs-jev.png)
-*같은 메일에 같은 보기 정의로 세 가지를 물었을 때의 답입니다. LLM 쪽은 GPT-6 Luna에 답 형식을 정하지 않고 따로 한 번 물은 답입니다. Jev 쪽은 120통 실측에서 이 메일에 돌려준 답입니다. 두 시간 모두 이 메일 한 통에 걸린 값입니다. 2026-10-06 측정.*
+<video src="/videos/jev-ai/llm-vs-jev.mp4" poster="/videos/jev-ai/llm-vs-jev.jpg" autoplay loop muted playsinline controls width="100%" aria-label="같은 메일 한 통에 GPT-6 Luna와 Jev가 답하는 과정을 실제 걸린 시간대로 보여 주는 애니메이션. 위에는 고객 신지호가 10월 6일 오전 7시 18분에 보낸 메일 '결제 실패 문자 받았는데 확인해주세요'와 경과 시간이 있다. 어떤 종류인가요, 답장이 필요한가요, 얼마나 급한가요라는 같은 질문을 두 모델에 동시에 보낸다. 0.22초에 오른쪽 Jev(jev-1.13) 칸이 끝나며 종류는 결제 73%, 사기 16%, 고객 지원 11%, 답장이 필요할 확률 95%, 급한 정도는 지금 바로 100%가 막대그래프로 한 번에 뜬다. 그때 왼쪽 GPT-6 Luna 칸은 아직 토큰을 만들고 있다. 토큰 수가 85개까지 늘어나는데 앞의 65개는 답하기 전에 생각하는 데 쓰고 나머지 20개로 category: billing, needs_reply: true, urgency: 2를 써서 3.9초에 끝난다. 두 칸 아래에는 GPT-6 Luna는 답을 토큰 단위로 하나씩 이어 쓰고 답에 확신도가 없다는 설명과 Jev는 세 질문을 한 번에 받아 보기마다 확률을 돌려준다는 설명이 있다. 마지막에는 같은 메일, 같은 질문에 Jev 0.22초, GPT-6 Luna 3.9초라고 적힌다"></video>
+
+*같은 메일에 같은 보기 정의로 세 가지를 물었을 때 두 모델이 답하는 과정을 실제 걸린 시간대로 재생합니다(7초 반복, 소리 없음). LLM 쪽은 GPT-6 Luna에 답 형식을 정하지 않고 따로 한 번 물은 답입니다. Jev 쪽은 120통 실측에서 이 메일에 돌려준 답입니다. 두 시간 모두 이 메일 한 통에 걸린 값입니다. GPT-6 Luna가 토큰을 내놓은 시각은 재지 않아 85토큰을 3.9초에 고르게 나눠 그렸습니다. 2026-10-06 측정.*
 
 보기 정의를 주자 GPT-6 Luna도 'billing'처럼 보기 이름 하나로 답했습니다. 다만 이렇게 받은 답에는 얼마나 확신하는지가 없습니다. Jev는 보기마다 확률을 돌려주므로 "결제일 확률이 70%를 넘으면 결제 담당자에게, 아니면 사람에게"처럼 코드가 숫자를 보고 갈래를 나눌 수 있습니다. TypeSafe는 Jev를 "똑똑한 if문"이라고 부릅니다. if문은 조건에 따라 갈래를 나누는 코드입니다. Jev는 그 조건을 글로 적은 기준대로 판단해 줍니다.
 
@@ -59,8 +60,9 @@ TypeSafe AI 창업자 Diogo Almeida는 OpenAI에서 언어 모델이 지시를 �
 
 2주 뒤에는 큰 회사들이 비슷한 기능을 내놓았습니다. OpenAI는 9월 29일 [DevDay](https://openai.com/index/devday-2026-recap/)에서 GPT-6 Luna 기반의 Decisions API를 제한 미리보기로 발표했습니다. Databricks는 9월 30일 [ai_decide()](https://www.databricks.com/blog/introducing-aidecide-make-fast-decisions-your-governed-data) 베타를 내면서 TypeSafe API와 호환된다고 밝혔습니다. Cloudflare는 10월 1일 Jev API와 호환되는 오픈소스 모델 [Clef](https://blog.cloudflare.com/clef-decision-models/)를 공개했습니다.
 
-![TypeSafe AI 홈페이지의 비교 화면. 분홍 배경에 터미널 창 두 개가 나란히 있다. 왼쪽 TypeSafe AI 창은 같은 명령으로 질문 15개에 대한 답을 JSON으로 모두 받아 COST $0.000081, Completed in 0.114s를 표시했고 오른쪽 LLM 창은 답을 아직 받는 중이다. 아래에는 TypeSafe AI는 비용 0.000081달러에 0.114초, LLM은 비용 0.013880달러에 8.566초가 걸렸다고 적혀 있다](@/assets/images/jev-ai/03-typesafe-race.png)
-*TypeSafe AI 홈페이지의 비교 화면입니다. 같은 질문을 TypeSafe API와 LLM에 보낸 결과로, 회사가 만든 시연입니다. 2026-10-06 캡처.*
+<video src="/videos/jev-ai/typesafe-race.mp4" poster="/videos/jev-ai/typesafe-race.jpg" autoplay loop muted playsinline controls width="100%" aria-label="TypeSafe AI가 발표 글에 실은 비교 영상. 위에 Same 27 questions. Same order.라는 제목이 있고 터미널 창 두 개가 나란히 있다. 두 창에서 명령을 동시에 실행하자 왼쪽 TypeSafe 창은 0.114초 만에 질문 27개의 답을 확률이 담긴 JSON으로 모두 받아 cost $0.000081을 표시한다. 그때 오른쪽 LLM 창(gpt-5.6-terra)은 Waiting for first token...이라며 첫 토큰을 기다리고 있다. LLM 창은 그 뒤 답을 한 줄씩 받아 8.566초에 끝나고 cost $0.013880을 표시한다. 마지막에는 제목 아래에 TYPESAFE 74.9x FASTER, 171.0x CHEAPER가 뜬다"></video>
+
+*TypeSafe가 [발표 글](https://typesafe.ai/blog/introducing-system-one-models-and-jev)에 실은 비교 영상입니다(15초 반복, 소리 없음). 같은 질문 27개를 TypeSafe API와 GPT-5.6 Terra에 동시에 보낸 회사의 시연입니다. 영상 끝의 74.9배와 171.0배는 이 시연 한 번의 값입니다.*
 
 TypeSafe 홈페이지는 Jev가 193.6배 빠르고 444.6배 싸다고 내세웁니다. 회사가 만든 업무 네 가지 평가에서 나온 값입니다. 회사도 블로그에서 실제로 얻을 이득으로는 높은 쪽일 것이라고 적었습니다.
 
@@ -85,9 +87,9 @@ TypeSafe 홈페이지는 Jev가 193.6배 빠르고 444.6배 싸다고 내세웁�
 
 ### Jev는 얼마나 빨랐을까?
 
-<video src="/videos/jev-ai/race.mp4" poster="/videos/jev-ai/race.jpg" controls muted playsinline preload="metadata" width="100%" aria-label="메일 120통을 Jev와 GPT-6 Luna에 동시에 보내는 터미널 화면. 두 줄의 진행 막대가 차오르는데 Jev 막대는 4.4초 만에 끝나고 GPT-6 Luna 막대는 53.1초에 끝난다. 영상 8초부터는 4배속이다. 마지막 화면에는 Jev 120통 4.4초 0.0070달러, GPT-6 Luna 120통 53.1초 0.0135달러가 적혀 있다"></video>
+<video src="/videos/jev-ai/race-grid.mp4" poster="/videos/jev-ai/race-grid.jpg" autoplay loop muted playsinline controls width="100%" aria-label="메일 120통을 GPT-6 Luna와 Jev에 동시에 보내는 경주를 메일 한 통당 칸 하나로 그린 애니메이션. 왼쪽 GPT-6 Luna와 오른쪽 Jev(jev-1.13)에 칸이 120개씩 있다. 한 번에 8통씩 보내고 답이 온 메일의 칸이 찬다. Jev는 4.4초 만에 120칸을 모두 채우고 그때 GPT-6 Luna는 8칸을 채웠다. 경주 6초부터 8배속으로 넘어가 GPT-6 Luna가 53.1초에 끝난다. Jev 칸 중 6개는 메일 종류를 틀려 빨간색이고 GPT-6 Luna에는 빨간 칸이 없다"></video>
 
-*같은 메일 120통을 두 모델에 동시에 보낸 화면입니다(23초, 소리 없음). 영상 8초부터는 4배속으로 돌렸습니다. 화면에 찍힌 초는 실제 걸린 시간입니다. 마지막 화면의 값(Jev 4.4초, GPT-6 Luna 53.1초)은 표의 세 번과 따로 잰 실행이라 평균과 조금 다릅니다. 2026-10-06 녹화.*
+*같은 메일 120통을 두 모델에 동시에 보낸 실행을 메일 한 통당 칸 하나로 그렸습니다(15초 반복, 소리 없음). 답이 온 순간 칸이 찹니다. 빨간 칸은 메일 종류를 틀린 메일입니다. 경주 6초까지는 실제 걸린 시간대로, 그 뒤는 8배속으로 재생합니다. 화면의 초는 실제 걸린 시간입니다. 이 실행(Jev 4.4초, GPT-6 Luna 53.1초)은 표의 세 번과 따로 잰 것이라 평균과 조금 다릅니다. 2026-10-06 측정.*
 
 세 번 잰 평균은 이렇습니다.
 
@@ -122,6 +124,10 @@ Jev가 놓친 사기 메일 5통은 모두 정상 메일처럼 꾸민 메일이�
 사기 메일을 이렇게 놓친다면 메일함을 통째로 맡기기는 어렵습니다. 그래도 Jev가 답에 붙이는 확신도를 보면 어디까지 맡길지 고를 수 있었습니다.
 
 ### 확신도로 사람에게 넘길 메일을 고를 수 있습니다
+
+<video src="/videos/jev-ai/typesafe-confidence.mp4" poster="/videos/jev-ai/typesafe-confidence.jpg" autoplay loop muted playsinline controls width="480" height="576" style="margin-inline:auto" aria-label="TypeSafe AI 홈페이지의 확신도 설명 애니메이션. 분홍 점무늬 배경 위 TYPESAFE AI MODEL 창에 Confidence levels and thresholds ...라는 글과 격자가 있다. 격자의 칸이 흰색, 회색, 검은색처럼 농도가 다른 색으로 하나씩 차오르고 왼쪽 위의 통과 수가 03 / 40 PASS에서 12 / 40 PASS까지 올라간다. 격자 아래에는 NO에서 50/50을 거쳐 YES로 이어지는 흑백 막대가 있다. 잠시 뒤 칸이 비워지고 처음부터 다시 시작한다"></video>
+
+*TypeSafe 홈페이지에 걸린 확신도와 기준선 설명 애니메이션입니다(8초 반복, 소리 없음). 격자의 칸이 '아니요'(흰색)부터 '예'(검은색)까지 농도가 다른 색으로 차고 왼쪽 위 숫자가 기준을 통과(PASS)한 칸 수를 셉니다.*
 
 Jev는 종류처럼 보기를 고르는 답에 [확신도](https://docs.typesafe.ai/confidence)를 붙여 줍니다. 확신도가 기준보다 낮은 메일만 사람에게 넘기면 결과가 이렇게 달라집니다(1회차 실측, 메일 종류 질문).
 
