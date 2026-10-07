@@ -257,8 +257,11 @@ GA4, Microsoft Clarity, Search Console, 네이버 서치어드바이저, Bing �
 - **GA4의 '브라우저 기록 이벤트 기반 페이지 변경'은 꺼 둔다.** ClientRouter가 pushState 순간에만
   이전 글 제목을 넣어 두기 때문에(`astro/dist/transitions/router.js`의 `moveToLocation`), 페이지 전환
   페이지뷰는 `GoogleAnalytics.astro`가 `astro:after-swap`에서 새 제목으로 직접 보낸다. 켜 두면 두 번 잡힌다.
-- **`/privacy/`는 켜진 도구만 적는다.** GA4와 Clarity 약관이 사용 사실 고지를 요구한다.
-  분석 도구를 새로 붙이면 `src/pages/privacy.astro`에도 항목을 더한다.
+- **`/privacy/`는 켜진 도구만 적는다.** GA4 약관은 사용 사실과 쿠키를, Clarity 약관은 Microsoft 같은
+  제3자의 수집, Microsoft Advertising을 위한 수집, 거부 방법, Microsoft 개인정보처리방침 링크를 알리도록 요구한다.
+  분석 도구, GA 향상된 측정, 보관 기간, 쿠키, 브라우저 저장 값 가운데 하나라도 바뀌면 `src/pages/privacy.astro`의
+  문구와 `updated`를 함께 고친다. Clarity 쿠키 문서에는 만료 기간이 없어서, 본문의 만료 기간은
+  2026-10-07에 실제 브라우저로 잰 값이다.
 - Bing은 Search Console에서 가져오기로 연결한다. 토큰 없이 확인되고 사이트맵도 따라온다.
 
 ### 방문 데이터 조회
