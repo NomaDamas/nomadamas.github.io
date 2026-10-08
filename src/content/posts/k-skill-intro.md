@@ -88,7 +88,7 @@ README의 설치 명령은 두 줄입니다. Claude Code 입력창에 차례로 
 
 설치 범위를 직접 고르려면 `/plugin`을 입력하고 Discover 탭에서 k-skill을 검색해 Enter를 누르면 됩니다.
 
-![Claude Code의 /plugin 화면. Plugin details 아래에 k-skill, from k-skill, 한국인을 위한 90+ Agent Skill 번들이라는 설명이 있고, 90+ Agent Skill에 실제 스킬은 127개라는 주황 라벨이 붙어 있다. 아래 설치 방법 세 가지 중 Install for you, in this repo only (local scope)가 선택되어 있고 이 폴더에서만 켜기라는 초록 라벨이 붙어 있다](@/assets/images/k-skill-intro/01-plugin-install.png)
+![Claude Code의 /plugin 화면. Plugin details 아래에 k-skill, from k-skill, 한국인을 위한 90+ Agent Skill 번들이라는 설명이 있고 90+ Agent Skill에 실제 스킬은 127개라는 주황 라벨이 붙어 있다. 아래 설치 방법 세 가지 중 Install for you, in this repo only (local scope)가 선택되어 있고 이 폴더에서만 켜기라는 초록 라벨이 붙어 있다](@/assets/images/k-skill-intro/01-plugin-install.png)
 *user scope는 나에게 모든 폴더에서, project scope는 이 저장소를 함께 쓰는 모든 사람에게, local scope는 나에게만 이 폴더에서 켜집니다. 2026-09-29 캡처, Claude Code 2.1.284.*
 
 이 글에서는 시연용 폴더에서만 켜지도록 local scope를 골랐습니다. 켜짐 설정은 그 폴더의 `.claude/settings.local.json`에만 기록됩니다. 설치가 끝나면 Claude Code를 다시 시작하지 않아도 쓸 수 있습니다. 터미널에서는 `claude plugin install k-skill@k-skill --scope local`처럼 `--scope` 옵션으로 범위를 고를 수 있습니다.
@@ -113,7 +113,7 @@ k-skill을 켠 폴더에서 Claude Code에 스킬 이름 없이 평소 말로 �
 
 Claude Code는 질문을 보고 지하철 도착 정보 스킬(`seoul-subway-arrival`)과 서울 혼잡도 스킬(`seoul-density`)을 불러왔습니다. 그다음 스킬의 자세한 지침을 받아 오는 명령을 실행해도 되는지 물었습니다.
 
-![Claude Code 화면. 맨 위에 강남역 퇴근길 질문이 있고, 그 아래 Skill(k-skill:seoul-subway-arrival)과 Skill(k-skill:seoul-density)가 Successfully loaded skill로 나온 부분에 질문에 맞는 스킬 두 개를 스스로 고름이라는 초록 라벨이 붙어 있다. 아래 Bash command 권한 확인 창에는 bunx @nomadamas/k-skill@0 instruct seoul-subway-arrival 명령과 지하철 도착 스킬 지침 가져오기라는 설명에 초록 라벨이, 1. Yes에 읽어 보고 1번(Yes)이라는 라벨이 붙어 있다](@/assets/images/k-skill-intro/02-ask-permission.png)
+![Claude Code 화면. 맨 위에 강남역 퇴근길 질문이 있고 그 아래 Skill(k-skill:seoul-subway-arrival)과 Skill(k-skill:seoul-density)가 Successfully loaded skill로 나온 부분에 질문에 맞는 스킬 두 개를 스스로 고름이라는 초록 라벨이 붙어 있다. 아래 Bash command 권한 확인 창에는 bunx @nomadamas/k-skill@0 instruct seoul-subway-arrival 명령과 지하철 도착 스킬 지침 가져오기라는 설명에 초록 라벨이, 1. Yes에 읽어 보고 1번(Yes)이라는 라벨이 붙어 있다](@/assets/images/k-skill-intro/02-ask-permission.png)
 *시연 컴퓨터는 `npx` 대신 `bunx`를 쓰도록 설정해 두어 `bunx`로 실행했습니다. 2026-09-29 캡처.*
 
 k-skill의 스킬 파일은 짧은 안내문입니다. 에이전트는 스킬을 부르면 아래 명령을 실행합니다.
@@ -126,7 +126,7 @@ npx -y @nomadamas/k-skill@0 instruct <스킬 이름>
 
 답이 나올 때까지 명령 네 개를 허락했습니다. 두 스킬의 지침 받기, 지하철 도착 정보 조회, 혼잡도 조회입니다. 도착 정보는 이런 명령으로 가져왔습니다.
 
-![Claude Code의 Bash command 권한 확인 창. curl로 k-skill-proxy.nomadamas.org의 /v1/seoul-subway/arrival에 stationName=강남을 보내는 명령에 k-skill 프록시로 강남역 도착 정보 조회라는 초록 라벨이 붙어 있고, 아래 1. Yes에 1번(Yes) 라벨이 붙어 있다](@/assets/images/k-skill-intro/03-proxy-permission.png)
+![Claude Code의 Bash command 권한 확인 창. curl로 k-skill-proxy.nomadamas.org의 /v1/seoul-subway/arrival에 stationName=강남을 보내는 명령에 k-skill 프록시로 강남역 도착 정보 조회라는 초록 라벨이 붙어 있고 아래 1. Yes에 1번(Yes) 라벨이 붙어 있다](@/assets/images/k-skill-intro/03-proxy-permission.png)
 *`k-skill-proxy.nomadamas.org`에 역 이름만 보내 서울 열린데이터 광장의 실시간 도착 정보를 받습니다. 제 인증키는 쓰지 않았습니다.*
 
 ### 2. 출처와 기준 시각이 붙은 답
@@ -159,12 +159,12 @@ npx -y @nomadamas/k-skill@0 instruct <스킬 이름>
 
 같은 시각 제 컴퓨터에서도 공공데이터포털(data.go.kr) 접속이 시간 초과됐고 공공데이터포털을 거치는 미세먼지 조회도 HTTP 502를 받았습니다. 서울 열린데이터 광장을 쓰는 지하철 도착 정보는 정상 응답했습니다. 프록시가 원천 기관 서버에서 값을 받아 오지 못한 경우입니다.
 
-![Claude Code의 답. 10월 쉬는 날 질문 아래 Skill(k-skill:korean-holiday-calendar)에 공휴일 스킬을 고름이라는 초록 라벨이 있고, 공휴일 조회 API(k-skill-proxy)가 두 번 모두 500 proxy_error (fetch failed)로 실패해서 API로 확인하지 못했다는 문장에 API 실패를 먼저 밝힘이라는 초록 라벨이 있다. 가운데 표에는 10월 3일(토) 개천절, 10월 5일(월) 개천절 대체공휴일, 10월 9일(금) 한글날이 있고, 아래 2026년 추석 대체공휴일은 9월 28일(월)이라는 줄에 틀림: 2026년 추석은 대체공휴일 없음이라는 주황 라벨이 붙어 있다](@/assets/images/k-skill-intro/05-holiday-fallback.png)
+![Claude Code의 답. 10월 쉬는 날 질문 아래 Skill(k-skill:korean-holiday-calendar)에 공휴일 스킬을 고름이라는 초록 라벨이 있고 공휴일 조회 API(k-skill-proxy)가 두 번 모두 500 proxy_error (fetch failed)로 실패해서 API로 확인하지 못했다는 문장에 API 실패를 먼저 밝힘이라는 초록 라벨이 있다. 가운데 표에는 10월 3일(토) 개천절, 10월 5일(월) 개천절 대체공휴일, 10월 9일(금) 한글날이 있고 아래 2026년 추석 대체공휴일은 9월 28일(월)이라는 줄에 틀림: 2026년 추석은 대체공휴일 없음이라는 주황 라벨이 붙어 있다](@/assets/images/k-skill-intro/05-holiday-fallback.png)
 *API 실패를 먼저 밝히고 나머지는 모델이 알고 있는 규정으로 채운 답입니다. 2026-09-29 20:31 캡처.*
 
 10월 3일(토) 개천절, 5일(월) 개천절 대체공휴일, 9일(금) 한글날은 맞았습니다. 하지만 "2026년 추석 대체공휴일은 9월 28일(월)"이라는 줄은 틀렸습니다.
 
-우주항공청의 [2026년 월력요항](https://www.kasa.go.kr/bbs/BBSMSTR_000000000010/view.do?nttId=B000000001860Pe2zT3)에 따르면 올해 추석 공휴일은 9월 24일(목)부터 26일(토)까지 사흘입니다. 일요일인 27일까지 쉬고 28일(월)은 평일입니다. 설과 추석은 일요일이나 다른 공휴일과 겹칠 때만 대체공휴일이 생기는데, 올해 추석 공휴일은 토요일과만 겹쳤습니다.
+우주항공청의 [2026년 월력요항](https://www.kasa.go.kr/bbs/BBSMSTR_000000000010/view.do?nttId=B000000001860Pe2zT3)에 따르면 올해 추석 공휴일은 9월 24일(목)부터 26일(토)까지 사흘입니다. 일요일인 27일까지 쉬고 28일(월)은 평일입니다. 설과 추석은 일요일이나 다른 공휴일과 겹칠 때만 대체공휴일이 생기는데 올해 추석 공휴일은 토요일과만 겹쳤습니다.
 
 > [!WARNING]
 > **"확인하지 못했다"는 말 뒤의 내용은 모델의 기억입니다.** 스킬이 원천 데이터를 받아 왔는지는 답에 붙은 출처와 기준 시각으로 확인할 수 있습니다. 날짜나 금액처럼 정확해야 하는 값에 출처가 없다면 공식 자료로 한 번 더 확인하세요.
