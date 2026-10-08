@@ -8,10 +8,10 @@ featured: false
 draft: false
 ogImage: ../../assets/images/korea-hacker-house/00-cover.png
 ---
-![드라마 실리콘밸리의 한 장면. 나무 벽과 책장이 있는 집 거실에 긴 나무 책상을 놓고 모니터와 노트북을 여러 대 켜 두었다. 한 사람은 노트북으로 작업하고, 한 사람은 모니터 앞에서 턱을 괴고 있고, 주인공 리처드는 책상 옆에 서서 전화를 받고 있다. 뒤쪽 벽에는 해적 깃발과 꼬마전구가 걸려 있다](@/assets/images/korea-hacker-house/00-silicon-valley-hbo.jpg)
+![드라마 실리콘밸리의 한 장면. 나무 벽과 책장이 있는 집 거실에 긴 나무 책상을 놓고 모니터와 노트북을 여러 대 켜 두었다. 한 사람은 노트북으로 작업하고 한 사람은 모니터 앞에서 턱을 괴고 있다. 주인공 리처드는 책상 옆에 서서 전화를 받고 있다. 뒤쪽 벽에는 해적 깃발과 꼬마전구가 걸려 있다](@/assets/images/korea-hacker-house/00-silicon-valley-hbo.jpg)
 *미국 HBO 드라마 '실리콘밸리'(2014~2019)에서 주인공들이 얼리치의 집 거실을 작업실 삼아 일하는 장면입니다. 사진: [HBO](https://www.hbo.com/silicon-valley).*
 
-미드 [실리콘밸리](https://www.hbo.com/silicon-valley)를 보셨나요? 주인공 리처드는 실리콘밸리의 한 집에 얹혀살며 압축 기술 스타트업 파이드 파이퍼를 차립니다. 집주인 얼리치는 자기 집을 스타트업 인큐베이터로 꾸며 놓고, 개발자들을 재워 주는 대신 그들이 차린 회사의 지분 10%를 가져갑니다. 같은 집에서 먹고 자며 밤낮없이 코드를 짜는 그 집이 해커하우스입니다.
+미드 [실리콘밸리](https://www.hbo.com/silicon-valley)를 보셨나요? 주인공 리처드는 실리콘밸리의 한 집에 얹혀살며 압축 기술 스타트업 파이드 파이퍼를 차립니다. 집주인 얼리치는 자기 집을 스타트업 인큐베이터로 꾸며 놓고 개발자들을 재워 주는 대신 그들이 차린 회사의 지분 10%를 가져갑니다. 같은 집에서 먹고 자며 밤낮없이 코드를 짜는 그 집이 해커하우스입니다.
 
 드라마에만 있는 집은 아닙니다. 서울에도 창업자와 개발자가 모여 제품과 오픈소스를 만드는 해커하우스가 있고 올해 들어 새로 문을 연 곳도 생겼습니다.
 
@@ -76,7 +76,7 @@ ogImage: ../../assets/images/korea-hacker-house/00-cover.png
 
 ### 템프서울 (/tmp Seoul)
 
-![템프서울 개관 행사. 앞쪽 화면에 /tmp Seoul 개관 환영사라는 글자가 떠 있고, 오른쪽에 선 카카오벤처스 김기준 대표가 이야기하고 있다. 참석자들은 뒷모습으로 앉아 있고 벽 쪽에 높은 의자와 소파가 있다](@/assets/images/korea-hacker-house/03-tmpseoul-opening.png)
+![템프서울 개관 행사. 앞쪽 화면에 /tmp Seoul 개관 환영사라는 글자가 떠 있고 오른쪽에 선 카카오벤처스 김기준 대표가 이야기하고 있다. 참석자들은 뒷모습으로 앉아 있고 벽 쪽에 높은 의자와 소파가 있다](@/assets/images/korea-hacker-house/03-tmpseoul-opening.png)
 *템프서울 개관 행사에서 카카오벤처스 김기준 대표가 환영사를 하는 모습입니다. 사진: [카카오벤처스 공식 개관 발표](https://www.kakao.vc/en/posts/kakaobenceoseu-cangeobja-molib-gongdongce-tempeuseoul-gongsig-gaegwan-geulrobeol-bildeo-keomyunitiwa-yeongyeol-doul-geos).*
 
 [템프서울](https://tmpseoul.com/)은 스타트업 투자사 카카오벤처스가 서울에 연 몰입형 해커하우스입니다. 혼자 창업한 사람을 대상으로 하고 카카오벤처스는 [개관 예고](https://www.kakao.vc/en/posts/kakaobenceoseu-cangeobja-molib-gongdongce-gonggan-tempeuseoul-tmp-seoul-9weol-gaegwan)에서 "숙박을 전제로 한 합숙형 공간이 아닌" 곳이라고 밝혔습니다. 한 번 입주하면 3개월 정도 쓸 수 있습니다.
@@ -85,7 +85,7 @@ ogImage: ../../assets/images/korea-hacker-house/00-cover.png
 
 ### VYV House
 
-![VYV House의 작업방. 나무 바닥의 넓은 방에 큰 창문이 나 있고, 창가와 벽을 따라 책상 세 개와 모니터, 사무용 의자가 놓여 있다](@/assets/images/korea-hacker-house/04-vyv-house.jpg)
+![VYV House의 작업방. 나무 바닥의 넓은 방에 큰 창문이 나 있고 창가와 벽을 따라 책상 세 개와 모니터, 사무용 의자가 놓여 있다](@/assets/images/korea-hacker-house/04-vyv-house.jpg)
 *VYV House의 작업방입니다. 사진: [VYV House 사이트 앨범](https://vyv.house/album).*
 
 [VYV House](https://vyv.house/)는 사이트에 투자사 해시드가 지원한다고 적힌 서울의 거주형 하우스입니다. 스스로를 빌더(직접 만드는 사람) 레지던시라고 소개하고 "집과 식탁을 나눈다(Share a home and a table)"고 적습니다. 정확한 위치는 따로 알려 주며 9월 30일 기준 사이트에 입주자 7명의 프로필이 있습니다.
@@ -118,12 +118,12 @@ EO Studio가 미국 샌프란시스코에서 운영하는 거주형 하우스입
 
 ## 저희 NomaDamas를 소개합니다
 
-![NomaDamas 작업 공간. 몰딩 천장이 있는 방의 벽을 따라 책상이 놓여 있고, 멤버 네 명이 각자 모니터를 여러 대 켜 두고 코드 편집기와 터미널 화면을 보며 작업하고 있다. 방 가운데에는 흰 원형 테이블이 있다](@/assets/images/korea-hacker-house/00-nomadamas-workspace.jpg)
+![NomaDamas 작업 공간. 몰딩 천장이 있는 방의 벽을 따라 책상이 놓여 있고 멤버 네 명이 각자 모니터를 여러 대 켜 두고 코드 편집기와 터미널 화면을 보며 작업하고 있다. 방 가운데에는 흰 원형 테이블이 있다](@/assets/images/korea-hacker-house/00-nomadamas-workspace.jpg)
 *NomaDamas 작업 공간입니다. 멤버마다 작업 자리와 모니터를 씁니다.*
 
 드라마 속 그 집이 서울에 있다면 아마 이런 모습일 겁니다. [NomaDamas](https://nomadamas.github.io/about/)는 AI 회사 [Markr AI](https://markr.ai)가 운영하는 AI 오픈소스 해커하우스입니다. 해커하우스라는 말이 낯선 분께는 "개발 좋아하는 사람들의 하숙집"이라고 하면 금방 알아들으십니다. 여기서 먹고 자며 만드는 멤버도 있고 출근하듯 드나드는 멤버도 있습니다.
 
-멋을 낸 사무실과는 거리가 멉니다. 밤늦게 게임을 하다가도 이야기가 AI로 번지고, 거기서 나온 아이디어로 그 자리에서 저장소를 만들어 다음 날 공개합니다. 실리콘밸리 창업자들이 차고에서 회사를 시작했듯이 저희도 일단 만들어 내놓고 반응을 보며 키웁니다. 혼자 시작한 프로젝트에 한두 명이 붙어 판이 커지는 일도 생깁니다. 매주 화요일 저녁에는 다 같이 모여 한 주 동안 만든 것을 보여 줍니다.
+멋을 낸 사무실과는 거리가 멉니다. 밤늦게 게임을 하다가도 이야기가 AI로 번지고 거기서 나온 아이디어로 그 자리에서 저장소를 만들어 다음 날 공개합니다. 실리콘밸리 창업자들이 차고에서 회사를 시작했듯이 저희도 일단 만들어 내놓고 반응을 보며 키웁니다. 혼자 시작한 프로젝트에 한두 명이 붙어 판이 커지는 일도 생깁니다. 매주 화요일 저녁에는 다 같이 모여 한 주 동안 만든 것을 보여 줍니다.
 
 ### 만든 오픈소스는 전부 공개합니다
 
