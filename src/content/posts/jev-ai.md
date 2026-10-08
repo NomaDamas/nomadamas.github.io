@@ -53,7 +53,7 @@ TypeSafe AI 창업자 Diogo Almeida는 OpenAI에서 언어 모델이 지시를 �
 
 ## 왜 이렇게 난리였을까?
 
-![Jev 공개 뒤 3주 동안 일어난 일을 세 칸으로 정리한 연표. 1. 공개(9월 15일): TypeSafe AI가 Jev를 얼리 액세스로 공개했고 해커뉴스 발표 글이 1,989점, 댓글 520개를 받았다. 2. 따라 만들기(9월 16일~22일): 9월 16일 공개 하루 만에 따라 만든 모델 Jevlike가 해커뉴스 169점, 9월 19일 Latent Space 뉴스레터가 이틀 사이 따라 만든 모델 6개를 소개, 공개 첫 주에 Jev를 쓰는 새 GitHub 저장소 1,865개(논문 Jev in the Wild 집계). 3. 큰 회사들의 비슷한 기능(9월 29일~10월 1일): 9월 29일 OpenAI Decisions API가 DevDay에서 제한 미리보기로 발표, 9월 30일 Databricks ai_decide() 베타가 TypeSafe API와 호환, 10월 1일 Cloudflare Clef가 오픈소스로 Jev API와 호환](@/assets/images/jev-ai/02-timeline.png)
+![Jev 공개 뒤 3주 동안 일어난 일을 세 칸으로 정리한 연표. 1. 공개(9월 15일): TypeSafe AI가 Jev를 얼리 액세스로 공개했고 해커뉴스 발표 글이 1,989점, 댓글 520개를 받았다. 2. 따라 만들기(9월 16일부터 22일까지): 9월 16일 공개 하루 만에 따라 만든 모델 Jevlike가 해커뉴스 169점, 9월 19일 Latent Space 뉴스레터가 이틀 사이 따라 만든 모델 6개를 소개, 공개 첫 주에 Jev를 쓰는 새 GitHub 저장소 1,865개(논문 Jev in the Wild 집계). 3. 큰 회사들의 비슷한 기능(9월 29일부터 10월 1일까지): 9월 29일 OpenAI Decisions API가 DevDay에서 제한 미리보기로 발표, 9월 30일 Databricks ai_decide() 베타가 TypeSafe API와 호환, 10월 1일 Cloudflare Clef가 오픈소스로 Jev API와 호환](@/assets/images/jev-ai/02-timeline.png)
 *Jev 공개 뒤 3주 동안의 주요 사건입니다. 해커뉴스 점수와 댓글 수는 2026-10-06 기준입니다.*
 
 공개 하루 만에 Jev를 흉내 낸 작은 모델([Jevlike](https://github.com/vinnylarouge/jevlike))이 해커뉴스에 올라왔습니다. 공개 나흘 뒤인 9월 19일에는 [Latent Space 뉴스레터](https://www.latent.space/p/ainews-here-are-6-clones-of-jev-in)가 이틀 사이에 나온 따라 만든 모델 6개를 정리했습니다. 공개 첫 주에 Jev를 쓰는 새 GitHub 저장소가 1,865개 생겼다는 [논문 집계](https://huggingface.co/papers/2609.30216)도 나왔습니다.
