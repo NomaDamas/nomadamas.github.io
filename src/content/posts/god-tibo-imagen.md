@@ -25,8 +25,8 @@ OpenAI는 4월 21일 GPT Image 2를 사용하는 [ChatGPT Images 2.0](https://op
 
 현재 편집 경쟁에서도 GPT Image가 앞서 있습니다. 2026년 10월 7일 갱신된 [Arena 단일 이미지 편집 순위](https://arena.ai/leaderboard/image/image-edit/single-image)에서 `gpt-image-2.5-sunburst`는 1위, `gemini-nano-banana-2.1`은 6위입니다. 두 모델 모두 잠정 순위이며, 점수는 사람의 선호 평가이지 편집 정확도 백분율은 아닙니다.
 
-![Arena 단일 이미지 편집 순위: Sunburst 1위 1524±5, flare 2위 1481±5, GPT Image 2 medium 3위 1462±3, Nano Banana 2.1 6위 1428±6. Sunburst와 flare, Nano Banana 2.1은 잠정 순위](@/assets/images/god-tibo-imagen/11-image-edit-ranking.png)
-*단일 이미지 편집에서 Sunburst가 1위, Nano Banana 2.1이 6위입니다.*
+![Arena 단일 이미지 편집 순위의 실제 화면. 상위 6개 모델 중 GPT Image가 1~3위, Nano Banana 2.1이 6위이며 점수와 잠정 평가 표시가 함께 보입니다.](@/assets/images/god-tibo-imagen/11-image-edit-ranking.png)
+*[Arena 단일 이미지 편집 순위](https://arena.ai/leaderboard/image/image-edit/single-image). Sunburst가 1위, Nano Banana 2.1이 6위입니다.*
 
 그렇다면 Codex에서 그림을 만들려면 새 도구부터 설치해야 할까요? **이미 Codex 자체에 이미지 생성 기능이 있습니다.** [공식 문서](https://learn.chatgpt.com/docs/image-generation)는 ChatGPT 로그인으로 `$imagegen`을 사용해 UI 자산, 배너, 삽화, 스프라이트 시트를 만드는 방법을 안내합니다. 기본 기능은 GPT Image 2를 사용하며 일반 Codex 사용 한도에 포함됩니다.
 
