@@ -1,14 +1,14 @@
 ---
 title: "나노 바나나 다음은 GPT Image: Codex로 이미지 만들고 고치기"
-description: "나노 바나나로 익숙해진 사진 편집과 게임 소품 만들기를 Codex에 한국어로 부탁합니다. GPT Image의 편집 순위, god-tibo-imagen으로 만든 물약과 수정 결과, 직접 쓰는 방법과 제약을 소개합니다."
+description: "SNS 광고 시안을 만들고 제목과 버튼 문구를 바꾸는 일을 Codex에 한국어로 부탁합니다. GPT Image의 편집 경쟁, god-tibo-imagen으로 만든 실제 커피 광고 시안과 활용 방법을 소개합니다."
 pubDatetime: 2026-10-10T00:56:00+09:00
 author: "안승원 (Aiden)"
 tags: ["god-tibo-imagen", "codex", "코덱스 이미지 생성", "AI 이미지 생성", "python", "노마다마스"]
-ogImage: ../../assets/images/god-tibo-imagen/15-cover.png
+ogImage: ../../assets/images/god-tibo-imagen/20-ad-original.png
 featured: false
 ---
 
-요즘 AI는 글쓰기와 개발을 넘어 디자인 작업에서도 실력을 보여 주고 있습니다. 특히 이미지 생성과 편집의 발전이 눈에 띕니다. 증명사진의 배경을 바꾸고, 사진 속 옷을 갈아입히고, 게임에 넣을 소품을 만드는 일을 말로 부탁할 수 있게 됐습니다.
+요즘 AI는 글쓰기와 개발을 넘어 디자인 작업에서도 실력을 보여 주고 있습니다. 특히 이미지 생성과 편집의 발전이 눈에 띕니다. 증명사진의 배경을 바꾸고, 사진 속 옷을 갈아입히고, SNS에 올릴 광고 소재를 만드는 일을 말로 부탁할 수 있게 됐습니다.
 
 이런 활용으로 주목받은 도구가 Google의 나노 바나나입니다. 이제 OpenAI의 GPT Image도 이미지 생성과 편집 능력을 높이며 경쟁하고 있습니다. **이런 이미지 작업도 평소 쓰던 Codex에서 한국어로 부탁해 볼까요?**
 
@@ -41,40 +41,39 @@ https://github.com/NomaDamas/god-tibo-imagen
 
 [god-tibo-imagen](https://github.com/NomaDamas/god-tibo-imagen)은 NomaDamas 멤버 [김동규(Jeffrey Kim)](https://github.com/vkehfdl1)가 만든 공개 도구입니다. 기존 Codex의 ChatGPT 로그인 상태를 이용해 이미지 생성과 수정을 요청하고, 지정한 경로에 PNG로 저장합니다.
 
-Claude Code나 Codex에 이 도구를 써 달라고 맡길 수 있습니다. 직접 연결하려면 터미널 명령 `gti`, Node.js의 `createProvider`, Python의 `gti.Client`를 사용합니다. 터미널은 명령을 입력하는 창입니다. 예를 들어 게임 소품을 만드는 프로그램에서 이미지 요청과 파일 저장을 한 단계로 묶을 수 있습니다.
+Claude Code나 Codex에 이 도구를 써 달라고 맡길 수 있습니다. 직접 연결하려면 터미널 명령 `gti`, Node.js의 `createProvider`, Python의 `gti.Client`를 사용합니다. 터미널은 명령을 입력하는 창입니다. 예를 들어 광고 문구별 시안을 만드는 프로그램에서 이미지 요청과 파일 저장을 한 단계로 묶을 수 있습니다.
 
 그림 한 장을 대화로 다듬는 데는 Codex의 기본 기능으로도 충분합니다. god-tibo-imagen은 **내 프로그램에서 요청 문장과 저장 경로를 직접 다루고 싶을 때** 살펴볼 도구입니다.
 
-## 에이전트에게 물약을 부탁했습니다
+## 광고 시안을 만들고, 문구를 바꿔 봅니다
 
-Codex에 god-tibo-imagen으로 빨간 체력 물약을 만들고, 그 PNG를 입력으로 받아 액체를 파란색으로 바꿔 달라고 부탁했습니다. 게임 가방에 넣을 소품을 떠올리며 둥근 병, 코르크 마개, 짙은 갈색 테두리와 크림색 배경을 요청했습니다.
+SNS 광고를 준비하다 보면 같은 상품으로 여러 문구를 시험해 보고 싶어집니다. 제품 사진과 색감은 유지하면서 제목이나 버튼 문구를 바꾼 시안을 비교하는 작업입니다.
 
-![코르크 마개와 짙은 갈색 테두리가 있는 빨간 체력 물약과 파란 액체로 수정한 물약이 나란히 놓인 그림](@/assets/images/god-tibo-imagen/12-potion-pair.png)
-*빨간 체력 물약을 만든 뒤, 같은 병의 액체를 파란색으로 바꿨습니다.*
+커피 정기배송 서비스를 가정하고 Codex에 광고 시안을 부탁했습니다. 크림색 배경에 커피 봉투와 아이스커피를 배치하고, 제목은 ‘매일, 좋은 커피’, 버튼에는 ‘커피 구독 알아보기’를 넣도록 요청했습니다.
 
-두 결과 모두 둥근 병과 코르크 마개, 크림색 배경을 갖췄습니다. 파란 물약은 병을 처음부터 다시 설명해 만드는 대신 빨간 물약 파일을 넣어 수정한 결과입니다. 다만 ‘액체만 바꿔 달라’는 요청이 다른 모든 픽셀의 보존을 보장하지는 않습니다. 게임에 넣기 전에는 병의 윤곽과 반사광도 살펴봐야 합니다.
+![크림색 배경에 커피 봉투와 아이스커피를 배치한 광고. 제목은 매일, 좋은 커피, 버튼은 커피 구독 알아보기입니다.](@/assets/images/god-tibo-imagen/20-ad-original.png)
+*‘매일, 좋은 커피’로 정기배송 서비스를 소개하는 시안입니다.*
 
-만든 물약의 색을 다시 바꿔 보는 과정입니다. 이번에는 빨간 병의 액체를 초록색으로 부탁합니다. 아래 영상에서 Codex와 나눈 대화와 실행 과정을 볼 수 있습니다.
+다음에는 이 PNG를 입력으로 넣고 제목을 ‘출근 전, 한 잔의 여유’, 버튼 문구를 ‘첫 배송 살펴보기’로 바꿔 달라고 부탁했습니다. 상품을 다시 설명하지 않고 기존 시안에서 광고 문구를 수정한 것입니다.
 
-<video src='/videos/god-tibo-imagen/agent-edit.mp4' poster='/videos/god-tibo-imagen/agent-edit.jpg' controls muted playsinline preload='metadata' width='100%' aria-label='Codex에 빨간 물약의 액체를 초록색으로 바꿔 달라고 부탁하는 과정'></video>
+![같은 커피 봉투와 아이스커피 구도를 사용한 광고. 제목은 출근 전, 한 잔의 여유, 버튼은 첫 배송 살펴보기로 바뀌었습니다.](@/assets/images/god-tibo-imagen/21-ad-variant.png)
+*출근 전의 상황을 떠올리게 하는 문구로 바꾼 시안입니다.*
 
-*부탁부터 결과 확인까지 약 85초. 대기 구간은 4배속입니다.*
+두 시안 모두 커피 봉투와 잔, 크림색 배경을 유지하면서 제목과 버튼 문구가 바뀌었습니다. 이렇게 후보를 만든 뒤 어떤 문구가 상품과 고객에게 더 맞는지 비교할 수 있습니다. 실제 광고를 내보내기 전에는 한글 표기와 상품 표현, 브랜드 지침을 확인하면 됩니다.
 
-![빨간 물약을 입력으로 받아 액체를 초록색으로 바꾼 게임 소품](@/assets/images/god-tibo-imagen/14-potion-green.png)
-*같은 물약의 액체를 초록색으로 바꾼 결과입니다.*
+<video src='/videos/god-tibo-imagen/ad-demo.mp4' poster='/videos/god-tibo-imagen/ad-demo.jpg' controls muted playsinline preload='metadata' width='100%' aria-label='Codex에 커피 광고 시안을 부탁하고 제목과 버튼 문구를 바꾸는 실행 기록'></video>
+
+*한국어 부탁부터 두 시안 확인까지. 대기 구간은 4배속입니다.*
 
 ## 직접 써 보기
 
 ### 먼저 한국어로 부탁합니다
 
-Codex에 ChatGPT 계정으로 로그인한 환경에서, 작업 폴더를 Claude Code나 Codex로 열고 다음처럼 부탁합니다. 앞의 빨간 물약과 파란 물약처럼 생성한 파일을 다음 편집의 입력으로 연결하는 요청입니다.
+Codex에 ChatGPT 계정으로 로그인한 환경에서, 작업 폴더를 Claude Code나 Codex로 열고 다음처럼 부탁합니다. 첫 광고 시안을 만들고 그 파일을 입력으로 넣어 다른 문구의 시안까지 만드는 요청입니다.
 
 ```text wrap
-이 폴더에 god-tibo-imagen을 설치하고 빨간 체력 물약을 그려 주세요. 둥근 유리병과 코르크 마개, 짙은 갈색 테두리, 크림색 배경의 2D 게임 소품으로 만들고 images/potion-red.png에 저장해 주세요. 다음에는 그 파일을 입력으로 넣어 병 모양과 구도를 유지하면서 액체만 파란색으로 바꾸고 images/potion-blue.png에 저장해 주세요.
+god-tibo-imagen으로 커피 정기배송 서비스의 SNS 광고 시안을 만들어 주세요. 크림색 배경에 커피 봉투와 아이스커피를 배치하고, 제목은 '매일, 좋은 커피', 버튼 문구는 '커피 구독 알아보기'로 넣어 images/ad-original.png에 저장해 주세요. 다음에는 이 파일을 입력으로 넣고 제품 사진과 색감은 유지하면서 제목을 '출근 전, 한 잔의 여유', 버튼 문구를 '첫 배송 살펴보기'로 바꿔 images/ad-variant.png에 저장해 주세요.
 ```
-
-![에이전트에게 한국어로 물약 생성과 수정을 부탁하는 방법과 터미널에서 gti 명령을 실행하는 방법을 비교한 그림](@/assets/images/god-tibo-imagen/13-how-to-ask.png)
-*한국어로 부탁하거나, 직접 명령으로 물약 PNG를 저장합니다.*
 
 에이전트가 실행 권한을 물으면 **현재 폴더에 패키지를 설치하는지, 요청과 입력 이미지를 OpenAI로 보내도 되는지** 확인한 뒤 승인하면 됩니다. 이미지 생성은 내 컴퓨터 안에서 이루어지지 않습니다. 고객 자료나 인물 사진은 전송할 권한이 있는 것만 사용합니다.
 
@@ -94,8 +93,8 @@ pnpm add god-tibo-imagen@0.4.1 --ignore-scripts
 pnpm exec gti --provider private-codex \
   --model gpt-6.1-sol \
   --size 1024x1024 \
-  --prompt "둥근 유리병과 코르크 마개가 있는 빨간 체력 물약. 짙은 갈색 테두리, 크림색 배경의 2D 게임 소품. 병 전체를 가운데에 배치하고 글자와 로고는 넣지 마세요." \
-  --output ./images/potion-red.png
+  --prompt "커피 정기배송 서비스의 SNS 광고. 크림색 배경에 커피 봉투와 아이스커피를 배치하고 짙은 초록색 글자를 사용하세요. 제목은 '매일, 좋은 커피', 작은 설명은 '커피 정기배송', 버튼 문구는 '커피 구독 알아보기'로 넣으세요. 실제 브랜드 로고와 가격은 넣지 마세요." \
+  --output ./images/ad-original.png
 ```
 
 수정할 때는 `--image`로 방금 저장한 파일을 넘깁니다.
@@ -103,10 +102,10 @@ pnpm exec gti --provider private-codex \
 ```bash
 pnpm exec gti --provider private-codex \
   --model gpt-6.1-sol \
-  --image ./images/potion-red.png \
+  --image ./images/ad-original.png \
   --size 1024x1024 \
-  --prompt "병 모양과 코르크 마개, 테두리와 배경, 구도를 유지하고 액체만 파란색으로 바꿔 주세요." \
-  --output ./images/potion-blue.png
+  --prompt "제품 사진과 색감을 유지하면서 제목을 '출근 전, 한 잔의 여유', 버튼 문구를 '첫 배송 살펴보기'로 바꿔 주세요." \
+  --output ./images/ad-variant.png
 ```
 
 ### Python 코드에 연결합니다
@@ -122,9 +121,9 @@ from gti import Client
 
 client = Client(provider="private-codex")
 result = client.generate_image(
-    prompt="둥근 유리병과 코르크 마개가 있는 빨간 체력 물약. 크림색 배경의 2D 게임 소품. 글자 없이 그려 주세요.",
+    prompt="커피 정기배송 서비스의 SNS 광고. 크림색 배경에 커피 봉투와 아이스커피를 배치하고, 제목은 '매일, 좋은 커피', 버튼 문구는 '커피 구독 알아보기'로 넣어 주세요.",
     model="gpt-6.1-sol",
-    output_path="./images/potion-red.png",
+    output_path="./images/ad-original.png",
     size="1024x1024",
 )
 print(result.saved_path)
@@ -137,7 +136,7 @@ Node.js에서는 `createProvider`로 같은 작업을 코드에 연결합니다.
 - **로그인만으로 생성 권한이 보장되지는 않습니다.** 기존 Codex의 ChatGPT 인증을 이용하며, 인증정보가 시스템 키체인에만 있는 환경은 지원하지 않습니다. 계정의 이미지 생성 권한도 필요합니다.
 - **비공개 통신 경로에 의존합니다.** 서버 주소나 요청 형식이 바뀌면 작동하지 않을 수 있습니다. 계속 운영할 서비스에는 [공식 이미지 생성 API](https://developers.openai.com/api/docs/guides/image-generation)를 우선 검토합니다.
 - **이미지 모델 옵션이 그대로 적용되지 않을 수 있습니다.** 기본 요청값은 Sunburst지만 비공개 서버가 그 값을 따르지 않을 수 있습니다.
-- **요청한 크기와 결과 크기가 다를 수 있습니다.** 물약은 1024×1024를 요청했지만 1254×1254로 반환됐습니다. 게임에서 정확한 크기가 필요하면 저장 후 확인하고 맞춰야 합니다.
+- **요청한 크기와 결과 크기가 다를 수 있습니다.** 광고 플랫폼이 요구하는 픽셀 규격에 맞게 저장 결과를 확인하고 내보내면 됩니다.
 - **구독이 무제한 생성을 뜻하지는 않습니다.** Codex 기본 이미지 생성은 일반 사용 한도에 포함됩니다. 모든 구독 계정에서 무료 또는 무제한 생성이나 GPT Image 2.5 사용이 보장되는 것은 아닙니다.
 
 ## 저희 NomaDamas를 소개합니다
@@ -149,7 +148,7 @@ Node.js에서는 `createProvider`로 같은 작업을 코드에 연결합니다.
 
 god-tibo-imagen도 이곳에서 나온 도구입니다. NomaDamas는 2026년 10월 10일 기준 공개 저장소 90개를 운영하며, Markr와 함께 화장실을 주제로 제품을 만드는 해커톤 ‘변기톤’도 열었습니다. 작업 공간과 프로젝트 이야기는 [해커하우스 소개](/posts/korea-hacker-house/)에서 이어 읽을 수 있습니다.
 
-처음에는 물약 하나를 부탁해 보고, 색이나 소재를 바꿔 보세요. 쓸 만한 도구라면 [god-tibo-imagen 저장소](https://github.com/NomaDamas/god-tibo-imagen)에 star를 눌러 주세요.
+다음 SNS 게시물이나 광고에 쓸 시안을 하나 부탁해 보세요. 상품과 문구를 바꿔 가며 후보를 비교할 수 있습니다. 쓸 만한 도구라면 [god-tibo-imagen 저장소](https://github.com/NomaDamas/god-tibo-imagen)에 star를 눌러 주세요.
 
 ## 자주 묻는 질문
 
@@ -159,8 +158,8 @@ god-tibo-imagen도 이곳에서 나온 도구입니다. NomaDamas는 2026년 10�
 > [!faq]- 별도 OpenAI API 키 없이 되나요?
 > 기존 Codex의 ChatGPT 로그인 상태를 이용합니다. 계정의 이미지 생성 권한과 이용 조건을 확인해야 하며, API 키를 쓰지 않는다고 무제한이나 영구 무료인 것은 아닙니다.
 
-> [!faq]- 액체만 바꾸면 병은 완전히 그대로인가요?
-> 보장되지 않습니다. 물약의 색을 바꾸는 편집은 가능하지만 병의 윤곽과 반사광 등 다른 부분도 달라질 수 있습니다. 게임에 쓰기 전에는 원본과 결과를 비교합니다.
+> [!faq]- 같은 상품으로 광고 문구가 다른 시안을 만들 수 있나요?
+> 기존 시안 파일을 입력으로 넣고 제목이나 버튼 문구를 바꿔 달라고 부탁하면 됩니다. 여러 후보를 비교한 뒤 실제 광고에 쓸 문구와 상품 표현을 최종 확인하면 됩니다.
 
 > [!faq]- Can I generate images from Python with god-tibo-imagen?
 > Yes. Use `gti.Client` to request an image and save it as a PNG. It uses existing Codex ChatGPT authentication and depends on a private backend rather than the official public image API.
