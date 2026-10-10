@@ -8,7 +8,9 @@ ogImage: ../../assets/images/god-tibo-imagen/15-cover.png
 featured: false
 ---
 
-증명사진의 배경을 바꾸고, 사진 속 옷을 갈아입히고, 게임에 넣을 소품을 그립니다. 나노 바나나로 익숙해진 이미지 작업에서 이제 GPT Image가 편집 순위의 선두에 섰습니다. **이런 그림도 Codex에 한국어로 부탁해 만들어 볼까요?**
+요즘 AI는 글쓰기와 개발을 넘어 디자인 작업에서도 실력을 보여 주고 있습니다. 특히 이미지 생성과 편집의 발전이 눈에 띕니다. 증명사진의 배경을 바꾸고, 사진 속 옷을 갈아입히고, 게임에 넣을 소품을 만드는 일을 말로 부탁할 수 있게 됐습니다.
+
+이런 활용으로 주목받은 도구가 Google의 나노 바나나입니다. 이제 OpenAI의 GPT Image도 이미지 생성과 편집 능력을 높이며 경쟁하고 있습니다. **이런 이미지 작업도 평소 쓰던 Codex에서 한국어로 부탁해 볼까요?**
 
 ![같은 인물의 모습을 유지하면서 옷과 배경을 바꾼 나노 바나나의 사진 편집 예시](@/assets/images/god-tibo-imagen/10-nano-banana.jpg)
 *[Google의 나노 바나나 소개](https://blog.google/products/gemini/updated-image-editing-model/)*
