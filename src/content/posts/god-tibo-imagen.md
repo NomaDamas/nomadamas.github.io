@@ -19,7 +19,9 @@ featured: false
 
 ## 나노 바나나 이후, GPT Image의 편집 경쟁
 
-그 뒤에는 [‘덕테이프’라고 불린 익명 모델들](https://spoonai.me/blog/2026-04-16-openai-duct-tape-gpt-image-2-ko)이 GPT Image 2라는 추측으로 화제를 모았습니다. OpenAI는 이후 4월 21일 [ChatGPT Images 2.0](https://openai.com/index/introducing-chatgpt-images-2-0/)을 발표했습니다.
+이미지 생성 모델을 비교하는 Arena에서는 Google의 나노 바나나 2가 선두를 지키고 있었습니다. 그런데 2026년 4월, ‘덕테이프’라는 별명으로 불린 익명 모델들이 등장했습니다. 블라인드 비교에 참여한 사용자들 사이에서 **나노 바나나 Pro보다 결과가 좋다는 반응**이 나오면서 주목받았습니다. 당시 이 모델들은 [OpenAI의 차기 이미지 모델, GPT Image 2로 추정됐습니다](https://spoonai.me/blog/2026-04-16-openai-duct-tape-gpt-image-2-ko).
+
+OpenAI는 4월 21일 GPT Image 2를 사용하는 [ChatGPT Images 2.0](https://openai.com/index/introducing-chatgpt-images-2-0/)을 발표했습니다. 공개 직후 GPT Image 2는 [Arena의 이미지 생성과 편집 순위에서 모두 1위](https://community.openai.com/t/introducing-gpt-image-2-available-today-in-the-api-and-codex/1379479/2)에 올랐습니다. 나노 바나나가 앞서던 이미지 경쟁에서 **OpenAI가 선두를 가져온 것입니다.**
 
 현재 편집 경쟁에서도 GPT Image가 앞서 있습니다. 2026년 10월 7일 갱신된 [Arena 단일 이미지 편집 순위](https://arena.ai/leaderboard/image/image-edit/single-image)에서 `gpt-image-2.5-sunburst`는 1위, `gemini-nano-banana-2.1`은 6위입니다. 두 모델 모두 잠정 순위이며, 점수는 사람의 선호 평가이지 편집 정확도 백분율은 아닙니다.
 
