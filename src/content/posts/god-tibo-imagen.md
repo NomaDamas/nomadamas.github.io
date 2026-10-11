@@ -61,9 +61,9 @@ SNS 광고를 준비하다 보면 같은 상품으로 여러 문구를 시험해
 
 두 시안 모두 커피 봉투와 잔, 크림색 배경을 유지하면서 제목과 버튼 문구가 바뀌었습니다. 이렇게 후보를 만든 뒤 어떤 문구가 상품과 고객에게 더 맞는지 비교할 수 있습니다. 실제 광고를 내보내기 전에는 한글 표기와 상품 표현, 브랜드 지침을 확인하면 됩니다.
 
-<video src='/videos/god-tibo-imagen/ad-demo.mp4' poster='/videos/god-tibo-imagen/ad-demo.jpg' controls muted playsinline preload='metadata' width='100%' aria-label='Codex에 커피 광고 시안을 부탁하고 제목과 버튼 문구를 바꾸는 실행 기록'></video>
+<video src='/videos/god-tibo-imagen/ad-demo-short.mp4' poster='/videos/god-tibo-imagen/ad-demo-short.jpg' controls muted playsinline preload='metadata' width='100%' aria-label='Codex 실행 기록을 요약한 커피 광고 생성과 문구 변경 과정'></video>
 
-*한국어 부탁부터 두 시안 확인까지. 대기 구간은 4배속입니다.*
+*광고 생성과 문구 변경 과정을 18초로 요약했습니다.*
 
 ## 직접 써 보기
 
