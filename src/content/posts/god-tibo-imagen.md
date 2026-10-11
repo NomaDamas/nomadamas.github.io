@@ -1,7 +1,7 @@
 ---
 title: "나노 바나나 다음은 GPT Image: Codex로 이미지 만들고 고치기"
 description: "SNS 광고 시안을 만들고 제목과 버튼 문구를 바꾸는 일을 Codex에 한국어로 부탁합니다. GPT Image의 편집 경쟁, god-tibo-imagen으로 만든 실제 커피 광고 시안과 활용 방법을 소개합니다."
-pubDatetime: 2026-10-10T00:56:00+09:00
+pubDatetime: 2026-10-11T20:34:59+09:00
 author: "안승원 (Aiden)"
 tags: ["god-tibo-imagen", "codex", "코덱스 이미지 생성", "AI 이미지 생성", "python", "노마다마스"]
 ogImage: ../../assets/images/god-tibo-imagen/20-ad-original.png
