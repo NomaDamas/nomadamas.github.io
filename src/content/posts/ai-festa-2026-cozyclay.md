@@ -59,9 +59,9 @@ AI 페스타 2026의 전국민 AI 경진대회 특별관에는 이 문제를 3D�
 
 부스에서는 팀원이 노트북으로 CozyClay를 다뤄 보였습니다.
 
-<video src="/videos/ai-festa-2026-cozyclay/booth-demo.mp4" poster="/videos/ai-festa-2026-cozyclay/booth-demo.jpg" controls muted playsinline preload="metadata" width="100%" aria-label="CozyClay 부스의 TV와 노트북을 가까이 찍은 영상. 팀원이 노트북에서 CozyClay 작업 화면을 다룬다. 뒤 TV에는 'So plan the shot in 3D first.', 'Same camera. Same timing. Same jump.' 문구와 회색 기둥 장면이 나오다가 'Plan in 3D'와 'AI renders it' 문구와 함께 AI가 만든 인물 영상이 나온다"></video>
+<video src="/videos/ai-festa-2026-cozyclay/booth-demo.mp4" poster="/videos/ai-festa-2026-cozyclay/booth-demo.jpg" controls playsinline preload="metadata" width="100%" aria-label="CozyClay 부스의 TV와 노트북을 가까이 찍은 영상. 팀원이 노트북에서 CozyClay 작업 화면을 다룬다. 뒤 TV에는 'So plan the shot in 3D first.', 'Same camera. Same timing. Same jump.' 문구와 회색 기둥 장면이 나오다가 'Plan in 3D'와 'AI renders it' 문구와 함께 AI가 만든 인물 영상이 나온다"></video>
 
-*CozyClay 부스에서 찍은 영상입니다(17초, 소리 없음).*
+*CozyClay 부스에서 사용법을 설명하는 영상입니다(17초, 소리 있음).*
 
 CozyClay [체험판](https://cozyclay.org/#try)은 지금도 열 수 있습니다. 장면 속 카메라를 움직여 보는 7단계 튜토리얼이고 마우스와 키보드가 있어야 해서 컴퓨터 브라우저로 열어야 합니다.
 
@@ -77,9 +77,9 @@ CozyClay [체험판](https://cozyclay.org/#try)은 지금도 열 수 있습니�
 - 인물에 동작을 주고 카메라의 위치와 움직임, 컷을 타임라인에 정합니다.
 - 짠 장면을 영상의 첫 장면 그림이나 모델이 따라갈 참고 영상, 프롬프트로 바꿔 Seedance, Kling, Veo 같은 AI 영상 모델에 넘깁니다.
 
-<video src="/videos/ai-festa-2026-cozyclay/cozyclay-seedance-vs-greybox.mp4" poster="/videos/ai-festa-2026-cozyclay/cozyclay-seedance-vs-greybox.jpg" controls muted playsinline preload="metadata" width="100%" aria-label="위아래로 나뉜 비교 영상. 위는 흐린 하늘 아래 콘크리트 기둥 두 개 사이를 사람이 뛰어 건너는 실사 같은 영상이다. 아래는 격자 바닥 위 회색 기둥 두 개 사이를 회색 인형이 같은 순간에 같은 동작으로 뛰어 건너는 3D 화면이다. 뛰어 건넌 뒤에는 두 화면 모두 기둥 위에 내려선 발을 가까이 보여 준다. 마지막에는 모자와 헤드폰을 쓴 인물(위)과 회색 인형(아래)이 정면을 보고 선다"></video>
+<video src="/videos/ai-festa-2026-cozyclay/cozyclay-seedance-vs-greybox.mp4" poster="/videos/ai-festa-2026-cozyclay/cozyclay-seedance-vs-greybox.jpg" controls playsinline preload="metadata" width="100%" aria-label="위아래로 나뉜 비교 영상. 위는 흐린 하늘 아래 콘크리트 기둥 두 개 사이를 사람이 뛰어 건너는 실사 같은 영상이다. 아래는 격자 바닥 위 회색 기둥 두 개 사이를 회색 인형이 같은 순간에 같은 동작으로 뛰어 건너는 3D 화면이다. 뛰어 건넌 뒤에는 두 화면 모두 기둥 위에 내려선 발을 가까이 보여 준다. 마지막에는 모자와 헤드폰을 쓴 인물(위)과 회색 인형(아래)이 정면을 보고 선다"></video>
 
-*위는 AI 영상 모델 Seedance 2.5가 만든 영상, 아래는 CozyClay에서 짠 회색 3D 장면입니다(17초, 소리 없음). 영상: [CozyClay 공식 사이트](https://cozyclay.org/).*
+*위는 AI 영상 모델 Seedance 2.5가 만든 영상, 아래는 CozyClay에서 짠 회색 3D 장면입니다(17초, 소리 있음). 영상: [CozyClay 공식 사이트](https://cozyclay.org/).*
 
 위 영상에서는 회색 장면이 두 기둥의 자리와 뛰어오르는 순간을 정했고 콘크리트, 옷, 날씨 같은 겉모습은 AI 영상 모델이 만들었습니다.
 
