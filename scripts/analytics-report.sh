@@ -7,7 +7,7 @@
 # 인증과 권한, 호출 한도는 AGENTS.md "방문 데이터 조회" 절에 있다.
 set -euo pipefail
 
-GA_PROPERTY_ID="${GA_PROPERTY_ID:-555475692}"
+GA_PROPERTY_ID="${GA_PROPERTY_ID:-558608779}"
 GA_SERVICE_ACCOUNT="${GA_SERVICE_ACCOUNT:-ga-reader@nomadamas-analytics.iam.gserviceaccount.com}"
 GA_SCOPE="https://www.googleapis.com/auth/analytics.readonly"
 CLARITY_ENDPOINT="https://www.clarity.ms/export-data/api/v1/project-live-insights"
