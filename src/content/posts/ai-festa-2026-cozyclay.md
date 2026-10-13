@@ -11,9 +11,9 @@ ogImage: ../../assets/images/ai-festa-2026-cozyclay/00-cover.png
 ---
 ![AI 페스타 2026 전시장의 CozyClay 부스 포스터 기둥. 기둥 위쪽에는 공중으로 뛰어오른 사람 사진과 CozyClay 글자가 있다. 가운데에는 같은 장면을 회색 기둥과 인형으로 짠 작은 3D 화면이, 아래에는 'AI 영상, 원하는 구도부터.', '인물의 동작과 카메라를 3D로 먼저 연출하세요.', 'cozyclay.org' 문구와 QR 코드가 있다. 맨 아래에는 '점프 데모 기반 AI 이미지 재구성'이라는 작은 글씨가 있다. 왼쪽에는 휴대폰을 보는 관람객들과 다른 회사 부스, 'AI WEEK26 - AI FESTA' 표지판이 보인다. 오른쪽에는 NomaDamas 티셔츠를 입은 팀원과 지나가는 관람객들이 있다. 관람객 얼굴은 흐리게 처리했다](@/assets/images/ai-festa-2026-cozyclay/01-booth-crowd.jpg)
 
-AI 영상 모델에 같은 지시 문장(프롬프트)을 넣어도 카메라는 나올 때마다 다른 자리에 섭니다. 원하는 구도가 나올 때까지 다시 뽑으면 그만큼 요금도 다시 냅니다.
+AI 영상 모델에 같은 지시 문장(프롬프트)을 다시 넣어도 카메라가 같은 자리에 선다는 보장이 없습니다. 원하는 구도가 나올 때까지 다시 뽑으면 그만큼 요금도 다시 냅니다.
 
-AI 페스타 2026의 전국민 AI 경진대회 특별관에는 이 문제를 3D로 푸는 오픈소스 [CozyClay(코지클레이)](https://github.com/NomaDamas/CozyClay)의 부스가 있었습니다. 저희 NomaDamas 멤버가 만든 도구로, 인물의 동작과 카메라를 3D로 먼저 짜 두고 그 장면을 AI 영상 모델에 넘깁니다. 행사에 가지 못했다면 부스에서 보여 준 시연을 아래 영상으로 볼 수 있습니다.
+AI 페스타 2026의 전국민 AI 경진대회 특별관에는 이 문제를 3D로 푸는 오픈소스 [CozyClay(코지클레이)](https://github.com/NomaDamas/CozyClay)의 부스가 있었습니다. 저희 NomaDamas 멤버가 만든 이 도구는 인물의 동작과 카메라를 3D로 먼저 짜 두고 그 장면을 AI 영상 모델에 넘깁니다.
 
 > **요약**
 >
@@ -49,7 +49,7 @@ AI 페스타 2026의 전국민 AI 경진대회 특별관에는 이 문제를 3D�
 
 ![전국민 AI 경진대회 배너. 남색 바탕에 '모두의 AI를 위한 전국민 AI 경진대회 AI Challenge for All' 제목과 'AI ROOKIE', 'AI CHAMPION' 두 대회 이름이 있다. 아래에는 머리에 안테나를 단 흰 호랑이 캐릭터가 있다. 왼쪽 벽에는 '함께하는 기업/기관' 아래 Liner, 미리캔버스, ABLEARN 로고와 재정경제부, 교육부, 국방부, 문화체육관광부, 법제처, 행정안전부, 해양수산부, 성평등가족부 로고가 붙어 있다. 오른쪽 파란 벽에는 CHAMPION의 앞 글자 CHAMPI가 세로로 크게 보인다](@/assets/images/ai-festa-2026-cozyclay/02-challenge-banner.jpg)
 
-메인 무대 앞 특별관은 [전국민 AI 경진대회](https://aichallenge4all.or.kr/) 우수작을 모은 자리였습니다. 과기정통부가 여러 AI 대회를 하나로 묶은 통합 대회로, 일반 국민, 초중고 학생, 대학생과 연구자, 디지털 취약계층으로 대상을 나눠 4월부터 11월까지 치르고 12월에 시상합니다.
+메인 무대 앞 특별관은 [전국민 AI 경진대회](https://aichallenge4all.or.kr/) 우수작을 모은 자리였습니다. 전국민 AI 경진대회는 과기정통부가 여러 AI 대회를 하나로 묶은 통합 대회입니다. 일반 국민, 초중고 학생, 대학생과 연구자, 디지털 취약계층으로 대상을 나눠 4월부터 11월까지 치르고 12월에 시상합니다.
 
 이 특별관에는 연구자 대회 AI CHAMPION(인공지능 챔피언 대회)과 대학생 대회 [AI ROOKIE](https://ai-rookie.or.kr/)(인공지능 루키 대회)의 참가팀이 나왔습니다. AI ROOKIE 참가팀은 스스로 정한 문제를 푸는 AI 서비스를 만들어 예선, 본선, 결선 심사를 거치고 결선은 11월에 열립니다. CozyClay 팀은 AI ROOKIE 결선 진출팀입니다.
 
@@ -57,11 +57,11 @@ AI 페스타 2026의 전국민 AI 경진대회 특별관에는 이 문제를 3D�
 
 ![왼쪽은 CozyClay 부스 정면이다. 위에 AI ROOKIE 간판이 있다. 흰 기둥에 '애니메이션 좋아하세요?'라는 큰 글씨가, 그 아래 TV에 회색 기둥 위의 인물 장면과 'Same camera. Same timing'으로 시작하는 문구가 나온다. NomaDamas 티셔츠를 입은 팀원 한 명은 음료를 들고 브이 자를 그리고 있다. 다른 한 명은 등을 보인 채 노트북을 다룬다. 오른쪽은 부스 포스터로, 공중에 뛰어오른 사람 사진 옆에 'CozyClay', 'AI ROOKIE AI FESTA 2026'이 적혀 있다. 아래에는 회색 기둥과 인형으로 짠 '3D PREVIS' 작은 화면과 'AI 영상, 원하는 구도부터.', '인물의 동작과 카메라를 3D로 먼저 연출하세요.', '브라우저 기반 3D 프리비즈 스튜디오' 문구가 있다](@/assets/images/ai-festa-2026-cozyclay/03-booth-poster.jpg)
 
-부스에서는 팀원이 노트북으로 CozyClay를 다루며 3D로 짠 장면이 AI 영상이 되는 과정을 보여 줬습니다.
+부스에서는 팀원이 노트북으로 CozyClay를 다뤄 보였습니다.
 
 <video src="/videos/ai-festa-2026-cozyclay/booth-demo.mp4" poster="/videos/ai-festa-2026-cozyclay/booth-demo.jpg" controls muted playsinline preload="metadata" width="100%" aria-label="CozyClay 부스의 TV와 노트북을 가까이 찍은 영상. 팀원이 노트북에서 CozyClay 작업 화면을 다룬다. 뒤 TV에는 'So plan the shot in 3D first.', 'Same camera. Same timing. Same jump.' 문구와 회색 기둥 장면이 나오다가 'Plan in 3D'와 'AI renders it' 문구와 함께 AI가 만든 인물 영상이 나온다"></video>
 
-*부스 노트북에서 CozyClay를 다루는 모습입니다(17초, 소리 없음).*
+*CozyClay 부스에서 찍은 영상입니다(17초, 소리 없음).*
 
 CozyClay [체험판](https://cozyclay.org/#try)은 지금도 열 수 있습니다. 장면 속 카메라를 움직여 보는 7단계 튜토리얼이고 마우스와 키보드가 있어야 해서 컴퓨터 브라우저로 열어야 합니다.
 
@@ -89,7 +89,7 @@ CozyClay [체험판](https://cozyclay.org/#try)은 지금도 열 수 있습니�
 npx cozyclay
 ```
 
-CozyClay는 무료로 쓸 수 있는 오픈소스입니다. 빗나간 영상에 다시 내는 돈은 CozyClay가 아니라 Seedance 같은 영상 모델 서비스의 요금입니다.
+CozyClay는 무료로 쓸 수 있는 오픈소스입니다. 원하는 구도가 나올 때까지 다시 뽑는 요금은 CozyClay가 아니라 Seedance 같은 영상 모델 서비스에 냅니다.
 
 ## CozyClay는 누가 만들었을까?
 
@@ -103,7 +103,7 @@ CozyClay는 무료로 쓸 수 있는 오픈소스입니다. 빗나간 영상에 
 ![NomaDamas 작업 공간. 몰딩 천장이 있는 방의 벽을 따라 책상이 놓여 있다. 멤버 네 명이 각자 모니터를 여러 대 켜 두고 코드 편집기와 터미널 화면을 보며 작업하고 있다. 방 가운데에는 흰 원형 테이블이 있다](@/assets/images/ai-festa-2026-cozyclay/07-nomadamas-workspace.jpg)
 *NomaDamas 작업 공간입니다.*
 
-[NomaDamas](https://github.com/NomaDamas)는 AI 회사 [Markr AI](https://markr.ai)가 운영하는 서울의 AI 오픈소스 해커하우스입니다. 개발 좋아하는 사람들이 하숙하듯 모여 오픈소스를 만듭니다. 밤에 이야기하다 나온 아이디어도 그 자리에서 저장소로 만들어 다음 날 공개하고 반응을 보며 키웁니다.
+[NomaDamas](https://github.com/NomaDamas)는 AI 회사 [Markr AI](https://markr.ai)가 운영하는 서울의 AI 오픈소스 해커하우스입니다. 개발 좋아하는 사람들이 하숙집처럼 드나들며 오픈소스를 만듭니다. 아이디어가 나오면 완성을 기다리지 않고 다음 날 저장소부터 공개한 뒤 반응을 보며 키웁니다.
 
 공개 저장소 90개가 받은 star는 모두 12,148개입니다(2026년 10월 7일 기준). CozyClay는 그중 세 번째로 star를 많이 받았습니다. 첫째는 [k-skill](https://github.com/NomaDamas/k-skill)(7,810개)로, 지하철 도착 정보나 부동산 실거래가처럼 한국에서만 필요한 조회를 AI 에이전트가 할 수 있게 해 줍니다. 둘째는 AI로 발표 자료를 만들 때 쓰는 [slides-grab](https://github.com/NomaDamas/slides-grab)(1,212개)입니다.
 
@@ -124,7 +124,7 @@ CozyClay가 궁금하다면 아래 체험판부터 열어 보세요. 써 보고 
 > 2026년 10월 6일(화)부터 8일(목)까지 서울 코엑스 3층 C홀에서 열렸습니다. 관람 시간은 6일과 7일이 오전 10시부터 오후 5시까지, 마지막 날인 8일은 오후 4시까지였습니다. [공식 사이트](https://www.aifesta.kr/)의 사전 등록은 10월 2일 오후 6시에 마감됐습니다. 사전 등록을 마쳤다면 무료로 들어갈 수 있었고 마치지 못했다면 현장에서 등록하고 입장료 1만 원을 냈습니다. AI 서밋과 퓨처 테크 컨퍼런스는 따로 유료 등록해야 했습니다.
 
 > [!faq]- AI 페스타 2026에서 CozyClay(코지클레이) 부스와 전국민 AI 경진대회 특별관은 어디에 있었나요?
-> 전국민 AI 경진대회 특별관은 코엑스 C홀 메인 무대 바로 앞, [공식 전시 배치도](https://www.aifesta.kr/exhibition/booth-map)의 CH-01 구역이었습니다. [전국민 AI 경진대회](https://aichallenge4all.or.kr/) 우수작을 모은 특별관으로 AI ROOKIE와 AI CHAMPION 참가팀이 나왔고 [CozyClay](https://github.com/NomaDamas/CozyClay) 부스는 AI ROOKIE 구역에 있었습니다.
+> 전국민 AI 경진대회 특별관은 코엑스 C홀 메인 무대 바로 앞에 있었습니다. [전국민 AI 경진대회](https://aichallenge4all.or.kr/) 우수작을 모은 특별관으로 AI ROOKIE와 AI CHAMPION 참가팀이 나왔습니다. [CozyClay](https://github.com/NomaDamas/CozyClay) 부스는 [공식 전시 배치도](https://www.aifesta.kr/exhibition/booth-map)의 CH-01 구역, AI ROOKIE 참가팀 자리에 있었습니다.
 
 > [!faq]- AI ROOKIE(인공지능 루키 대회)는 누가 참가하나요?
 > 만 34세 이하이면서 학사 학위가 없는 대학생이 전공과 상관없이 참가할 수 있습니다. 팀장은 대한민국 국적이어야 합니다. 스스로 정한 문제를 푸는 AI 서비스를 만들어 예선, 본선, 결선 심사를 거치고 총상금은 3억 5천만 원입니다. 공지와 일정은 [AI ROOKIE 사이트](https://ai-rookie.or.kr/)에 있습니다.
@@ -133,7 +133,7 @@ CozyClay가 궁금하다면 아래 체험판부터 열어 보세요. 써 보고 
 > [CozyClay](https://github.com/NomaDamas/CozyClay)는 AGPL-3.0 라이선스로 공개된 무료 오픈소스입니다. 설치 없이 보려면 [cozyclay.org](https://cozyclay.org/#try)의 체험판을 컴퓨터 브라우저에서 열면 됩니다. Node.js 22.19 이상이 있는 컴퓨터에서는 터미널에 `npx cozyclay`를 입력해 실행할 수 있습니다. 짠 장면으로 AI 영상을 만드는 비용은 Seedance 같은 영상 모델 서비스에서 따로 듭니다.
 
 > [!faq]- What was AI FESTA 26, and where was the CozyClay booth?
-> AI FESTA 26 (AI Festa 2026) was the flagship event of Korea's national AI Week, designated by the Ministry of Science and ICT. It ran October 6 to 8, 2026, in Hall C on the 3rd floor of COEX, Seoul. [CozyClay](https://github.com/NomaDamas/CozyClay), an open source previs tool from NomaDamas that runs in the browser, had a booth in the AI ROOKIE area of the AI Challenge for All special pavilion, block CH-01 on the [official floor plan](https://www.aifesta.kr/exhibition/booth-map), right in front of the main stage. The CozyClay demo still runs in the browser at [cozyclay.org](https://cozyclay.org/#try).
+> AI FESTA 26 (AI Festa 2026) was the flagship event of Korea's national AI Week, designated by the Ministry of Science and ICT. It ran October 6 to 8, 2026, in Hall C on the 3rd floor of COEX, Seoul. [CozyClay](https://github.com/NomaDamas/CozyClay), an open source previs tool from NomaDamas that runs in the browser, had a booth in block CH-01 on the [official floor plan](https://www.aifesta.kr/exhibition/booth-map), in the AI ROOKIE area of the AI Challenge for All special pavilion right in front of the main stage. The CozyClay demo still runs in the browser at [cozyclay.org](https://cozyclay.org/#try).
 
 ## 참고 자료
 
