@@ -56,6 +56,10 @@ content:
       - name: draft
         label: 초안 (발행 안 함)
         type: boolean
+      - name: hideAbout
+        label: 글 끝 NomaDamas 소개 숨기기
+        type: boolean
+        description: 본문이 NomaDamas를 이미 자세히 소개하는 글만 켠다. 소개 문구는 고정 페이지의 post-about에서 고친다.
       - name: ogImage
         label: 공유 이미지
         type: image

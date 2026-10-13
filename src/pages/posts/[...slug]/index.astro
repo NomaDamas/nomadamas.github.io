@@ -16,6 +16,7 @@ import BackButton from "./_components/BackButton.astro";
 import BackToTopButton from "./_components/BackToTopButton.astro";
 import AdjacentPostNav from "./_components/AdjacentPostNav.astro";
 import FloatingToc from "./_components/FloatingToc.astro";
+import PostAbout from "./_components/PostAbout.astro";
 import {
   FLOATING_TOC_MIN_HEADINGS,
   TOC_MAX_DEPTH,
@@ -81,6 +82,7 @@ const {
   timezone,
   tags,
   hideEditPost,
+  hideAbout,
 } = post.data;
 
 const { Content, headings } = await render(post);
@@ -168,6 +170,8 @@ const ogImage = ogImageUrl
     >
       <Content />
     </article>
+
+    {!hideAbout && <PostAbout />}
 
     {
       tocHeadings.length >= FLOATING_TOC_MIN_HEADINGS && (
