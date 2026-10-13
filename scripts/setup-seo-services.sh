@@ -250,7 +250,7 @@ note "설치 코드를 사이트에 붙이라는 안내가 나와도 무시하�
 ask_valid PUBLIC_GA_MEASUREMENT_ID "측정 ID를 붙여 넣으세요 (G-XXXX):" '^G-[A-Z0-9]+$'
 
 # ── 2 ────────────────────────────────────────────────────────────────────
-stage "Google Analytics 4: 브라우저 기록 기반 페이지뷰 끄기"
+stage "Google Analytics 4: 브라우저 기록 기반 페이지뷰 끄기, 보관 기간"
 if [[ -n "$PUBLIC_GA_MEASUREMENT_ID" ]]; then
   say "이 블로그는 페이지를 새로 고치지 않고 넘깁니다(Astro ClientRouter). 넘길 때의 페이지뷰는"
   say "코드가 직접 보내므로, GA의 자동 수집을 끄지 않으면 페이지뷰가 두 번씩 잡힙니다."
@@ -258,7 +258,10 @@ if [[ -n "$PUBLIC_GA_MEASUREMENT_ID" ]]; then
   step "페이지 조회수(Page views) -> 고급 설정 표시(Show advanced settings)를 엽니다."
   step "'브라우저 기록 이벤트 기반 페이지 변경(Page changes based on browser history events)'을 끄고 저장합니다."
   note "'페이지 로드(Page loads)'는 켜 둔 채로 둡니다."
-  pause "껐으면 Enter"
+  say "방문 분석 안내(/privacy/)에 GA 보관 기간을 14개월로 적어 두었으니 속성 설정도 맞춥니다."
+  step "관리(Admin) -> 데이터 수집 및 수정(Data collection and modification) -> 데이터 보관(Data retention)."
+  step "이벤트 데이터 보관(Event data retention)을 14개월로 바꾸고 저장합니다. 기본값은 2개월입니다."
+  pause "둘 다 했으면 Enter"
 else
   note "GA4를 건너뛰어서 이 단계도 건너뜁니다."
 fi
