@@ -1,7 +1,7 @@
 ---
 title: "Claude Code 스킬이란? AI에게 건네는 업무 온보딩 문서"
 description: "Claude Code 스킬은 우리 팀이 일하는 방식을 적어 AI에게 건네는 온보딩 문서입니다. 같은 주간 보고 부탁을 스킬 없이, 스킬과 함께 맡겨 결과를 비교하고, k-skill로 한글 문서와 KTX 시간표, 맞춤법 검사를 맡겨 본 뒤 첫 스킬을 만드는 법까지 정리했습니다."
-pubDatetime: 2026-10-13T20:30:00+09:00
+pubDatetime: 2026-10-13T22:30:00+09:00
 author: "안승원 (Aiden)"
 tags: ["claude code", "클로드 코드 스킬", "agent skills", "에이전트 스킬", "k-skill", "업무 자동화"]
 ogImage: ../../assets/images/claude-code-skills/00-cover.png
