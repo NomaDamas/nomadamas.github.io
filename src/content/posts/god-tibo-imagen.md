@@ -139,16 +139,9 @@ Node.js에서는 `createProvider`로 같은 작업을 코드에 연결합니다.
 - **요청한 크기와 결과 크기가 다를 수 있습니다.** 광고 플랫폼이 요구하는 픽셀 규격에 맞게 저장 결과를 확인하고 내보내면 됩니다.
 - **구독이 무제한 생성을 뜻하지는 않습니다.** Codex 기본 이미지 생성은 일반 사용 한도에 포함됩니다. 모든 구독 계정에서 무료 또는 무제한 생성이나 GPT Image 2.5 사용이 보장되는 것은 아닙니다.
 
-## 저희 NomaDamas를 소개합니다
+## 마치며
 
-![NomaDamas 작업 공간에서 멤버들이 책상과 여러 대의 모니터 앞에서 작업하는 모습](@/assets/images/korea-hacker-house/00-nomadamas-workspace.jpg)
-*[NomaDamas 작업 공간](/posts/korea-hacker-house/)*
-
-[NomaDamas](https://blog.nomadamas.org/about/)는 AI 회사 [Markr AI](https://markr.ai)가 운영하는 AI 오픈소스 해커하우스입니다. 함께 살거나 작업 공간에 드나드는 멤버들이 필요한 도구를 만들고 공개합니다. 혼자 시작한 프로젝트에 다른 멤버가 붙고, 매주 화요일 저녁에는 한 주 동안 만든 것을 보여 줍니다.
-
-god-tibo-imagen도 이곳에서 나온 도구입니다. NomaDamas는 2026년 10월 10일 기준 공개 저장소 90개를 운영하며, Markr와 함께 화장실을 주제로 제품을 만드는 해커톤 ‘변기톤’도 열었습니다. 작업 공간과 프로젝트 이야기는 [해커하우스 소개](/posts/korea-hacker-house/)에서 이어 읽을 수 있습니다.
-
-다음 SNS 게시물이나 광고에 쓸 시안을 하나 부탁해 보세요. 상품과 문구를 바꿔 가며 후보를 비교할 수 있습니다. 쓸 만한 도구라면 [god-tibo-imagen 저장소](https://github.com/NomaDamas/god-tibo-imagen)에 star를 눌러 주세요.
+god-tibo-imagen은 저희 NomaDamas에서 나온 도구입니다. 다음 SNS 게시물이나 광고에 쓸 시안을 하나 부탁해 보세요. 상품과 문구를 바꿔 가며 후보를 비교할 수 있습니다. 쓸 만한 도구라면 [god-tibo-imagen 저장소](https://github.com/NomaDamas/god-tibo-imagen)에 star를 눌러 주세요.
 
 ## 자주 묻는 질문
 

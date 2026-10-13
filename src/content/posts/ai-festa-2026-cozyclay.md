@@ -96,18 +96,7 @@ CozyClay는 무료로 쓸 수 있는 오픈소스입니다. 원하는 구도가 
 ![CozyClay 부스 앞에 선 두 사람. 둘 다 낙타 그림과 NOMADAMAS 글자가 있는 올리브색 티셔츠를 입고 목에 EXHIBITOR 명찰을 건 채 브이 자를 그리고 있다. 뒤 흰 기둥 위쪽에는 '애니메이션 좋아하세요?'가 크게 적혀 있다. 가운데 TV에는 'Stop prompting AI video. Direct it.' 문구가, 아래 노트북에는 CozyClay 첫 화면이 떠 있다. 오른쪽 뒤 관람객 얼굴은 흐리게 처리했다](@/assets/images/ai-festa-2026-cozyclay/04-team.jpg)
 *왼쪽이 한동건 님, 오른쪽이 하도윤 님입니다.*
 
-[CozyClay](https://github.com/NomaDamas/CozyClay)는 하도윤 님([HaD0Yun](https://github.com/HaD0Yun))이 만들고 관리합니다. 한동건 님([Eastsidegunn](https://github.com/Eastsidegunn))도 개발에 참여했습니다. 7월 말에 만든 저장소는 두 달여 만에 star를 761개 받았습니다(2026년 10월 7일 기준). star는 GitHub에서 개발자들이 관심 있는 저장소에 누르는 표시입니다.
-
-## 저희 NomaDamas를 소개합니다
-
-![NomaDamas 작업 공간. 몰딩 천장이 있는 방의 벽을 따라 책상이 놓여 있다. 멤버 네 명이 각자 모니터를 여러 대 켜 두고 코드 편집기와 터미널 화면을 보며 작업하고 있다. 방 가운데에는 흰 원형 테이블이 있다](@/assets/images/ai-festa-2026-cozyclay/07-nomadamas-workspace.jpg)
-*NomaDamas 작업 공간입니다.*
-
-[NomaDamas](https://github.com/NomaDamas)는 AI 회사 [Markr AI](https://markr.ai)가 운영하는 서울의 AI 오픈소스 해커하우스입니다. 개발 좋아하는 사람들이 하숙집처럼 드나들며 오픈소스를 만듭니다. 아이디어가 나오면 완성을 기다리지 않고 다음 날 저장소부터 공개한 뒤 반응을 보며 키웁니다.
-
-공개 저장소 90개가 받은 star는 모두 12,148개입니다(2026년 10월 7일 기준). CozyClay는 그중 세 번째로 star를 많이 받았습니다. 첫째는 [k-skill](https://github.com/NomaDamas/k-skill)(7,810개)로, 지하철 도착 정보나 부동산 실거래가처럼 한국에서만 필요한 조회를 AI 에이전트가 할 수 있게 해 줍니다. 둘째는 AI로 발표 자료를 만들 때 쓰는 [slides-grab](https://github.com/NomaDamas/slides-grab)(1,212개)입니다.
-
-Markr AI와 함께 해커톤(며칠 안에 팀을 꾸려 제품을 만들어 보이는 대회)도 엽니다. 첫 회인 '변기톤'에서는 올해 5월 14일부터 19일까지 참가자들이 화장실과 관련된 제품을 만들어 시연했습니다.
+[CozyClay](https://github.com/NomaDamas/CozyClay)는 하도윤 님([HaD0Yun](https://github.com/HaD0Yun))이 만들고 관리합니다. 한동건 님([Eastsidegunn](https://github.com/Eastsidegunn))도 개발에 참여했습니다. 7월 말에 만든 저장소는 두 달여 만에 star를 761개 받았습니다(2026년 10월 7일 기준). star는 GitHub에서 개발자들이 관심 있는 저장소에 누르는 표시입니다. 761개는 저희 NomaDamas 공개 저장소 90개 가운데 세 번째로 많습니다.
 
 ## 마치며
 
@@ -158,17 +147,13 @@ CozyClay가 궁금하다면 아래 체험판부터 열어 보세요. 써 보고 
 - [CozyClay GitHub](https://github.com/NomaDamas/CozyClay), [CozyClay 공식 사이트](https://cozyclay.org/)
 - [Greybox to AI video](https://cozyclay.org/greybox-to-video/), [Seedance 2.5 camera control](https://cozyclay.org/seedance-camera-control/) - CozyClay 공식 사이트의 설명 글
 
-**NomaDamas**
-
-- [NomaDamas GitHub](https://github.com/NomaDamas), [한국 해커하우스 총정리](/posts/korea-hacker-house/)
-
 **갱신 이력**
 
 - 2026-10-07 최초 발행
 - 2026-10-07 마지막 날(8일) 관람 시간을 오후 4시까지로 바로잡음. 행사와 CozyClay 공식 배너, NomaDamas 작업 공간 사진, 부스 위치를 표시한 전시 배치도를 넣음
 - 2026-10-08 행사가 끝나 일정과 부스 안내를 지난 일로 고침. 행사 뒤에도 쓸 수 있는 체험판 안내를 요약과 마치며에 넣음
 - 2026-10-13 도입을 AI 영상의 구도 문제로 다시 씀. 화면과 포스터 문구를 옮겨 적은 문장과 같은 설명을 되풀이한 문장을 덜어 냄. 부스 시연 영상과 공식 비교 영상에 소리를 넣음
-- 2026-10-14 NomaDamas 소개 절의 해커톤 문장을 고침
+- 2026-10-14 NomaDamas 소개 절을 모든 글 끝에 붙는 공용 소개로 옮김
 
 ---
 

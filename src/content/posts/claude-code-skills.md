@@ -276,16 +276,9 @@ Claude Code를 새로 열고 `/skills`를 입력하면 스킬 목록에 weekly-r
 
 AI는 우리 팀이 일하는 방식을 모릅니다. 매번 덧붙이던 설명을 `SKILL.md`에 적어 두면 다음부터는 처음부터 그 방식대로 일합니다. 결과를 받을 때마다 고쳐 주는 점이 있다면, 그 점을 몇 줄로 적어 스킬로 만들어 보세요.
 
-## 저희 NomaDamas를 소개합니다
+## 마치며
 
-![NomaDamas 작업 공간. 몰딩 천장이 있는 방의 벽을 따라 책상이 놓여 있고 멤버 네 명이 각자 모니터를 여러 대 켜 두고 코드 편집기와 터미널 화면을 보며 작업하고 있다. 방 가운데에는 흰 원형 테이블이 있다](@/assets/images/korea-hacker-house/00-nomadamas-workspace.jpg)
-*NomaDamas 작업 공간입니다.*
-
-[NomaDamas](https://github.com/NomaDamas)는 AI 회사 [Markr AI](https://markr.ai)가 운영하는 서울의 AI 오픈소스 해커하우스입니다. 해커하우스라는 말이 낯설다면 개발 좋아하는 사람들의 하숙집을 떠올리면 됩니다. 밤늦게 하던 이야기가 새로 나온 AI로 번지면, 거기서 떠오른 아이디어로 저장소를 만들어 다음 날 공개합니다.
-
-지금 공개 저장소는 91개이고 star는 모두 12,267개입니다(2026년 10월 13일 기준). 그중 7,907개가 이 글에서 쓴 [k-skill](https://github.com/NomaDamas/k-skill)에 모였습니다. 올해 5월에는 Markr AI와 함께 화장실을 주제로 한 해커톤(정해진 시간 안에 팀을 짜서 무언가를 만들어 내는 대회) '변기톤'을 열었습니다. 하우스 이야기는 [한국 해커하우스 글](/posts/korea-hacker-house/)에 더 적었습니다.
-
-한국 업무에 필요한 스킬은 [k-skill 저장소](https://github.com/NomaDamas/k-skill)에서 골라 쓸 수 있습니다. 도움이 됐다면 star를 눌러 주세요.
+이 글에서 쓴 k-skill은 저희 NomaDamas의 프로젝트입니다. NomaDamas 공개 저장소 91개가 받은 star 12,267개 가운데 7,907개가 이 저장소에 모였습니다(2026년 10월 13일 기준). 한국 업무에 필요한 스킬은 [k-skill 저장소](https://github.com/NomaDamas/k-skill)에서 골라 쓸 수 있습니다. 도움이 됐다면 star를 눌러 주세요.
 
 ## 자주 묻는 질문
 
