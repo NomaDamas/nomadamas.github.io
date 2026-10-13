@@ -2,7 +2,7 @@
 title: "AI 페스타 2026 현장: 경진대회 특별관에서 만난 CozyClay(코지클레이)"
 description: "10월 6일부터 8일까지 코엑스 C홀에서 열린 AI 페스타 2026(AI FESTA 26)의 전국민 AI 경진대회 특별관에는 NomaDamas 오픈소스 CozyClay(코지클레이) 부스가 있었습니다. CozyClay는 3D로 짠 장면을 AI 영상 모델에 넘기는 도구로, 체험판은 지금도 열어 볼 수 있습니다."
 pubDatetime: 2026-10-07T21:45:00+09:00
-modDatetime: 2026-10-08T16:36:00+09:00
+modDatetime: 2026-10-14T00:03:00+09:00
 author: "안승원 (Aiden)"
 tags: ["AI 페스타 2026", "AI FESTA 26", "인공지능 페스타", "전국민 AI 경진대회", "AI ROOKIE", "CozyClay", "코지클레이", "NomaDamas"]
 featured: false
