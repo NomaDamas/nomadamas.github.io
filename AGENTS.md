@@ -262,6 +262,11 @@ GA4, Microsoft Clarity, Search Console, 네이버 서치어드바이저, Bing �
 - **GA4의 '브라우저 기록 이벤트 기반 페이지 변경'은 꺼 둔다.** ClientRouter가 pushState 순간에만
   이전 글 제목을 넣어 두기 때문에(`astro/dist/transitions/router.js`의 `moveToLocation`), 페이지 전환
   페이지뷰는 `GoogleAnalytics.astro`가 `astro:after-swap`에서 새 제목으로 직접 보낸다. 켜 두면 두 번 잡힌다.
+  꺼졌는지는 로그인 없이 공개 태그로 확인한다.
+  `curl -s "https://www.googletagmanager.com/gtag/js?id=<측정 ID>" | grep -c __ccd_em_page_view`가 0이면 꺼진 것이다.
+- **GA4 속성과 Clarity 프로젝트에는 관리자를 둘 이상 둔다.** 2026-10-13에 이전 조직 Google 계정을 쓸 수 없게 되자
+  그 계정 하나만 관리자였던 속성과 프로젝트에 아무도 들어갈 수 없어 새 계정으로 다시 만들었다.
+  지금 쓰는 ID는 `gh variable list`로 본다.
 - **`/privacy/`는 켜진 도구만 적는다.** GA4 약관은 사용 사실과 쿠키를, Clarity 약관은 Microsoft 같은
   제3자의 수집, Microsoft Advertising을 위한 수집, 거부 방법, Microsoft 개인정보처리방침 링크를 알리도록 요구한다.
   분석 도구, GA 향상된 측정, 보관 기간, 쿠키, 브라우저 저장 값 가운데 하나라도 바뀌면 `src/pages/privacy.astro`의
@@ -279,12 +284,15 @@ scripts/analytics-report.sh ga 7 <캠페인>     # utm_campaign 하나만
 scripts/analytics-report.sh clarity 1         # Clarity 최근 1일
 ```
 
-- **GA4는 키 파일 없이 서비스 계정을 가장해 읽는다.** GCP 프로젝트 `nomadamas-analytics`의 서비스 계정
-  `ga-reader`가 GA4 속성(`555475692`)에 뷰어로 들어가 있다. 이 서비스 계정의 토큰을 받을 권한
-  (`roles/iam.serviceAccountTokenCreator`)은 조직 공용 Google 계정에만 있다. 스크립트는 `gcloud auth list`에서
+- **GA4 조회는 2026-10-13부터 끊겨 있다.** 아래 서비스 계정이 이전 조직 계정의 GCP 프로젝트에 있어
+  토큰을 받을 수 없고, 새 속성에도 들어가 있지 않다. 읽기용 서비스 계정을 새 속성에 뷰어로 넣고
+  스크립트의 `GA_PROPERTY_ID`, `GA_SERVICE_ACCOUNT` 기본값을 바꿔야 다시 동작한다.
+- **GA4는 키 파일 없이 서비스 계정을 가장해 읽는다.** 이전 구성은 GCP 프로젝트 `nomadamas-analytics`의
+  서비스 계정 `ga-reader`가 이전 GA4 속성(`555475692`)에 뷰어로 들어가 있고, 토큰을 받을 권한
+  (`roles/iam.serviceAccountTokenCreator`)은 조직 공용 Google 계정에만 있는 형태였다. 스크립트는 `gcloud auth list`에서
   이 권한이 있는 계정을 찾아 쓰고, 없으면 그 계정으로 `gcloud auth login`부터 한다.
 - **Clarity는 `CLARITY_API_TOKEN`으로 읽는다.** 환경변수가 없으면 `agents-env` 전역 스토어에서 꺼낸다.
-  토큰은 Clarity 프로젝트 설정의 Data Export에서 발급한다.
+  토큰은 Clarity 프로젝트 설정의 Data Export에서 발급한다. 프로젝트를 새로 만들면 토큰도 그 프로젝트에서 다시 발급한다.
 - **Clarity는 하루 10회, 최근 1~3일만 조회된다.** 7일 이상의 추이는 GA4로 본다.
   Clarity의 `sessions`는 봇을 뺀 수이고, `bot_sessions`만 있는 경로는 사람 방문이 아니다.
 - **GA4 표준 보고서는 반영이 늦다.** 방문 뒤 하루에서 이틀까지 걸려, 공유 직후 몇 시간은 Clarity에만 잡힐 수 있다.
