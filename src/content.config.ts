@@ -20,6 +20,8 @@ const posts = defineCollection({
       description: z.string(),
       canonicalURL: z.string().optional(),
       hideEditPost: z.boolean().optional(),
+      // 글 끝 공용 NomaDamas 소개(src/content/pages/post-about.md)를 뺀다. 본문이 그 소개를 이미 자세히 다루는 글만 쓴다
+      hideAbout: z.boolean().optional(),
       timezone: z.string().optional(),
     }),
 });

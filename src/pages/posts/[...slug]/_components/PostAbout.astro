@@ -1,0 +1,24 @@
+---
+import { getEntry, render } from "astro:content";
+
+// 모든 글 끝에 붙는 NomaDamas 소개. 문구는 src/content/pages/post-about.md 한 곳에서 고친다.
+// 글마다 본문에 같은 소개 문장을 쓰면 글끼리 틀에서 찍은 문장이 생겨, 본문에는 그 글의 주제와 이어지는 사실만 둔다.
+const about = await getEntry("pages", "post-about");
+
+if (!about) {
+  throw new Error(
+    "Missing content entry: `post-about.md` in `src/content/pages/`"
+  );
+}
+
+const { Content } = await render(about);
+---
+
+<aside
+  aria-labelledby="post-about-title"
+  class="app-prose max-w-app border-border bg-muted/40 mt-10 rounded-md border px-5 py-4"
+  data-pagefind-ignore
+>
+  <h2 id="post-about-title" class="mt-0 text-lg">{about.data.title}</h2>
+  <Content />
+</aside>

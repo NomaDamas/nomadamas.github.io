@@ -6,6 +6,7 @@ author: "안승원 (Aiden)"
 tags: ["해커하우스", "hacker house", "korea hacker house", "창업", "스타트업", "오픈소스", "템프서울", "NomaDamas"]
 featured: false
 draft: false
+hideAbout: true
 ogImage: ../../assets/images/korea-hacker-house/00-cover.png
 ---
 ![드라마 실리콘밸리의 한 장면. 나무 벽과 책장이 있는 집 거실에 긴 나무 책상을 놓고 모니터와 노트북을 여러 대 켜 두었다. 한 사람은 노트북으로 작업하고 한 사람은 모니터 앞에서 턱을 괴고 있다. 주인공 리처드는 책상 옆에 서서 전화를 받고 있다. 뒤쪽 벽에는 해적 깃발과 꼬마전구가 걸려 있다](@/assets/images/korea-hacker-house/00-silicon-valley-hbo.jpg)
