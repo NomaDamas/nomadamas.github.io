@@ -11,7 +11,7 @@ draft: false
 
 > [!TIP] 먼저 고른다면
 > - 한국어와 영어 나레이션을 내 목소리로 만들려면 **Qwen3-TTS Base**부터 권합니다. 제가 쓰는 목소리와 짧은 대본에서는 Qwen이 가장 마음에 들었습니다.
-> - VoxCPM2, Higgs TTS 3, MOSS-TTS, Fish Audio Drama 3도 같은 대본으로 생성했습니다. 아래에서 다섯 모델의 두 언어 샘플을 들을 수 있습니다.
+> - VoxCPM2, Higgs TTS 3, MOSS-TTS, Fish Audio Drama 3도 같은 대본으로 생성했습니다. 아래에서 약 1분 분량의 한국어 음성과 짧은 영어 샘플을 들을 수 있습니다.
 > - **Apple Silicon Mac에서 시작하는 방법**과 내 목소리를 복제하는 방법도 정리했습니다.
 
 쇼츠 대본에서 문장 하나를 바꾸면 나레이션도 다시 녹음해야 합니다. 발표 영상이나 제품 시연을 만들 때도 비슷합니다. 대본을 고칠 때마다 내 목소리로 음성 파일을 만들 수 있다면 어떨까요?
@@ -30,7 +30,7 @@ draft: false
 ![로컬 TTS의 입력과 결과. 새로 읽힐 대본과 목소리 참고 녹음을 내 컴퓨터의 모델에 넣으면 새 나레이션 WAV가 나온다](@/assets/images/local-tts-models/01-local-tts.png)
 *이번 비교는 참고 녹음으로 목소리를 복제하는 방식입니다. 원본 녹음과 새로 읽힐 대본은 서로 다릅니다.*
 
-아래 샘플은 모델을 내려받아 제 컴퓨터에서 만들었습니다. 한국어와 영어를 같은 목소리로 읽힌 결과를 들어볼 수 있습니다.
+아래 샘플은 모델을 내려받아 제 컴퓨터에서 만들었습니다. 같은 목소리의 녹음을 넣었을 때 각 모델이 어떻게 읽는지 들어볼 수 있습니다.
 
 ## 처음 하나 설치한다면 Qwen3-TTS
 
@@ -46,13 +46,36 @@ draft: false
 
 Qwen3-TTS에는 용도가 다른 모델이 있습니다. **Base**는 녹음을 넣어 목소리를 복제할 때, **CustomVoice**는 준비된 화자를 고를 때, **VoiceDesign**은 원하는 목소리를 글로 설명할 때 쓰는 모델입니다. 한국어와 영어는 공식 지원 언어에 포함됩니다. [공식 모델 설명](https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base#released-models-description-and-download)
 
-### 같은 문장을 읽힌 Qwen 샘플
+### 약 1분의 한국어와 짧은 영어 샘플
 
-한국어 대본입니다.
+한국어는 TTS가 무엇인지 설명하는 대본입니다. 다른 네 모델에도 같은 대본을 넣었습니다.
 
-> 안녕하세요. 오늘은 새로운 음성 모델을 비교합니다.
+> [!faq]- 한국어 공통 대본 펼쳐 보기
+> 티티에스는 글자를 사람의 목소리처럼 읽어 주는 기술입니다.
+>
+> 휴대전화가 문자를 읽어 주거나, 내비게이션이 길을 안내할 때 들어 보셨을 거예요.
+>
+> 원하는 문장을 입력하고 목소리를 고르면, 직접 녹음하지 않아도 음성 파일을 만들 수 있습니다.
+>
+> 요즘은 문장의 흐름에 맞춰 쉬어 가고, 말끝의 높낮이도 자연스럽게 바꿔 줍니다.
+>
+> 동영상 나레이션을 만들거나, 긴 글을 귀로 듣거나, 안내 방송을 준비할 때 쓸 수 있죠.
+>
+> 대본을 고치면 바뀐 문장만 다시 만들 수 있어서 편리합니다.
+>
+> 내 목소리로 녹음한 짧은 파일을 참고해, 비슷한 목소리로 새 문장을 읽게 할 수도 있습니다.
+>
+> 이런 기능을 목소리 복제라고 합니다.
+>
+> 인터넷 서비스로 이용할 수도 있고, 내 컴퓨터에서 직접 실행할 수도 있습니다.
+>
+> 지금 들으시는 목소리도 같은 대본을 음성 모델에 넣어서 만든 결과입니다.
+>
+> 어떤 목소리가 가장 자연스럽고 오래 듣기 편한지 비교해 보세요.
 
-<audio controls preload="metadata" src="/audio/local-tts-models/qwen-ko.wav" aria-label="Qwen3-TTS 한국어 음성 복제 샘플" style="width:100%;max-width:100%"></audio>
+**한국어, 52초**
+
+<audio controls preload="metadata" src="/audio/local-tts-models/qwen-ko-1m.wav" aria-label="Qwen3-TTS 한국어 1분 대본 생성 샘플" style="width:100%;max-width:100%"></audio>
 
 영어 대본입니다. 목소리 참고 녹음은 한국어입니다.
 
@@ -60,7 +83,7 @@ Qwen3-TTS에는 용도가 다른 모델이 있습니다. **Base**는 녹음을 �
 
 <audio controls preload="metadata" src="/audio/local-tts-models/qwen-en.wav" aria-label="Qwen3-TTS 영어 음성 복제 샘플" style="width:100%;max-width:100%"></audio>
 
-*다섯 모델 모두 같은 6초 녹음으로 목소리를 복제했습니다. 비교하기 쉽도록 재생 음량을 맞췄습니다.*
+*다섯 모델에 같은 6초 녹음을 넣었습니다. 비교하기 쉽도록 재생 음량을 맞췄습니다.*
 
 ## 다른 로컬 TTS 모델도 들어보면
 
@@ -80,9 +103,9 @@ Qwen 결과가 마음에 들더라도 다른 모델로 같은 대본을 읽혀�
 
 [VoxCPM2](https://github.com/OpenBMB/VoxCPM)는 OpenBMB의 다국어 음성 생성 모델입니다. 음성 복제와 원하는 목소리를 설명해 만드는 목소리 설계 기능을 제공합니다.
 
-**한국어**
+**한국어, 71초**
 
-<audio controls preload="metadata" src="/audio/local-tts-models/vox-ko.wav" aria-label="VoxCPM2 한국어 음성 복제 샘플" style="width:100%;max-width:100%"></audio>
+<audio controls preload="metadata" src="/audio/local-tts-models/vox-ko-1m.wav" aria-label="VoxCPM2 한국어 1분 대본 생성 샘플" style="width:100%;max-width:100%"></audio>
 
 **영어**
 
@@ -105,9 +128,9 @@ Qwen과 목소리의 닮은 정도나 말의 리듬이 다르게 들린다면, �
 ![Higgs TTS 3 공식 출시 이미지. 어두운 배경에 여러 색의 음성 파형과 숫자 3, TTS가 보인다](@/assets/images/local-tts-models/07-higgs-tts-3.png)
 *출처: [Boson AI의 Higgs TTS 3 소개](https://www.boson.ai/blog/higgs-audio-v3-tts).*
 
-**한국어**
+**한국어, 56초**
 
-<audio controls preload="metadata" src="/audio/local-tts-models/higgs-ko.wav" aria-label="Higgs TTS 3 한국어 음성 복제 샘플" style="width:100%;max-width:100%"></audio>
+<audio controls preload="metadata" src="/audio/local-tts-models/higgs-ko-1m.wav" aria-label="Higgs TTS 3 한국어 1분 대본 생성 샘플" style="width:100%;max-width:100%"></audio>
 
 **영어**
 
@@ -127,11 +150,11 @@ Qwen과 목소리의 닮은 정도나 말의 리듬이 다르게 들린다면, �
 
 *출처: [OpenMOSS MOSS-TTS 공식 저장소](https://github.com/OpenMOSS/MOSS-TTS).*
 
-[MOSS-TTS](https://huggingface.co/OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5)로도 같은 목소리의 한국어와 영어 나레이션을 만들었습니다. 사용한 모델은 **MOSS-TTS 1.5 Local Transformer**입니다.
+[MOSS-TTS](https://huggingface.co/OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5)에도 제 녹음을 넣어 한국어와 영어 나레이션을 만들었습니다. 사용한 모델은 **MOSS-TTS 1.5 Local Transformer**입니다.
 
-**한국어**
+**한국어, 64초**
 
-<audio controls preload="metadata" src="/audio/local-tts-models/moss-ko.wav" aria-label="MOSS-TTS Local Transformer 한국어 음성 복제 샘플" style="width:100%;max-width:100%"></audio>
+<audio controls preload="metadata" src="/audio/local-tts-models/moss-ko-1m.wav" aria-label="MOSS-TTS Local Transformer 한국어 1분 대본 생성 샘플" style="width:100%;max-width:100%"></audio>
 
 **영어**
 
@@ -147,14 +170,16 @@ Qwen과 목소리의 닮은 정도나 말의 리듬이 다르게 들린다면, �
 
 *출처: [Fish Audio 공식 문서](https://docs.fish.audio).*
 
-[Fish Audio Drama 3](https://huggingface.co/fishaudio/drama-3)도 한국어와 영어 나레이션을 만들 수 있습니다. 이번에 받은 모델 파일은 약 **24.6GB**입니다. 제 Mac에서는 짧은 문장 하나를 만드는 데 약 2분이 걸렸습니다.
+[Fish Audio Drama 3](https://huggingface.co/fishaudio/drama-3)도 한국어와 영어 나레이션을 만들 수 있습니다. 이번에 받은 모델 파일은 약 **24.6GB**입니다.
 
 ![Fish Audio Drama 3 공식 출시 이미지. Fish Audio 로고와 Drama 3 제목이 있는 홍보 이미지](@/assets/images/local-tts-models/08-drama-3.jpg)
 *출처: [Fish Audio의 Drama 3 소개](https://beta.fish.audio/blog/fish-audio-drama-3/).*
 
-**한국어**
+모든 문장에 제 녹음을 넣었습니다. 그런데 약 1분짜리 한국어 나레이션을 들어보니 중간중간 다른 사람의 목소리처럼 들렸습니다.
 
-<audio controls preload="metadata" src="/audio/local-tts-models/drama-ko.wav" aria-label="Fish Audio Drama 3 한국어 음성 복제 샘플" style="width:100%;max-width:100%"></audio>
+**한국어, 58초**
+
+<audio controls preload="metadata" src="/audio/local-tts-models/drama-ko-1m.wav" aria-label="Fish Audio Drama 3 한국어 1분 대본 생성 샘플" style="width:100%;max-width:100%"></audio>
 
 **영어**
 
@@ -209,11 +234,11 @@ python -m mlx_audio.tts.generate \
 |---|---|
 | 한국어 영상 나레이션 | 문장 끝, 조사, 띄어 읽는 위치 |
 | 영어 나레이션 | 발음, 강세, 한국어 참고 음성의 특징이 얼마나 남는지 |
-| 내 목소리 복제 | 발음의 정확성과 별개로 원래 목소리와 닮았는지 |
+| 내 목소리 복제 | 원래 목소리와 닮았는지, 긴 대본에서도 같은 목소리로 이어지는지 |
 | 자주 고치는 짧은 영상 | 한 문장을 다시 만드는 데 걸리는 시간 |
 | 감정이 있는 대사 | 원하는 감정과 속도를 조절할 수 있는지 |
 
-짧은 테스트 문장이 마음에 들면 다음에는 실제로 쓸 고유명사, 숫자, 한국어와 영어가 섞인 문장을 넣어 보세요. 그 대본까지 만족스럽게 읽어 주는 모델을 고르면 됩니다.
+짧은 테스트 문장이 마음에 들면 실제로 쓸 고유명사, 숫자, 한국어와 영어가 섞인 문장을 한 문단 분량으로 넣어 보세요. 그 대본까지 만족스럽게 읽어 주는 모델을 고르면 됩니다.
 
 ## 자주 묻는 질문
 
@@ -221,7 +246,7 @@ python -m mlx_audio.tts.generate \
 > 이 글의 샘플은 외부 TTS API 이용료 없이 만들었습니다. 상업 이용 조건은 모델마다 다르므로 각 모델의 라이선스를 확인해 주세요.
 
 > [!faq]- 한국어와 영어를 같은 목소리로 만들 수 있나요?
-> 이번 다섯 설정에서는 같은 한국어 참고 녹음으로 두 언어의 음성 파일을 만들었습니다. 두 언어에서 목소리가 얼마나 비슷하게 유지되는지는 위 샘플을 듣고 비교할 수 있습니다.
+> Qwen3-TTS Base에 같은 한국어 참고 녹음을 넣어 두 언어의 음성을 만들었습니다. 위의 한국어와 영어 샘플에서 목소리를 들어볼 수 있습니다.
 
 > [!faq]- 어떤 컴퓨터에서나 쓸 수 있나요? / Can I run local TTS on any PC?
 > 이 글의 따라 하기는 Apple Silicon Mac을 기준으로 합니다. 다른 컴퓨터에서는 사용하려는 모델의 공식 설치 안내를 확인해 주세요.
@@ -235,5 +260,7 @@ python -m mlx_audio.tts.generate \
 - [Fish Audio Drama 3 공식 모델](https://huggingface.co/fishaudio/drama-3)
 - [MLX-Audio](https://github.com/Blaizzy/mlx-audio), [이번 대안 모델에 사용한 소스 버전](https://github.com/Blaizzy/mlx-audio/tree/1865f49cc9a40de9b5e4fcf55952b9812d751f1d)
 - [Drama 3용 audio.cpp 실행 안내](https://github.com/0xShug0/audio.cpp/blob/main/docs/models/fish_drama3.md), [사용한 GGUF 변환본](https://huggingface.co/Jmica/Drama-3-GGUF/blob/main/drama-3-backbone-8bit-experts-Q4_K_S.gguf)
+
+*2026-10-20 업데이트: 한국어 샘플을 약 1분 분량으로 바꾸고 Drama 3에서 목소리가 달라졌던 경험을 추가했습니다.*
 
 이 글은 AI의 도움을 받아 작성했습니다.
