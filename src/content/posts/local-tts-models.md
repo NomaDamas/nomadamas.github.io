@@ -168,6 +168,8 @@ Qwen과 목소리의 닮은 정도나 말의 리듬이 다르게 들린다면, �
 
 <audio controls preload="metadata" src="/audio/local-tts-models/drama-en.wav" aria-label="Fish Audio Drama 3 영어 음성 복제 샘플" style="width:100%;max-width:100%"></audio>
 
+*Built with Fish Audio. 이 절의 음성은 [Fish Audio Drama 3](https://huggingface.co/fishaudio/drama-3)로 생성했습니다.*
+
 이 시간은 CPU와 디스크를 이용한 이번 실행의 값입니다. 다른 네 모델의 GPU 실행 시간과 비교해 Drama 자체가 그만큼 느리다고 말할 수는 없습니다.
 
 ## 내 컴퓨터에서 돌아갈까요?
