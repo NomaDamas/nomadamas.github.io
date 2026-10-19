@@ -18,6 +18,9 @@ draft: true
 
 로컬 TTS(Text-to-Speech, 문자를 음성으로 바꾸는 기술)는 모델을 내 컴퓨터에 받아 실행하는 방식입니다. 이 글은 한국어와 영어 나레이션을 만들려는 분이 첫 모델을 고를 수 있도록, 음성 복제가 가능한 다섯 모델의 결과와 실행 조건을 정리했습니다.
 
+![Qwen3-TTS, VoxCPM2, Boson AI, OpenMOSS, Fish Audio의 공식 로고를 배치한 로컬 TTS 모델 5종 안내](@/assets/images/local-tts-models/00-cover.png)
+*로고 출처: [Qwen](https://github.com/QwenLM/Qwen3-TTS), [OpenBMB](https://github.com/OpenBMB/VoxCPM), [Boson AI](https://www.boson.ai), [OpenMOSS](https://github.com/OpenMOSS/MOSS-TTS), [Fish Audio](https://fish.audio).*
+
 ## 목차
 
 ## 로컬 TTS로 무엇을 할 수 있나요?
@@ -32,6 +35,14 @@ draft: true
 여기서 살펴볼 것은 한국어와 영어, 그리고 내 목소리 복제입니다. 감정 연기, 긴 오디오북, 실시간 대화까지 한꺼번에 평가하지는 않았습니다.
 
 ## 처음 하나 설치한다면 Qwen3-TTS
+
+<div style="background:#fff;padding:1.5rem;border-radius:0.75rem">
+
+![Qwen3-TTS 공식 로고](@/assets/images/local-tts-models/02-qwen-logo.png)
+
+</div>
+
+*출처: [Qwen3-TTS 공식 저장소](https://github.com/QwenLM/Qwen3-TTS).*
 
 저는 한국어와 영어 나레이션용 첫 로컬 TTS로 [Qwen3-TTS](https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base)를 권합니다. 원래 사용하던 모델이고, 다른 후보를 실행한 뒤에도 제 목소리로 만든 짧은 샘플에서는 Qwen을 선호했습니다. 모든 화자와 대본에서 가장 좋다는 순위표는 아닙니다.
 
@@ -63,6 +74,14 @@ Qwen 결과가 마음에 들더라도 다른 모델로 같은 대본을 읽혀�
 
 ### VoxCPM2
 
+<div style="background:#fff;padding:1.5rem;border-radius:0.75rem">
+
+![OpenBMB VoxCPM 공식 로고](@/assets/images/local-tts-models/03-voxcpm-logo.png)
+
+</div>
+
+*출처: [OpenBMB VoxCPM 공식 저장소](https://github.com/OpenBMB/VoxCPM).*
+
 [VoxCPM2](https://github.com/OpenBMB/VoxCPM)는 OpenBMB의 다국어 음성 생성 모델입니다. 공식 프로젝트는 음성 복제와 목소리 설계 기능을 소개합니다. 여기서는 BF16 가중치를 Apple Silicon용 실행기인 MLX-Audio로 돌려 두 언어를 생성했습니다.
 
 **한국어**
@@ -77,7 +96,18 @@ Qwen과 목소리의 닮은 정도나 말의 리듬이 다르게 들린다면, �
 
 ### Higgs TTS 3
 
+<div style="background:#1b2228;padding:1.5rem;border-radius:0.75rem">
+
+![Higgs TTS 3를 만든 Boson AI의 공식 로고](@/assets/images/local-tts-models/04-boson-logo.svg)
+
+</div>
+
+*출처: [Boson AI 공식 사이트](https://www.boson.ai).*
+
 [Higgs TTS 3](https://huggingface.co/bosonai/higgs-tts-3-4b)는 Boson AI의 음성 생성 모델입니다. 이번에는 4B BF16 가중치를 MLX-Audio에서 실행했습니다.
+
+![Higgs TTS 3 공식 출시 이미지. 어두운 배경에 여러 색의 음성 파형과 숫자 3, TTS가 보인다](@/assets/images/local-tts-models/07-higgs-tts-3.png)
+*출처: [Boson AI의 Higgs TTS 3 소개](https://www.boson.ai/blog/higgs-audio-v3-tts).*
 
 **한국어**
 
@@ -90,6 +120,14 @@ Qwen과 목소리의 닮은 정도나 말의 리듬이 다르게 들린다면, �
 같은 문장을 읽어도 멈추는 위치나 끝음이 달라질 수 있습니다. 영상에 넣을 때는 화면에 맞는 말의 속도인지도 들어볼 수 있습니다.
 
 ### MOSS-TTS 1.5 Local Transformer
+
+<div style="background:#fff;padding:1.5rem;border-radius:0.75rem">
+
+![MOSS-TTS를 만든 OpenMOSS의 공식 로고](@/assets/images/local-tts-models/05-openmoss-logo.svg)
+
+</div>
+
+*출처: [OpenMOSS MOSS-TTS 공식 저장소](https://github.com/OpenMOSS/MOSS-TTS).*
 
 [MOSS-TTS](https://huggingface.co/OpenMOSS-Team/MOSS-TTS-Local-Transformer-v1.5)에는 여러 구조의 모델이 있습니다. 아래 샘플은 **4B Local Transformer 4비트 모델과 v2 BF16 음성 변환기**로 만들었습니다. 음성 변환기는 모델이 다루는 수치 표현과 실제 소리를 서로 바꾸는 모듈입니다.
 
@@ -105,9 +143,20 @@ Qwen과 목소리의 닮은 정도나 말의 리듬이 다르게 들린다면, �
 
 ### Fish Audio Drama 3
 
+<div style="background:#1b2228;padding:1.5rem;border-radius:0.75rem">
+
+![Fish Audio 공식 로고](@/assets/images/local-tts-models/06-fish-logo.png)
+
+</div>
+
+*출처: [Fish Audio 공식 문서](https://docs.fish.audio).*
+
 [Fish Audio Drama 3](https://huggingface.co/fishaudio/drama-3)도 한국어와 영어 샘플을 만들었습니다. 이번에는 MLX 대신 [audio.cpp](https://github.com/0xShug0/audio.cpp/blob/main/docs/models/fish_drama3.md)를 사용했습니다. 모델 일부를 디스크에서 읽으며 CPU로 실행하는 설정입니다.
 
 사용한 가중치는 모델 일부를 4비트, 본체를 8비트로 저장한 [Q4_K/Q8 GGUF 변환본](https://huggingface.co/Jmica/Drama-3-GGUF/blob/main/drama-3-backbone-8bit-experts-Q4_K_S.gguf)입니다. 크기는 약 **24.6GB**입니다. GGUF는 실행기에 맞춰 변환한 모델 파일 형식입니다. 아래 짧은 음성 하나에도 이 설정에서는 약 100초에서 127초가 걸렸습니다.
+
+![Fish Audio Drama 3 공식 출시 이미지. Fish Audio 로고와 Drama 3 제목이 있는 홍보 이미지](@/assets/images/local-tts-models/08-drama-3.jpg)
+*출처: [Fish Audio의 Drama 3 소개](https://beta.fish.audio/blog/fish-audio-drama-3/).*
 
 **한국어**
 
