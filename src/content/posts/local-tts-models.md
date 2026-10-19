@@ -1,12 +1,12 @@
 ---
 title: "로컬 TTS 모델 추천: 내 컴퓨터에서 AI 음성 만들기"
 description: "로컬 TTS 모델 추천을 위해 한국어와 영어 음성을 직접 만들었습니다. Qwen3-TTS 등 local TTS 모델 5종의 음성 복제 샘플과 Apple Silicon Mac 실행 조건을 비교합니다."
-pubDatetime: 2026-10-20T02:40:00+09:00
+pubDatetime: 2026-10-20T03:15:00+09:00
 author: "안승원 (Aiden)"
 tags: ["로컬 TTS", "한국어 TTS", "음성 복제", "Qwen3-TTS", "AI 음성", "local TTS"]
 ogImage: ../../assets/images/local-tts-models/00-cover.png
 featured: false
-draft: true
+draft: false
 ---
 
 > [!TIP] 먼저 고른다면
@@ -116,6 +116,8 @@ Qwen과 목소리의 닮은 정도나 말의 리듬이 다르게 들린다면, �
 **영어**
 
 <audio controls preload="metadata" src="/audio/local-tts-models/higgs-en.wav" aria-label="Higgs TTS 3 영어 음성 복제 샘플" style="width:100%;max-width:100%"></audio>
+
+*이 절의 음성은 [Boson AI의 Higgs Audio](https://www.boson.ai/higgs-audio), Higgs TTS 3로 생성했습니다.*
 
 같은 문장을 읽어도 멈추는 위치나 끝음이 달라질 수 있습니다. 영상에 넣을 때는 화면에 맞는 말의 속도인지도 들어볼 수 있습니다.
 
