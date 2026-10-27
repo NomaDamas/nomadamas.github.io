@@ -127,8 +127,11 @@ sitemap의 `lastmod`도 이 값을 쓴다.
 에이전트가 고친 내용은 커밋하지 않은 변경으로 쌓이고, 사람이 덩어리마다 수락해 커밋한다. push, PR, 머지도 사람이 스튜디오 버튼으로 한다.
 사람이 켤 때만 도는 화면이라 "로컬 맥에 자동화를 걸지 않는다"(하지 않는 것)와 부딪치지 않는다.
 
-`studio/`는 별도 pnpm 패키지다. React 타입(`@types/react`)이 루트에 들어오면 satori의 `ReactNode`가 풀려
-OG 이미지 코드(`og.png.ts`, `posts/[...slug]/index.png.ts`)의 타입 검사가 깨진다. 스튜디오 의존성은 `studio/package.json`에만 넣는다.
+`studio/`는 사이트와 따로 설치한다. `studio/pnpm-workspace.yaml`과 `studio/pnpm-lock.yaml`이 있어서 루트의 `pnpm install`(배포와 PR 검사)에는
+스튜디오 의존성이 들어가지 않는다. React 타입(`@types/react`)이 사이트 설치에 섞이면 satori의 `ReactNode`가 풀려
+OG 이미지 코드(`og.png.ts`, `posts/[...slug]/index.png.ts`)의 타입 검사가 깨진다. 루트 워크스페이스 패키지로 두었을 때는
+로컬 pnpm 11에서는 통과하고 PR 검사의 pnpm 12에서 깨졌다.
+스튜디오 의존성은 `studio/package.json`에만 넣고 `pnpm --dir studio install`로 잠금 파일을 갱신한다. `pnpm studio`와 `pnpm studio:check`는 먼저 이 설치를 한다.
 `tsconfig.json`은 `studio`를 빼고 검사한다(`astro check`). 스튜디오 타입 검사는 `pnpm studio:check`.
 
 ## 작성자 표시

@@ -5,8 +5,8 @@
 스튜디오 안에는 AI가 없다.
 
 ```bash
-pnpm install
-pnpm studio          # http://127.0.0.1:4310
+pnpm install         # 사이트 의존성
+pnpm studio          # 스튜디오 의존성(studio/)을 설치하고 http://127.0.0.1:4310 을 띄운다
 ```
 
 처음 켜면 설정 화면에서 두 폴더를 고른다.
@@ -102,8 +102,10 @@ Astro가 백그라운드 자식에게 주는 `ASTRO_DEV_BACKGROUND=1`을 똑같�
 | `.studio/`(저장소 루트, git 밖) | `state.json` 글 목록, `config.json` 설정, `runtime.json` 켜진 주소, `rejected/` 거절한 변경                               |
 | 작업 폴더                       | `request.md`, `task.md`, `brief.md`, `claims.md`, `captures/`, `comments.json`, `checks.json`, `ai-review.md`, `share.md` |
 
-`studio/`는 별도 pnpm 패키지다(`pnpm-workspace.yaml`). React 타입이 루트에 들어오면 satori의 `ReactNode`가 풀려
-사이트의 OG 이미지 코드 타입 검사가 깨지기 때문이다. 스튜디오 의존성은 이 폴더의 `package.json`에만 넣는다.
+`studio/`는 사이트와 따로 설치한다(`studio/pnpm-workspace.yaml`, `studio/pnpm-lock.yaml`). 그래서 루트의 `pnpm install`(배포와 PR 검사)에는
+스튜디오 의존성이 들어가지 않는다. React 타입이 사이트 설치에 섞이면 satori의 `ReactNode`가 풀려 사이트의 OG 이미지 코드 타입 검사가 깨진다.
+루트 워크스페이스 패키지로 두었을 때는 로컬 pnpm 11에서는 통과하고 PR 검사의 pnpm 12에서 깨졌다.
+스튜디오 의존성은 이 폴더의 `package.json`에만 넣고 `pnpm --dir studio install`로 잠금 파일을 갱신한다.
 
 ```bash
 pnpm studio:check    # 스튜디오 타입 검사(사이트의 astro check는 studio를 빼고 돈다)
