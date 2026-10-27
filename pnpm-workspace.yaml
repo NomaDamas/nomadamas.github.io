@@ -1,3 +1,8 @@
+# studio/는 블로그 스튜디오(로컬 도구)다. React 타입이 루트에 들어오면 satori의 ReactNode가 풀려
+# OG 이미지 코드의 타입 검사가 깨지므로 의존성을 따로 둔다(studio/README.md)
+packages:
+  - studio
+
 allowBuilds:
   esbuild: true
   sharp: true

@@ -18,5 +18,9 @@ export default [
     },
   },
   { rules: { "no-console": "error" } },
-  { ignores: ["dist/**", ".astro/**", "public/pagefind/**"] },
+  // 블로그 스튜디오는 터미널에서 돌리는 로컬 도구라 진행 상황을 콘솔에 찍는다(studio/README.md)
+  { files: ["studio/**"], rules: { "no-console": "off" } },
+  {
+    ignores: ["dist/**", ".astro/**", "public/pagefind/**", ".studio/**"],
+  },
 ];

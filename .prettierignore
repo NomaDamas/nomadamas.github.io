@@ -11,6 +11,7 @@
 !.prettierrc
 !eslint.config.js
 !README.md
+!/studio
 !.vscode
 
 # Ignore MDX files
