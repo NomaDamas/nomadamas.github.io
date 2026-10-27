@@ -1,8 +1,9 @@
 import { existsSync } from "node:fs";
 import { run, runOk } from "./exec.ts";
 
-// 한글 경로를 \353\270... 같은 8진수로 바꾸지 않게 한다
-const GIT = ["-c", "core.quotePath=false"];
+// 한글 경로를 \353\270... 같은 8진수로 바꾸지 않게 한다.
+// 경로는 글자 그대로 읽는다. 에이전트가 만든 `*` 같은 파일 이름이 수락, 거절에서 다른 파일까지 가리키지 않게 한다
+const GIT = ["-c", "core.quotePath=false", "--literal-pathspecs"];
 
 export function git(cwd: string, args: string[], input?: string) {
   return runOk("git", [...GIT, "-C", cwd, ...args], { input });

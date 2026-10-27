@@ -64,8 +64,26 @@ async function waitForHttp(port: number, timeoutMs: number) {
   return false;
 }
 
+// 프록시가 Host를 127.0.0.1로 바꿔 넘기므로 Vite의 Host 검사가 다른 이름으로 들어온 요청(DNS 리바인딩)을
+// 거르지 못한다. 그래서 프록시가 자기 주소로, 자기 페이지에서 들어온 요청만 넘긴다
+function ownAddress(server: http.Server, req: http.IncomingMessage) {
+  const address = server.address();
+  const port = typeof address === "object" && address ? address.port : 0;
+  const hosts = [`127.0.0.1:${port}`, `localhost:${port}`];
+  const origin = req.headers.origin;
+  return (
+    hosts.includes(req.headers.host ?? "") &&
+    (!origin || hosts.some(host => origin === `http://${host}`))
+  );
+}
+
 function createProxy(upstreamPort: number, bridgeTag: string) {
   const server = http.createServer((req, res) => {
+    if (!ownAddress(server, req)) {
+      res.writeHead(403, { "content-type": "text/plain; charset=utf-8" });
+      res.end("허용하지 않는 주소입니다.");
+      return;
+    }
     const headers = { ...req.headers };
     headers.host = `127.0.0.1:${upstreamPort}`;
     // 압축된 HTML에는 스크립트를 끼울 수 없다
@@ -108,6 +126,10 @@ function createProxy(upstreamPort: number, bridgeTag: string) {
   });
   // Vite의 HMR 웹소켓을 그대로 넘긴다. 원고를 고치면 미리보기가 새로 고쳐진다
   server.on("upgrade", (req, socket, head) => {
+    if (!ownAddress(server, req)) {
+      socket.destroy();
+      return;
+    }
     const upstream = net.connect(upstreamPort, "127.0.0.1", () => {
       let raw = `${req.method} ${req.url} HTTP/1.1\r\n`;
       for (let i = 0; i < req.rawHeaders.length; i += 2) {
