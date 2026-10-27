@@ -11,7 +11,11 @@
 !.prettierrc
 !eslint.config.js
 !README.md
+!/studio
 !.vscode
 
 # Ignore MDX files
 *.mdx
+
+# 스튜디오의 잠금 파일은 pnpm이 쓴다
+/studio/pnpm-lock.yaml

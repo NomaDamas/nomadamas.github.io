@@ -120,6 +120,20 @@ sitemap의 `lastmod`도 이 값을 쓴다.
 웹 편집기는 PR 없이 `main`에 바로 커밋하므로 PR 검사를 거치지 않는다. "빌드가 막는 것"에 걸리면
 배포 빌드가 멈추고 사이트는 이전 배포에 머문다. 저장한 뒤 Actions 탭에서 배포가 성공했는지 본다.
 
+## 스튜디오에서 글쓰기
+
+`pnpm studio`는 글을 에이전트와 함께 쓰고 고치는 로컬 도구(블로그 스튜디오)를 띄운다. 사용법과 설계는 `studio/README.md`.
+에이전트는 herdr 탭의 Claude Code나 Codex로 따로 돌고, 스튜디오는 진행을 보여 주고 사람의 승인과 코멘트를 전달한다.
+에이전트가 고친 내용은 커밋하지 않은 변경으로 쌓이고, 사람이 덩어리마다 수락해 커밋한다. push, PR, 머지도 사람이 스튜디오 버튼으로 한다.
+사람이 켤 때만 도는 화면이라 "로컬 맥에 자동화를 걸지 않는다"(하지 않는 것)와 부딪치지 않는다.
+
+`studio/`는 사이트와 따로 설치한다. `studio/pnpm-workspace.yaml`과 `studio/pnpm-lock.yaml`이 있어서 루트의 `pnpm install`(배포와 PR 검사)에는
+스튜디오 의존성이 들어가지 않는다. React 타입(`@types/react`)이 사이트 설치에 섞이면 satori의 `ReactNode`가 풀려
+OG 이미지 코드(`og.png.ts`, `posts/[...slug]/index.png.ts`)의 타입 검사가 깨진다. 루트 워크스페이스 패키지로 두었을 때는
+로컬 pnpm 11에서는 통과하고 PR 검사의 pnpm 12에서 깨졌다.
+스튜디오 의존성은 `studio/package.json`에만 넣고 `pnpm --dir studio install`로 잠금 파일을 갱신한다. `pnpm studio`와 `pnpm studio:check`는 먼저 이 설치를 한다.
+`tsconfig.json`은 `studio`를 빼고 검사한다(`astro check`). 스튜디오 타입 검사는 `pnpm studio:check`.
+
 ## 작성자 표시
 
 글 제목 아래 "작성"은 그 글 파일을 처음 추가한 커밋, "최근 수정"은 가장 최근 커밋을 한 GitHub 계정이다.
