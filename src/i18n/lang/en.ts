@@ -41,6 +41,7 @@ export default {
   footer: {
     copyright: "Copyright",
     allRightsReserved: "All rights reserved.",
+    home: "NomaDamas home",
     privacy: "Analytics notice",
   },
   pages: {

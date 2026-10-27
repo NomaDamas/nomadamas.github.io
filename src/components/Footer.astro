@@ -12,6 +12,8 @@ type Props = {
 const { noMarginTop = false, class: className, ...attrs } = Astro.props;
 
 const t = useTranslations(Astro.currentLocale);
+// 조직 홈. 블로그 본문과 헤더에는 nomadamas.org 링크가 없어 모든 페이지의 푸터에 둔다.
+const HOME_URL = "https://nomadamas.org/";
 const currentYear = new Date().getFullYear();
 ---
 
@@ -27,6 +29,13 @@ const currentYear = new Date().getFullYear();
       <span>{t.footer.copyright} &#169; {currentYear}</span>
       <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
       <span>{t.footer.allRightsReserved}</span>
+      <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
+      <a
+        href={HOME_URL}
+        class="hover:text-accent underline decoration-dashed underline-offset-4"
+      >
+        {t.footer.home}
+      </a>
       <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
       <a
         href={getRelativeLocaleUrl(
