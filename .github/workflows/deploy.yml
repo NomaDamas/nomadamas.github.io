@@ -51,3 +51,30 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v5
+
+  # 배포가 끝나면 바뀐 글 주소를 IndexNow로 네이버와 Bing에 알린다(scripts/indexnow.sh).
+  # 알림이 실패해도 사이트는 이미 배포됐으므로 워크플로 전체를 실패로 만들지 않는다.
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /scripts/indexnow.sh
+            /public/*.txt
+          sparse-checkout-cone-mode: false
+      # push는 이전 커밋과 비교해 바뀐 글만, 손으로 돌린 배포는 sitemap 전체를 알린다.
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          if [ "$EVENT" = push ] && [ -n "$BEFORE" ] && [ "$BEFORE" != 0000000000000000000000000000000000000000 ]; then
+            scripts/indexnow.sh "$BEFORE" "$GITHUB_SHA"
+          else
+            scripts/indexnow.sh --all
+          fi
