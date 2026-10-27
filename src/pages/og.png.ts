@@ -2,6 +2,7 @@ import type { APIRoute } from "astro";
 import satori from "satori";
 import sharp from "sharp";
 import { loadOgFonts } from "@/utils/loadOgFonts";
+import { GENERATED_OG_IMAGE_SIZE } from "@/utils/resolveDefaultOgImagePath";
 import config from "@/config";
 
 export const GET: APIRoute = async context => {
@@ -129,8 +130,7 @@ export const GET: APIRoute = async context => {
       },
     },
     {
-      width: 1200,
-      height: 630,
+      ...GENERATED_OG_IMAGE_SIZE,
       embedFont: true,
       fonts,
     }

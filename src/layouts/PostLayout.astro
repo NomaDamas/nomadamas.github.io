@@ -12,6 +12,8 @@ type Props = {
   title?: string;
   description?: string;
   ogImage?: string;
+  /** og:image의 크기. 글 페이지가 아는 경우에만 넘긴다(Layout.astro). */
+  ogImageSize?: { width: number; height: number };
   canonicalURL?: string;
   pubDatetime?: Date;
   modDatetime?: Date | null;
@@ -30,6 +32,7 @@ const {
   title,
   description,
   ogImage,
+  ogImageSize,
   canonicalURL,
   pubDatetime,
   modDatetime,
@@ -64,6 +67,8 @@ const structuredData = {
   {title}
   {description}
   {ogImage}
+  {ogImageSize}
+  ogImageAlt={headline ?? title}
   {canonicalURL}
   ogType="article"
   author={byline?.name ?? author}
