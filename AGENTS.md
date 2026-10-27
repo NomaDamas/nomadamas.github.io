@@ -282,6 +282,18 @@ GA4, Microsoft Clarity, Search Console, 네이버 서치어드바이저, Bing �
   2026-10-07에 실제 브라우저로 잰 값이다.
 - Bing은 Search Console에서 가져오기로 연결한다. 토큰 없이 확인되고 사이트맵도 따라온다.
 
+### IndexNow
+
+배포가 끝나면 `deploy.yml`의 `indexnow` 잡이 `scripts/indexnow.sh`로 바뀐 글 주소를 네이버와 Bing에 알린다.
+push는 이전 커밋과 비교해 추가, 수정, 삭제된 글과 홈, 글 목록만 보내고, Actions에서 손으로 돌린 배포는 sitemap 전체를 보낸다.
+구글은 IndexNow를 받지 않는다. 구글은 사이트맵과 Search Console의 색인 생성 요청으로 간다.
+
+- **키는 `public/<키>.txt`이고 스크립트의 `KEY`와 같아야 한다.** 검색엔진이 이 파일을 읽어 소유를 확인한다.
+  키는 공개값이다. 바꿀 때는 파일 이름, 파일 내용, `KEY`를 함께 바꾼다
+- 응답 200은 받음, 202는 받고 키 확인을 기다리는 중이다. 403은 키 파일이 안 맞고, 422는 주소가 이 호스트가 아니며, 429는 너무 자주 보낸 것이다
+- 알림이 실패해도 잡만 실패로 표시되고 배포는 그대로다(`continue-on-error`). 손으로 다시 보낼 때는 `scripts/indexnow.sh --all`을 돌린다
+- 바뀌지 않은 주소를 반복해서 보내지 않는다. 같은 주소를 자주 보내면 429로 막힌다
+
 ### 방문 데이터 조회
 
 `scripts/analytics-report.sh`로 GA4와 Clarity 데이터를 유입 경로(UTM)별로 본다. 읽기만 한다.
