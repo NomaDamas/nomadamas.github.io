@@ -5,6 +5,7 @@ import sharp from "sharp";
 import { loadOgFonts } from "@/utils/loadOgFonts";
 import { getPostSlug } from "@/utils/getPostPaths";
 import { byline, getPostAuthors } from "@/utils/postAuthors";
+import { GENERATED_OG_IMAGE_SIZE } from "@/utils/resolveDefaultOgImagePath";
 import config from "@/config";
 
 export async function getStaticPaths() {
@@ -157,8 +158,7 @@ export const GET: APIRoute = async ({ props, url }) => {
       },
     },
     {
-      width: 1200,
-      height: 630,
+      ...GENERATED_OG_IMAGE_SIZE,
       embedFont: true,
       fonts,
     }

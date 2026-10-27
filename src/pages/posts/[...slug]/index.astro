@@ -24,6 +24,7 @@ import {
 } from "@/utils/toc";
 import { useTranslations } from "@/i18n";
 import { byline, getPostAuthors } from "@/utils/postAuthors";
+import { GENERATED_OG_IMAGE_SIZE } from "@/utils/resolveDefaultOgImagePath";
 import config from "@/config";
 
 export async function getStaticPaths() {
@@ -97,11 +98,15 @@ const tocHeadings = headings.filter(
 );
 
 let ogImageUrl: string | undefined;
+// og:image:width/height. 프런트매터 이미지는 Astro가 읽은 원본 크기, 자동 생성 이미지는 생성기의 크기다.
+// 문자열 주소는 크기를 모르므로 비워 둔다.
+let ogImageSize: { width: number; height: number } | undefined;
 
 if (typeof initOgImage === "string") {
   ogImageUrl = initOgImage;
 } else if (initOgImage?.src) {
   ogImageUrl = initOgImage.src;
+  ogImageSize = { width: initOgImage.width, height: initOgImage.height };
 }
 
 if (!ogImageUrl && config.features.dynamicOgImage) {
@@ -110,6 +115,7 @@ if (!ogImageUrl && config.features.dynamicOgImage) {
     ""
   );
   ogImageUrl = `${postUrl}/index.png`;
+  ogImageSize = GENERATED_OG_IMAGE_SIZE;
 }
 
 const ogImage = ogImageUrl
@@ -122,6 +128,7 @@ const ogImage = ogImageUrl
   headline={title}
   description={description}
   ogImage={ogImage}
+  ogImageSize={ogImageSize}
   canonicalURL={canonicalURL}
   pubDatetime={pubDatetime}
   modDatetime={modDatetime}
