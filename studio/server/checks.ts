@@ -1,13 +1,14 @@
 import { existsSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import type { ViteDevServer } from "vite";
+import { ensureSiteDeps } from "./deps.ts";
 import { run, which } from "./exec.ts";
 import { draftPath, parseFrontMatter, sha256, POSTS_DIR } from "./posts.ts";
 import { writeJsonAtomic, type PostRecord } from "./store.ts";
 
 // 점검은 두 가지다.
 // 빠른 점검: 원고 파일만 읽는다. 블로그 빌드가 막는 규칙(src/utils/checkPosts.ts)을 같은 코드로 돌리고,
-//   이미지, 제목 구조, 키워드 자리, 근거 표, 지난 교정을 본다.
+//   이미지, 제목 구조, 키워드 자리, 근거 표, 지난 교정을 본다. 처음 한 번은 글 worktree에 의존성을 설치한다(deps.ts).
 // 빌드 점검: 글 worktree에서 pnpm build를 돌리고 나온 HTML의 메타 태그, 구조화 데이터, llms.txt, sitemap을 읽는다.
 // 점수는 내지 않는다. 검색 순위에 대한 점수식은 근거가 약하고, 걸린 곳마다 이유를 적는 쪽이 고치기 쉽다.
 
@@ -373,6 +374,11 @@ export async function quickChecks(
   }
 
   try {
+    const install = await ensureSiteDeps(record.worktree);
+    if (!install.ok)
+      throw new Error(
+        `글 worktree의 pnpm install이 실패했습니다: ${install.log.trim().slice(-500)}`
+      );
     items.push(...(await buildRules(vite, record, file)));
   } catch (error) {
     items.push({
@@ -565,10 +571,14 @@ export function startBuild(record: PostRecord, siteUrl: string) {
   const state = { log: [] as string[] };
   building.set(record.id, state);
   void (async () => {
-    const result = await run("pnpm", ["build"], {
-      cwd: record.worktree,
-      timeoutMs: 10 * 60 * 1000,
-    });
+    const install = await ensureSiteDeps(record.worktree);
+    state.log.push(...install.log.split("\n"));
+    const result = install.ok
+      ? await run("pnpm", ["build"], {
+          cwd: record.worktree,
+          timeoutMs: 10 * 60 * 1000,
+        })
+      : { code: 1, stdout: "", stderr: "pnpm install이 실패했습니다" };
     state.log.push(...(result.stdout + result.stderr).split("\n"));
     const meta = result.code === 0 ? readBuiltMeta(record, siteUrl) : null;
     const previous = readChecks(record);

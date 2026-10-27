@@ -84,7 +84,8 @@ Astro가 백그라운드 자식에게 주는 `ASTRO_DEV_BACKGROUND=1`을 똑같�
 
 - **빠른 점검**: 원고 파일만 읽는다. 빌드를 멈추는 규칙은 사이트의 `src/utils/checkPosts.ts`를 그대로 불러 돌리고,
   제목과 설명 길이, 본문 제목 구조, 이미지 대체 텍스트와 파일, 검색 키워드 자리, 근거 표의 빈 근거,
-  `nomadamas-blog` 스킬의 지난 교정(`corrections.py check`)을 본다.
+  `nomadamas-blog` 스킬의 지난 교정(`corrections.py check`)을 본다. 처음 한 번은 글 worktree에 사이트 의존성을 설치한다(`server/deps.ts`).
+  `checkPosts.ts`를 불러올 때 `tsconfig.json`이 상속하는 `astro/tsconfigs/strict`가 있어야 해서다.
 - **빌드 점검**: 글 worktree에서 `pnpm build`를 돌리고 글 페이지의 `<title>`, 설명, canonical, Open Graph, X 카드,
   `BlogPosting` 구조화 데이터, h1, `llms.txt`와 sitemap 포함 여부를 읽는다. 검색 결과와 공유 카드 모습도 그린다.
 - **AI 점검**: 에이전트에게 스킬의 검수 절차(humanize-korean, patina `--backend claude-cli`)를 맡긴다.

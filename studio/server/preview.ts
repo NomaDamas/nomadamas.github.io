@@ -1,8 +1,8 @@
 import { spawn, type ChildProcess } from "node:child_process";
-import { existsSync } from "node:fs";
 import http from "node:http";
 import net from "node:net";
 import path from "node:path";
+import { ensureSiteDeps, hasSiteDeps } from "./deps.ts";
 import { run } from "./exec.ts";
 import type { PostRecord } from "./store.ts";
 
@@ -182,15 +182,11 @@ export function startPreview(record: PostRecord, studioOrigin: string) {
   void (async () => {
     try {
       const wt = record.worktree;
-      if (!existsSync(path.join(wt, "node_modules", ".bin", "astro"))) {
+      if (!hasSiteDeps(wt)) {
         remember(preview, "의존성을 설치합니다(pnpm install)…");
-        const install = await run(
-          "pnpm",
-          ["install", "--frozen-lockfile", "--prefer-offline"],
-          { cwd: wt, timeoutMs: 10 * 60 * 1000 }
-        );
-        remember(preview, install.stdout + install.stderr);
-        if (install.code !== 0) throw new Error("pnpm install이 실패했습니다");
+        const install = await ensureSiteDeps(wt);
+        remember(preview, install.log);
+        if (!install.ok) throw new Error("pnpm install이 실패했습니다");
       }
       preview.status = "starting";
       const astro = path.join(wt, "node_modules", ".bin", "astro");

@@ -58,7 +58,8 @@ export function ChecksTab({
               <h3>빠른 점검</h3>
               <div className="small muted">
                 원고 파일만 읽습니다. 빌드를 멈추는 규칙, 제목과 설명, 이미지,
-                키워드 자리, 근거 표, 지난 교정을 봅니다.
+                키워드 자리, 근거 표, 지난 교정을 봅니다. 처음 한 번은 글
+                worktree에 의존성을 설치해서 조금 걸립니다.
               </div>
             </div>
             <button
