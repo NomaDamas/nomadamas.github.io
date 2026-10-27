@@ -41,6 +41,7 @@ export default {
   footer: {
     copyright: "Copyright",
     allRightsReserved: "NomaDamas",
+    home: "노마다마스 홈",
     privacy: "방문 분석 안내",
   },
   pages: {
