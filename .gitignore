@@ -33,3 +33,6 @@ public/pagefind
 
 # docker compose
 compose.override.yaml
+
+# 블로그 스튜디오의 로컬 상태(글 목록, 설정, 거절한 변경 보관). studio/README.md
+.studio/

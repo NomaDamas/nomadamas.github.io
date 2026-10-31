@@ -1,0 +1,22 @@
+{
+  "name": "nomadamas-blog-studio",
+  "private": true,
+  "type": "module",
+  "description": "블로그 글을 에이전트와 함께 쓰고 고치는 로컬 도구. 사용법은 README.md",
+  "scripts": {
+    "start": "node server/main.ts",
+    "check": "tsc -p ."
+  },
+  "devDependencies": {
+    "@hono/node-server": "^2.1.5",
+    "@types/node": "^24.12.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "hono": "^4.13.14",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "^6.0.3",
+    "vite": "8.1.0"
+  }
+}

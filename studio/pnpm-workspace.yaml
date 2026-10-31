@@ -1,0 +1,6 @@
+# 스튜디오는 사이트와 따로 설치한다. 이 파일이 있으면 studio/가 자기 잠금 파일을 가진 별도 설치 단위가 되어,
+# 루트의 pnpm install(배포와 PR 검사)에 스튜디오 의존성이 들어가지 않는다.
+# React 타입이 사이트 설치에 섞이면 satori의 ReactNode가 풀려 OG 이미지 코드의 astro check가 깨진다(README.md).
+
+# 루트 pnpm-workspace.yaml과 같은 공급망 설정
+minimumReleaseAge: 1440
