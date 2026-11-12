@@ -1,7 +1,10 @@
 ---
 import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
-import { resolveDefaultOgImagePath } from "@/utils/resolveDefaultOgImagePath";
+import {
+  resolveDefaultOgImagePath,
+  resolveDefaultOgImageSize,
+} from "@/utils/resolveDefaultOgImagePath";
 import { getAssetPath } from "@/utils/withBase";
 import SiteAnalytics from "@/components/SiteAnalytics.astro";
 import config from "@/config";
@@ -11,6 +14,10 @@ type Props = {
   title?: string;
   description?: string;
   ogImage?: string;
+  /** og:image의 크기. 아는 경우에만 넘긴다. 없으면 공유 카드가 이미지를 받아 잰다. */
+  ogImageSize?: { width: number; height: number };
+  /** og:image의 대체 텍스트. 없으면 제목을 쓴다(자동 생성 OG 이미지는 제목을 그린 그림이다). */
+  ogImageAlt?: string;
   canonicalURL?: string;
   ogType?: "website" | "article";
   /** 검색 결과에 나올 필요가 없는 페이지(검색, 404). sitemap에서도 뺀다(astro.config.ts). */
@@ -25,6 +32,11 @@ const {
   title = site.title,
   description = site.description,
   ogImage = resolveDefaultOgImagePath(config),
+  // 기본 이미지를 쓸 때만 기본 이미지의 크기를 안다. 넘겨받은 이미지는 넘겨받은 크기만 쓴다.
+  ogImageSize = Astro.props.ogImage
+    ? undefined
+    : resolveDefaultOgImageSize(config),
+  ogImageAlt = title,
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
   ogType = "website",
   noindex = false,
@@ -32,6 +44,9 @@ const {
 } = Astro.props;
 
 const socialImageURL = new URL(ogImage, Astro.site ?? Astro.url);
+// og:locale은 언어_지역 형식(ko_KR)이다. 표에 없는 언어는 태그를 뺀다.
+const OG_LOCALES: Record<string, string> = { ko: "ko_KR", en: "en_US" };
+const ogLocale = OG_LOCALES[Astro.currentLocale ?? site.lang];
 // getRelativeLocaleUrl은 끝에 슬래시를 붙여 /rss.xml/ 로 만들고, 그 주소는 404다.
 // favicon/sitemap과 같은 getAssetPath를 써야 슬래시가 안 붙는다.
 const rssHref = getAssetPath("rss.xml");
@@ -72,6 +87,18 @@ const rssHref = getAssetPath("rss.xml");
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={socialImageURL} />
+    {
+      ogImageSize && (
+        <meta property="og:image:width" content={String(ogImageSize.width)} />
+      )
+    }
+    {
+      ogImageSize && (
+        <meta property="og:image:height" content={String(ogImageSize.height)} />
+      )
+    }
+    <meta property="og:image:alt" content={ogImageAlt} />
+    {ogLocale && <meta property="og:locale" content={ogLocale} />}
 
     <!-- Twitter / X -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -79,6 +106,7 @@ const rssHref = getAssetPath("rss.xml");
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={socialImageURL} />
+    <meta property="twitter:image:alt" content={ogImageAlt} />
 
     <!-- RSS autodiscovery -->
     <link
