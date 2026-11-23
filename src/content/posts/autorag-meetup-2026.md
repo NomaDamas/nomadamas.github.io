@@ -1,7 +1,7 @@
 ---
 title: "에이전트 시대에도 RAG가 필요할까? AutoRAG 밋업 2026 후기"
 description: "에이전트 시대에도 RAG는 사라지지 않고 제때 써야 하는 기술이 됐습니다. 2026년 10월 28일 AutoRAG Meetup(오토래그 밋업) 다섯 세션의 핵심과 현장 스케치 영상을 정리했습니다."
-pubDatetime: 2026-11-23T12:41:00+09:00
+pubDatetime: 2026-11-23T13:20:00+09:00
 author: "안승원 (Aiden)"
 tags: ["AutoRAG", "AutoRAG 밋업", "오토래그", "RAG", "AI 에이전트", "MCP", "NomaDamas"]
 featured: false
