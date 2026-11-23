@@ -18,5 +18,22 @@ class QuoteTest(unittest.TestCase):
         self.assertNotIn(cl.plain("'변기톤'을 열었습니다"), body)
 
 
+class ManuscriptTest(unittest.TestCase):
+    def test_counts_iframe_embeds_apart_from_videos(self):
+        import tempfile
+
+        text = (
+            '---\ntitle: "글"\n---\n'
+            "![사진](a.jpg)\n\n"
+            '<iframe src="https://www.youtube-nocookie.com/embed/x"></iframe>\n\n'
+            '<video src="b.mp4" controls></video>\n\n'
+            "```html\n<iframe src=\"코드 블록 안은 세지 않는다\"></iframe>\n```\n"
+        )
+        with tempfile.NamedTemporaryFile("w", suffix=".md", encoding="utf-8", delete=False) as f:
+            f.write(text)
+        self.assertEqual(cl.manuscript(f.name), ("글", 1, 1, 1))
+        Path(f.name).unlink()
+
+
 if __name__ == "__main__":
     unittest.main()
