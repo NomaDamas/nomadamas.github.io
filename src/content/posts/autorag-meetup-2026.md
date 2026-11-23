@@ -1,6 +1,6 @@
 ---
 title: "에이전트 시대에도 RAG가 필요할까? AutoRAG 밋업 2026 후기"
-description: "에이전트 시대에도 RAG는 사라지지 않고 제때 써야 하는 기술이 됐습니다. 2026년 10월 28일 AutoRAG(오토래그) 밋업 다섯 세션의 핵심과 현장 스케치 영상을 정리했습니다. A recap of the AutoRAG Meetup in Seoul: why RAG still matters for AI agents."
+description: "에이전트 시대에도 RAG는 사라지지 않고 제때 써야 하는 기술이 됐습니다. 2026년 10월 28일 AutoRAG Meetup(오토래그 밋업) 다섯 세션의 핵심과 현장 스케치 영상을 정리했습니다."
 pubDatetime: 2026-11-23T12:41:00+09:00
 author: "안승원 (Aiden)"
 tags: ["AutoRAG", "AutoRAG 밋업", "오토래그", "RAG", "AI 에이전트", "MCP", "NomaDamas"]
@@ -104,7 +104,7 @@ AutoRAG를 처음 만든 김병욱 님은 2024년에 시작한 AutoRAG 오픈소
 
 *소리 있음. 영상: [TeddyNote 유튜브 채널](https://www.youtube.com/watch?v=h0Xpdf9-Hcs), 브레인크루 영상팀 제작(5분 3초, 2026년 11월 12일 공개)*
 
-영상에는 발표 하이라이트와 참석자 인터뷰가 담겨 있습니다. 회의 중에 에이전트에게 한글 파일을 찾게 했다가 15분이 지나 회의가 끝난 뒤에야 답을 받은 일이 AutoRAG 에이전트를 만든 계기였다는 이야기도 나옵니다.
+영상에는 발표 하이라이트와 참석자 인터뷰가 담겨 있습니다. 회의 중에 에이전트에게 한글(HWP) 파일을 찾게 했다가 회의가 끝난 뒤에야 답을 받은 일이 AutoRAG 에이전트를 만든 계기였다는 이야기도 나옵니다.
 
 ## 세션 뒤에 이어진 네트워킹
 
