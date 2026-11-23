@@ -49,13 +49,15 @@ try {
   // 로딩 중 snapshot에는 계정 버튼이 빠질 수 있어 몇 번 다시 본다
   let s0 = null;
   let accountShown = false;
-  for (let i = 0; i < 4 && !accountShown; i++) {
+  let box = null;
+  // 입력칸은 계정 버튼보다 늦게 나타날 수 있어 둘 다 보일 때까지 기다린다
+  for (let i = 0; i < 12 && !(accountShown && box); i++) {
     await sleep(2500);
     s0 = await snapshot(t, { interactive: true });
     accountShown = s0.tree.split("\n").some((l) => l.includes("Google 계정:") && l.includes(account));
+    box = s0.tree.match(/combobox "[^"]*모든 URL 검사" \[ref=(\w+)\]/);
   }
   if (!accountShown) throw new Error("화면의 Google 계정이 " + account + "가 아니다");
-  const box = s0.tree.match(/combobox "[^"]*모든 URL 검사" \[ref=(\w+)\]/);
   if (!box) throw new Error("URL 검사 입력칸을 찾지 못했다");
   await t.locator(box[1]).fill(target);
   await t.keyboard.press("Enter");
