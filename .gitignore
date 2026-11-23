@@ -33,3 +33,6 @@ public/pagefind
 
 # docker compose
 compose.override.yaml
+
+# 스킬 스크립트를 돌리면 생기는 바이트코드. worktree 정리를 막는다
+__pycache__/

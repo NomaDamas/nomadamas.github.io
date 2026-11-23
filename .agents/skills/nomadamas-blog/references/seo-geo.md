@@ -31,7 +31,7 @@
     - 응답 코드의 뜻, 다시 보내는 법, 반복 전송 금지는 이 저장소 `AGENTS.md`의 "IndexNow" 절이 정본이다.
     - "알릴 주소가 없습니다"는 그 푸시에 글 변경이 없었다는 뜻이다. 글을 더하거나 고친 머지에서 이 줄이 나오면 위 절대로 다시 보내고(승인 대상), 스크립트가 놓친 원인은 이슈 후보로 사용자에게 알린다.
 2. 새 글 주소(`https://blog.nomadamas.org/posts/<slug>/`)를 Search Console에서 색인 생성 요청한다. API가 없어 소유자 화면을 `scripts/request_index.py`로 조작한다.
-    - `--account`(소유자로 로그인된 Aside 계정), `--property`, `--google-account` 값은 이 저장소의 운영 문서에서 읽는다. 화면의 Google 계정이 다르면 스크립트가 누르지 않고 멈춘다. 다른 계정에서 제출이 나가지 않게 하려는 것이다.
+    - `--property`는 `sc-domain:nomadamas.org`다. `--account`(Aside 계정)와 `--google-account`는 기기와 로그인마다 달라 저장소에 적지 않는다. `aside account list`의 계정마다 Search Console(`https://search.google.com/search-console?resource_id=sc-domain%3Anomadamas.org`)을 열고, 속성 개요가 보이는 계정의 "Google 계정:" 버튼에 적힌 이메일을 쓴다. 화면의 Google 계정이 다르면 스크립트가 누르지 않고 멈춘다. 다른 계정에서 제출이 나가지 않게 하려는 것이다.
     - 먼저 `--no-submit`으로 돌려 입력칸과 버튼을 찾는지 본다. 화면 조회만 하므로 승인 없이 돌려도 된다. 화면이 바뀌어 `failed`가 나오면 아래 함정을 보고 스크립트를 고친다.
     - 실제 요청은 사이트 제출이라 주소를 밝혀 승인받는다(`SKILL.md` 승인 경계).
 3. 하루 이틀 뒤 URL 검사로 상태를 다시 본다. 조회는 서비스 계정 API로 해서 승인이 필요 없다. 여전히 "Google에는 아직 알려지지 않은 URL입니다."면 `search-audit.md` "막힌 단계 찾기"의 발견 단계부터 본다.

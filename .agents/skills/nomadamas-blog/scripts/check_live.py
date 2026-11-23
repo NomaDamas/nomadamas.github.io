@@ -9,7 +9,7 @@
   - 글 주소 응답 200과 제목. --post가 있으면 원고 title이 <title>에 들어 있는지
   - 제목 아래 작성자 표시("작성:" 뒤 GitHub 계정 링크)
   - og:image 응답 200
-  - 본문(article)의 이미지, 영상, 포스터 응답 200. --post가 있으면 원고와 개수 비교
+  - 본문(article)의 이미지, 영상, 포스터, 임베드(iframe) 응답 200. --post가 있으면 원고와 개수 비교
   - 본문에 취소선(<del>)이 없는지
   - sitemap과 홈(없으면 글 목록)에 글 주소가 있는지
   - --expect 문구가 본문에 있고 --absent 문구가 없는지. 고친 문구와 지운 문구를 넘긴다.
@@ -87,7 +87,7 @@ def plain(text):
 
 
 def manuscript(path):
-    """원고의 title, 이미지 수, 영상 수."""
+    """원고의 title, 이미지 수, 영상 수, 임베드(iframe) 수."""
     text = Path(path).read_text(encoding="utf-8")
     m = FRONTMATTER_RE.match(text)
     title = ""
@@ -97,7 +97,8 @@ def manuscript(path):
     body = FENCE_RE.sub("", text[m.end():] if m else text)
     images = len(re.findall(r"!\[[^\]]*\]\(", body)) + len(re.findall(r"<img\b", body))
     videos = len(re.findall(r"<video\b", body))
-    return title, images, videos
+    embeds = len(re.findall(r"<iframe\b", body))
+    return title, images, videos, embeds
 
 
 def main(argv=None):
@@ -162,14 +163,18 @@ def main(argv=None):
     imgs = re.findall(r'<img\b[^>]*\bsrc="([^"]+)"', article)
     videos = re.findall(r'<video\b[^>]*\bsrc="([^"]+)"', article)
     posters = re.findall(r'<video\b[^>]*\bposter="([^"]+)"', article)
-    results = [check_url("본문 미디어", u) for u in imgs + videos + posters]
+    # 유튜브 같은 임베드는 <video>가 아니라 iframe이라 따로 센다. 다른 호스트 주소는 조회하지 않고 개수만 원고와 맞춘다
+    embeds = re.findall(r'<iframe\b[^>]*\bsrc="([^"]+)"', article)
+    results = [check_url("본문 미디어", u) for u in imgs + videos + posters + embeds]
     if "fail" not in results:
-        report.ok(f"본문 이미지 {len(imgs)}개, 영상 {len(videos)}개, 포스터 {len(posters)}개 응답 200")
+        report.ok(f"본문 이미지 {len(imgs)}개, 영상 {len(videos)}개, 포스터 {len(posters)}개, 임베드 {len(embeds)}개 응답 200")
     if md:
         if len(imgs) != md[1]:
             report.fail(f"본문 이미지 {len(imgs)}개가 원고의 {md[1]}개와 다릅니다")
         if len(videos) != md[2]:
             report.fail(f"본문 영상 {len(videos)}개가 원고의 {md[2]}개와 다릅니다")
+        if len(embeds) != md[3]:
+            report.fail(f"본문 임베드 {len(embeds)}개가 원고의 {md[3]}개와 다릅니다")
 
     dels = re.findall(r"<del>(.*?)</del>", article, re.S)
     if dels:
