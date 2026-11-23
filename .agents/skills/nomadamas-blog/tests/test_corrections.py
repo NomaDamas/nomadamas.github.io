@@ -331,5 +331,20 @@ class CorrectionsTest(unittest.TestCase):
                 with self.subTest(row=row["id"]):
                     self.assertIn("플레이북", row["reason"])
 
+    def test_decision_ids_are_in_ops_playbook(self):
+        # 플레이북은 운영 저장소(seungwonme/nomadamas)에 있다. 그 체크아웃이 없는 곳(CI)에서는 건너뛴다
+        import os
+        import re
+
+        default = Path.home() / "Dev/2-area/nomadamas/05-playbook/blog.md"
+        playbook = Path(os.environ.get("NOMADAMAS_PLAYBOOK", default))
+        if not playbook.is_file():
+            self.skipTest(f"운영 저장소 플레이북이 없음: {playbook}")
+        text = playbook.read_text(encoding="utf-8")
+        for row in cor.load(cor.TABLE):
+            if row["type"] == "결정":
+                with self.subTest(row=row["id"]):
+                    self.assertRegex(text, rf"\b{re.escape(row['id'])}\b")
+
 if __name__ == "__main__":
     unittest.main()
